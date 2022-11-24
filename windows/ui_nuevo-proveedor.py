@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'nuevo-proveedor.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -94,9 +94,9 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Nuevo proveedor", None))
-        self.label.setText(QCoreApplication.translate("Form", u"Raz\u00f3n social*", None))
-        self.label_2.setText(QCoreApplication.translate("Form", u"Direcci\u00f3n*", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"Tel\u00e9fono*", None))
+        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"E-Mail", None))
     # retranslateUi
 

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="prefijoNuevo">
-    <file>Fondo Main.png</file>
+    <file>Cajitas_v2.png</file>
+    <file>Escudo-Club.png</file>
   </qresource>
 </RCC>

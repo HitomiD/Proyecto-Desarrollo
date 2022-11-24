@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -20,18 +20,25 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
     QLabel, QLineEdit, QMainWindow, QMenu,
     QMenuBar, QSizePolicy, QSpacerItem, QStatusBar,
     QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+import Lupa_rc
+import Logo_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(844, 683)
+        MainWindow.resize(841, 692)
+        MainWindow.setStyleSheet(u"background-color: white;\n"
+"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: rgb(84, 84, 84)")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.frame)
@@ -42,6 +49,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(16)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet(u"image: url(:/Logo/MockUps/Icono Club Sarmiento (Sin Fondo).png);")
 
         self.horizontalLayout_2.addWidget(self.label_2)
 
@@ -49,8 +57,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
+        self.label_3 = QLabel(self.frame)
+        self.label_3.setObjectName(u"label_3")
+        font1 = QFont()
+        font1.setPointSize(11)
+        self.label_3.setFont(font1)
+        self.label_3.setStyleSheet(u"image: url(:/Lupa/Lupa.png);\n"
+"filter:invert(100%);\n"
+"color:white;")
+
+        self.horizontalLayout_2.addWidget(self.label_3)
+
         self.lineEdit = QLineEdit(self.frame)
         self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.lineEdit.setReadOnly(True)
 
         self.horizontalLayout_2.addWidget(self.lineEdit)
@@ -64,15 +84,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addItem(self.horizontalSpacer_3)
 
 
-        self.verticalLayout_2.addWidget(self.frame)
+        self.verticalLayout.addWidget(self.frame)
 
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        font1 = QFont()
-        font1.setPointSize(20)
-        self.label.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Roboto"])
+        font2.setPointSize(30)
+        font2.setBold(False)
+        font2.setItalic(False)
+        self.label.setFont(font2)
+        self.label.setStyleSheet(u"font: 30pt \"Roboto\";\n"
+"color: rgb(148, 148, 148);")
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setWordWrap(False)
         self.label.setMargin(10)
@@ -95,6 +118,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setStyleSheet(u"background-color: white;\n"
+"color:black;")
         self.tableWidget.setAutoScroll(True)
         self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
@@ -113,7 +138,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 844, 20))
+        self.menubar.setGeometry(QRect(0, 0, 841, 22))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
         self.menuAyuda = QMenu(self.menubar)
@@ -130,9 +155,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Club sarmiento", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Club sarmiento</span></p></body></html>", None))
+        self.label_3.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Buscar por nombre", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Listado de productos", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700; color:#545454;\">Menu Principal</span></p></body></html>", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)

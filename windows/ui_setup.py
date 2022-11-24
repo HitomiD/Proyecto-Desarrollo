@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'setup.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,7 +23,8 @@ class Ui_Wizard(object):
     def setupUi(self, Wizard):
         if not Wizard.objectName():
             Wizard.setObjectName(u"Wizard")
-        Wizard.resize(403, 300)
+        Wizard.resize(404, 329)
+        Wizard.setStyleSheet(u"")
         self.wizardPage1 = QWizardPage()
         self.wizardPage1.setObjectName(u"wizardPage1")
         self.wizardPage1.setLocale(QLocale(QLocale.Spanish, QLocale.Argentina))
@@ -163,15 +164,15 @@ class Ui_Wizard(object):
 
     def retranslateUi(self, Wizard):
         Wizard.setWindowTitle(QCoreApplication.translate("Wizard", u"Configuraci\u00f3n inicial", None))
-        self.label.setText(QCoreApplication.translate("Wizard", u"Informaci\u00f3n Administrador", None))
+        self.label.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p><span style=\" font-weight:700;\">Informaci\u00f3n Administrador</span></p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("Wizard", u"Tel\u00e9fono", None))
-        self.label_6.setText(QCoreApplication.translate("Wizard", u"Nombre y apellido*", None))
-        self.label_7.setText(QCoreApplication.translate("Wizard", u"Correo electr\u00f3nico*", None))
-        self.label_8.setText(QCoreApplication.translate("Wizard", u"Los campos se\u00f1alados con * son obligatorios. El correo electr\u00f3nico ser\u00e1 utilizado como medio de recuperaci\u00f3n de la contrase\u00f1a.", None))
+        self.label_6.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p>Nombre y apellido<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_7.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p>Correo electr\u00f3nico<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p>Los campos se\u00f1alados con <span style=\" font-weight:700; color:#ff0000;\">*</span> son obligatorios. El correo electr\u00f3nico ser\u00e1 utilizado como medio de recuperaci\u00f3n de la contrase\u00f1a.</p></body></html>", None))
         self.label_9.setText(QCoreApplication.translate("Wizard", u"Crear contrase\u00f1a", None))
-        self.contraseniaLabel.setText(QCoreApplication.translate("Wizard", u"Contrase\u00f1a", None))
+        self.contraseniaLabel.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p>Contrase\u00f1a<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.contraseniaLineEdit.setText("")
-        self.confirmarContraseniaLabel.setText(QCoreApplication.translate("Wizard", u"Confirmar contrase\u00f1a", None))
+        self.confirmarContraseniaLabel.setText(QCoreApplication.translate("Wizard", u"<html><head/><body><p>Confirmar contrase\u00f1a<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.confirmarContraseniaLineEdit.setText("")
         self.label_10.setText(QCoreApplication.translate("Wizard", u"Se recomienda utilizar una contrase\u00f1a de 8 caracteres como m\u00ednimo y compuesta por may\u00fasculas,min\u00fasculas y n\u00fameros.", None))
         self.label_11.setText(QCoreApplication.translate("Wizard", u"En caso de p\u00e9rdida se utilizar\u00e1 la direcci\u00f3n de correo electr\u00f3nico del administrador como medio de recuperaci\u00f3n.", None))
