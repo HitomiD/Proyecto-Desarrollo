@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>300</height>
+    <width>404</width>
+    <height>329</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Configuración inicial</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWizardPage" name="wizardPage1">
    <property name="locale">
@@ -26,7 +29,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Información Administrador</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Información Administrador&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -67,14 +70,14 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Nombre y apellido*</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nombre y apellido&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>Correo electrónico*</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Correo electrónico&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -96,7 +99,7 @@
     <item>
      <widget class="QLabel" name="label_8">
       <property name="text">
-       <string>Los campos señalados con * son obligatorios. El correo electrónico será utilizado como medio de recuperación de la contraseña.</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los campos señalados con &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt; son obligatorios. El correo electrónico será utilizado como medio de recuperación de la contraseña.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -146,7 +149,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="contraseniaLabel">
         <property name="text">
-         <string>Contraseña</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contraseña&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -163,7 +166,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="confirmarContraseniaLabel">
         <property name="text">
-         <string>Confirmar contraseña</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Confirmar contraseña&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
