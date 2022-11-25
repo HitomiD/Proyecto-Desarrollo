@@ -16,22 +16,25 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFormLayout, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
+    QLayout, QLineEdit, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
+    QWidget)
 import Fondo Main_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1396, 649)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 791, 521))
+        self.verticalLayoutWidget.setGeometry(QRect(0, 50, 1371, 571))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setSpacing(6)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setSizeConstraint(QLayout.SetMaximumSize)
         self.verticalLayout.setContentsMargins(5, 5, 5, 5)
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -46,6 +49,18 @@ class Ui_MainWindow(object):
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.tituloLayout.addItem(self.horizontalSpacer_4)
+
+        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_17)
+
+        self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_19)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_6)
 
         self.label_2 = QLabel(self.verticalLayoutWidget)
         self.label_2.setObjectName(u"label_2")
@@ -69,6 +84,18 @@ class Ui_MainWindow(object):
         self.label_4.setMargin(0)
 
         self.tituloLayout.addWidget(self.label_4)
+
+        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_20)
+
+        self.horizontalSpacer_18 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_18)
+
+        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.tituloLayout.addItem(self.horizontalSpacer_16)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -137,6 +164,14 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.verticalLayoutWidget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMaximumSize(QSize(200, 16777215))
+        self.pushButton.setStyleSheet(u"background-color: rgb(0, 193, 13);\n"
+"color:white;\n"
+"border:none;\n"
+"font-size: 14px;\n"
+"font-weight: bold;\n"
+"font-family:Fira Sans;\n"
+"padding: 5px 5px 7px 5px;\n"
+"border-radius:5px;")
 
         self.horizontalLayout_2.addWidget(self.pushButton)
 
@@ -161,7 +196,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addItem(self.verticalSpacer_8)
 
-        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_6 = QSpacerItem(42, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer_6)
 
@@ -172,12 +207,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(25, -1, 25, -1)
-        self.label_3 = QLabel(self.verticalLayoutWidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setTextFormat(Qt.RichText)
-        self.label_3.setWordWrap(True)
+        self.pushButton_2 = QPushButton(self.verticalLayoutWidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setStyleSheet(u"background-color: transparent;\n"
+"color:blue;\n"
+"font-weight: bold;")
 
-        self.horizontalLayout.addWidget(self.label_3)
+        self.horizontalLayout.addWidget(self.pushButton_2)
 
         self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -228,7 +264,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 20))
+        self.menubar.setGeometry(QRect(0, 0, 1396, 22))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -242,8 +278,9 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Gestion de Inventario", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Contrase\u00f1a</span></p></body></html>", None))
         self.inputPassword.setInputMask("")
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">\u00bfProblemas para iniciar sesi\u00f3n?</p></body></html>", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"INGRESAR", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u00bfProblemas para\n"
+" iniciar sesi\u00f3n?", None))
         self.label_5.setText("")
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Club Atl\u00e9tico <span style=\" font-size:12pt;\">Sarmiento</span></p></body></html>", None))
     # retranslateUi
