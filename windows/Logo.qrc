@@ -2,4 +2,7 @@
   <qresource prefix="Logo">
     <file>../../../MockUps/Icono Club Sarmiento (Sin Fondo).png</file>
   </qresource>
+  <qresource prefix="prefijoNuevo">
+    <file>Escudo-Club - copia.png</file>
+  </qresource>
 </RCC>
