@@ -134,7 +134,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Fondo Main.qrc">:/prefijoNuevo/Cajitas_v2.png</pixmap>
+          <pixmap resource="Recursos.qrc">:/Logos/Cajitas_v2.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -557,7 +557,7 @@ font-weight: bold;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Fondo Main.qrc">:/prefijoNuevo/Escudo-Club.png</pixmap>
+          <pixmap resource="Recursos.qrc">:/Logos/Escudo-Club.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -594,13 +594,14 @@ font-weight: bold;</string>
      <x>0</x>
      <y>0</y>
      <width>1396</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="Fondo Main.qrc"/>
+  <include location="Recursos.qrc"/>
+  <include location="Recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

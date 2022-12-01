@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="Logos">
+    <file>Cajitas_v2.png</file>
+    <file>Escudo-Club.png</file>
+  </qresource>
+  <qresource prefix="Iconos">
+    <file>Lupa.png</file>
+  </qresource>
+</RCC>

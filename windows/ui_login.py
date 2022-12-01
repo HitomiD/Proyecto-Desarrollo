@@ -19,7 +19,8 @@ from PySide6.QtWidgets import (QApplication, QFormLayout, QHBoxLayout, QLabel,
     QLayout, QLineEdit, QMainWindow, QMenuBar,
     QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
-import Fondo Main_rc
+import Recursos_rc
+import Recursos_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -65,7 +66,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.verticalLayoutWidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(200, 200))
-        self.label_2.setPixmap(QPixmap(u":/prefijoNuevo/Cajitas_v2.png"))
+        self.label_2.setPixmap(QPixmap(u":/Logos/Cajitas_v2.png"))
         self.label_2.setScaledContents(True)
 
         self.tituloLayout.addWidget(self.label_2)
@@ -242,7 +243,7 @@ class Ui_MainWindow(object):
         self.label_5 = QLabel(self.verticalLayoutWidget)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMaximumSize(QSize(55, 55))
-        self.label_5.setPixmap(QPixmap(u":/prefijoNuevo/Escudo-Club.png"))
+        self.label_5.setPixmap(QPixmap(u":/Logos/Escudo-Club.png"))
         self.label_5.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label_5)
@@ -264,7 +265,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1396, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1396, 20))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
