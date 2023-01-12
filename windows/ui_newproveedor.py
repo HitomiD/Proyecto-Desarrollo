@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'nuevo-proveedor.ui'
+## Form generated from reading UI file 'newproveedor.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.3.2
 ##
@@ -19,19 +19,19 @@ from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialogButtonBox, 
     QLabel, QLineEdit, QSizePolicy, QSpacerItem,
     QVBoxLayout, QWidget)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        if not Form.objectName():
-            Form.setObjectName(u"Form")
-        Form.resize(309, 204)
-        Form.setStyleSheet(u".QLabel {\n"
+class Ui_nuevoproveedor(object):
+    def setupUi(self, nuevoproveedor):
+        if not nuevoproveedor.objectName():
+            nuevoproveedor.setObjectName(u"nuevoproveedor")
+        nuevoproveedor.resize(309, 230)
+        nuevoproveedor.setStyleSheet(u".QLabel {\n"
 "background-color:transparent;\n"
 "color:black;\n"
 "font-family:Fira Sans;\n"
 "}\n"
 "\n"
 "")
-        self.verticalLayout = QVBoxLayout(Form)
+        self.verticalLayout = QVBoxLayout(nuevoproveedor)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(20, -1, 20, -1)
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -48,48 +48,48 @@ class Ui_Form(object):
 
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName(u"formLayout")
-        self.label = QLabel(Form)
+        self.label = QLabel(nuevoproveedor)
         self.label.setObjectName(u"label")
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label)
 
-        self.lineEdit = QLineEdit(Form)
+        self.lineEdit = QLineEdit(nuevoproveedor)
         self.lineEdit.setObjectName(u"lineEdit")
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit)
 
-        self.label_2 = QLabel(Form)
+        self.label_2 = QLabel(nuevoproveedor)
         self.label_2.setObjectName(u"label_2")
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label_2)
 
-        self.lineEdit_2 = QLineEdit(Form)
+        self.lineEdit_2 = QLineEdit(nuevoproveedor)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_2)
 
-        self.label_3 = QLabel(Form)
+        self.label_3 = QLabel(nuevoproveedor)
         self.label_3.setObjectName(u"label_3")
 
         self.formLayout.setWidget(3, QFormLayout.LabelRole, self.label_3)
 
-        self.lineEdit_3 = QLineEdit(Form)
+        self.lineEdit_3 = QLineEdit(nuevoproveedor)
         self.lineEdit_3.setObjectName(u"lineEdit_3")
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEdit_3)
 
-        self.lineEdit_4 = QLineEdit(Form)
+        self.lineEdit_4 = QLineEdit(nuevoproveedor)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
 
         self.formLayout.setWidget(4, QFormLayout.FieldRole, self.lineEdit_4)
 
-        self.label_4 = QLabel(Form)
+        self.label_4 = QLabel(nuevoproveedor)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setStyleSheet(u"")
 
         self.formLayout.setWidget(4, QFormLayout.LabelRole, self.label_4)
 
-        self.label_5 = QLabel(Form)
+        self.label_5 = QLabel(nuevoproveedor)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setStyleSheet(u"display: flex;\n"
 "background-color: transparent;\n"
@@ -105,7 +105,7 @@ class Ui_Form(object):
 
         self.verticalLayout.addItem(self.verticalSpacer_4)
 
-        self.buttonBox = QDialogButtonBox(Form)
+        self.buttonBox = QDialogButtonBox(nuevoproveedor)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setStyleSheet(u"label{\n"
 "background-color:transparent;\n"
@@ -121,17 +121,17 @@ class Ui_Form(object):
         self.verticalLayout.addItem(self.verticalSpacer_3)
 
 
-        self.retranslateUi(Form)
+        self.retranslateUi(nuevoproveedor)
 
-        QMetaObject.connectSlotsByName(Form)
+        QMetaObject.connectSlotsByName(nuevoproveedor)
     # setupUi
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Nuevo proveedor", None))
-        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("Form", u"E-Mail", None))
-        self.label_5.setText(QCoreApplication.translate("Form", u"Agregar Proveedor", None))
+    def retranslateUi(self, nuevoproveedor):
+        nuevoproveedor.setWindowTitle(QCoreApplication.translate("nuevoproveedor", u"Nuevo proveedor", None))
+        self.label.setText(QCoreApplication.translate("nuevoproveedor", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("nuevoproveedor", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("nuevoproveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("nuevoproveedor", u"E-Mail", None))
+        self.label_5.setText(QCoreApplication.translate("nuevoproveedor", u"Agregar Proveedor", None))
     # retranslateUi
 
