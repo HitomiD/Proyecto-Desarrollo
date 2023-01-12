@@ -407,52 +407,52 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.tablaInventario)
 
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.layoutBtnInventario = QHBoxLayout()
+        self.layoutBtnInventario.setObjectName(u"layoutBtnInventario")
         self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_11)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_11)
 
         self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_9)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_9)
 
         self.btnNuevoProducto = QPushButton(self.tabInventario)
         self.btnNuevoProducto.setObjectName(u"btnNuevoProducto")
         self.btnNuevoProducto.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout.addWidget(self.btnNuevoProducto)
+        self.layoutBtnInventario.addWidget(self.btnNuevoProducto)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_2)
 
         self.btnModProducto = QPushButton(self.tabInventario)
         self.btnModProducto.setObjectName(u"btnModProducto")
         self.btnModProducto.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout.addWidget(self.btnModProducto)
+        self.layoutBtnInventario.addWidget(self.btnModProducto)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_4)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_4)
 
         self.btnElimProducto = QPushButton(self.tabInventario)
         self.btnElimProducto.setObjectName(u"btnElimProducto")
         self.btnElimProducto.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout.addWidget(self.btnElimProducto)
+        self.layoutBtnInventario.addWidget(self.btnElimProducto)
 
         self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_10)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_10)
 
         self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_12)
+        self.layoutBtnInventario.addItem(self.horizontalSpacer_12)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout)
+        self.verticalLayout_3.addLayout(self.layoutBtnInventario)
 
         self.tabWidget.addTab(self.tabInventario, "")
         self.tabProveedores = QWidget()
@@ -587,15 +587,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.tablaProveedores)
 
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.layoutBtnProveedores = QHBoxLayout()
+        self.layoutBtnProveedores.setObjectName(u"layoutBtnProveedores")
         self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_13)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_13)
 
         self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_17)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_17)
 
         self.btnNuevoProveedor = QPushButton(self.tabProveedores)
         self.btnNuevoProveedor.setObjectName(u"btnNuevoProveedor")
@@ -606,38 +606,38 @@ class Ui_MainWindow(object):
         self.btnNuevoProveedor.setSizePolicy(sizePolicy)
         self.btnNuevoProveedor.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout_3.addWidget(self.btnNuevoProveedor)
+        self.layoutBtnProveedores.addWidget(self.btnNuevoProveedor)
 
         self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_14)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_14)
 
-        self.pushButton_3 = QPushButton(self.tabProveedores)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setMinimumSize(QSize(150, 0))
+        self.btnModProveedor = QPushButton(self.tabProveedores)
+        self.btnModProveedor.setObjectName(u"btnModProveedor")
+        self.btnModProveedor.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout_3.addWidget(self.pushButton_3)
+        self.layoutBtnProveedores.addWidget(self.btnModProveedor)
 
         self.horizontalSpacer_15 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_15)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_15)
 
-        self.pushButton = QPushButton(self.tabProveedores)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(150, 0))
+        self.btnElimProveedor = QPushButton(self.tabProveedores)
+        self.btnElimProveedor.setObjectName(u"btnElimProveedor")
+        self.btnElimProveedor.setMinimumSize(QSize(150, 0))
 
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.layoutBtnProveedores.addWidget(self.btnElimProveedor)
 
         self.horizontalSpacer_18 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_18)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_18)
 
         self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_16)
+        self.layoutBtnProveedores.addItem(self.horizontalSpacer_16)
 
 
-        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+        self.verticalLayout_4.addLayout(self.layoutBtnProveedores)
 
         self.tabWidget.addTab(self.tabProveedores, "")
 
@@ -666,7 +666,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -966,8 +966,8 @@ class Ui_MainWindow(object):
         self.tablaProveedores.setSortingEnabled(__sortingEnabled1)
 
         self.btnNuevoProveedor.setText(QCoreApplication.translate("MainWindow", u"Nuevo", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
+        self.btnModProveedor.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
+        self.btnElimProveedor.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabProveedores), QCoreApplication.translate("MainWindow", u"Proveedores", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MainWindow", u"Ayuda", None))

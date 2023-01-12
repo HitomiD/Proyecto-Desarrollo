@@ -170,7 +170,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tabInventario">
          <attribute name="title">
@@ -948,7 +948,7 @@ color:black;</string>
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
+           <layout class="QHBoxLayout" name="layoutBtnInventario">
             <item>
              <spacer name="horizontalSpacer_11">
               <property name="orientation">
@@ -1387,7 +1387,7 @@ color:black;</string>
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <layout class="QHBoxLayout" name="layoutBtnProveedores">
             <item>
              <spacer name="horizontalSpacer_13">
               <property name="orientation">
@@ -1447,7 +1447,7 @@ color:black;</string>
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="btnModProveedor">
               <property name="minimumSize">
                <size>
                 <width>150</width>
@@ -1473,7 +1473,7 @@ color:black;</string>
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="btnElimProveedor">
               <property name="minimumSize">
                <size>
                 <width>150</width>

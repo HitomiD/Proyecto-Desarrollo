@@ -1,12 +1,33 @@
-from PySide6.QtWidgets import QMainWindow, QWidget, QPushButton,QMessageBox
+from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
 from ui_main import Ui_MainWindow
-from ui_newproveedor import Ui_nuevoproveedor
+from ui_newproducto import Ui_newProducto
 
 #DEFINICIONES DE VENTANAS
+
+
+#Nuevo producto
+class VentanaCarga(QDialog) :
+    def __init__(self):
+        super(VentanaCarga,self).__init__()
+        self.ui = Ui_newProducto()
+        self.ui.setupUi(self)
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow) :
     def __init__(self):
-        super(VentanaPrincipal,self).__init__()
+        super(VentanaPrincipal, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        
+    #VENTANA PRUEBA
+    #     self.w = None
+    #     #BOTONES INVENTARIO
+    #     #Abrir ventana de carga
+    #     self.ui.btnNuevoProducto.clicked.connect(self.nuevoProducto)
+        
+    # def nuevoProducto(self):
+    #     self.w = VentanaCarga()
+    #     self.w.show()
+    #FIN VENTANA PRUEBA     
+        
+
