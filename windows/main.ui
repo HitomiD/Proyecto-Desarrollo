@@ -21,6 +21,9 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinAndMaxSize</enum>
+      </property>
       <item>
        <widget class="QFrame" name="frame">
         <property name="styleSheet">
@@ -170,7 +173,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tabInventario">
          <attribute name="title">
@@ -293,6 +296,11 @@ color:black;</string>
             </column>
             <column>
              <property name="text">
+              <string>Stock minimo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
               <string>Precio unitario</string>
              </property>
             </column>
@@ -324,7 +332,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="0" column="3">
+            <item row="0" column="4">
              <property name="text">
               <string>$30,5</string>
              </property>
@@ -332,7 +340,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="0" column="4">
+            <item row="0" column="5">
              <property name="text">
               <string>Nadur</string>
              </property>
@@ -340,7 +348,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="0" column="5">
+            <item row="0" column="6">
              <property name="text">
               <string>10/08/2022</string>
              </property>
@@ -375,7 +383,7 @@ color:black;</string>
               </brush>
              </property>
             </item>
-            <item row="1" column="3">
+            <item row="1" column="4">
              <property name="text">
               <string>$500</string>
              </property>
@@ -383,7 +391,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="1" column="4">
+            <item row="1" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -391,7 +399,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="1" column="5">
+            <item row="1" column="6">
              <property name="text">
               <string>20/11/2022</string>
              </property>
@@ -417,7 +425,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="2" column="3">
+            <item row="2" column="4">
              <property name="text">
               <string>$75</string>
              </property>
@@ -425,7 +433,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="2" column="4">
+            <item row="2" column="5">
              <property name="text">
               <string>Nadur</string>
              </property>
@@ -433,7 +441,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="2" column="5">
+            <item row="2" column="6">
              <property name="text">
               <string>29/11/2022</string>
              </property>
@@ -459,7 +467,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="3" column="3">
+            <item row="3" column="4">
              <property name="text">
               <string>$120</string>
              </property>
@@ -467,7 +475,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="3" column="4">
+            <item row="3" column="5">
              <property name="text">
               <string>Nadur</string>
              </property>
@@ -475,7 +483,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="3" column="5">
+            <item row="3" column="6">
              <property name="text">
               <string>29/11/2022</string>
              </property>
@@ -501,7 +509,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="4" column="3">
+            <item row="4" column="4">
              <property name="text">
               <string>$600</string>
              </property>
@@ -509,7 +517,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="4" column="4">
+            <item row="4" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -517,7 +525,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="4" column="5">
+            <item row="4" column="6">
              <property name="text">
               <string>23/11/2022</string>
              </property>
@@ -543,7 +551,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="5" column="3">
+            <item row="5" column="4">
              <property name="text">
               <string>$300</string>
              </property>
@@ -551,7 +559,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="5" column="4">
+            <item row="5" column="5">
              <property name="text">
               <string>Del Pueblo</string>
              </property>
@@ -559,7 +567,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="5" column="5">
+            <item row="5" column="6">
              <property name="text">
               <string>30/11/2022</string>
              </property>
@@ -585,7 +593,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="6" column="3">
+            <item row="6" column="4">
              <property name="text">
               <string>$400</string>
              </property>
@@ -593,7 +601,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="6" column="4">
+            <item row="6" column="5">
              <property name="text">
               <string>Del Pueblo</string>
              </property>
@@ -601,7 +609,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="6" column="5">
+            <item row="6" column="6">
              <property name="text">
               <string>30/11/2022</string>
              </property>
@@ -627,7 +635,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="7" column="3">
+            <item row="7" column="4">
              <property name="text">
               <string>$300</string>
              </property>
@@ -635,7 +643,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="7" column="4">
+            <item row="7" column="5">
              <property name="text">
               <string>Del Pueblo</string>
              </property>
@@ -643,7 +651,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="7" column="5">
+            <item row="7" column="6">
              <property name="text">
               <string>30/11/2022</string>
              </property>
@@ -669,7 +677,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="8" column="3">
+            <item row="8" column="4">
              <property name="text">
               <string>$330</string>
              </property>
@@ -677,7 +685,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="8" column="4">
+            <item row="8" column="5">
              <property name="text">
               <string>Del Pueblo</string>
              </property>
@@ -685,7 +693,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="8" column="5">
+            <item row="8" column="6">
              <property name="text">
               <string>30/11/2022</string>
              </property>
@@ -711,7 +719,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="9" column="3">
+            <item row="9" column="4">
              <property name="text">
               <string>$700</string>
              </property>
@@ -719,7 +727,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="9" column="4">
+            <item row="9" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -727,7 +735,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="9" column="5">
+            <item row="9" column="6">
              <property name="text">
               <string>23/11/2022</string>
              </property>
@@ -753,7 +761,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="10" column="3">
+            <item row="10" column="4">
              <property name="text">
               <string>$500</string>
              </property>
@@ -761,7 +769,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="10" column="4">
+            <item row="10" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -769,7 +777,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="10" column="5">
+            <item row="10" column="6">
              <property name="text">
               <string>23/11/2022</string>
              </property>
@@ -795,7 +803,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="11" column="3">
+            <item row="11" column="4">
              <property name="text">
               <string>$650</string>
              </property>
@@ -803,7 +811,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="11" column="4">
+            <item row="11" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -811,7 +819,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="11" column="5">
+            <item row="11" column="6">
              <property name="text">
               <string>23/11/2022</string>
              </property>
@@ -837,7 +845,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="12" column="3">
+            <item row="12" column="4">
              <property name="text">
               <string>$1000</string>
              </property>
@@ -845,7 +853,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="12" column="4">
+            <item row="12" column="5">
              <property name="text">
               <string>La Elisa S.A.</string>
              </property>
@@ -853,7 +861,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="12" column="5">
+            <item row="12" column="6">
              <property name="text">
               <string>29/11/2022</string>
              </property>
@@ -879,7 +887,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="13" column="3">
+            <item row="13" column="4">
              <property name="text">
               <string>$80</string>
              </property>
@@ -887,7 +895,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="13" column="4">
+            <item row="13" column="5">
              <property name="text">
               <string>Nadur</string>
              </property>
@@ -895,7 +903,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="13" column="5">
+            <item row="13" column="6">
              <property name="text">
               <string>29/11/2022</string>
              </property>
@@ -921,7 +929,7 @@ color:black;</string>
               <set>AlignCenter</set>
              </property>
             </item>
-            <item row="14" column="3">
+            <item row="14" column="4">
              <property name="text">
               <string>$700</string>
              </property>
@@ -929,7 +937,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="14" column="4">
+            <item row="14" column="5">
              <property name="text">
               <string>San Jorge</string>
              </property>
@@ -937,7 +945,7 @@ color:black;</string>
               <set>AlignTrailing|AlignVCenter</set>
              </property>
             </item>
-            <item row="14" column="5">
+            <item row="14" column="6">
              <property name="text">
               <string>10/10/2022</string>
              </property>
@@ -1500,6 +1508,592 @@ color:black;</string>
             </item>
             <item>
              <spacer name="horizontalSpacer_16">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabIngresos">
+         <attribute name="title">
+          <string>Ingresos</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetMinAndMaxSize</enum>
+            </property>
+            <item>
+             <widget class="QTableWidget" name="tablaProveedores_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>303</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>303</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::DefaultContextMenu</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: white;
+color:black;</string>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+              </property>
+              <property name="autoScroll">
+               <bool>true</bool>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="cornerButtonEnabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderHighlightSections">
+               <bool>true</bool>
+              </attribute>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string/>
+               </property>
+              </row>
+              <column>
+               <property name="text">
+                <string>ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Fecha</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Proveedor</string>
+               </property>
+              </column>
+              <item row="0" column="0">
+               <property name="text">
+                <string>034</string>
+               </property>
+              </item>
+              <item row="0" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="0" column="2">
+               <property name="text">
+                <string>Juan Carlos</string>
+               </property>
+              </item>
+              <item row="1" column="0">
+               <property name="text">
+                <string>234</string>
+               </property>
+              </item>
+              <item row="1" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="1" column="2">
+               <property name="text">
+                <string>El chancho peludo</string>
+               </property>
+              </item>
+              <item row="2" column="0">
+               <property name="text">
+                <string>008</string>
+               </property>
+              </item>
+              <item row="2" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="2" column="2">
+               <property name="text">
+                <string>Los hermanos</string>
+               </property>
+              </item>
+              <item row="3" column="0">
+               <property name="text">
+                <string>009</string>
+               </property>
+              </item>
+              <item row="3" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="3" column="2">
+               <property name="text">
+                <string>Marcelo Rodriguez</string>
+               </property>
+              </item>
+              <item row="4" column="0">
+               <property name="text">
+                <string>158</string>
+               </property>
+              </item>
+              <item row="4" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="4" column="2">
+               <property name="text">
+                <string>Matias perez</string>
+               </property>
+              </item>
+              <item row="5" column="0">
+               <property name="text">
+                <string>341</string>
+               </property>
+              </item>
+              <item row="5" column="1">
+               <property name="text">
+                <string>17/12/22</string>
+               </property>
+              </item>
+              <item row="5" column="2">
+               <property name="text">
+                <string>El chancho peludo</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_19">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <layout class="QFormLayout" name="formLayout">
+                 <property name="horizontalSpacing">
+                  <number>30</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>100</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>100</number>
+                 </property>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>Proveedor</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>CUIL/CUIT</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Fecha</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="text">
+                    <string>Juan Carlos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="lineEdit_2">
+                   <property name="text">
+                    <string>23423134</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="lineEdit_3">
+                   <property name="text">
+                    <string>17/12/22</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="4" column="1">
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tableWidget">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>Producto</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Precio de compra</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Cantidad</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Precio total</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string>Coca coca cero 1L</string>
+                  </property>
+                 </item>
+                 <item row="0" column="1">
+                  <property name="text">
+                   <string>250</string>
+                  </property>
+                 </item>
+                 <item row="0" column="2">
+                  <property name="text">
+                   <string>45</string>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string>Esprait 500ml</string>
+                  </property>
+                 </item>
+                 <item row="1" column="1">
+                  <property name="text">
+                   <string>250</string>
+                  </property>
+                 </item>
+                 <item row="1" column="2">
+                  <property name="text">
+                   <string>23</string>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string>Fantasiosa 500ml</string>
+                  </property>
+                 </item>
+                 <item row="2" column="1">
+                  <property name="text">
+                   <string>180</string>
+                  </property>
+                 </item>
+                 <item row="2" column="2">
+                  <property name="text">
+                   <string>542</string>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string>Monstruo 380ml</string>
+                  </property>
+                 </item>
+                 <item row="3" column="1">
+                  <property name="text">
+                   <string>340</string>
+                  </property>
+                 </item>
+                 <item row="3" column="2">
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string>kilmes 2.5L</string>
+                  </property>
+                 </item>
+                 <item row="4" column="1">
+                  <property name="text">
+                   <string>500</string>
+                  </property>
+                 </item>
+                 <item row="4" column="2">
+                  <property name="text">
+                   <string>75</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="layoutBtnProveedores_4">
+            <item>
+             <spacer name="horizontalSpacer_37">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_38">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnNuevoIngreso">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Nuevo</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_39">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnModIngreso">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Modificar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_40">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnHistorial">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Eliminar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_41">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_42">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
