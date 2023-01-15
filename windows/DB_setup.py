@@ -52,13 +52,13 @@ def setup():
         
         #Triggers de actualización ante nuevo ingreso
         dbconnection.execute("""
-                            CREATE TRIGGER actualizar_stock AFTER INSERT ON Productos_por_Ingreso
+                            CREATE TRIGGER actualizar_stock_y_proveedor AFTER INSERT ON Productos_por_Ingreso
                             BEGIN
                                 UPDATE Productos SET stock = stock + NEW.cantidad, CUIL_CUIT_proveedor = (SELECT CUIL_CUIT_proveedor FROM Ingresos WHERE num_ingreso = NEW.num_ingreso) WHERE ID = NEW.ID;
                             END;
                             """)
         dbconnection.execute("""
-                             CREATE TRIGGER actualizar_ultimo_ingreso AFTER INSERT ON Ingresos
+                             CREATE TRIGGER actualizar_ultimo_ingreso_asociado AFTER INSERT ON Ingresos
                                 BEGIN
                                     UPDATE Proveedores SET num_ultimo_ingreso = NEW.num_ingreso WHERE CUIL_CUIT = NEW.CUIL_CUIT_proveedor;
                                 END;
