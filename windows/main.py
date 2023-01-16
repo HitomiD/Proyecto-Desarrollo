@@ -1,6 +1,9 @@
+import DB_setup
 from PySide6.QtWidgets import QApplication
 import sys
 from ventanas import *         
+
+DB_setup.setup()
 
 def run():
     app = QApplication([])
