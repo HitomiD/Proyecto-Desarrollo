@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFormLayout, QFrame,
-    QHBoxLayout, QHeaderView, QLabel, QLayout,
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QGridLayout,
+    QGroupBox, QHBoxLayout, QHeaderView, QLabel,
     QLineEdit, QMainWindow, QMenu, QMenuBar,
     QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
     QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
@@ -28,7 +28,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(845, 692)
+        MainWindow.resize(830, 690)
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setStyleSheet(u"background-color: white;\n"
 "")
         self.actionAcerca_de = QAction(MainWindow)
@@ -37,13 +42,13 @@ class Ui_MainWindow(object):
         self.actionExportar_como_PDF.setObjectName(u"actionExportar_como_PDF")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setSizeConstraint(QLayout.SetMinAndMaxSize)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(10, 10, 810, 100))
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet(u"background-color: rgb(84, 84, 84)")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -98,11 +103,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_3)
 
-
-        self.verticalLayout.addWidget(self.frame)
-
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setGeometry(QRect(10, 116, 810, 520))
         self.tabInventario = QWidget()
         self.tabInventario.setObjectName(u"tabInventario")
         self.verticalLayout_3 = QVBoxLayout(self.tabInventario)
@@ -603,11 +606,11 @@ class Ui_MainWindow(object):
 
         self.btnNuevoProveedor = QPushButton(self.tabProveedores)
         self.btnNuevoProveedor.setObjectName(u"btnNuevoProveedor")
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnNuevoProveedor.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btnNuevoProveedor.sizePolicy().hasHeightForWidth())
+        self.btnNuevoProveedor.setSizePolicy(sizePolicy1)
         self.btnNuevoProveedor.setMinimumSize(QSize(150, 0))
 
         self.layoutBtnProveedores.addWidget(self.btnNuevoProveedor)
@@ -646,78 +649,230 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tabProveedores, "")
         self.tabIngresos = QWidget()
         self.tabIngresos.setObjectName(u"tabIngresos")
-        self.verticalLayout_7 = QVBoxLayout(self.tabIngresos)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.horizontalLayout = QHBoxLayout()
+        self.frame1 = QFrame(self.tabIngresos)
+        self.frame1.setObjectName(u"frame1")
+        self.frame1.setGeometry(QRect(350, 30, 441, 391))
+        sizePolicy.setHeightForWidth(self.frame1.sizePolicy().hasHeightForWidth())
+        self.frame1.setSizePolicy(sizePolicy)
+        self.frame1.setFrameShape(QFrame.StyledPanel)
+        self.groupBox = QGroupBox(self.frame1)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setGeometry(QRect(10, 10, 421, 181))
+        self.gridLayout = QGridLayout(self.groupBox)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 0, 1, 1, 1)
+
+        self.label_2 = QLabel(self.groupBox)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
+
+        self.lineEdit = QLineEdit(self.groupBox)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.gridLayout.addWidget(self.lineEdit, 1, 1, 1, 1)
+
+        self.label = QLabel(self.groupBox)
+        self.label.setObjectName(u"label")
+
+        self.gridLayout.addWidget(self.label, 2, 0, 1, 1)
+
+        self.lineEdit_2 = QLineEdit(self.groupBox)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.gridLayout.addWidget(self.lineEdit_2, 2, 1, 1, 1)
+
+        self.label_3 = QLabel(self.groupBox)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout.addWidget(self.label_3, 3, 0, 1, 1)
+
+        self.lineEdit_3 = QLineEdit(self.groupBox)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.gridLayout.addWidget(self.lineEdit_3, 3, 1, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 4, 1, 1, 1)
+
+        self.groupBox_2 = QGroupBox(self.frame1)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setGeometry(QRect(10, 200, 421, 181))
+        self.tableWidget = QTableWidget(self.groupBox_2)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
+        __qtablewidgetitem160 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem160)
+        __qtablewidgetitem161 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem161)
+        __qtablewidgetitem162 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem162)
+        __qtablewidgetitem163 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem163)
+        if (self.tableWidget.rowCount() < 5):
+            self.tableWidget.setRowCount(5)
+        __qtablewidgetitem164 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem164)
+        __qtablewidgetitem165 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem165)
+        __qtablewidgetitem166 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem166)
+        __qtablewidgetitem167 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(3, __qtablewidgetitem167)
+        __qtablewidgetitem168 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem168)
+        __qtablewidgetitem169 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 0, __qtablewidgetitem169)
+        __qtablewidgetitem170 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 1, __qtablewidgetitem170)
+        __qtablewidgetitem171 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 2, __qtablewidgetitem171)
+        __qtablewidgetitem172 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 0, __qtablewidgetitem172)
+        __qtablewidgetitem173 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 1, __qtablewidgetitem173)
+        __qtablewidgetitem174 = QTableWidgetItem()
+        self.tableWidget.setItem(1, 2, __qtablewidgetitem174)
+        __qtablewidgetitem175 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 0, __qtablewidgetitem175)
+        __qtablewidgetitem176 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 1, __qtablewidgetitem176)
+        __qtablewidgetitem177 = QTableWidgetItem()
+        self.tableWidget.setItem(2, 2, __qtablewidgetitem177)
+        __qtablewidgetitem178 = QTableWidgetItem()
+        self.tableWidget.setItem(3, 0, __qtablewidgetitem178)
+        __qtablewidgetitem179 = QTableWidgetItem()
+        self.tableWidget.setItem(3, 1, __qtablewidgetitem179)
+        __qtablewidgetitem180 = QTableWidgetItem()
+        self.tableWidget.setItem(3, 2, __qtablewidgetitem180)
+        __qtablewidgetitem181 = QTableWidgetItem()
+        self.tableWidget.setItem(4, 0, __qtablewidgetitem181)
+        __qtablewidgetitem182 = QTableWidgetItem()
+        self.tableWidget.setItem(4, 1, __qtablewidgetitem182)
+        __qtablewidgetitem183 = QTableWidgetItem()
+        self.tableWidget.setItem(4, 2, __qtablewidgetitem183)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setGeometry(QRect(0, 18, 421, 161))
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy2)
+        self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.tableWidget.setWordWrap(True)
+        self.widget = QWidget(self.tabIngresos)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(10, 440, 790, 41))
+        self.horizontalLayout = QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setSizeConstraint(QLayout.SetMinAndMaxSize)
-        self.tablaProveedores_3 = QTableWidget(self.tabIngresos)
+        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_21)
+
+        self.btnNuevoIngreso = QPushButton(self.widget)
+        self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
+        sizePolicy1.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
+        self.btnNuevoIngreso.setSizePolicy(sizePolicy1)
+        self.btnNuevoIngreso.setMinimumSize(QSize(150, 0))
+
+        self.horizontalLayout.addWidget(self.btnNuevoIngreso)
+
+        self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_19)
+
+        self.btnModIngreso = QPushButton(self.widget)
+        self.btnModIngreso.setObjectName(u"btnModIngreso")
+        self.btnModIngreso.setMinimumSize(QSize(150, 0))
+
+        self.horizontalLayout.addWidget(self.btnModIngreso)
+
+        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_20)
+
+        self.btnHistorial = QPushButton(self.widget)
+        self.btnHistorial.setObjectName(u"btnHistorial")
+        self.btnHistorial.setMinimumSize(QSize(150, 0))
+
+        self.horizontalLayout.addWidget(self.btnHistorial)
+
+        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_22)
+
+        self.groupBox_3 = QGroupBox(self.tabIngresos)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_3.setGeometry(QRect(10, 10, 321, 411))
+        self.tablaProveedores_3 = QTableWidget(self.groupBox_3)
         if (self.tablaProveedores_3.columnCount() < 3):
             self.tablaProveedores_3.setColumnCount(3)
-        __qtablewidgetitem160 = QTableWidgetItem()
-        self.tablaProveedores_3.setHorizontalHeaderItem(0, __qtablewidgetitem160)
-        __qtablewidgetitem161 = QTableWidgetItem()
-        self.tablaProveedores_3.setHorizontalHeaderItem(1, __qtablewidgetitem161)
-        __qtablewidgetitem162 = QTableWidgetItem()
-        self.tablaProveedores_3.setHorizontalHeaderItem(2, __qtablewidgetitem162)
+        __qtablewidgetitem184 = QTableWidgetItem()
+        self.tablaProveedores_3.setHorizontalHeaderItem(0, __qtablewidgetitem184)
+        __qtablewidgetitem185 = QTableWidgetItem()
+        self.tablaProveedores_3.setHorizontalHeaderItem(1, __qtablewidgetitem185)
+        __qtablewidgetitem186 = QTableWidgetItem()
+        self.tablaProveedores_3.setHorizontalHeaderItem(2, __qtablewidgetitem186)
         if (self.tablaProveedores_3.rowCount() < 6):
             self.tablaProveedores_3.setRowCount(6)
-        __qtablewidgetitem163 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(0, __qtablewidgetitem163)
-        __qtablewidgetitem164 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(1, __qtablewidgetitem164)
-        __qtablewidgetitem165 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(2, __qtablewidgetitem165)
-        __qtablewidgetitem166 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(3, __qtablewidgetitem166)
-        __qtablewidgetitem167 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(4, __qtablewidgetitem167)
-        __qtablewidgetitem168 = QTableWidgetItem()
-        self.tablaProveedores_3.setVerticalHeaderItem(5, __qtablewidgetitem168)
-        __qtablewidgetitem169 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(0, 0, __qtablewidgetitem169)
-        __qtablewidgetitem170 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(0, 1, __qtablewidgetitem170)
-        __qtablewidgetitem171 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(0, 2, __qtablewidgetitem171)
-        __qtablewidgetitem172 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(1, 0, __qtablewidgetitem172)
-        __qtablewidgetitem173 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(1, 1, __qtablewidgetitem173)
-        __qtablewidgetitem174 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(1, 2, __qtablewidgetitem174)
-        __qtablewidgetitem175 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(2, 0, __qtablewidgetitem175)
-        __qtablewidgetitem176 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(2, 1, __qtablewidgetitem176)
-        __qtablewidgetitem177 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(2, 2, __qtablewidgetitem177)
-        __qtablewidgetitem178 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(3, 0, __qtablewidgetitem178)
-        __qtablewidgetitem179 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(3, 1, __qtablewidgetitem179)
-        __qtablewidgetitem180 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(3, 2, __qtablewidgetitem180)
-        __qtablewidgetitem181 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(4, 0, __qtablewidgetitem181)
-        __qtablewidgetitem182 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(4, 1, __qtablewidgetitem182)
-        __qtablewidgetitem183 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(4, 2, __qtablewidgetitem183)
-        __qtablewidgetitem184 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(5, 0, __qtablewidgetitem184)
-        __qtablewidgetitem185 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(5, 1, __qtablewidgetitem185)
-        __qtablewidgetitem186 = QTableWidgetItem()
-        self.tablaProveedores_3.setItem(5, 2, __qtablewidgetitem186)
+        __qtablewidgetitem187 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(0, __qtablewidgetitem187)
+        __qtablewidgetitem188 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(1, __qtablewidgetitem188)
+        __qtablewidgetitem189 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(2, __qtablewidgetitem189)
+        __qtablewidgetitem190 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(3, __qtablewidgetitem190)
+        __qtablewidgetitem191 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(4, __qtablewidgetitem191)
+        __qtablewidgetitem192 = QTableWidgetItem()
+        self.tablaProveedores_3.setVerticalHeaderItem(5, __qtablewidgetitem192)
+        __qtablewidgetitem193 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(0, 0, __qtablewidgetitem193)
+        __qtablewidgetitem194 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(0, 1, __qtablewidgetitem194)
+        __qtablewidgetitem195 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(0, 2, __qtablewidgetitem195)
+        __qtablewidgetitem196 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(1, 0, __qtablewidgetitem196)
+        __qtablewidgetitem197 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(1, 1, __qtablewidgetitem197)
+        __qtablewidgetitem198 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(1, 2, __qtablewidgetitem198)
+        __qtablewidgetitem199 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(2, 0, __qtablewidgetitem199)
+        __qtablewidgetitem200 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(2, 1, __qtablewidgetitem200)
+        __qtablewidgetitem201 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(2, 2, __qtablewidgetitem201)
+        __qtablewidgetitem202 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(3, 0, __qtablewidgetitem202)
+        __qtablewidgetitem203 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(3, 1, __qtablewidgetitem203)
+        __qtablewidgetitem204 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(3, 2, __qtablewidgetitem204)
+        __qtablewidgetitem205 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(4, 0, __qtablewidgetitem205)
+        __qtablewidgetitem206 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(4, 1, __qtablewidgetitem206)
+        __qtablewidgetitem207 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(4, 2, __qtablewidgetitem207)
+        __qtablewidgetitem208 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(5, 0, __qtablewidgetitem208)
+        __qtablewidgetitem209 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(5, 1, __qtablewidgetitem209)
+        __qtablewidgetitem210 = QTableWidgetItem()
+        self.tablaProveedores_3.setItem(5, 2, __qtablewidgetitem210)
         self.tablaProveedores_3.setObjectName(u"tablaProveedores_3")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tablaProveedores_3.sizePolicy().hasHeightForWidth())
-        self.tablaProveedores_3.setSizePolicy(sizePolicy1)
-        self.tablaProveedores_3.setMinimumSize(QSize(303, 0))
-        self.tablaProveedores_3.setMaximumSize(QSize(303, 16777215))
+        self.tablaProveedores_3.setEnabled(True)
+        self.tablaProveedores_3.setGeometry(QRect(0, 18, 321, 391))
+        sizePolicy.setHeightForWidth(self.tablaProveedores_3.sizePolicy().hasHeightForWidth())
+        self.tablaProveedores_3.setSizePolicy(sizePolicy)
+        self.tablaProveedores_3.setMinimumSize(QSize(0, 0))
+        self.tablaProveedores_3.setMaximumSize(QSize(16777215, 16777215))
         self.tablaProveedores_3.setBaseSize(QSize(0, 0))
         self.tablaProveedores_3.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tablaProveedores_3.setStyleSheet(u"background-color: white;\n"
@@ -731,201 +886,17 @@ class Ui_MainWindow(object):
         self.tablaProveedores_3.horizontalHeader().setProperty("showSortIndicator", False)
         self.tablaProveedores_3.horizontalHeader().setStretchLastSection(False)
         self.tablaProveedores_3.verticalHeader().setHighlightSections(True)
-
-        self.horizontalLayout.addWidget(self.tablaProveedores_3)
-
-        self.horizontalSpacer_19 = QSpacerItem(20, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer_19)
-
-        self.frame1 = QFrame(self.tabIngresos)
-        self.frame1.setObjectName(u"frame1")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.frame1.sizePolicy().hasHeightForWidth())
-        self.frame1.setSizePolicy(sizePolicy2)
-        self.frame1.setFrameShape(QFrame.StyledPanel)
-        self.verticalLayout_8 = QVBoxLayout(self.frame1)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.formLayout = QFormLayout()
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setHorizontalSpacing(30)
-        self.formLayout.setContentsMargins(100, -1, 100, -1)
-        self.label_2 = QLabel(self.frame1)
-        self.label_2.setObjectName(u"label_2")
-
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.label_2)
-
-        self.label = QLabel(self.frame1)
-        self.label.setObjectName(u"label")
-
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label)
-
-        self.label_3 = QLabel(self.frame1)
-        self.label_3.setObjectName(u"label_3")
-
-        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.label_3)
-
-        self.lineEdit = QLineEdit(self.frame1)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit)
-
-        self.lineEdit_2 = QLineEdit(self.frame1)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_2)
-
-        self.lineEdit_3 = QLineEdit(self.frame1)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEdit_3)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.formLayout.setItem(0, QFormLayout.FieldRole, self.verticalSpacer)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.formLayout.setItem(4, QFormLayout.FieldRole, self.verticalSpacer_2)
-
-
-        self.verticalLayout_8.addLayout(self.formLayout)
-
-        self.tableWidget = QTableWidget(self.frame1)
-        if (self.tableWidget.columnCount() < 4):
-            self.tableWidget.setColumnCount(4)
-        __qtablewidgetitem187 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem187)
-        __qtablewidgetitem188 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem188)
-        __qtablewidgetitem189 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem189)
-        __qtablewidgetitem190 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem190)
-        if (self.tableWidget.rowCount() < 5):
-            self.tableWidget.setRowCount(5)
-        __qtablewidgetitem191 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem191)
-        __qtablewidgetitem192 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem192)
-        __qtablewidgetitem193 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem193)
-        __qtablewidgetitem194 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(3, __qtablewidgetitem194)
-        __qtablewidgetitem195 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem195)
-        __qtablewidgetitem196 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 0, __qtablewidgetitem196)
-        __qtablewidgetitem197 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 1, __qtablewidgetitem197)
-        __qtablewidgetitem198 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 2, __qtablewidgetitem198)
-        __qtablewidgetitem199 = QTableWidgetItem()
-        self.tableWidget.setItem(1, 0, __qtablewidgetitem199)
-        __qtablewidgetitem200 = QTableWidgetItem()
-        self.tableWidget.setItem(1, 1, __qtablewidgetitem200)
-        __qtablewidgetitem201 = QTableWidgetItem()
-        self.tableWidget.setItem(1, 2, __qtablewidgetitem201)
-        __qtablewidgetitem202 = QTableWidgetItem()
-        self.tableWidget.setItem(2, 0, __qtablewidgetitem202)
-        __qtablewidgetitem203 = QTableWidgetItem()
-        self.tableWidget.setItem(2, 1, __qtablewidgetitem203)
-        __qtablewidgetitem204 = QTableWidgetItem()
-        self.tableWidget.setItem(2, 2, __qtablewidgetitem204)
-        __qtablewidgetitem205 = QTableWidgetItem()
-        self.tableWidget.setItem(3, 0, __qtablewidgetitem205)
-        __qtablewidgetitem206 = QTableWidgetItem()
-        self.tableWidget.setItem(3, 1, __qtablewidgetitem206)
-        __qtablewidgetitem207 = QTableWidgetItem()
-        self.tableWidget.setItem(3, 2, __qtablewidgetitem207)
-        __qtablewidgetitem208 = QTableWidgetItem()
-        self.tableWidget.setItem(4, 0, __qtablewidgetitem208)
-        __qtablewidgetitem209 = QTableWidgetItem()
-        self.tableWidget.setItem(4, 1, __qtablewidgetitem209)
-        __qtablewidgetitem210 = QTableWidgetItem()
-        self.tableWidget.setItem(4, 2, __qtablewidgetitem210)
-        self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy3)
-        self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.tableWidget.setWordWrap(True)
-
-        self.verticalLayout_8.addWidget(self.tableWidget)
-
-
-        self.horizontalLayout.addWidget(self.frame1)
-
-
-        self.verticalLayout_7.addLayout(self.horizontalLayout)
-
-        self.layoutBtnProveedores_4 = QHBoxLayout()
-        self.layoutBtnProveedores_4.setObjectName(u"layoutBtnProveedores_4")
-        self.horizontalSpacer_37 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_37)
-
-        self.horizontalSpacer_38 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_38)
-
-        self.btnNuevoIngreso = QPushButton(self.tabIngresos)
-        self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
-        sizePolicy.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
-        self.btnNuevoIngreso.setSizePolicy(sizePolicy)
-        self.btnNuevoIngreso.setMinimumSize(QSize(150, 0))
-
-        self.layoutBtnProveedores_4.addWidget(self.btnNuevoIngreso)
-
-        self.horizontalSpacer_39 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_39)
-
-        self.btnModIngreso = QPushButton(self.tabIngresos)
-        self.btnModIngreso.setObjectName(u"btnModIngreso")
-        self.btnModIngreso.setMinimumSize(QSize(150, 0))
-
-        self.layoutBtnProveedores_4.addWidget(self.btnModIngreso)
-
-        self.horizontalSpacer_40 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_40)
-
-        self.btnHistorial = QPushButton(self.tabIngresos)
-        self.btnHistorial.setObjectName(u"btnHistorial")
-        self.btnHistorial.setMinimumSize(QSize(150, 0))
-
-        self.layoutBtnProveedores_4.addWidget(self.btnHistorial)
-
-        self.horizontalSpacer_41 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_41)
-
-        self.horizontalSpacer_42 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_42)
-
-
-        self.verticalLayout_7.addLayout(self.layoutBtnProveedores_4)
-
+        self.label_4 = QLabel(self.tabIngresos)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(350, 12, 111, 16))
         self.tabWidget.addTab(self.tabIngresos, "")
-
-        self.verticalLayout.addWidget(self.tabWidget)
-
-
-        self.verticalLayout_2.addLayout(self.verticalLayout)
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 845, 20))
+        self.menubar.setGeometry(QRect(0, 0, 830, 20))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
         self.menuAyuda = QMenu(self.menubar)
@@ -1244,105 +1215,109 @@ class Ui_MainWindow(object):
         self.btnModProveedor.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
         self.btnElimProveedor.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabProveedores), QCoreApplication.translate("MainWindow", u"Proveedores", None))
-        ___qtablewidgetitem137 = self.tablaProveedores_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem138 = self.tablaProveedores_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
-        ___qtablewidgetitem139 = self.tablaProveedores_3.horizontalHeaderItem(2)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Proveedor", None));
-
-        __sortingEnabled2 = self.tablaProveedores_3.isSortingEnabled()
-        self.tablaProveedores_3.setSortingEnabled(False)
-        ___qtablewidgetitem140 = self.tablaProveedores_3.item(0, 0)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"034", None));
-        ___qtablewidgetitem141 = self.tablaProveedores_3.item(0, 1)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem142 = self.tablaProveedores_3.item(0, 2)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"Juan Carlos", None));
-        ___qtablewidgetitem143 = self.tablaProveedores_3.item(1, 0)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"234", None));
-        ___qtablewidgetitem144 = self.tablaProveedores_3.item(1, 1)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem145 = self.tablaProveedores_3.item(1, 2)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"El chancho peludo", None));
-        ___qtablewidgetitem146 = self.tablaProveedores_3.item(2, 0)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"008", None));
-        ___qtablewidgetitem147 = self.tablaProveedores_3.item(2, 1)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem148 = self.tablaProveedores_3.item(2, 2)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"Los hermanos", None));
-        ___qtablewidgetitem149 = self.tablaProveedores_3.item(3, 0)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"009", None));
-        ___qtablewidgetitem150 = self.tablaProveedores_3.item(3, 1)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem151 = self.tablaProveedores_3.item(3, 2)
-        ___qtablewidgetitem151.setText(QCoreApplication.translate("MainWindow", u"Marcelo Rodriguez", None));
-        ___qtablewidgetitem152 = self.tablaProveedores_3.item(4, 0)
-        ___qtablewidgetitem152.setText(QCoreApplication.translate("MainWindow", u"158", None));
-        ___qtablewidgetitem153 = self.tablaProveedores_3.item(4, 1)
-        ___qtablewidgetitem153.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem154 = self.tablaProveedores_3.item(4, 2)
-        ___qtablewidgetitem154.setText(QCoreApplication.translate("MainWindow", u"Matias perez", None));
-        ___qtablewidgetitem155 = self.tablaProveedores_3.item(5, 0)
-        ___qtablewidgetitem155.setText(QCoreApplication.translate("MainWindow", u"341", None));
-        ___qtablewidgetitem156 = self.tablaProveedores_3.item(5, 1)
-        ___qtablewidgetitem156.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
-        ___qtablewidgetitem157 = self.tablaProveedores_3.item(5, 2)
-        ___qtablewidgetitem157.setText(QCoreApplication.translate("MainWindow", u"El chancho peludo", None));
-        self.tablaProveedores_3.setSortingEnabled(__sortingEnabled2)
-
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Proveedor", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Proveedor", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"CUIL/CUIT", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Fecha", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Juan Carlos", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"CUIL/CUIT ", None))
         self.lineEdit_2.setText(QCoreApplication.translate("MainWindow", u"23423134", None))
-        self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None))
-        ___qtablewidgetitem158 = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem158.setText(QCoreApplication.translate("MainWindow", u"Producto", None));
-        ___qtablewidgetitem159 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem159.setText(QCoreApplication.translate("MainWindow", u"Precio de compra", None));
-        ___qtablewidgetitem160 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem160.setText(QCoreApplication.translate("MainWindow", u"Cantidad", None));
-        ___qtablewidgetitem161 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"Precio total", None));
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Tel\u00e9fono", None))
+        self.lineEdit_3.setText(QCoreApplication.translate("MainWindow", u"2456980234", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Detalle de ingreso", None))
+        ___qtablewidgetitem137 = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"Producto", None));
+        ___qtablewidgetitem138 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Precio de compra", None));
+        ___qtablewidgetitem139 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Cantidad", None));
+        ___qtablewidgetitem140 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"Precio total", None));
 
-        __sortingEnabled3 = self.tableWidget.isSortingEnabled()
+        __sortingEnabled2 = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
-        ___qtablewidgetitem162 = self.tableWidget.item(0, 0)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"Coca coca cero 1L", None));
-        ___qtablewidgetitem163 = self.tableWidget.item(0, 1)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"250", None));
-        ___qtablewidgetitem164 = self.tableWidget.item(0, 2)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"45", None));
-        ___qtablewidgetitem165 = self.tableWidget.item(1, 0)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"Esprait 500ml", None));
-        ___qtablewidgetitem166 = self.tableWidget.item(1, 1)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"250", None));
-        ___qtablewidgetitem167 = self.tableWidget.item(1, 2)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"23", None));
-        ___qtablewidgetitem168 = self.tableWidget.item(2, 0)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"Fantasiosa 500ml", None));
-        ___qtablewidgetitem169 = self.tableWidget.item(2, 1)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"180", None));
-        ___qtablewidgetitem170 = self.tableWidget.item(2, 2)
-        ___qtablewidgetitem170.setText(QCoreApplication.translate("MainWindow", u"542", None));
-        ___qtablewidgetitem171 = self.tableWidget.item(3, 0)
-        ___qtablewidgetitem171.setText(QCoreApplication.translate("MainWindow", u"Monstruo 380ml", None));
-        ___qtablewidgetitem172 = self.tableWidget.item(3, 1)
-        ___qtablewidgetitem172.setText(QCoreApplication.translate("MainWindow", u"340", None));
-        ___qtablewidgetitem173 = self.tableWidget.item(3, 2)
-        ___qtablewidgetitem173.setText(QCoreApplication.translate("MainWindow", u"2", None));
-        ___qtablewidgetitem174 = self.tableWidget.item(4, 0)
-        ___qtablewidgetitem174.setText(QCoreApplication.translate("MainWindow", u"kilmes 2.5L", None));
-        ___qtablewidgetitem175 = self.tableWidget.item(4, 1)
-        ___qtablewidgetitem175.setText(QCoreApplication.translate("MainWindow", u"500", None));
-        ___qtablewidgetitem176 = self.tableWidget.item(4, 2)
-        ___qtablewidgetitem176.setText(QCoreApplication.translate("MainWindow", u"75", None));
-        self.tableWidget.setSortingEnabled(__sortingEnabled3)
+        ___qtablewidgetitem141 = self.tableWidget.item(0, 0)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"Coca coca cero 1L", None));
+        ___qtablewidgetitem142 = self.tableWidget.item(0, 1)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"250", None));
+        ___qtablewidgetitem143 = self.tableWidget.item(0, 2)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"45", None));
+        ___qtablewidgetitem144 = self.tableWidget.item(1, 0)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"Esprait 500ml", None));
+        ___qtablewidgetitem145 = self.tableWidget.item(1, 1)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"250", None));
+        ___qtablewidgetitem146 = self.tableWidget.item(1, 2)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"23", None));
+        ___qtablewidgetitem147 = self.tableWidget.item(2, 0)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"Fantasiosa 500ml", None));
+        ___qtablewidgetitem148 = self.tableWidget.item(2, 1)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"180", None));
+        ___qtablewidgetitem149 = self.tableWidget.item(2, 2)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"542", None));
+        ___qtablewidgetitem150 = self.tableWidget.item(3, 0)
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"Monstruo 380ml", None));
+        ___qtablewidgetitem151 = self.tableWidget.item(3, 1)
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("MainWindow", u"340", None));
+        ___qtablewidgetitem152 = self.tableWidget.item(3, 2)
+        ___qtablewidgetitem152.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem153 = self.tableWidget.item(4, 0)
+        ___qtablewidgetitem153.setText(QCoreApplication.translate("MainWindow", u"kilmes 2.5L", None));
+        ___qtablewidgetitem154 = self.tableWidget.item(4, 1)
+        ___qtablewidgetitem154.setText(QCoreApplication.translate("MainWindow", u"500", None));
+        ___qtablewidgetitem155 = self.tableWidget.item(4, 2)
+        ___qtablewidgetitem155.setText(QCoreApplication.translate("MainWindow", u"75", None));
+        self.tableWidget.setSortingEnabled(__sortingEnabled2)
 
         self.btnNuevoIngreso.setText(QCoreApplication.translate("MainWindow", u"Nuevo", None))
         self.btnModIngreso.setText(QCoreApplication.translate("MainWindow", u"Modificar", None))
         self.btnHistorial.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Ingresos", None))
+        ___qtablewidgetitem156 = self.tablaProveedores_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem156.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem157 = self.tablaProveedores_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem157.setText(QCoreApplication.translate("MainWindow", u"Fecha", None));
+        ___qtablewidgetitem158 = self.tablaProveedores_3.horizontalHeaderItem(2)
+        ___qtablewidgetitem158.setText(QCoreApplication.translate("MainWindow", u"Proveedor", None));
+
+        __sortingEnabled3 = self.tablaProveedores_3.isSortingEnabled()
+        self.tablaProveedores_3.setSortingEnabled(False)
+        ___qtablewidgetitem159 = self.tablaProveedores_3.item(0, 0)
+        ___qtablewidgetitem159.setText(QCoreApplication.translate("MainWindow", u"034", None));
+        ___qtablewidgetitem160 = self.tablaProveedores_3.item(0, 1)
+        ___qtablewidgetitem160.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem161 = self.tablaProveedores_3.item(0, 2)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"Juan Carlos", None));
+        ___qtablewidgetitem162 = self.tablaProveedores_3.item(1, 0)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"234", None));
+        ___qtablewidgetitem163 = self.tablaProveedores_3.item(1, 1)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem164 = self.tablaProveedores_3.item(1, 2)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"El chancho peludo", None));
+        ___qtablewidgetitem165 = self.tablaProveedores_3.item(2, 0)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"008", None));
+        ___qtablewidgetitem166 = self.tablaProveedores_3.item(2, 1)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem167 = self.tablaProveedores_3.item(2, 2)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"Los hermanos", None));
+        ___qtablewidgetitem168 = self.tablaProveedores_3.item(3, 0)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"009", None));
+        ___qtablewidgetitem169 = self.tablaProveedores_3.item(3, 1)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem170 = self.tablaProveedores_3.item(3, 2)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("MainWindow", u"Marcelo Rodriguez", None));
+        ___qtablewidgetitem171 = self.tablaProveedores_3.item(4, 0)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("MainWindow", u"158", None));
+        ___qtablewidgetitem172 = self.tablaProveedores_3.item(4, 1)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem173 = self.tablaProveedores_3.item(4, 2)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("MainWindow", u"Matias perez", None));
+        ___qtablewidgetitem174 = self.tablaProveedores_3.item(5, 0)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("MainWindow", u"341", None));
+        ___qtablewidgetitem175 = self.tablaProveedores_3.item(5, 1)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("MainWindow", u"17/12/22", None));
+        ___qtablewidgetitem176 = self.tablaProveedores_3.item(5, 2)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("MainWindow", u"El chancho peludo", None));
+        self.tablaProveedores_3.setSortingEnabled(__sortingEnabled3)
+
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Detalle de ingreso:", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabIngresos), QCoreApplication.translate("MainWindow", u"Ingresos", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MainWindow", u"Ayuda", None))
