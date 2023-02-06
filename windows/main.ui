@@ -1570,7 +1570,7 @@ color:black;</string>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
-      <widget class="QGroupBox" name="groupBox">
+      <widget class="QGroupBox" name="groupBoxProveedor">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1597,42 +1597,42 @@ color:black;</string>
          </spacer>
         </item>
         <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="tagProveedor">
           <property name="text">
            <string>Proveedor</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="nombreProveedor">
           <property name="text">
            <string>Juan Carlos</string>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="tagCUIL">
           <property name="text">
            <string>CUIL/CUIT </string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="cuilProveedor">
           <property name="text">
            <string>23423134</string>
           </property>
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="tagTelefono">
           <property name="text">
            <string>Teléfono</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="telefonoProveedor">
           <property name="text">
            <string>2456980234</string>
           </property>
@@ -1665,7 +1665,7 @@ color:black;</string>
        <property name="title">
         <string>Detalle de ingreso</string>
        </property>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="tablaIngresosDetalle">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1930,7 +1930,7 @@ color:black;</string>
       <property name="title">
        <string>Ingresos</string>
       </property>
-      <widget class="QTableWidget" name="tablaProveedores_3">
+      <widget class="QTableWidget" name="tablaIngresos">
        <property name="enabled">
         <bool>true</bool>
        </property>
