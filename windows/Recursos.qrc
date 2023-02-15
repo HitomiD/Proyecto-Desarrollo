@@ -4,6 +4,7 @@
     <file>Escudo-Club.png</file>
   </qresource>
   <qresource prefix="Iconos">
+    <file>Lupa v2.png</file>
     <file>Lupa.png</file>
   </qresource>
 </RCC>

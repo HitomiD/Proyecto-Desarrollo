@@ -15,10 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFormLayout, QHBoxLayout, QLabel,
-    QLayout, QLineEdit, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLayout,
+    QLineEdit, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import Recursos_rc
 import Recursos_rc
 
@@ -26,27 +25,20 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1396, 649)
+        MainWindow.resize(1396, 683)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(0, 50, 1371, 571))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setSpacing(6)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setSizeConstraint(QLayout.SetMaximumSize)
-        self.verticalLayout.setContentsMargins(5, 5, 5, 5)
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer)
-
-        self.verticalSpacer_10 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer_10)
-
+        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 1371, 695))
+        self.TODO = QVBoxLayout(self.verticalLayoutWidget)
+        self.TODO.setSpacing(6)
+        self.TODO.setObjectName(u"TODO")
+        self.TODO.setSizeConstraint(QLayout.SetMaximumSize)
+        self.TODO.setContentsMargins(5, 15, 5, 0)
         self.tituloLayout = QHBoxLayout()
         self.tituloLayout.setObjectName(u"tituloLayout")
+        self.tituloLayout.setContentsMargins(-1, 0, -1, -1)
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.tituloLayout.addItem(self.horizontalSpacer_4)
@@ -103,37 +95,92 @@ class Ui_MainWindow(object):
         self.tituloLayout.addItem(self.horizontalSpacer_3)
 
 
-        self.verticalLayout.addLayout(self.tituloLayout)
+        self.TODO.addLayout(self.tituloLayout)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_4 = QSpacerItem(20, 30, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.verticalLayout.addItem(self.verticalSpacer_4)
+        self.TODO.addItem(self.verticalSpacer_4)
 
-        self.formLayout = QFormLayout()
-        self.formLayout.setObjectName(u"formLayout")
+        self.LayOutUsuario = QHBoxLayout()
+        self.LayOutUsuario.setSpacing(0)
+        self.LayOutUsuario.setObjectName(u"LayOutUsuario")
+        self.LayOutUsuario.setContentsMargins(-1, -1, -1, 0)
+        self.DerSpacer = QSpacerItem(40, 30, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout.addLayout(self.formLayout)
+        self.LayOutUsuario.addItem(self.DerSpacer)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer_7)
-
-        self.inputLayout = QHBoxLayout()
-        self.inputLayout.setObjectName(u"inputLayout")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.inputLayout.addItem(self.horizontalSpacer)
-
-        self.Input = QVBoxLayout()
-        self.Input.setObjectName(u"Input")
-        self.label = QLabel(self.verticalLayoutWidget)
-        self.label.setObjectName(u"label")
+        self.LayOutInternoUsuario = QVBoxLayout()
+        self.LayOutInternoUsuario.setObjectName(u"LayOutInternoUsuario")
+        self.LayOutInternoUsuario.setContentsMargins(-1, 0, -1, -1)
+        self.LabelUsuario = QLabel(self.verticalLayoutWidget)
+        self.LabelUsuario.setObjectName(u"LabelUsuario")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.LabelUsuario.sizePolicy().hasHeightForWidth())
+        self.LabelUsuario.setSizePolicy(sizePolicy)
         font1 = QFont()
         font1.setPointSize(15)
-        self.label.setFont(font1)
-        self.label.setAlignment(Qt.AlignCenter)
+        self.LabelUsuario.setFont(font1)
+        self.LabelUsuario.setAlignment(Qt.AlignCenter)
 
-        self.Input.addWidget(self.label)
+        self.LayOutInternoUsuario.addWidget(self.LabelUsuario)
+
+        self.LayOutInputUsuario = QHBoxLayout()
+        self.LayOutInputUsuario.setSpacing(0)
+        self.LayOutInputUsuario.setObjectName(u"LayOutInputUsuario")
+        self.LayOutInputUsuario.setContentsMargins(-1, -1, -1, 0)
+        self.horizontalSpacer_22 = QSpacerItem(140, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.LayOutInputUsuario.addItem(self.horizontalSpacer_22)
+
+        self.CasillaUsuario = QLineEdit(self.verticalLayoutWidget)
+        self.CasillaUsuario.setObjectName(u"CasillaUsuario")
+        self.CasillaUsuario.setEnabled(True)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.CasillaUsuario.sizePolicy().hasHeightForWidth())
+        self.CasillaUsuario.setSizePolicy(sizePolicy1)
+        self.CasillaUsuario.setMinimumSize(QSize(180, 0))
+        self.CasillaUsuario.setMaximumSize(QSize(150, 16777215))
+        self.CasillaUsuario.setBaseSize(QSize(0, 0))
+
+        self.LayOutInputUsuario.addWidget(self.CasillaUsuario, 0, Qt.AlignHCenter)
+
+        self.horizontalSpacer_23 = QSpacerItem(140, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.LayOutInputUsuario.addItem(self.horizontalSpacer_23)
+
+
+        self.LayOutInternoUsuario.addLayout(self.LayOutInputUsuario)
+
+
+        self.LayOutUsuario.addLayout(self.LayOutInternoUsuario)
+
+        self.IzqSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.LayOutUsuario.addItem(self.IzqSpacer)
+
+
+        self.TODO.addLayout(self.LayOutUsuario)
+
+        self.LayOutContrasenia = QHBoxLayout()
+        self.LayOutContrasenia.setObjectName(u"LayOutContrasenia")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.LayOutContrasenia.addItem(self.horizontalSpacer)
+
+        self.LayOutInternoContrasena = QVBoxLayout()
+        self.LayOutInternoContrasena.setObjectName(u"LayOutInternoContrasena")
+        self.CONTRASENA = QLabel(self.verticalLayoutWidget)
+        self.CONTRASENA.setObjectName(u"CONTRASENA")
+        sizePolicy.setHeightForWidth(self.CONTRASENA.sizePolicy().hasHeightForWidth())
+        self.CONTRASENA.setSizePolicy(sizePolicy)
+        self.CONTRASENA.setFont(font1)
+        self.CONTRASENA.setAlignment(Qt.AlignCenter)
+
+        self.LayOutInternoContrasena.addWidget(self.CONTRASENA)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -154,17 +201,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addItem(self.horizontalSpacer_5)
 
 
-        self.Input.addLayout(self.horizontalLayout_3)
+        self.LayOutInternoContrasena.addLayout(self.horizontalLayout_3)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.LayOutIngresar = QHBoxLayout()
+        self.LayOutIngresar.setSpacing(5)
+        self.LayOutIngresar.setObjectName(u"LayOutIngresar")
+        self.LayOutIngresar.setContentsMargins(-1, 10, -1, -1)
         self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_13)
+        self.LayOutIngresar.addItem(self.horizontalSpacer_13)
 
         self.pushButton = QPushButton(self.verticalLayoutWidget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMaximumSize(QSize(200, 16777215))
+        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(0, 193, 13);\n"
 "color:white;\n"
 "border:none;\n"
@@ -174,82 +224,61 @@ class Ui_MainWindow(object):
 "padding: 5px 5px 7px 5px;\n"
 "border-radius:5px;")
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.LayOutIngresar.addWidget(self.pushButton)
 
         self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_14)
+        self.LayOutIngresar.addItem(self.horizontalSpacer_14)
 
 
-        self.Input.addLayout(self.horizontalLayout_2)
+        self.LayOutInternoContrasena.addLayout(self.LayOutIngresar)
 
 
-        self.inputLayout.addLayout(self.Input)
+        self.LayOutContrasenia.addLayout(self.LayOutInternoContrasena)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.inputLayout.addItem(self.horizontalSpacer_2)
+        self.LayOutContrasenia.addItem(self.horizontalSpacer_2)
 
 
-        self.verticalLayout.addLayout(self.inputLayout)
+        self.TODO.addLayout(self.LayOutContrasenia)
 
-        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer_8)
-
-        self.verticalSpacer_6 = QSpacerItem(42, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer_6)
-
-        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer_5)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(25, -1, 25, -1)
+        self.LayOutDelFondo = QHBoxLayout()
+        self.LayOutDelFondo.setObjectName(u"LayOutDelFondo")
+        self.LayOutDelFondo.setContentsMargins(25, -1, 6, -1)
         self.pushButton_2 = QPushButton(self.verticalLayoutWidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet(u"background-color: transparent;\n"
 "color:blue;\n"
 "font-weight: bold;")
 
-        self.horizontalLayout.addWidget(self.pushButton_2)
-
-        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer_9)
+        self.LayOutDelFondo.addWidget(self.pushButton_2)
 
         self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_11)
+        self.LayOutDelFondo.addItem(self.horizontalSpacer_11)
 
         self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_12)
-
-        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer_10)
-
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer_8)
+        self.LayOutDelFondo.addItem(self.horizontalSpacer_12)
 
         self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_7)
+        self.LayOutDelFondo.addItem(self.horizontalSpacer_7)
 
         self.label_5 = QLabel(self.verticalLayoutWidget)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMaximumSize(QSize(55, 55))
+        self.label_5.setSizeIncrement(QSize(25, 25))
         self.label_5.setPixmap(QPixmap(u":/Logos/Escudo-Club.png"))
         self.label_5.setScaledContents(True)
 
-        self.horizontalLayout.addWidget(self.label_5)
+        self.LayOutDelFondo.addWidget(self.label_5)
 
         self.label_6 = QLabel(self.verticalLayoutWidget)
         self.label_6.setObjectName(u"label_6")
+        self.label_6.setSizeIncrement(QSize(25, 25))
         font2 = QFont()
         font2.setFamilies([u"Noto Serif Display Bold"])
         font2.setBold(True)
@@ -257,15 +286,15 @@ class Ui_MainWindow(object):
         self.label_6.setTextFormat(Qt.RichText)
         self.label_6.setWordWrap(True)
 
-        self.horizontalLayout.addWidget(self.label_6)
+        self.LayOutDelFondo.addWidget(self.label_6)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.TODO.addLayout(self.LayOutDelFondo)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1396, 20))
+        self.menubar.setGeometry(QRect(0, 0, 1396, 22))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -277,7 +306,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_2.setText("")
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Gestion de Inventario", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Contrase\u00f1a</span></p></body></html>", None))
+        self.LabelUsuario.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Usuario</span></p></body></html>", None))
+        self.CONTRASENA.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Contrase\u00f1a</span></p></body></html>", None))
         self.inputPassword.setInputMask("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"INGRESAR", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u00bfProblemas para\n"
