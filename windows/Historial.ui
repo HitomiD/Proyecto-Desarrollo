@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>671</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-6</y>
+     <width>671</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(84, 84, 84)</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="escudoClub">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">width:25px;
+height:25px;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Logos/Escudo-Club - copia v2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Recursos.qrc">:/Logos/Escudo-Club.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Iconos/Lupa v2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="barraBusqueda">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Buscar por nombre</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_7">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>110</y>
+     <width>681</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="tabBarAutoHide">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="tabHistorial">
+    <attribute name="title">
+     <string>Historial</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTableWidget" name="tablaInventario">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>657</width>
+         <height>487</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+color:black;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll">
+        <bool>true</bool>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="textElideMode">
+        <enum>Qt::ElideMiddle</enum>
+       </property>
+       <property name="horizontalScrollMode">
+        <enum>QAbstractItemView::ScrollPerItem</enum>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="rowCount">
+        <number>19</number>
+       </property>
+       <property name="columnCount">
+        <number>6</number>
+       </property>
+       <attribute name="horizontalHeaderVisible">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>105</number>
+       </attribute>
+       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>30</number>
+       </attribute>
+       <attribute name="verticalHeaderHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string/>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Responsable</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Producto</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Stock Anterior</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Stock Actual</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Proveedor</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>14/05/2018</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="0" column="2">
+        <property name="text">
+         <string>Cebolla</string>
+        </property>
+       </item>
+       <item row="0" column="3">
+        <property name="text">
+         <string>15</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="4">
+        <property name="text">
+         <string>30</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>25/09/2018</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string>Acelga</string>
+        </property>
+       </item>
+       <item row="1" column="3">
+        <property name="text">
+         <string>06</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="4">
+        <property name="text">
+         <string>20</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>31/10/2018</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string>Papas</string>
+        </property>
+       </item>
+       <item row="2" column="3">
+        <property name="text">
+         <string>150</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="4">
+        <property name="text">
+         <string>200</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>02/12/2018</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string>Hamburguesas</string>
+        </property>
+       </item>
+       <item row="3" column="3">
+        <property name="text">
+         <string>40</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="4">
+        <property name="text">
+         <string>30</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>14/02/2019</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="4" column="2">
+        <property name="text">
+         <string>Queso</string>
+        </property>
+       </item>
+       <item row="4" column="3">
+        <property name="text">
+         <string>10</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="4">
+        <property name="text">
+         <string>50</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="5">
+        <property name="text">
+         <string>La Elisa S.A.</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>11/03/2019</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>Pan (Común)</string>
+        </property>
+       </item>
+       <item row="5" column="3">
+        <property name="text">
+         <string>03</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="4">
+        <property name="text">
+         <string>20</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="5">
+        <property name="text">
+         <string>Del Pueblo</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="0">
+        <property name="text">
+         <string>21/05/2019</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>Pan (Hamburguesas)</string>
+        </property>
+       </item>
+       <item row="6" column="3">
+        <property name="text">
+         <string>95</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="4">
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="5">
+        <property name="text">
+         <string>Del Pueblo</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="0">
+        <property name="text">
+         <string>09/08/2019</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string>Pan (Sandwich)</string>
+        </property>
+       </item>
+       <item row="7" column="3">
+        <property name="text">
+         <string>50</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="4">
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="5">
+        <property name="text">
+         <string>Del Pueblo</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="0">
+        <property name="text">
+         <string>15/05/2020</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string>Pan (Pebete)</string>
+        </property>
+       </item>
+       <item row="8" column="3">
+        <property name="text">
+         <string>45</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="4">
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="5">
+        <property name="text">
+         <string>Del Pueblo</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="0">
+        <property name="text">
+         <string>19/08/2020</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>Hamburguesas</string>
+        </property>
+       </item>
+       <item row="9" column="3">
+        <property name="text">
+         <string>90</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="background">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </property>
+       </item>
+       <item row="9" column="4">
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="5">
+        <property name="text">
+         <string>San Jorge</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="0">
+        <property name="text">
+         <string>28/12/2020</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>Harina</string>
+        </property>
+       </item>
+       <item row="10" column="3">
+        <property name="text">
+         <string>10</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="4">
+        <property name="text">
+         <string>15</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="5">
+        <property name="text">
+         <string>San Jorge</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="0">
+        <property name="text">
+         <string>14/06/2021</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="11" column="2">
+        <property name="text">
+         <string>Aceite</string>
+        </property>
+       </item>
+       <item row="11" column="3">
+        <property name="text">
+         <string>10</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="4">
+        <property name="text">
+         <string>20</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="5">
+        <property name="text">
+         <string>San Jorge</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="12" column="0">
+        <property name="text">
+         <string>24/09/2021</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="12" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="12" column="2">
+        <property name="text">
+         <string>Cebolla</string>
+        </property>
+       </item>
+       <item row="12" column="3">
+        <property name="text">
+         <string>20</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="12" column="4">
+        <property name="text">
+         <string>30</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="12" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="13" column="0">
+        <property name="text">
+         <string>18/12/2021</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="13" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="13" column="2">
+        <property name="text">
+         <string>Hamburguesas</string>
+        </property>
+       </item>
+       <item row="13" column="3">
+        <property name="text">
+         <string>15</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="13" column="4">
+        <property name="text">
+         <string>40</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="13" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="14" column="0">
+        <property name="text">
+         <string>22/03/2022</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="14" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="14" column="2">
+        <property name="text">
+         <string>Harina</string>
+        </property>
+       </item>
+       <item row="14" column="3">
+        <property name="text">
+         <string>02</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="14" column="4">
+        <property name="text">
+         <string>15</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="14" column="5">
+        <property name="text">
+         <string>San Jorge</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="15" column="0">
+        <property name="text">
+         <string>19/04/2022</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="15" column="1">
+        <property name="text">
+         <string>Noche</string>
+        </property>
+       </item>
+       <item row="15" column="2">
+        <property name="text">
+         <string>Papas</string>
+        </property>
+       </item>
+       <item row="15" column="3">
+        <property name="text">
+         <string>50</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="15" column="4">
+        <property name="text">
+         <string>200</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="15" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="16" column="0">
+        <property name="text">
+         <string>01/10/2022</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="16" column="1">
+        <property name="text">
+         <string>Mañana</string>
+        </property>
+       </item>
+       <item row="16" column="2">
+        <property name="text">
+         <string>Pan (Sandwich)</string>
+        </property>
+       </item>
+       <item row="16" column="3">
+        <property name="text">
+         <string>150</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="16" column="4">
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="16" column="5">
+        <property name="text">
+         <string>Del Pueblo</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="17" column="0">
+        <property name="text">
+         <string>16/12/2022</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="17" column="1">
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item row="17" column="2">
+        <property name="text">
+         <string>Hamburguesas</string>
+        </property>
+       </item>
+       <item row="17" column="3">
+        <property name="text">
+         <string>60</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="17" column="4">
+        <property name="text">
+         <string>40</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="17" column="5">
+        <property name="text">
+         <string>Nadur</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

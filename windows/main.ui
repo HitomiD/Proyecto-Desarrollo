@@ -90,11 +90,17 @@
      </item>
      <item>
       <widget class="QLabel" name="tituloTab">
+       <property name="font">
+        <font>
+         <bold>false</bold>
+         <kerning>false</kerning>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">padding:0px;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; color:#ffffff;&quot;&gt;Club&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; color:#ffffff;&quot;&gt;Sarmiento&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; color:#ffffff;&quot;&gt;Club Sarmiento&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -206,6 +212,9 @@
       <width>811</width>
       <height>511</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -980,9 +989,20 @@ color:black;</string>
             <height>0</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(89, 197, 0);
-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
           </property>
           <property name="text">
            <string>Nuevo</string>
@@ -1010,9 +1030,20 @@ color: rgb(255, 255, 255);</string>
             <height>0</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 83, 184);
-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(0, 0, 0);
+border-radius:5px;
+height:25%;</string>
           </property>
           <property name="text">
            <string>Modificar</string>
@@ -1040,9 +1071,21 @@ color: rgb(255, 255, 255);</string>
             <height>0</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>true</bold>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(232, 0, 0);
-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(0, 0, 0);
+border-radius:5px;
+height:25%;</string>
           </property>
           <property name="text">
            <string>Eliminar</string>
@@ -1534,9 +1577,16 @@ color:black;</string>
              <height>0</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(89, 197, 0);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
            </property>
            <property name="text">
             <string>Nuevo</string>
@@ -1564,9 +1614,16 @@ color: rgb(255, 255, 255);</string>
              <height>0</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 83, 184);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
            </property>
            <property name="text">
             <string>Modificar</string>
@@ -1594,9 +1651,16 @@ color: rgb(255, 255, 255);</string>
              <height>0</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(232, 0, 0);
-color: rgb(255, 255, 255);</string>
+            <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
            </property>
            <property name="text">
             <string>Eliminar</string>
@@ -2028,9 +2092,16 @@ color: rgb(255, 255, 255);</string>
            <height>0</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(89, 197, 0);
-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
          </property>
          <property name="text">
           <string>Nuevo</string>
@@ -2058,9 +2129,16 @@ color: rgb(255, 255, 255);</string>
            <height>0</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 83, 184);
-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
          </property>
          <property name="text">
           <string>Modificar</string>
@@ -2088,9 +2166,16 @@ color: rgb(255, 255, 255);</string>
            <height>0</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(232, 0, 0);
-color: rgb(255, 255, 255);</string>
+          <string notr="true">background-color: rgb(200, 200, 200);
+color: rgb(30, 30, 30);
+border-radius:5px;
+height:25%;</string>
          </property>
          <property name="text">
           <string>Eliminar</string>
