@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1396</width>
-    <height>683</height>
+    <width>1373</width>
+    <height>649</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -536,6 +536,22 @@ color:blue;
 font-weight: bold;</string>
          </property>
          <property name="text">
+          <string>Crear 
+ Usuario</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: transparent;
+color:blue;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
           <string>¿Problemas para
  iniciar sesión?</string>
          </property>
@@ -640,7 +656,7 @@ font-weight: bold;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1396</width>
+     <width>1373</width>
      <height>22</height>
     </rect>
    </property>
