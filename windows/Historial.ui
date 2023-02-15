@@ -65,7 +65,7 @@
 height:25px;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Logos/Escudo-Club - copia v2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string/>
       </property>
       <property name="pixmap">
        <pixmap resource="Recursos.qrc">:/Logos/Escudo-Club.png</pixmap>
@@ -163,12 +163,15 @@ height:25px;</string>
          <height>487</height>
         </size>
        </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 color:black;</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Panel</enum>
+        <enum>QFrame::Box</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
@@ -182,11 +185,20 @@ color:black;</string>
        <property name="horizontalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustIgnored</enum>
+       </property>
        <property name="autoScroll">
         <bool>true</bool>
        </property>
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="tabKeyNavigation">
+        <bool>true</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::NoDragDrop</enum>
        </property>
        <property name="alternatingRowColors">
         <bool>true</bool>
@@ -194,13 +206,31 @@ color:black;</string>
        <property name="selectionMode">
         <enum>QAbstractItemView::SingleSelection</enum>
        </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
        <property name="textElideMode">
-        <enum>Qt::ElideMiddle</enum>
+        <enum>Qt::ElideLeft</enum>
+       </property>
+       <property name="verticalScrollMode">
+        <enum>QAbstractItemView::ScrollPerItem</enum>
        </property>
        <property name="horizontalScrollMode">
         <enum>QAbstractItemView::ScrollPerItem</enum>
        </property>
+       <property name="showGrid">
+        <bool>true</bool>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::SolidLine</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
        <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="cornerButtonEnabled">
         <bool>true</bool>
        </property>
        <property name="rowCount">
@@ -232,6 +262,12 @@ color:black;</string>
        </attribute>
        <attribute name="verticalHeaderHighlightSections">
         <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
        </attribute>
        <row>
         <property name="text">

@@ -217,7 +217,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabInventario">
      <attribute name="title">
@@ -1582,9 +1582,12 @@ color:black;</string>
              <bold>true</bold>
             </font>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
+color: rgb(30,30 ,30);
 border-radius:5px;
 height:25%;</string>
            </property>
@@ -1618,6 +1621,9 @@ height:25%;</string>
             <font>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(200, 200, 200);
@@ -1655,6 +1661,9 @@ height:25%;</string>
             <font>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(200, 200, 200);
@@ -2097,6 +2106,9 @@ height:25%;</string>
            <bold>true</bold>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(200, 200, 200);
 color: rgb(30, 30, 30);
@@ -2134,6 +2146,9 @@ height:25%;</string>
            <bold>true</bold>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(200, 200, 200);
 color: rgb(30, 30, 30);
@@ -2170,6 +2185,9 @@ height:25%;</string>
           <font>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(200, 200, 200);
