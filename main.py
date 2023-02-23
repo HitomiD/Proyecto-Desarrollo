@@ -1,9 +1,10 @@
 import DB_setup
 from PySide6.QtWidgets import QApplication
 import sys
-from ventanas import *         
+from windows.ventanas import *
 
 DB_setup.setup()
+
 
 def run():
     app = QApplication([])
@@ -13,3 +14,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+    

@@ -1,6 +1,8 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
-from ui_main import Ui_MainWindow
-from ui_newproducto import Ui_newProducto
+from windows.ui_main import Ui_MenuPrincipal
+from windows.ui_newproducto import Ui_newProducto
+
+#Este archivo contiene las definiciones de todas las ventanas del sistema
 
 #DEFINICIONES DE VENTANAS
 
@@ -16,7 +18,7 @@ class VentanaCarga(QDialog) :
 class VentanaPrincipal(QMainWindow) :
     def __init__(self):
         super(VentanaPrincipal, self).__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_MenuPrincipal()
         self.ui.setupUi(self)
         
     #VENTANA PRUEBA
