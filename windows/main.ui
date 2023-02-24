@@ -217,7 +217,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tabInventario">
      <attribute name="title">
@@ -587,7 +587,7 @@ color:black;</string>
          </attribute>
          <column>
           <property name="text">
-           <string>ID</string>
+           <string>CUIL/CUIT</string>
           </property>
          </column>
          <column>
@@ -976,41 +976,6 @@ height:25%;</string>
         <attribute name="verticalHeaderVisible">
          <bool>false</bool>
         </attribute>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
         <column>
          <property name="text">
           <string>Producto</string>
@@ -1031,121 +996,6 @@ height:25%;</string>
           <string>Precio total</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>Coca coca cero 1L</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>250</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>45</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string/>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>Esprait 500ml</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>250</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>23</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>Fantasiosa 500ml</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>180</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>542</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>Monstruo 380ml</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>340</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
-        <item row="4" column="0">
-         <property name="text">
-          <string>kilmes 2.5 Ltr.</string>
-         </property>
-        </item>
-        <item row="4" column="1">
-         <property name="text">
-          <string>500</string>
-         </property>
-        </item>
-        <item row="4" column="2">
-         <property name="text">
-          <string>75</string>
-         </property>
-        </item>
-        <item row="5" column="0">
-         <property name="text">
-          <string>Amstel 1 Ltr.</string>
-         </property>
-        </item>
-        <item row="5" column="1">
-         <property name="text">
-          <string>300</string>
-         </property>
-        </item>
-        <item row="5" column="2">
-         <property name="text">
-          <string>50</string>
-         </property>
-        </item>
-        <item row="6" column="0">
-         <property name="text">
-          <string>Jack Daniels 750ml.</string>
-         </property>
-        </item>
-        <item row="6" column="1">
-         <property name="text">
-          <string>1500</string>
-         </property>
-        </item>
-        <item row="6" column="2">
-         <property name="text">
-          <string>5</string>
-         </property>
-        </item>
-        <item row="6" column="3">
-         <property name="text">
-          <string/>
-         </property>
-        </item>
        </widget>
       </widget>
      </widget>
@@ -1412,71 +1262,6 @@ color:black;</string>
        <attribute name="verticalHeaderHighlightSections">
         <bool>true</bool>
        </attribute>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string/>
-        </property>
-       </row>
        <column>
         <property name="text">
          <string>ID</string>
@@ -1492,96 +1277,6 @@ color:black;</string>
          <string>Proveedor</string>
         </property>
        </column>
-       <item row="0" column="0">
-        <property name="text">
-         <string>034</string>
-        </property>
-       </item>
-       <item row="0" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="0" column="2">
-        <property name="text">
-         <string>Juan Carlos</string>
-        </property>
-       </item>
-       <item row="1" column="0">
-        <property name="text">
-         <string>234</string>
-        </property>
-       </item>
-       <item row="1" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="1" column="2">
-        <property name="text">
-         <string>El chancho peludo</string>
-        </property>
-       </item>
-       <item row="2" column="0">
-        <property name="text">
-         <string>008</string>
-        </property>
-       </item>
-       <item row="2" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="2" column="2">
-        <property name="text">
-         <string>Los hermanos</string>
-        </property>
-       </item>
-       <item row="3" column="0">
-        <property name="text">
-         <string>009</string>
-        </property>
-       </item>
-       <item row="3" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="3" column="2">
-        <property name="text">
-         <string>Marcelo Rodriguez</string>
-        </property>
-       </item>
-       <item row="4" column="0">
-        <property name="text">
-         <string>158</string>
-        </property>
-       </item>
-       <item row="4" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="4" column="2">
-        <property name="text">
-         <string>Matias perez</string>
-        </property>
-       </item>
-       <item row="5" column="0">
-        <property name="text">
-         <string>341</string>
-        </property>
-       </item>
-       <item row="5" column="1">
-        <property name="text">
-         <string>17/12/22</string>
-        </property>
-       </item>
-       <item row="5" column="2">
-        <property name="text">
-         <string>El chancho peludo</string>
-        </property>
-       </item>
       </widget>
      </widget>
      <widget class="QLabel" name="label_4">

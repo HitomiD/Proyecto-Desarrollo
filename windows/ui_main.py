@@ -23,8 +23,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
     QVBoxLayout, QWidget)
 import windows.Recursos_rc
-
 import crud
+
 
 class Ui_MenuPrincipal(object):
     def setupUi(self, MenuPrincipal):
@@ -170,7 +170,7 @@ class Ui_MenuPrincipal(object):
         self.tablaInventario.horizontalHeader().setStretchLastSection(False)
         self.tablaInventario.verticalHeader().setDefaultSectionSize(30)
         self.tablaInventario.verticalHeader().setHighlightSections(True)
-        
+
         #Setup tabla inventario
         
         crud.poblarQTableInventario(self.tablaInventario)
@@ -302,6 +302,9 @@ class Ui_MenuPrincipal(object):
         self.tablaProveedores.verticalHeader().setStretchLastSection(False)
 
         self.verticalLayout.addWidget(self.tablaProveedores)
+
+        #poblado tabla proveedores
+        crud.poblarQTableProveedores(self.tablaProveedores)
 
         self.layoutBtnProveedores = QHBoxLayout()
         self.layoutBtnProveedores.setObjectName(u"layoutBtnProveedores")
@@ -443,68 +446,6 @@ class Ui_MenuPrincipal(object):
         self.tablaIngresosDetalle.setHorizontalHeaderItem(2, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
         self.tablaIngresosDetalle.setHorizontalHeaderItem(3, __qtablewidgetitem16)
-        if (self.tablaIngresosDetalle.rowCount() < 7):
-            self.tablaIngresosDetalle.setRowCount(7)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(0, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(1, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(2, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(3, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(4, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(5, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setVerticalHeaderItem(6, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(0, 0, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(0, 1, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(0, 2, __qtablewidgetitem26)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(0, 3, __qtablewidgetitem27)
-        __qtablewidgetitem28 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(1, 0, __qtablewidgetitem28)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(1, 1, __qtablewidgetitem29)
-        __qtablewidgetitem30 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(1, 2, __qtablewidgetitem30)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(2, 0, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(2, 1, __qtablewidgetitem32)
-        __qtablewidgetitem33 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(2, 2, __qtablewidgetitem33)
-        __qtablewidgetitem34 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(3, 0, __qtablewidgetitem34)
-        __qtablewidgetitem35 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(3, 1, __qtablewidgetitem35)
-        __qtablewidgetitem36 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(3, 2, __qtablewidgetitem36)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(4, 0, __qtablewidgetitem37)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(4, 1, __qtablewidgetitem38)
-        __qtablewidgetitem39 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(4, 2, __qtablewidgetitem39)
-        __qtablewidgetitem40 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(5, 0, __qtablewidgetitem40)
-        __qtablewidgetitem41 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(5, 1, __qtablewidgetitem41)
-        __qtablewidgetitem42 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(5, 2, __qtablewidgetitem42)
-        __qtablewidgetitem43 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(6, 0, __qtablewidgetitem43)
-        __qtablewidgetitem44 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(6, 1, __qtablewidgetitem44)
-        __qtablewidgetitem45 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(6, 2, __qtablewidgetitem45)
-        __qtablewidgetitem46 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setItem(6, 3, __qtablewidgetitem46)
         self.tablaIngresosDetalle.setObjectName(u"tablaIngresosDetalle")
         self.tablaIngresosDetalle.setEnabled(True)
         self.tablaIngresosDetalle.setGeometry(QRect(0, 18, 424, 201))
@@ -589,76 +530,12 @@ class Ui_MenuPrincipal(object):
         self.tablaIngresos = QTableWidget(self.groupBox_3)
         if (self.tablaIngresos.columnCount() < 3):
             self.tablaIngresos.setColumnCount(3)
-        __qtablewidgetitem47 = QTableWidgetItem()
-        self.tablaIngresos.setHorizontalHeaderItem(0, __qtablewidgetitem47)
-        __qtablewidgetitem48 = QTableWidgetItem()
-        self.tablaIngresos.setHorizontalHeaderItem(1, __qtablewidgetitem48)
-        __qtablewidgetitem49 = QTableWidgetItem()
-        self.tablaIngresos.setHorizontalHeaderItem(2, __qtablewidgetitem49)
-        if (self.tablaIngresos.rowCount() < 13):
-            self.tablaIngresos.setRowCount(13)
-        __qtablewidgetitem50 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(0, __qtablewidgetitem50)
-        __qtablewidgetitem51 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(1, __qtablewidgetitem51)
-        __qtablewidgetitem52 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(2, __qtablewidgetitem52)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(3, __qtablewidgetitem53)
-        __qtablewidgetitem54 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(4, __qtablewidgetitem54)
-        __qtablewidgetitem55 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(5, __qtablewidgetitem55)
-        __qtablewidgetitem56 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(6, __qtablewidgetitem56)
-        __qtablewidgetitem57 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(7, __qtablewidgetitem57)
-        __qtablewidgetitem58 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(8, __qtablewidgetitem58)
-        __qtablewidgetitem59 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(9, __qtablewidgetitem59)
-        __qtablewidgetitem60 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(10, __qtablewidgetitem60)
-        __qtablewidgetitem61 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(11, __qtablewidgetitem61)
-        __qtablewidgetitem62 = QTableWidgetItem()
-        self.tablaIngresos.setVerticalHeaderItem(12, __qtablewidgetitem62)
-        __qtablewidgetitem63 = QTableWidgetItem()
-        self.tablaIngresos.setItem(0, 0, __qtablewidgetitem63)
-        __qtablewidgetitem64 = QTableWidgetItem()
-        self.tablaIngresos.setItem(0, 1, __qtablewidgetitem64)
-        __qtablewidgetitem65 = QTableWidgetItem()
-        self.tablaIngresos.setItem(0, 2, __qtablewidgetitem65)
-        __qtablewidgetitem66 = QTableWidgetItem()
-        self.tablaIngresos.setItem(1, 0, __qtablewidgetitem66)
-        __qtablewidgetitem67 = QTableWidgetItem()
-        self.tablaIngresos.setItem(1, 1, __qtablewidgetitem67)
-        __qtablewidgetitem68 = QTableWidgetItem()
-        self.tablaIngresos.setItem(1, 2, __qtablewidgetitem68)
-        __qtablewidgetitem69 = QTableWidgetItem()
-        self.tablaIngresos.setItem(2, 0, __qtablewidgetitem69)
-        __qtablewidgetitem70 = QTableWidgetItem()
-        self.tablaIngresos.setItem(2, 1, __qtablewidgetitem70)
-        __qtablewidgetitem71 = QTableWidgetItem()
-        self.tablaIngresos.setItem(2, 2, __qtablewidgetitem71)
-        __qtablewidgetitem72 = QTableWidgetItem()
-        self.tablaIngresos.setItem(3, 0, __qtablewidgetitem72)
-        __qtablewidgetitem73 = QTableWidgetItem()
-        self.tablaIngresos.setItem(3, 1, __qtablewidgetitem73)
-        __qtablewidgetitem74 = QTableWidgetItem()
-        self.tablaIngresos.setItem(3, 2, __qtablewidgetitem74)
-        __qtablewidgetitem75 = QTableWidgetItem()
-        self.tablaIngresos.setItem(4, 0, __qtablewidgetitem75)
-        __qtablewidgetitem76 = QTableWidgetItem()
-        self.tablaIngresos.setItem(4, 1, __qtablewidgetitem76)
-        __qtablewidgetitem77 = QTableWidgetItem()
-        self.tablaIngresos.setItem(4, 2, __qtablewidgetitem77)
-        __qtablewidgetitem78 = QTableWidgetItem()
-        self.tablaIngresos.setItem(5, 0, __qtablewidgetitem78)
-        __qtablewidgetitem79 = QTableWidgetItem()
-        self.tablaIngresos.setItem(5, 1, __qtablewidgetitem79)
-        __qtablewidgetitem80 = QTableWidgetItem()
-        self.tablaIngresos.setItem(5, 2, __qtablewidgetitem80)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tablaIngresos.setHorizontalHeaderItem(0, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tablaIngresos.setHorizontalHeaderItem(1, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.tablaIngresos.setHorizontalHeaderItem(2, __qtablewidgetitem19)
         self.tablaIngresos.setObjectName(u"tablaIngresos")
         self.tablaIngresos.setEnabled(True)
         self.tablaIngresos.setGeometry(QRect(0, 19, 321, 392))
@@ -689,6 +566,11 @@ class Ui_MenuPrincipal(object):
         self.tablaIngresos.horizontalHeader().setStretchLastSection(False)
         self.tablaIngresos.verticalHeader().setVisible(False)
         self.tablaIngresos.verticalHeader().setHighlightSections(True)
+        
+        #poblado tabla ingresos
+        crud.poblarQTableIngresos(self.tablaIngresos)
+
+        
         self.label_4 = QLabel(self.tabIngresos)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(350, 12, 111, 16))
@@ -719,7 +601,7 @@ class Ui_MenuPrincipal(object):
 
         self.retranslateUi(MenuPrincipal)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MenuPrincipal)
@@ -752,7 +634,7 @@ class Ui_MenuPrincipal(object):
         self.btnElimProveedor_4.setText(QCoreApplication.translate("MenuPrincipal", u"Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInventario), QCoreApplication.translate("MenuPrincipal", u"Inventario", None))
         ___qtablewidgetitem7 = self.tablaProveedores.horizontalHeaderItem(0)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MenuPrincipal", u"CUIL/CUIT", None));
         ___qtablewidgetitem8 = self.tablaProveedores.horizontalHeaderItem(1)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MenuPrincipal", u"Raz\u00f3n social", None));
         ___qtablewidgetitem9 = self.tablaProveedores.horizontalHeaderItem(2)
@@ -783,104 +665,16 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
         ___qtablewidgetitem16 = self.tablaIngresosDetalle.horizontalHeaderItem(3)
         ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"Precio total", None));
-
-        __sortingEnabled = self.tablaIngresosDetalle.isSortingEnabled()
-        self.tablaIngresosDetalle.setSortingEnabled(False)
-        ___qtablewidgetitem17 = self.tablaIngresosDetalle.item(0, 0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"Coca coca cero 1L", None));
-        ___qtablewidgetitem18 = self.tablaIngresosDetalle.item(0, 1)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MenuPrincipal", u"250", None));
-        ___qtablewidgetitem19 = self.tablaIngresosDetalle.item(0, 2)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MenuPrincipal", u"45", None));
-        ___qtablewidgetitem20 = self.tablaIngresosDetalle.item(1, 0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MenuPrincipal", u"Esprait 500ml", None));
-        ___qtablewidgetitem21 = self.tablaIngresosDetalle.item(1, 1)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MenuPrincipal", u"250", None));
-        ___qtablewidgetitem22 = self.tablaIngresosDetalle.item(1, 2)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MenuPrincipal", u"23", None));
-        ___qtablewidgetitem23 = self.tablaIngresosDetalle.item(2, 0)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MenuPrincipal", u"Fantasiosa 500ml", None));
-        ___qtablewidgetitem24 = self.tablaIngresosDetalle.item(2, 1)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MenuPrincipal", u"180", None));
-        ___qtablewidgetitem25 = self.tablaIngresosDetalle.item(2, 2)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MenuPrincipal", u"542", None));
-        ___qtablewidgetitem26 = self.tablaIngresosDetalle.item(3, 0)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MenuPrincipal", u"Monstruo 380ml", None));
-        ___qtablewidgetitem27 = self.tablaIngresosDetalle.item(3, 1)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MenuPrincipal", u"340", None));
-        ___qtablewidgetitem28 = self.tablaIngresosDetalle.item(3, 2)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MenuPrincipal", u"2", None));
-        ___qtablewidgetitem29 = self.tablaIngresosDetalle.item(4, 0)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MenuPrincipal", u"kilmes 2.5 Ltr.", None));
-        ___qtablewidgetitem30 = self.tablaIngresosDetalle.item(4, 1)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MenuPrincipal", u"500", None));
-        ___qtablewidgetitem31 = self.tablaIngresosDetalle.item(4, 2)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MenuPrincipal", u"75", None));
-        ___qtablewidgetitem32 = self.tablaIngresosDetalle.item(5, 0)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MenuPrincipal", u"Amstel 1 Ltr.", None));
-        ___qtablewidgetitem33 = self.tablaIngresosDetalle.item(5, 1)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MenuPrincipal", u"300", None));
-        ___qtablewidgetitem34 = self.tablaIngresosDetalle.item(5, 2)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MenuPrincipal", u"50", None));
-        ___qtablewidgetitem35 = self.tablaIngresosDetalle.item(6, 0)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MenuPrincipal", u"Jack Daniels 750ml.", None));
-        ___qtablewidgetitem36 = self.tablaIngresosDetalle.item(6, 1)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MenuPrincipal", u"1500", None));
-        ___qtablewidgetitem37 = self.tablaIngresosDetalle.item(6, 2)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MenuPrincipal", u"5", None));
-        self.tablaIngresosDetalle.setSortingEnabled(__sortingEnabled)
-
         self.btnNuevoProveedor_2.setText(QCoreApplication.translate("MenuPrincipal", u"Nuevo", None))
         self.btnModProveedor_2.setText(QCoreApplication.translate("MenuPrincipal", u"Modificar", None))
         self.btnElimProveedor_3.setText(QCoreApplication.translate("MenuPrincipal", u"Eliminar", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
-        ___qtablewidgetitem38 = self.tablaIngresos.horizontalHeaderItem(0)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
-        ___qtablewidgetitem39 = self.tablaIngresos.horizontalHeaderItem(1)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MenuPrincipal", u"Fecha", None));
-        ___qtablewidgetitem40 = self.tablaIngresos.horizontalHeaderItem(2)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
-
-        __sortingEnabled1 = self.tablaIngresos.isSortingEnabled()
-        self.tablaIngresos.setSortingEnabled(False)
-        ___qtablewidgetitem41 = self.tablaIngresos.item(0, 0)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MenuPrincipal", u"034", None));
-        ___qtablewidgetitem42 = self.tablaIngresos.item(0, 1)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem43 = self.tablaIngresos.item(0, 2)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MenuPrincipal", u"Juan Carlos", None));
-        ___qtablewidgetitem44 = self.tablaIngresos.item(1, 0)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MenuPrincipal", u"234", None));
-        ___qtablewidgetitem45 = self.tablaIngresos.item(1, 1)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem46 = self.tablaIngresos.item(1, 2)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MenuPrincipal", u"El chancho peludo", None));
-        ___qtablewidgetitem47 = self.tablaIngresos.item(2, 0)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("MenuPrincipal", u"008", None));
-        ___qtablewidgetitem48 = self.tablaIngresos.item(2, 1)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem49 = self.tablaIngresos.item(2, 2)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("MenuPrincipal", u"Los hermanos", None));
-        ___qtablewidgetitem50 = self.tablaIngresos.item(3, 0)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("MenuPrincipal", u"009", None));
-        ___qtablewidgetitem51 = self.tablaIngresos.item(3, 1)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem52 = self.tablaIngresos.item(3, 2)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("MenuPrincipal", u"Marcelo Rodriguez", None));
-        ___qtablewidgetitem53 = self.tablaIngresos.item(4, 0)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("MenuPrincipal", u"158", None));
-        ___qtablewidgetitem54 = self.tablaIngresos.item(4, 1)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem55 = self.tablaIngresos.item(4, 2)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("MenuPrincipal", u"Matias perez", None));
-        ___qtablewidgetitem56 = self.tablaIngresos.item(5, 0)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("MenuPrincipal", u"341", None));
-        ___qtablewidgetitem57 = self.tablaIngresos.item(5, 1)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("MenuPrincipal", u"17/12/22", None));
-        ___qtablewidgetitem58 = self.tablaIngresos.item(5, 2)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("MenuPrincipal", u"El chancho peludo", None));
-        self.tablaIngresos.setSortingEnabled(__sortingEnabled1)
-
+        ___qtablewidgetitem17 = self.tablaIngresos.horizontalHeaderItem(0)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
+        ___qtablewidgetitem18 = self.tablaIngresos.horizontalHeaderItem(1)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MenuPrincipal", u"Fecha", None));
+        ___qtablewidgetitem19 = self.tablaIngresos.horizontalHeaderItem(2)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
         self.label_4.setText(QCoreApplication.translate("MenuPrincipal", u"Detalle de ingreso:", None))
         self.btnElimProveedor_2.setText(QCoreApplication.translate("MenuPrincipal", u"Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabIngresos), QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
