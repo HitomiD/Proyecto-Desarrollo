@@ -24,6 +24,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QVBoxLayout, QWidget)
 import windows.Recursos_rc
 
+import crud
+
 class Ui_MenuPrincipal(object):
     def setupUi(self, MenuPrincipal):
         if not MenuPrincipal.objectName():
@@ -168,9 +170,12 @@ class Ui_MenuPrincipal(object):
         self.tablaInventario.horizontalHeader().setStretchLastSection(False)
         self.tablaInventario.verticalHeader().setDefaultSectionSize(30)
         self.tablaInventario.verticalHeader().setHighlightSections(True)
-
+        
         #Setup tabla inventario
-        #self.tablaInventario.setRowCount(7)
+        
+        crud.poblarQTableInventario(self.tablaInventario)
+        
+        #Fin setup tabla inventario
 
         self.verticalLayout_3.addWidget(self.tablaInventario)
 

@@ -1,5 +1,6 @@
 from peewee import *
 
+#Este archivo contiene el modelo de peewee y unas de las funciones mas comunes para interactuar con la base de datos.
 
 ## Modelos generados automáticamente por pwiz ##
 database = SqliteDatabase('database.db')
@@ -7,6 +8,7 @@ database = SqliteDatabase('database.db')
 class UnknownField(object):
     def __init__(self, *_, **__): pass
 
+#se asocia el modelo a la variable "database"
 class BaseModel(Model):
     class Meta:
         database = database
@@ -60,16 +62,5 @@ class SqliteSequence(BaseModel):
         table_name = 'sqlite_sequence'
         primary_key = False
 ## Fin modelos generados automáticamente por pwiz ##
-
-
-
-#Insertar X objeto en Y tabla
-    
-
-#Actualizar x objeto en Y tabla
-
-#Eliminar X objeto de Y tabla
-
-#Carga qtablewidget
-
-#actualizar tabla
+def prueba():
+    print(Productos.descripcion.python_value(int))
