@@ -2,5 +2,8 @@
 *.db
 *.pyc
 
+#Resource logo file
+rc_Logo-Chiquito.py
+
 #Cache folder
 __pycache__/
