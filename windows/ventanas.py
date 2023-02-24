@@ -1,6 +1,8 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
-from ui_main import Ui_MenuPrincipal
-from ui_newproducto import Ui_newProducto
+from windows.ui_main import Ui_MenuPrincipal
+from windows.ui_newproducto import Ui_newProducto
+
+#Este archivo contiene las definiciones de todas las ventanas del sistema
 
 #DEFINICIONES DE VENTANAS
 
