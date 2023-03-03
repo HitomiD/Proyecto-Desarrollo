@@ -87,20 +87,4 @@ def poblarQTableIngresos(tabla):
         itemStock = QTableWidgetItem()
         itemStock.setData(0,"nombre proveedor") #placeholder
         tabla.setItem(index,2,itemStock)
-        
-#actualizar tabla
-
-    
-def guardarProducto(ventanaNewProducto):
-        nuevoProducto = Productos
-        nuevoProducto.descripcion = ventanaNewProducto.ui.lnEditNombre.text()
-        #cambiar el campo para que acepte solo numeros decimales
-        precio = ventanaNewProducto.ui.lnEditPrecio.text()
-        #nuevoProducto.precio_venta = float(precio)
-        #proveedor de prueba hasta que se implemente el dropdown
-        nuevoProducto.cuil_cuit_proveedor = 20237852347
-        #nuevoProducto.save()
-        
-        print("si ves esto es porque se acaba de ejecutar guardarProducto.")
-        
     
