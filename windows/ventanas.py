@@ -31,20 +31,25 @@ class VentanaCarga(QDialog) :
     
     #las funciones asociadas a eventos deben estar todas definidas dentro de la misma definicion de la clase de la ventana.
     def guardarProveedor(self):
+        if self.fieldCheck() == "ok":
+            nuevoProducto = Productos
+            nuevoProducto.descripcion = self.ui.lnEditNombre.text()
+            precio = self.ui.lnEditPrecio.text()
+            nuevoProducto.precio_venta = float(precio)
+            #proveedor de prueba hasta que se implemente el dropdown
+            nuevoProducto.cuil_cuit_proveedor = 20237852347
+            #No se va a implementar el guardado hasta que se haya implementado un control de datos ingresados
+            #nuevoProducto.save()
+            self.guardado.emit()
+    
+    def fieldCheck(self):
         if self.ui.lnEditPrecio.hasAcceptableInput():
             print ("el precio es valido")
+            if self.ui.lnEditNombre != "":
+                print ("los datos son validos")
+                return "ok"
         else:
-            print("el precio es inválido")
-        nuevoProducto = Productos
-        nuevoProducto.descripcion = self.ui.lnEditNombre.text()
-        precio = self.ui.lnEditPrecio.text()
-        nuevoProducto.precio_venta = float(precio)
-        #proveedor de prueba hasta que se implemente el dropdown
-        nuevoProducto.cuil_cuit_proveedor = 20237852347
-        #No se va a implementar el guardado hasta que se haya implementado un control de datos ingresados
-        #nuevoProducto.save()
-        self.guardado.emit()
-        
+            print("los datos son inválidos")        
     
     #Guardar producto en la base de datos
     
