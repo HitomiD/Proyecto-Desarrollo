@@ -1,6 +1,6 @@
 from peewee import *
 
-#Este archivo contiene el modelo de peewee y unas de las funciones mas comunes para interactuar con la base de datos.
+#Este archivo contiene el modelo de DB de peewee
 
 ## Modelos generados automáticamente por pwiz ##
 database = SqliteDatabase('database.db')
@@ -8,10 +8,13 @@ database = SqliteDatabase('database.db')
 class UnknownField(object):
     def __init__(self, *_, **__): pass
 
-#se asocia el modelo a la variable "database"
+#A esta clase se le asocian las definiciones de tablas posteriores.
 class BaseModel(Model):
     class Meta:
-        database = database
+        database  =  database
+        #   ^           ^
+        #atributo    nombre del
+        #de clase    archivo
 
 class Ingresos(BaseModel):
     cuil_cuit_proveedor = BareField(column_name='CUIL_CUIT_proveedor')
@@ -62,5 +65,3 @@ class SqliteSequence(BaseModel):
         table_name = 'sqlite_sequence'
         primary_key = False
 ## Fin modelos generados automáticamente por pwiz ##
-def prueba():
-    print(Productos.descripcion.python_value(int))

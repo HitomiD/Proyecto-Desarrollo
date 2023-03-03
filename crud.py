@@ -1,23 +1,19 @@
 from dbModel import *
 from PySide6.QtWidgets import QTableWidget, QTableWidgetItem
-#Insertar X objeto en Y tabla
-    
 
-#Actualizar x objeto en Y tabla
-
-#Eliminar X objeto de Y tabla
+#Este modulo contiene todas las interacciones directas con la base de datos.
 
 #Poblar tabla inventario
 def poblarQTableInventario(tabla):
     
-    #settear cantidad lineas
+    #settear cantidad de lineas para la tabla
     totalRegistros = Productos.select().count()
     tabla.setRowCount(totalRegistros)
     #El select incluye un join para incluir la razón social del proveedor asociado a cada producto.
     listaProductos = (Productos
                       .select(Productos.id,Productos.descripcion,Productos.stock,Productos.stock_minimo,Productos.precio_venta, Proveedores.razonsocial)
                       .join(Proveedores, JOIN.LEFT_OUTER, on=(Productos.cuil_cuit_proveedor == Proveedores.cuil_cuit))
-                      .namedtuples()) #Esto evita que se retorne un objeto de tipo "Productos".
+                      .namedtuples()) #namedtuples() es para retornar un diccionario.
 
 
     for index, producto in enumerate(listaProductos):
@@ -93,3 +89,18 @@ def poblarQTableIngresos(tabla):
         tabla.setItem(index,2,itemStock)
         
 #actualizar tabla
+
+    
+def guardarProducto(ventanaNewProducto):
+        nuevoProducto = Productos
+        nuevoProducto.descripcion = ventanaNewProducto.ui.lnEditNombre.text()
+        #cambiar el campo para que acepte solo numeros decimales
+        precio = ventanaNewProducto.ui.lnEditPrecio.text()
+        #nuevoProducto.precio_venta = float(precio)
+        #proveedor de prueba hasta que se implemente el dropdown
+        nuevoProducto.cuil_cuit_proveedor = 20237852347
+        #nuevoProducto.save()
+        
+        print("si ves esto es porque se acaba de ejecutar guardarProducto.")
+        
+    

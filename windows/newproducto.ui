@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="focusPolicy">
-   <enum>Qt::NoFocus</enum>
+   <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>Nuevo Proveedor</string>
+   <string>Nuevo Producto</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -122,7 +122,7 @@
         <number>25</number>
        </property>
        <item row="0" column="0">
-        <widget class="QLabel" name="lblNombre_2">
+        <widget class="QLabel" name="lblNombre">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -140,10 +140,10 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lnEditNombre_2"/>
+        <widget class="QLineEdit" name="lnEditNombre"/>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="lblPrecio_2">
+        <widget class="QLabel" name="lblPrecio">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -155,10 +155,10 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lnEditPrecio_2"/>
+        <widget class="QLineEdit" name="lnEditPrecio"/>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="lblDistr_2">
+        <widget class="QLabel" name="lblDistr">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -170,7 +170,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="comboxDistr_2"/>
+        <widget class="QComboBox" name="comboxDistr"/>
        </item>
       </layout>
      </item>

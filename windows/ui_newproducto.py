@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproducto.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,7 +25,7 @@ class Ui_newProducto(object):
         if not newProducto.objectName():
             newProducto.setObjectName(u"newProducto")
         newProducto.resize(427, 203)
-        newProducto.setFocusPolicy(Qt.NoFocus)
+        newProducto.setFocusPolicy(Qt.StrongFocus)
         self.verticalLayout = QVBoxLayout(newProducto)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.gridLayout = QGridLayout()
@@ -80,45 +80,45 @@ class Ui_newProducto(object):
         self.formLayout_2 = QFormLayout()
         self.formLayout_2.setObjectName(u"formLayout_2")
         self.formLayout_2.setContentsMargins(40, -1, 25, -1)
-        self.lblNombre_2 = QLabel(newProducto)
-        self.lblNombre_2.setObjectName(u"lblNombre_2")
+        self.lblNombre = QLabel(newProducto)
+        self.lblNombre.setObjectName(u"lblNombre")
         sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.lblNombre_2.sizePolicy().hasHeightForWidth())
-        self.lblNombre_2.setSizePolicy(sizePolicy1)
+        sizePolicy1.setHeightForWidth(self.lblNombre.sizePolicy().hasHeightForWidth())
+        self.lblNombre.setSizePolicy(sizePolicy1)
         font1 = QFont()
         font1.setPointSize(10)
-        self.lblNombre_2.setFont(font1)
+        self.lblNombre.setFont(font1)
 
-        self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.lblNombre_2)
+        self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.lblNombre)
 
-        self.lnEditNombre_2 = QLineEdit(newProducto)
-        self.lnEditNombre_2.setObjectName(u"lnEditNombre_2")
+        self.lnEditNombre = QLineEdit(newProducto)
+        self.lnEditNombre.setObjectName(u"lnEditNombre")
 
-        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.lnEditNombre_2)
+        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.lnEditNombre)
 
-        self.lblPrecio_2 = QLabel(newProducto)
-        self.lblPrecio_2.setObjectName(u"lblPrecio_2")
-        self.lblPrecio_2.setFont(font1)
+        self.lblPrecio = QLabel(newProducto)
+        self.lblPrecio.setObjectName(u"lblPrecio")
+        self.lblPrecio.setFont(font1)
 
-        self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.lblPrecio_2)
+        self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.lblPrecio)
 
-        self.lnEditPrecio_2 = QLineEdit(newProducto)
-        self.lnEditPrecio_2.setObjectName(u"lnEditPrecio_2")
+        self.lnEditPrecio = QLineEdit(newProducto)
+        self.lnEditPrecio.setObjectName(u"lnEditPrecio")
 
-        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.lnEditPrecio_2)
+        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.lnEditPrecio)
 
-        self.lblDistr_2 = QLabel(newProducto)
-        self.lblDistr_2.setObjectName(u"lblDistr_2")
-        self.lblDistr_2.setFont(font1)
+        self.lblDistr = QLabel(newProducto)
+        self.lblDistr.setObjectName(u"lblDistr")
+        self.lblDistr.setFont(font1)
 
-        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.lblDistr_2)
+        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.lblDistr)
 
-        self.comboxDistr_2 = QComboBox(newProducto)
-        self.comboxDistr_2.setObjectName(u"comboxDistr_2")
+        self.comboxDistr = QComboBox(newProducto)
+        self.comboxDistr.setObjectName(u"comboxDistr")
 
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.comboxDistr_2)
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.comboxDistr)
 
 
         self.gridLayout.addLayout(self.formLayout_2, 1, 0, 1, 1)
@@ -139,11 +139,11 @@ class Ui_newProducto(object):
     # setupUi
 
     def retranslateUi(self, newProducto):
-        newProducto.setWindowTitle(QCoreApplication.translate("newProducto", u"Nuevo Proveedor", None))
+        newProducto.setWindowTitle(QCoreApplication.translate("newProducto", u"Nuevo Producto", None))
         self.Cartelito_NewProducto.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:400;\">Ingrese los </span><span style=\" font-size:11pt;\">datos</span><span style=\" font-size:11pt; font-weight:400;\"> solicitados:</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Los campos se\u00f1alados con <span style=\" color:#ff0000;\">*</span> son obligatorios. </p></body></html>", None))
-        self.lblNombre_2.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Nombre<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.lblPrecio_2.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Precio unitario<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.lblDistr_2.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Distribuidor <span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblNombre.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Nombre<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblPrecio.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Precio unitario<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblDistr.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Distribuidor <span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
     # retranslateUi
 
