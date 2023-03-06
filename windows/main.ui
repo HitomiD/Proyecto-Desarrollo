@@ -217,7 +217,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tabInventario">
      <attribute name="title">
@@ -265,6 +265,9 @@ color:black;</string>
         </property>
         <property name="selectionMode">
          <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="textElideMode">
          <enum>Qt::ElideMiddle</enum>
@@ -368,7 +371,7 @@ color:black;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnNuevoProveedor_3">
+         <widget class="QPushButton" name="btnNuevoProducto">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -415,7 +418,7 @@ height:25%;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnModProveedor_3">
+         <widget class="QPushButton" name="btnModProducto">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -456,7 +459,7 @@ height:25%;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnElimProveedor_4">
+         <widget class="QPushButton" name="btnElimProducto">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -545,6 +548,9 @@ color:black;</string>
          </property>
          <property name="alternatingRowColors">
           <bool>true</bool>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
          </property>
          <attribute name="horizontalHeaderVisible">
           <bool>true</bool>
@@ -967,6 +973,9 @@ height:25%;</string>
         <property name="alternatingRowColors">
          <bool>true</bool>
         </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
         <property name="wordWrap">
          <bool>false</bool>
         </property>
@@ -1023,7 +1032,7 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnNuevoProveedor_2">
+        <widget class="QPushButton" name="btnNuevoIngreso">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -1069,7 +1078,7 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnModProveedor_2">
+        <widget class="QPushButton" name="btnModIngreso">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -1109,7 +1118,7 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnElimProveedor_3">
+        <widget class="QPushButton" name="btnElimIngreso">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -1222,6 +1231,9 @@ color:black;</string>
        </property>
        <property name="alternatingRowColors">
         <bool>true</bool>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
        </property>
        <property name="showGrid">
         <bool>true</bool>

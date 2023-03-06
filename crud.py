@@ -87,4 +87,11 @@ def poblarQTableIngresos(tabla):
         itemStock = QTableWidgetItem()
         itemStock.setData(0,"nombre proveedor") #placeholder
         tabla.setItem(index,2,itemStock)
+
+#Retorna una lista de proveedores para la comboBox de la ventana para añadir un producto.
+def listaProveedores():
+    listaProveedores = (Proveedores
+                      .select(Proveedores.cuil_cuit,Proveedores.razonsocial)
+                      .namedtuples()) #namedtuples() es para retornar un diccionario.
+    return listaProveedores
     

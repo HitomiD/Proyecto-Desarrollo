@@ -1,63 +1,81 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
 from PySide6.QtCore import Signal,Slot, QLocale
-from PySide6.QtGui import QDoubleValidator
+from PySide6.QtGui import QDoubleValidator,QIntValidator
 from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
 from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
 
-from dbModel import Productos
+from dbModel import Productos,Proveedores
 import crud
 
 #Este archivo contiene las definiciones de todas las ventanas (y sus funciones) del sistema
 
-#DEFINICIONES DE VENTANAS
+#Las funciones asociadas a eventos deben estar definidas dentro de la misma definicion de la ventana, sino no funcionan.
 
 
-#Nuevo producto
+#Popup nuevo producto
 class VentanaCarga(QDialog) :
     
+    #La señal de guardado se emite en un guardado exitoso para disparar la actualizacion de la tabla.
     guardado = Signal()
     
     def __init__(self):
         super(VentanaCarga,self).__init__()
         self.ui = Ui_newProducto()
         self.ui.setupUi(self)
+        #Validadores para campos:
         self.floatValidator = QDoubleValidator()
         self.floatValidator.setBottom(0)
         self.floatValidator.setDecimals(2)
         self.floatValidator.setLocale(QLocale.Language.Spanish)
         self.ui.lnEditPrecio.setValidator(self.floatValidator)
-        #self.accepted.connect(print("se ha tocado el boton aceptar"))
-        #self.rejected.connect(print("se toco el boton cancelar"))
-        self.ui.buttonBox.accepted.connect(self.guardarProveedor)
+        self.intValidator = QIntValidator()
+        self.intValidator.setBottom(0)
+        self.intValidator.setLocale(QLocale.Language.Spanish)
+        self.ui.lnEditStockMinimo.setValidator(self.intValidator)
+        #Fin Validadores
+        self.comboBoxSetup()
+        self.ui.buttonBox.accepted.connect(self.guardarProducto)
+
+    def comboBoxSetup(self):
+        listaProveedores = crud.listaProveedores()
+        for index,proveedor in enumerate(listaProveedores):
+            self.ui.comboxDistr.addItem(proveedor.razonsocial)
+        
     
-    #las funciones asociadas a eventos deben estar todas definidas dentro de la misma definicion de la clase de la ventana.
-    def guardarProveedor(self):
-        if self.fieldCheck() == "ok":
-            nuevoProducto = Productos
+    #Guardar proveedor
+    def guardarProducto(self):
+        if self.fieldCheckProducto() == "ok":
+            nuevoProducto = Productos() #"Productos" es el nombre del modelo de la tabla
+            
+            #Se extraen los datos de los campos de la ventana
             nuevoProducto.descripcion = self.ui.lnEditNombre.text()
             precio = self.ui.lnEditPrecio.text()
             nuevoProducto.precio_venta = float(precio)
-            #proveedor de prueba hasta que se implemente el dropdown
-            nuevoProducto.cuil_cuit_proveedor = 20237852347
-            #No se va a implementar el guardado hasta que se haya implementado un control de datos ingresados
-            #nuevoProducto.save()
+            nuevoProducto.stock_minimo = int(self.ui.lnEditStockMinimo.text())
+            cuil_cuit_proveedor = Proveedores.select(Proveedores.cuil_cuit).where(self.ui.comboxDistr.currentText() == Proveedores.razonsocial).get()
+            nuevoProducto.cuil_cuit_proveedor = cuil_cuit_proveedor
+            
+            nuevoProducto.save()
+            
             self.guardado.emit()
             self.accept()
     
-    def fieldCheck(self):
+    #Validacion de datos en los campos
+    def fieldCheckProducto(self):
         if self.ui.lnEditPrecio.hasAcceptableInput():
             print ("el precio es valido")
             if self.ui.lnEditNombre.text() != "":
-                print ("los datos son validos")
-                return "ok"
-        #De ser correctos los datos no se ejecuta lo siguiente
+                print ("la descripción es válida")
+                if self.ui.lnEditStockMinimo.text() != "":
+                    print("El stock mínimo es válido")
+                    if self.ui.comboxDistr.currentText() != "":
+                        print("El distribuidor es válido. Todos los datos son válidos.")
+                        return "ok"
+        #Si alguno de los datos es incorrecto se falla el check
         self.popupDatosInv =popupDatosInvalidos()
         self.popupDatosInv.show()
-        print("los datos son inválidos")        
-    
-    #Guardar producto en la base de datos
-    
+        
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow) :
@@ -79,10 +97,10 @@ class VentanaPrincipal(QMainWindow) :
         self.w.show()
     
     def actualizarTabla(self):
-        print("actualizar tabla lol")
+        crud.poblarQTableInventario(self.ui.tablaInventario)
     #FIN VENTANA PRUEBA     
         
-
+#Popup datos ingresados inválidos
 class popupDatosInvalidos(QDialog) :
         
     def __init__(self):

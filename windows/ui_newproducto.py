@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproducto.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ class Ui_newProducto(object):
     def setupUi(self, newProducto):
         if not newProducto.objectName():
             newProducto.setObjectName(u"newProducto")
-        newProducto.resize(427, 203)
+        newProducto.resize(427, 229)
         newProducto.setFocusPolicy(Qt.StrongFocus)
         self.verticalLayout = QVBoxLayout(newProducto)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -113,12 +113,22 @@ class Ui_newProducto(object):
         self.lblDistr.setObjectName(u"lblDistr")
         self.lblDistr.setFont(font1)
 
-        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.lblDistr)
+        self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.lblDistr)
 
         self.comboxDistr = QComboBox(newProducto)
         self.comboxDistr.setObjectName(u"comboxDistr")
 
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.comboxDistr)
+        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.comboxDistr)
+
+        self.lnEditStockMinimo = QLineEdit(newProducto)
+        self.lnEditStockMinimo.setObjectName(u"lnEditStockMinimo")
+
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.lnEditStockMinimo)
+
+        self.label = QLabel(newProducto)
+        self.label.setObjectName(u"label")
+
+        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.label)
 
 
         self.gridLayout.addLayout(self.formLayout_2, 1, 0, 1, 1)
@@ -146,5 +156,6 @@ class Ui_newProducto(object):
         self.lblNombre.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Nombre<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblPrecio.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Precio unitario<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblDistr.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Distribuidor <span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Stock minimo<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
     # retranslateUi
 

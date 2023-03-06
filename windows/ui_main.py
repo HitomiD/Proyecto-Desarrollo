@@ -157,6 +157,7 @@ class Ui_MenuPrincipal(object):
         self.tablaInventario.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaInventario.setAlternatingRowColors(True)
         self.tablaInventario.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tablaInventario.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tablaInventario.setTextElideMode(Qt.ElideMiddle)
         self.tablaInventario.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
         self.tablaInventario.setRowCount(0)
@@ -286,6 +287,7 @@ class Ui_MenuPrincipal(object):
         self.tablaProveedores.setAutoScroll(True)
         self.tablaProveedores.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaProveedores.setAlternatingRowColors(True)
+        self.tablaProveedores.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tablaProveedores.horizontalHeader().setVisible(True)
         self.tablaProveedores.horizontalHeader().setCascadingSectionResizes(True)
         self.tablaProveedores.horizontalHeader().setMinimumSectionSize(0)
@@ -461,6 +463,7 @@ class Ui_MenuPrincipal(object):
         self.tablaIngresosDetalle.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tablaIngresosDetalle.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaIngresosDetalle.setAlternatingRowColors(True)
+        self.tablaIngresosDetalle.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tablaIngresosDetalle.setWordWrap(False)
         self.tablaIngresosDetalle.setCornerButtonEnabled(False)
         self.tablaIngresosDetalle.verticalHeader().setVisible(False)
@@ -473,51 +476,51 @@ class Ui_MenuPrincipal(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer_21)
 
-        self.btnNuevoProveedor_2 = QPushButton(self.widget)
-        self.btnNuevoProveedor_2.setObjectName(u"btnNuevoProveedor_2")
-        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor_2.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor_2.setSizePolicy(sizePolicy2)
-        self.btnNuevoProveedor_2.setMinimumSize(QSize(150, 0))
-        self.btnNuevoProveedor_2.setFont(font4)
-        self.btnNuevoProveedor_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnNuevoProveedor_2.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
+        self.btnNuevoIngreso = QPushButton(self.widget)
+        self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
+        sizePolicy2.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
+        self.btnNuevoIngreso.setSizePolicy(sizePolicy2)
+        self.btnNuevoIngreso.setMinimumSize(QSize(150, 0))
+        self.btnNuevoIngreso.setFont(font4)
+        self.btnNuevoIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnNuevoIngreso.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(30, 30, 30);\n"
 "border-radius:5px;\n"
 "height:25%;")
 
-        self.horizontalLayout.addWidget(self.btnNuevoProveedor_2)
+        self.horizontalLayout.addWidget(self.btnNuevoIngreso)
 
         self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_19)
 
-        self.btnModProveedor_2 = QPushButton(self.widget)
-        self.btnModProveedor_2.setObjectName(u"btnModProveedor_2")
-        self.btnModProveedor_2.setMinimumSize(QSize(150, 0))
-        self.btnModProveedor_2.setFont(font4)
-        self.btnModProveedor_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModProveedor_2.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
+        self.btnModIngreso = QPushButton(self.widget)
+        self.btnModIngreso.setObjectName(u"btnModIngreso")
+        self.btnModIngreso.setMinimumSize(QSize(150, 0))
+        self.btnModIngreso.setFont(font4)
+        self.btnModIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnModIngreso.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(30, 30, 30);\n"
 "border-radius:5px;\n"
 "height:25%;")
 
-        self.horizontalLayout.addWidget(self.btnModProveedor_2)
+        self.horizontalLayout.addWidget(self.btnModIngreso)
 
         self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_20)
 
-        self.btnElimProveedor_3 = QPushButton(self.widget)
-        self.btnElimProveedor_3.setObjectName(u"btnElimProveedor_3")
-        self.btnElimProveedor_3.setMinimumSize(QSize(150, 0))
-        self.btnElimProveedor_3.setFont(font4)
-        self.btnElimProveedor_3.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimProveedor_3.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
+        self.btnElimIngreso = QPushButton(self.widget)
+        self.btnElimIngreso.setObjectName(u"btnElimIngreso")
+        self.btnElimIngreso.setMinimumSize(QSize(150, 0))
+        self.btnElimIngreso.setFont(font4)
+        self.btnElimIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimIngreso.setStyleSheet(u"background-color: rgb(200, 200, 200);\n"
 "color: rgb(30, 30, 30);\n"
 "border-radius:5px;\n"
 "height:25%;")
 
-        self.horizontalLayout.addWidget(self.btnElimProveedor_3)
+        self.horizontalLayout.addWidget(self.btnElimIngreso)
 
         self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -552,6 +555,7 @@ class Ui_MenuPrincipal(object):
         self.tablaIngresos.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tablaIngresos.setTabKeyNavigation(False)
         self.tablaIngresos.setAlternatingRowColors(True)
+        self.tablaIngresos.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tablaIngresos.setShowGrid(True)
         self.tablaIngresos.setGridStyle(Qt.SolidLine)
         self.tablaIngresos.setSortingEnabled(False)
@@ -600,7 +604,7 @@ class Ui_MenuPrincipal(object):
 
         self.retranslateUi(MenuPrincipal)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MenuPrincipal)
@@ -664,9 +668,9 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
         ___qtablewidgetitem16 = self.tablaIngresosDetalle.horizontalHeaderItem(3)
         ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"Precio total", None));
-        self.btnNuevoProveedor_2.setText(QCoreApplication.translate("MenuPrincipal", u"Nuevo", None))
-        self.btnModProveedor_2.setText(QCoreApplication.translate("MenuPrincipal", u"Modificar", None))
-        self.btnElimProveedor_3.setText(QCoreApplication.translate("MenuPrincipal", u"Eliminar", None))
+        self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"Nuevo", None))
+        self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"Modificar", None))
+        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"Eliminar", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         ___qtablewidgetitem17 = self.tablaIngresos.horizontalHeaderItem(0)
         ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
