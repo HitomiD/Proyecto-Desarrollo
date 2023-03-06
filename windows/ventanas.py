@@ -88,7 +88,10 @@ class VentanaPrincipal(QMainWindow) :
     #   self.w = None
     #     #BOTONES INVENTARIO
     #     #Abrir ventana de carga
+    
+        #Conectar botones
         self.ui.btnNuevoProducto.clicked.connect(self.nuevoProducto)
+        self.ui.btnElimProducto.clicked.connect(self.eliminarProducto)
         
     def nuevoProducto(self):
         self.w = VentanaCarga()
@@ -96,9 +99,16 @@ class VentanaPrincipal(QMainWindow) :
         #self.w.guardado.connect(crud.poblarQTableIngresos(self.ui.tablaIngresos))
         self.w.show()
     
+    def eliminarProducto(self):
+        row = self.ui.tablaInventario.currentRow()
+        idProducto = int(self.ui.tablaInventario.item(row,0).text())
+        crud.eliminarProducto(idProducto)
+        self.actualizarTabla()
+        self.actualizarTabla()
+        
+            
     def actualizarTabla(self):
         crud.poblarQTableInventario(self.ui.tablaInventario)
-    #FIN VENTANA PRUEBA     
         
 #Popup datos ingresados inválidos
 class popupDatosInvalidos(QDialog) :

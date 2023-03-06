@@ -94,4 +94,7 @@ def listaProveedores():
                       .select(Proveedores.cuil_cuit,Proveedores.razonsocial)
                       .namedtuples()) #namedtuples() es para retornar un diccionario.
     return listaProveedores
-    
+
+def eliminarProducto(idProducto):
+    qry=Productos.delete().where(Productos.id == idProducto)
+    qry.execute()
