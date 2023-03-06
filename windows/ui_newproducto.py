@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproducto.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -132,7 +132,8 @@ class Ui_newProducto(object):
 
 
         self.retranslateUi(newProducto)
-        self.buttonBox.accepted.connect(newProducto.accept)
+        #se reconecto buttonbox.accepted a la funcion fieldCheck en ventanas.py
+        #self.buttonBox.accepted.connect(newProducto.accept)
         self.buttonBox.rejected.connect(newProducto.reject)
 
         QMetaObject.connectSlotsByName(newProducto)

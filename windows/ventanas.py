@@ -1,8 +1,10 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
 from PySide6.QtCore import Signal,Slot, QLocale
 from PySide6.QtGui import QDoubleValidator
+from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
 from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
+
 from dbModel import Productos
 import crud
 
@@ -41,15 +43,18 @@ class VentanaCarga(QDialog) :
             #No se va a implementar el guardado hasta que se haya implementado un control de datos ingresados
             #nuevoProducto.save()
             self.guardado.emit()
+            self.accept()
     
     def fieldCheck(self):
         if self.ui.lnEditPrecio.hasAcceptableInput():
             print ("el precio es valido")
-            if self.ui.lnEditNombre != "":
+            if self.ui.lnEditNombre.text() != "":
                 print ("los datos son validos")
                 return "ok"
-        else:
-            print("los datos son inválidos")        
+        #De ser correctos los datos no se ejecuta lo siguiente
+        self.popupDatosInv =popupDatosInvalidos()
+        self.popupDatosInv.show()
+        print("los datos son inválidos")        
     
     #Guardar producto en la base de datos
     
@@ -78,3 +83,9 @@ class VentanaPrincipal(QMainWindow) :
     #FIN VENTANA PRUEBA     
         
 
+class popupDatosInvalidos(QDialog) :
+        
+    def __init__(self):
+        super(popupDatosInvalidos,self).__init__()
+        self.ui = Ui_popupDatosInvalidos()
+        self.ui.setupUi(self)
