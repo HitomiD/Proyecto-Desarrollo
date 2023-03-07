@@ -94,7 +94,7 @@ class VentanaEditar(formularioProducto):
       
         
 #Ventana principal
-class VentanaPrincipal(QMainWindow) :
+class VentanaPrincipal(QMainWindow):
     def __init__(self):
         super(VentanaPrincipal, self).__init__()
         self.ui = Ui_MenuPrincipal()    
@@ -142,7 +142,7 @@ class VentanaPrincipal(QMainWindow) :
         self.modWindow.ui.lnEditStockMinimo.setText(str(stockMinActual))
         self.modWindow.ui.comboxDistr.setCurrentText(nombreProveedorActual)
         self.modWindow.accepted.connect(self.editConfirmado)
-        self.modWindow.show()
+        self.modWindow.exec_()
     
     def editConfirmado(self):
         row = self.ui.tablaInventario.currentRow()
