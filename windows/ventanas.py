@@ -4,6 +4,7 @@ from PySide6.QtGui import QDoubleValidator,QIntValidator
 from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
 from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
+from windows.ui_confirmElimProd import Ui_confirmElimProducto
 
 from dbModel import Productos,Proveedores
 import crud
@@ -99,14 +100,20 @@ class VentanaPrincipal(QMainWindow) :
         #self.w.guardado.connect(crud.poblarQTableIngresos(self.ui.tablaIngresos))
         self.w.show()
     
+    #Muestra el popup de confirmacion para eliminar
     def eliminarProducto(self):
+        self.popupConfirmacion = popupConfirmElim()
+        self.popupConfirmacion.accepted.connect(self.eliminarProductoConfirmado)
+        self.popupConfirmacion.exec_()
+    
+    #Elimina el producto si el proceso se confirma
+    def eliminarProductoConfirmado(self):
         row = self.ui.tablaInventario.currentRow()
         idProducto = int(self.ui.tablaInventario.item(row,0).text())
         crud.eliminarProducto(idProducto)
         self.actualizarTabla()
-        self.actualizarTabla()
-        
-            
+    
+    #Actualiza tabla
     def actualizarTabla(self):
         crud.poblarQTableInventario(self.ui.tablaInventario)
         
@@ -116,4 +123,12 @@ class popupDatosInvalidos(QDialog) :
     def __init__(self):
         super(popupDatosInvalidos,self).__init__()
         self.ui = Ui_popupDatosInvalidos()
+        self.ui.setupUi(self)
+        
+#Popup confirmacion eliminar producto
+class popupConfirmElim(QDialog) :
+        
+    def __init__(self):
+        super(popupConfirmElim,self).__init__()
+        self.ui = Ui_confirmElimProducto()
         self.ui.setupUi(self)
