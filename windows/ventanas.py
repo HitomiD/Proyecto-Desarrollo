@@ -29,6 +29,7 @@ class VentanaCarga(QDialog) :
         self.floatValidator.setBottom(0)
         self.floatValidator.setDecimals(2)
         self.floatValidator.setLocale(QLocale.Language.Spanish)
+        self.floatValidator.setNotation(QDoubleValidator.StandardNotation)
         self.ui.lnEditPrecio.setValidator(self.floatValidator)
         self.intValidator = QIntValidator()
         self.intValidator.setBottom(0)
@@ -51,8 +52,8 @@ class VentanaCarga(QDialog) :
             
             #Se extraen los datos de los campos de la ventana
             nuevoProducto.descripcion = self.ui.lnEditNombre.text()
-            precio = self.ui.lnEditPrecio.text()
-            nuevoProducto.precio_venta = float(precio)
+            precio = self.ui.lnEditPrecio.text().replace(",",".") #se reemplaza la coma por el punto para que el interprete lo reconozca como float
+            nuevoProducto.precio_venta = precio
             nuevoProducto.stock_minimo = int(self.ui.lnEditStockMinimo.text())
             cuil_cuit_proveedor = Proveedores.select(Proveedores.cuil_cuit).where(self.ui.comboxDistr.currentText() == Proveedores.razonsocial).get()
             nuevoProducto.cuil_cuit_proveedor = cuil_cuit_proveedor
