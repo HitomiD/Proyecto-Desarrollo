@@ -58,9 +58,9 @@ class formularioProducto(QDialog) :
         self.popupDatosInv.exec_()
 
 #Popup nuevo producto
-class VentanaCarga(formularioProducto):
+class VentanaNewProducto(formularioProducto):
     def __init__(self):
-        super(VentanaCarga,self).__init__()
+        super(VentanaNewProducto,self).__init__()
         self.ui.buttonBox.accepted.connect(self.guardarProducto)
     
     #Guardar producto
@@ -81,9 +81,9 @@ class VentanaCarga(formularioProducto):
             self.guardado.emit()
             self.accept()
         
-class VentanaEditar(formularioProducto):
+class VentanaEditProducto(formularioProducto):
     def __init__(self):
-        super(VentanaEditar,self).__init__()
+        super(VentanaEditProducto,self).__init__()
         self.ui.buttonBox.accepted.connect(self.comprobarCampos)
 
     def comprobarCampos(self):
@@ -99,37 +99,35 @@ class VentanaPrincipal(QMainWindow):
         super(VentanaPrincipal, self).__init__()
         self.ui = Ui_MenuPrincipal()    
         self.ui.setupUi(self)
-    
-    #TAB INVENTARIO
+
         #Conectar botones
-        self.ui.btnNuevoProducto.clicked.connect(self.nuevoProducto)
-        self.ui.btnElimProducto.clicked.connect(self.eliminarProducto)
-        self.ui.btnModProducto.clicked.connect(self.editarProducto)
+        self.ui.btnNuevoProducto.clicked.connect(self.showNewProd)
+        self.ui.btnElimProducto.clicked.connect(self.showEliminarProd)
+        self.ui.btnModProducto.clicked.connect(self.showEditProd)
         
-    def nuevoProducto(self):
-        self.w = VentanaCarga()
-        self.w.guardado.connect(self.actualizarTabla)
+    def showNewProd(self):
+        self.w = VentanaNewProducto()
+        self.w.guardado.connect(self.updateTablaInventario)
         #self.w.guardado.connect(crud.poblarQTableIngresos(self.ui.tablaIngresos))
         self.w.show()
     
-    #Muestra el popup de confirmacion para eliminar
-    def eliminarProducto(self):
+    def showEliminarProd(self):
         self.popupConfirmacion = popupConfirmElim()
-        self.popupConfirmacion.accepted.connect(self.eliminarProductoConfirmado)
+        self.popupConfirmacion.accepted.connect(self.eliminarProducto)
         self.popupConfirmacion.exec_()
     
     #Elimina el producto si el proceso se confirma
-    def eliminarProductoConfirmado(self):
+    def eliminarProducto(self):
         row = self.ui.tablaInventario.currentRow()
         idProducto = int(self.ui.tablaInventario.item(row,0).text())
         crud.eliminarProducto(idProducto)
-        self.actualizarTabla()
+        self.updateTablaInventario()
     
     #Editar producto
-    def editarProducto(self):
-        self.modWindow = VentanaEditar()
+    def showEditProd(self):
+        self.modWindow = VentanaEditProducto()
         self.modWindow.setWindowTitle("Editar producto")
-        self.modWindow.guardado.connect(self.actualizarTabla)
+        self.modWindow.guardado.connect(self.updateTablaInventario)
         row = self.ui.tablaInventario.currentRow()
         descActual = self.ui.tablaInventario.item(row,1).text()
         #stockNuevo = int(self.ui.tablaInventario.item(row,2).text())
@@ -141,10 +139,11 @@ class VentanaPrincipal(QMainWindow):
         self.modWindow.ui.lnEditPrecio.setText(precio.replace(".",","))
         self.modWindow.ui.lnEditStockMinimo.setText(str(stockMinActual))
         self.modWindow.ui.comboxDistr.setCurrentText(nombreProveedorActual)
-        self.modWindow.accepted.connect(self.editConfirmado)
+        self.modWindow.accepted.connect(self.editProducto)
         self.modWindow.exec_()
     
-    def editConfirmado(self):
+    def editProducto(self):
+        #Id del producto seleccionado
         row = self.ui.tablaInventario.currentRow()
         idActual = int(self.ui.tablaInventario.item(row,0).text())
         #Obtener datos nuevos
@@ -156,19 +155,17 @@ class VentanaPrincipal(QMainWindow):
                             .select(Proveedores.cuil_cuit)
                             .where(Proveedores.razonsocial == self.modWindow.ui.comboxDistr.currentText())
                             .get())
-        #Update con los datos nuevos
-        print("El id del producto a modificar es "+str(idActual))
+        #Update query
         qry =(Productos
          .update(descripcion = descNueva,stock_minimo = stockMinNuevo,precio_venta = precioNuevo, cuil_cuit_proveedor = proveedorNuevo)
          .where(Productos.id == idActual))
         qry.execute()
         
-        self.actualizarTabla()
+        self.updateTablaInventario()
     
     #Actualiza tabla
-    def actualizarTabla(self):
+    def updateTablaInventario(self):
         crud.poblarQTableInventario(self.ui.tablaInventario)
-    #FIN TAB INVENTARIO
   
 #Popup datos ingresados inválidos
 class popupDatosInvalidos(QDialog) :
