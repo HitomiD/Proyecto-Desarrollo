@@ -1,5 +1,11 @@
 #ignore all cache files
 *.pyc
 
+#ignore all database files
+*.db
+
+#ignore all designer resource files
+rc_*.py
+
 #ignore __pycache__ folder
 __pycache__/
