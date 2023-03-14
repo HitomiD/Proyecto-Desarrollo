@@ -6,18 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>134</height>
+    <width>273</width>
+    <height>96</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>96</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>[Alerta] Datos Invalidos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/Alert.png</normaloff>../assets/Alert.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="datosInvalidos">
      <property name="text">
-      <string>Los datos ingresados no son válidos.</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Los datos ingresados no son válidos. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Por favor, ingrese datos validos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>

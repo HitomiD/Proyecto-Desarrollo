@@ -7,11 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>409</width>
-    <height>270</height>
+    <height>212</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>409</width>
+    <height>212</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Nuevo Proveedor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/Logo_Ventanas.png</normaloff>../assets/Logo_Ventanas.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -47,7 +57,7 @@
         <widget class="QLabel" name="label_15">
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -57,7 +67,7 @@ color: black;
 align-items: center;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ingrese los &lt;span style=&quot; font-weight:700;&quot;&gt;datos&lt;/span&gt; solicitados:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ingrese los datos solicitados:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -82,7 +92,7 @@ align-items: center;</string>
         <widget class="QLabel" name="label_11">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="text">
@@ -97,7 +107,7 @@ align-items: center;</string>
         <widget class="QLabel" name="label_12">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="text">
@@ -112,7 +122,7 @@ align-items: center;</string>
         <widget class="QLabel" name="label_13">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="text">
@@ -130,7 +140,7 @@ align-items: center;</string>
         <widget class="QLabel" name="label_14">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="styleSheet">
