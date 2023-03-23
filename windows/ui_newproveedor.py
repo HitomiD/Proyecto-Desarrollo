@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproveedor.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,86 +23,107 @@ class Ui_newProveedor(object):
     def setupUi(self, newProveedor):
         if not newProveedor.objectName():
             newProveedor.setObjectName(u"newProveedor")
-        newProveedor.resize(309, 230)
+        newProveedor.resize(409, 270)
         self.verticalLayout = QVBoxLayout(newProveedor)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout.addItem(self.verticalSpacer)
-
-        self.formLayout_3 = QFormLayout()
-        self.formLayout_3.setObjectName(u"formLayout_3")
-        self.label_11 = QLabel(newProveedor)
-        self.label_11.setObjectName(u"label_11")
-
-        self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.label_11)
-
-        self.lineEdit_9 = QLineEdit(newProveedor)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
-
-        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.lineEdit_9)
-
-        self.label_12 = QLabel(newProveedor)
-        self.label_12.setObjectName(u"label_12")
-
-        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.label_12)
-
-        self.lineEdit_10 = QLineEdit(newProveedor)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-
-        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.lineEdit_10)
-
-        self.label_13 = QLabel(newProveedor)
-        self.label_13.setObjectName(u"label_13")
-
-        self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.label_13)
-
-        self.lineEdit_11 = QLineEdit(newProveedor)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-
-        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lineEdit_11)
-
-        self.lineEdit_12 = QLineEdit(newProveedor)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
-
-        self.formLayout_3.setWidget(4, QFormLayout.FieldRole, self.lineEdit_12)
-
-        self.label_14 = QLabel(newProveedor)
-        self.label_14.setObjectName(u"label_14")
-        self.label_14.setStyleSheet(u"")
-
-        self.formLayout_3.setWidget(4, QFormLayout.LabelRole, self.label_14)
-
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(20, -1, 20, 0)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(-1, -1, -1, 0)
         self.label_15 = QLabel(newProveedor)
         self.label_15.setObjectName(u"label_15")
+        font = QFont()
+        font.setPointSize(12)
+        self.label_15.setFont(font)
         self.label_15.setStyleSheet(u"display: flex;\n"
 "background-color: transparent;\n"
 "color: black;\n"
 "align-items: center;")
 
-        self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.label_15)
+        self.verticalLayout_2.addWidget(self.label_15)
 
 
-        self.verticalLayout.addLayout(self.formLayout_3)
+        self.verticalLayout_3.addLayout(self.verticalLayout_2)
 
         self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout.addItem(self.verticalSpacer_4)
+        self.verticalLayout_3.addItem(self.verticalSpacer_4)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.formLayout_3 = QFormLayout()
+        self.formLayout_3.setObjectName(u"formLayout_3")
+        self.lblRazonSocial = QLabel(newProveedor)
+        self.lblRazonSocial.setObjectName(u"lblRazonSocial")
+        font1 = QFont()
+        font1.setPointSize(10)
+        self.lblRazonSocial.setFont(font1)
 
-        self.verticalLayout.addItem(self.verticalSpacer_3)
+        self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.lblRazonSocial)
+
+        self.lnEditRazonSocial = QLineEdit(newProveedor)
+        self.lnEditRazonSocial.setObjectName(u"lnEditRazonSocial")
+
+        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.lnEditRazonSocial)
+
+        self.lblDireccion = QLabel(newProveedor)
+        self.lblDireccion.setObjectName(u"lblDireccion")
+        self.lblDireccion.setFont(font1)
+
+        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.lblDireccion)
+
+        self.lnEditDireccion = QLineEdit(newProveedor)
+        self.lnEditDireccion.setObjectName(u"lnEditDireccion")
+
+        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.lnEditDireccion)
+
+        self.lblTelefono = QLabel(newProveedor)
+        self.lblTelefono.setObjectName(u"lblTelefono")
+        self.lblTelefono.setFont(font1)
+
+        self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.lblTelefono)
+
+        self.lnEditTelefono = QLineEdit(newProveedor)
+        self.lnEditTelefono.setObjectName(u"lnEditTelefono")
+
+        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lnEditTelefono)
+
+        self.lnEditEmail = QLineEdit(newProveedor)
+        self.lnEditEmail.setObjectName(u"lnEditEmail")
+
+        self.formLayout_3.setWidget(4, QFormLayout.FieldRole, self.lnEditEmail)
+
+        self.lblEmail = QLabel(newProveedor)
+        self.lblEmail.setObjectName(u"lblEmail")
+        self.lblEmail.setFont(font1)
+        self.lblEmail.setStyleSheet(u"")
+
+        self.formLayout_3.setWidget(4, QFormLayout.LabelRole, self.lblEmail)
+
+
+        self.verticalLayout_3.addLayout(self.formLayout_3)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer)
 
         self.buttonBox = QDialogButtonBox(newProveedor)
         self.buttonBox.setObjectName(u"buttonBox")
         self.buttonBox.setOrientation(Qt.Horizontal)
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Save)
 
-        self.verticalLayout.addWidget(self.buttonBox)
+        self.verticalLayout_3.addWidget(self.buttonBox)
+
+
+        self.verticalLayout.addLayout(self.verticalLayout_3)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_3)
 
 
         self.retranslateUi(newProveedor)
@@ -114,10 +135,10 @@ class Ui_newProveedor(object):
 
     def retranslateUi(self, newProveedor):
         newProveedor.setWindowTitle(QCoreApplication.translate("newProveedor", u"Nuevo Proveedor", None))
-        self.label_11.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_12.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_13.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.label_14.setText(QCoreApplication.translate("newProveedor", u"E-Mail", None))
-        self.label_15.setText(QCoreApplication.translate("newProveedor", u"Agregar Proveedor", None))
+        self.label_15.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Ingrese los <span style=\" font-weight:700;\">datos</span> solicitados:</p></body></html>", None))
+        self.lblRazonSocial.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblDireccion.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblTelefono.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.lblEmail.setText(QCoreApplication.translate("newProveedor", u"E-Mail", None))
     # retranslateUi
 

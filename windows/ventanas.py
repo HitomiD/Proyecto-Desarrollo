@@ -1,10 +1,11 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
-from PySide6.QtCore import Signal,Slot, QLocale
+from PySide6.QtCore import Signal, QLocale
 from PySide6.QtGui import QDoubleValidator,QIntValidator
 from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
 from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
 from windows.ui_confirmElimProd import Ui_confirmElimProducto
+from windows.ui_newproveedor import Ui_newProveedor
 
 from dbModel import Productos,Proveedores
 import crud
@@ -91,7 +92,55 @@ class VentanaEditProducto(formularioProducto):
             #print (self.fieldCheckProducto())
             self.guardado.emit()
             self.accept()
-      
+
+class FormularioProveedor(QDialog):
+    
+    guardado = Signal()
+    
+    def __init__(self):
+        super(FormularioProveedor, self).__init__()
+        self.ui = Ui_newProveedor()
+        self.ui.setupUi(self)
+        #Validadores para campos:
+        self.intValidator = QIntValidator()
+        self.intValidator.setBottom(0)
+        self.intValidator.setLocale(QLocale.Language.Spanish)
+        self.ui.lnEditTelefono.setValidator(self.intValidator)
+        #Fin Validadores
+    
+    #Validacion de datos en los campos
+    def fieldCheckProveedor(self):
+        if self.ui.lblRazonSocial.text() != "":
+            print ("La razon social es válida")
+            if self.ui.lnEditDireccion.text() != "":
+                print ("la dirección es válida")
+                if self.ui.lnEditTelefono.hasAcceptableInput():
+                    print("El teléfono es válido. Todos los datos son válidos")
+                    return "ok"
+        #Si alguno de los datos es incorrecto se falla el check
+        self.popupDatosInv = popupDatosInvalidos()
+        self.popupDatosInv.exec_()
+
+class VentanaNewProveedor(FormularioProveedor):
+    def __init__(self):
+        super(VentanaNewProveedor, self).__init__()
+        self.ui.buttonBox.accepted.connect(self.guardarProveedor)
+    
+    #Guardar producto
+    def guardarProveedor(self):
+        if self.fieldCheckProveedor() == "ok":
+            nuevoProveedor = Proveedores() #"Proveedores" es el nombre del modelo de la tabla
+            #Se extraen los datos de los campos de la ventana
+            nuevoProveedor.razonsocial = self.ui.lnEditRazonSocial.text()
+            nuevoProveedor.direccion = self.ui.lnEditDireccion.text()
+            telefono = int(self.ui.lnEditTelefono.text())
+            if telefono != None:
+                nuevoProveedor.telefono = telefono
+            
+            nuevoProveedor.save()
+            
+            self.guardado.emit()
+            self.accept()
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
@@ -104,11 +153,11 @@ class VentanaPrincipal(QMainWindow):
         self.ui.btnNuevoProducto.clicked.connect(self.showNewProd)
         self.ui.btnElimProducto.clicked.connect(self.showEliminarProd)
         self.ui.btnModProducto.clicked.connect(self.showEditProd)
+        self.ui.btnNuevoProveedor.clicked.connect(self.showNewProv)
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
         self.w.guardado.connect(self.updateTablaInventario)
-        #self.w.guardado.connect(crud.poblarQTableIngresos(self.ui.tablaIngresos))
         self.w.show()
     
     def showEliminarProd(self):
@@ -163,9 +212,17 @@ class VentanaPrincipal(QMainWindow):
         
         self.updateTablaInventario()
     
-    #Actualiza tabla
+    def showNewProv(self):
+        self.newProv = VentanaNewProveedor()
+        self.newProv.guardado.connect(self.updateTablaProveedores)
+        self.newProv.show()
+    
+    #Actualiza tabla Inventario en main window
     def updateTablaInventario(self):
         crud.poblarQTableInventario(self.ui.tablaInventario)
+    
+    def updateTablaProveedores(self):
+        crud.poblarQTableProveedores(self.ui.tablaProveedores)
   
 #Popup datos ingresados inválidos
 class popupDatosInvalidos(QDialog) :
