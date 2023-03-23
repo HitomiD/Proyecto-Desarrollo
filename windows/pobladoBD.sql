@@ -5,6 +5,8 @@ INSERT INTO productos (descripcion,stock,stock_minimo,precio_venta) VALUES('Espr
 INSERT INTO productos (descripcion,stock,stock_minimo,precio_venta) VALUES('Kilmes 1L','60','20','250');
 
 INSERT INTO proveedores (CUIL_CUIT,razonsocial,direccion,telefono,email,nota) VALUES ('20237852347','Juan pablo','salta 234','2478342344','juanpablo@mail.com','bebidas');
+INSERT INTO proveedores (CUIL_CUIT,razonsocial,direccion,telefono,email,nota) VALUES ('111111111','Prueba Cuit','prueba 234','2478342344','prueba@mail.com','prueba');
+
 
 INSERT INTO ingresos (CUIL_CUIT_proveedor,fecha) VALUES('20237852347','12/12/22');
     

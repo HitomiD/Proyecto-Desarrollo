@@ -106,6 +106,7 @@ class FormularioProveedor(QDialog):
         self.intValidator.setBottom(0)
         self.intValidator.setLocale(QLocale.Language.Spanish)
         self.ui.lnEditTelefono.setValidator(self.intValidator)
+        self.ui.lnEditCUIT.setValidator(self.intValidator)
         #Fin Validadores
     
     #Validacion de datos en los campos
@@ -115,7 +116,9 @@ class FormularioProveedor(QDialog):
             if self.ui.lnEditDireccion.text() != "":
                 print ("la dirección es válida")
                 if self.ui.lnEditTelefono.hasAcceptableInput():
-                    print("El teléfono es válido. Todos los datos son válidos")
+                    print("El teléfono es válido.")
+                    if self.ui.lnEditCUIT.hasAcceptableInput():
+                        print("El CUIT/CUIL es válido. Todos los datos son válidos")
                     return "ok"
         #Si alguno de los datos es incorrecto se falla el check
         self.popupDatosInv = popupDatosInvalidos()
@@ -134,10 +137,11 @@ class VentanaNewProveedor(FormularioProveedor):
             nuevoProveedor.razonsocial = self.ui.lnEditRazonSocial.text()
             nuevoProveedor.direccion = self.ui.lnEditDireccion.text()
             telefono = int(self.ui.lnEditTelefono.text())
-            if telefono != None:
-                nuevoProveedor.telefono = telefono
-            
-            nuevoProveedor.save()
+            nuevoProveedor.telefono = telefono
+            CUIL_CUIT = int(self.ui.lnEditCUIT.text())
+            nuevoProveedor.cuil_cuit = CUIL_CUIT
+            print (nuevoProveedor.cuil_cuit)
+            nuevoProveedor.save(force_insert=True)
             
             self.guardado.emit()
             self.accept()

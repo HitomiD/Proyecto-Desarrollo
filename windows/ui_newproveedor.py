@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproveedor.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -74,35 +74,45 @@ class Ui_newProveedor(object):
         self.lblDireccion.setObjectName(u"lblDireccion")
         self.lblDireccion.setFont(font1)
 
-        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.lblDireccion)
+        self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.lblDireccion)
 
         self.lnEditDireccion = QLineEdit(newProveedor)
         self.lnEditDireccion.setObjectName(u"lnEditDireccion")
 
-        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.lnEditDireccion)
+        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lnEditDireccion)
 
         self.lblTelefono = QLabel(newProveedor)
         self.lblTelefono.setObjectName(u"lblTelefono")
         self.lblTelefono.setFont(font1)
 
-        self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.lblTelefono)
+        self.formLayout_3.setWidget(5, QFormLayout.LabelRole, self.lblTelefono)
 
         self.lnEditTelefono = QLineEdit(newProveedor)
         self.lnEditTelefono.setObjectName(u"lnEditTelefono")
 
-        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lnEditTelefono)
+        self.formLayout_3.setWidget(5, QFormLayout.FieldRole, self.lnEditTelefono)
 
         self.lnEditEmail = QLineEdit(newProveedor)
         self.lnEditEmail.setObjectName(u"lnEditEmail")
 
-        self.formLayout_3.setWidget(4, QFormLayout.FieldRole, self.lnEditEmail)
+        self.formLayout_3.setWidget(6, QFormLayout.FieldRole, self.lnEditEmail)
 
         self.lblEmail = QLabel(newProveedor)
         self.lblEmail.setObjectName(u"lblEmail")
         self.lblEmail.setFont(font1)
         self.lblEmail.setStyleSheet(u"")
 
-        self.formLayout_3.setWidget(4, QFormLayout.LabelRole, self.lblEmail)
+        self.formLayout_3.setWidget(6, QFormLayout.LabelRole, self.lblEmail)
+
+        self.labelCUIT = QLabel(newProveedor)
+        self.labelCUIT.setObjectName(u"labelCUIT")
+
+        self.formLayout_3.setWidget(7, QFormLayout.LabelRole, self.labelCUIT)
+
+        self.lnEditCUIT = QLineEdit(newProveedor)
+        self.lnEditCUIT.setObjectName(u"lnEditCUIT")
+
+        self.formLayout_3.setWidget(7, QFormLayout.FieldRole, self.lnEditCUIT)
 
 
         self.verticalLayout_3.addLayout(self.formLayout_3)
@@ -127,7 +137,7 @@ class Ui_newProveedor(object):
 
 
         self.retranslateUi(newProveedor)
-        self.buttonBox.accepted.connect(newProveedor.accept)
+        #self.buttonBox.accepted.connect(newProveedor.accept)
         self.buttonBox.rejected.connect(newProveedor.reject)
 
         QMetaObject.connectSlotsByName(newProveedor)
@@ -140,5 +150,6 @@ class Ui_newProveedor(object):
         self.lblDireccion.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblTelefono.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblEmail.setText(QCoreApplication.translate("newProveedor", u"E-Mail", None))
+        self.labelCUIT.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>CUIL/CUIT<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
     # retranslateUi
 

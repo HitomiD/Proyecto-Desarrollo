@@ -25,7 +25,8 @@ class Ingresos(BaseModel):
         table_name = 'Ingresos'
 
 class Proveedores(BaseModel):
-    cuil_cuit = AutoField(column_name='CUIL_CUIT')
+    #cuil_cuit = AutoField(column_name='CUIL_CUIT')
+    cuil_cuit = IntegerField(primary_key=True)
     direccion = TextField(null=True)
     email = TextField(null=True)
     nota = TextField(null=True)
