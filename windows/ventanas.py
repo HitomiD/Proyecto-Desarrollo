@@ -157,7 +157,9 @@ class VentanaPrincipal(QMainWindow):
         self.ui.btnNuevoProducto.clicked.connect(self.showNewProd)
         self.ui.btnElimProducto.clicked.connect(self.showEliminarProd)
         self.ui.btnModProducto.clicked.connect(self.showEditProd)
+        
         self.ui.btnNuevoProveedor.clicked.connect(self.showNewProv)
+        self.ui.btnElimProveedor.clicked.connect(self.showEliminarProv)
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
@@ -220,6 +222,18 @@ class VentanaPrincipal(QMainWindow):
         self.newProv = VentanaNewProveedor()
         self.newProv.guardado.connect(self.updateTablaProveedores)
         self.newProv.show()
+    
+    def showEliminarProv(self):
+        self.popupConfirmacion = popupConfirmElim()
+        self.popupConfirmacion.accepted.connect(self.eliminarProveedor)
+        self.popupConfirmacion.exec_()
+    
+        #Elimina el producto si el proceso se confirma
+    def eliminarProveedor(self):
+        row = self.ui.tablaProveedores.currentRow()
+        cuilProveedor = int(self.ui.tablaProveedores.item(row,0).text())
+        crud.eliminarProveedor(cuilProveedor)
+        self.updateTablaProveedores()
     
     #Actualiza tabla Inventario en main window
     def updateTablaInventario(self):

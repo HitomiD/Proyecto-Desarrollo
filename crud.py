@@ -98,3 +98,7 @@ def listaProveedores():
 def eliminarProducto(idProducto):
     qry=Productos.delete().where(Productos.id == idProducto)
     qry.execute()
+    
+def eliminarProveedor(cuilProveedor):
+    qry = Proveedores.delete().where(Proveedores.cuil_cuit == cuilProveedor)
+    qry.execute()

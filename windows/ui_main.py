@@ -281,7 +281,7 @@ class Ui_MenuPrincipal(object):
         __qtablewidgetitem12 = QTableWidgetItem()
         self.tablaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem12)
         self.tablaProveedores.setObjectName(u"tablaProveedores")
-        self.tablaProveedores.setEnabled(False)
+        self.tablaProveedores.setEnabled(True)
         self.tablaProveedores.setStyleSheet(u"background-color: white;\n"
 "color:black;")
         self.tablaProveedores.setAutoScroll(True)
