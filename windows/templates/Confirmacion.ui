@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../assets/Warning-icon-isolated-on-transparent-background-PNG.png</normaloff>../assets/Warning-icon-isolated-on-transparent-background-PNG.png</iconset>
+    <normaloff>../assets/Logo_Ventanas.png</normaloff>../assets/Logo_Ventanas.png</iconset>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -68,7 +68,7 @@
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para confirmar el cambio, ingrese su &lt;span style=&quot; font-weight:700; color:#000000;&quot;&gt;usuario&lt;/span&gt; y &lt;span style=&quot; font-weight:700;&quot;&gt;contraseña&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para confirmar el cambio, ingrese su &lt;span style=&quot; color:#000000;&quot;&gt;usuario&lt;/span&gt; y contraseña&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -277,6 +277,13 @@
        </spacer>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QDialogButtonBox" name="buttonBox">

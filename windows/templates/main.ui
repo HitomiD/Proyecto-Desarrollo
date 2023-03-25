@@ -149,7 +149,7 @@
         <enum>Qt::RichText</enum>
        </property>
        <property name="pixmap">
-        <pixmap>../assets/Escudo-Interno.png</pixmap>
+        <pixmap>../assets/Escudo-Interno - copia.png</pixmap>
        </property>
       </widget>
      </item>
@@ -272,7 +272,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tabInventario">
      <attribute name="title">
@@ -292,9 +292,18 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="maximumSize">
+           <size>
+            <width>815</width>
+            <height>414</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-color: white;
 color:black;</string>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
           </property>
           <property name="frameShape">
            <enum>QFrame::Panel</enum>
@@ -326,8 +335,17 @@ color:black;</string>
           <property name="textElideMode">
            <enum>Qt::ElideMiddle</enum>
           </property>
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerItem</enum>
+          </property>
           <property name="horizontalScrollMode">
            <enum>QAbstractItemView::ScrollPerItem</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
           </property>
           <property name="rowCount">
            <number>19</number>
@@ -353,10 +371,22 @@ color:black;</string>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>false</bool>
           </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderMinimumSectionSize">
+           <number>30</number>
+          </attribute>
           <attribute name="verticalHeaderDefaultSectionSize">
            <number>30</number>
           </attribute>
           <attribute name="verticalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
            <bool>true</bool>
           </attribute>
           <row>
@@ -1938,7 +1968,7 @@ font-weight: 600;
          <property name="title">
           <string>Ingresos</string>
          </property>
-         <widget class="QTableWidget" name="tablaIngresos_2">
+         <widget class="QTableWidget" name="tablaIngresos">
           <property name="enabled">
            <bool>true</bool>
           </property>
@@ -1979,7 +2009,9 @@ font-weight: 600;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: white;
-color:black;</string>
+color:black;
+gridline-color: black;
+selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));</string>
           </property>
           <property name="horizontalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -1988,16 +2020,28 @@ color:black;</string>
            <enum>QAbstractScrollArea::AdjustToContents</enum>
           </property>
           <property name="autoScroll">
-           <bool>false</bool>
+           <bool>true</bool>
+          </property>
+          <property name="autoScrollMargin">
+           <number>10</number>
           </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
           </property>
           <property name="tabKeyNavigation">
+           <bool>true</bool>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="dragEnabled">
            <bool>false</bool>
           </property>
           <property name="alternatingRowColors">
            <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
           </property>
           <property name="showGrid">
            <bool>true</bool>
@@ -2117,6 +2161,15 @@ color:black;</string>
            <property name="text">
             <string>Proveedor</string>
            </property>
+           <property name="foreground">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
           </column>
           <item row="0" column="0">
            <property name="text">
@@ -2126,6 +2179,9 @@ color:black;</string>
           <item row="0" column="1">
            <property name="text">
             <string>17/12/22</string>
+           </property>
+           <property name="flags">
+            <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
            </property>
           </item>
           <item row="0" column="2">

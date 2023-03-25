@@ -81,7 +81,7 @@ height:25px;</string>
        <enum>Qt::RichText</enum>
       </property>
       <property name="pixmap">
-       <pixmap>../assets/Escudo-Interno.png</pixmap>
+       <pixmap>../assets/Escudo-Interno - copia.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>false</bool>

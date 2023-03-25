@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>409</width>
+    <width>382</width>
     <height>212</height>
    </rect>
   </property>
@@ -95,13 +95,26 @@ align-items: center;</string>
            <pointsize>9</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">margin-left:20px;</string>
+         </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Razón social&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_9"/>
+        <widget class="QLineEdit" name="lineEdit_9">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_12">
@@ -110,13 +123,23 @@ align-items: center;</string>
            <pointsize>9</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">margin-left:20px;</string>
+         </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dirección&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_10"/>
+        <widget class="QLineEdit" name="lineEdit_10">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_13">
@@ -125,16 +148,33 @@ align-items: center;</string>
            <pointsize>9</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">margin-left:20px;</string>
+         </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Teléfono&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_11"/>
+        <widget class="QLineEdit" name="lineEdit_11">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_12"/>
+        <widget class="QLineEdit" name="lineEdit_12">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_14">
@@ -144,7 +184,7 @@ align-items: center;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">margin-left:20px;</string>
          </property>
          <property name="text">
           <string>E-Mail</string>

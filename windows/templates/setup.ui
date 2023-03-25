@@ -9,14 +9,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>376</width>
+    <width>373</width>
     <height>259</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>373</width>
+    <height>259</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
-    <width>376</width>
-    <height>283</height>
+    <width>373</width>
+    <height>259</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -29,17 +35,42 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
   <property name="wizardStyle">
    <enum>QWizard::ModernStyle</enum>
   </property>
+  <property name="options">
+   <set>QWizard::HaveHelpButton|QWizard::NoBackButtonOnStartPage</set>
+  </property>
   <property name="titleFormat">
-   <enum>Qt::AutoText</enum>
+   <enum>Qt::PlainText</enum>
   </property>
   <widget class="QWizardPage" name="PrimeraPagina">
    <property name="locale">
     <locale language="Spanish" country="Argentina"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>30</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
     <item>
      <widget class="QLabel" name="Titulo_label">
       <property name="font">
@@ -56,19 +87,6 @@
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>30</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
      <layout class="QFormLayout" name="formLayout_2">
       <item row="0" column="1">
        <widget class="QLineEdit" name="Nombre_edit">
@@ -83,6 +101,9 @@
           <width>220</width>
           <height>22</height>
          </size>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: Rodrigo Alvarez</string>
         </property>
        </widget>
       </item>
@@ -110,6 +131,12 @@ margin-left: 2px;</string>
           <width>220</width>
           <height>22</height>
          </size>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhEmailCharactersOnly</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: ejemplo@ejemplo.com</string>
         </property>
        </widget>
       </item>
@@ -162,6 +189,24 @@ margin-left: 2px;</string>
           <width>220</width>
           <height>22</height>
          </size>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::ActionsContextMenu</enum>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhDialableCharactersOnly|Qt::ImhPreferNumbers</set>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: 2222554499</string>
+        </property>
+        <property name="cursorMoveStyle">
+         <enum>Qt::LogicalMoveStyle</enum>
         </property>
        </widget>
       </item>
@@ -312,21 +357,6 @@ margin-left: 2px;</string>
        </size>
       </property>
      </spacer>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_11">
-      <property name="font">
-       <font>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>En caso de pérdida se utilizará la dirección de correo electrónico del administrador como medio de recuperación.</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>
