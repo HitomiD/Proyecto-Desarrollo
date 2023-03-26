@@ -2868,6 +2868,7 @@ font-weight: 600;
     <property name="title">
      <string>Ayuda</string>
     </property>
+    <addaction name="actionManual_del_Usuario"/>
     <addaction name="actionAcerca_de"/>
    </widget>
    <addaction name="menuArchivo"/>
@@ -2885,10 +2886,19 @@ font-weight: 600;
   <action name="actionExportar_como_PDF">
    <property name="icon">
     <iconset>
-     <normaloff>../assets/PDF.png</normaloff>../assets/PDF.png</iconset>
+     <normaloff>../assets/pdf.png</normaloff>../assets/pdf.png</iconset>
    </property>
    <property name="text">
     <string>Exportar como PDF</string>
+   </property>
+  </action>
+  <action name="actionManual_del_Usuario">
+   <property name="icon">
+    <iconset>
+     <normaloff>../assets/Info.png</normaloff>../assets/Info.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manual del Usuario</string>
    </property>
   </action>
  </widget>
