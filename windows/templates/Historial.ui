@@ -10,8 +10,18 @@
     <height>627</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>671</width>
+    <height>627</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/Logo_Ventanas.png</normaloff>../assets/Logo_Ventanas.png</iconset>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -45,7 +55,7 @@
       </property>
       <property name="maximumSize">
        <size>
-        <width>100</width>
+        <width>200</width>
         <height>150</height>
        </size>
       </property>
@@ -67,11 +77,14 @@ height:25px;</string>
       <property name="text">
        <string/>
       </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
       <property name="pixmap">
-       <pixmap resource="Recursos.qrc">:/Logos/Escudo-Club.png</pixmap>
+       <pixmap>../assets/Escudo-Interno - copia.png</pixmap>
       </property>
       <property name="scaledContents">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -80,9 +93,12 @@ height:25px;</string>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>40</width>
+        <width>60</width>
         <height>20</height>
        </size>
       </property>
@@ -91,7 +107,13 @@ height:25px;</string>
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Iconos/Lupa v2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string/>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="pixmap">
+       <pixmap>../assets/Lupa-small.png</pixmap>
       </property>
      </widget>
     </item>
@@ -1166,7 +1188,8 @@ color:black;</string>
   </widget>
  </widget>
  <resources>
-  <include location="Recursos.qrc"/>
+  <include location="../Recursos.qrc"/>
+  <include location="../Recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

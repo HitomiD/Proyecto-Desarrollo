@@ -22,8 +22,6 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QMenuBar, QPushButton, QSizePolicy, QSpacerItem,
     QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
     QVBoxLayout, QWidget)
-import windows.Recursos_rc
-import crud
 
 class Ui_MenuPrincipal(object):
     def setupUi(self, MenuPrincipal):
@@ -146,8 +144,8 @@ class Ui_MenuPrincipal(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.tablaInventario.sizePolicy().hasHeightForWidth())
         self.tablaInventario.setSizePolicy(sizePolicy1)
-        self.tablaInventario.setStyleSheet(u"background-color: white;\n"
-"color:black;")
+        self.tablaInventario.setStyleSheet(u"background-color: red;\n"
+"color:black;scrollbar-color:black;")
         self.tablaInventario.setFrameShape(QFrame.Panel)
         self.tablaInventario.setFrameShadow(QFrame.Plain)
         self.tablaInventario.setLineWidth(1)
@@ -572,7 +570,6 @@ class Ui_MenuPrincipal(object):
         
         #poblado tabla ingresos
         crud.poblarQTableIngresos(self.tablaIngresos)
-
         
         self.label_4 = QLabel(self.tabIngresos)
         self.label_4.setObjectName(u"label_4")

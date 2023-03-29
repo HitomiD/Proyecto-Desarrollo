@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Wizard</class>
- <widget class="QWizard" name="Wizard">
+ <class>Crear_usuario</class>
+ <widget class="QWizard" name="Crear_usuario">
   <property name="enabled">
    <bool>true</bool>
   </property>
@@ -9,42 +9,55 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>404</width>
-    <height>331</height>
+    <width>373</width>
+    <height>259</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>373</width>
+    <height>259</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>373</width>
+    <height>259</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Configuración inicial</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/Logo_Ventanas.png</normaloff>../assets/Logo_Ventanas.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
   </property>
   <property name="wizardStyle">
    <enum>QWizard::ModernStyle</enum>
   </property>
-  <property name="titleFormat">
-   <enum>Qt::AutoText</enum>
+  <property name="options">
+   <set>QWizard::HaveHelpButton|QWizard::NoBackButtonOnStartPage</set>
   </property>
-  <widget class="QWizardPage" name="wizardPage1">
+  <property name="titleFormat">
+   <enum>Qt::PlainText</enum>
+  </property>
+  <widget class="QWizardPage" name="PrimeraPagina">
    <property name="locale">
     <locale language="Spanish" country="Argentina"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Información Administrador&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
@@ -53,40 +66,147 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>40</height>
+        <height>30</height>
        </size>
       </property>
      </spacer>
     </item>
     <item>
+     <widget class="QLabel" name="Titulo_label">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Crear Usuario&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QFormLayout" name="formLayout_2">
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="Nombre_edit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>30</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>220</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: Rodrigo Alvarez</string>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="Telefono_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>20</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-right: 10px;
+margin-left: 2px;</string>
+        </property>
         <property name="text">
          <string>Teléfono</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_4"/>
-      </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLineEdit" name="Correo_edit">
+        <property name="maximumSize">
+         <size>
+          <width>220</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhEmailCharactersOnly</set>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: ejemplo@ejemplo.com</string>
+        </property>
+       </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="Nombre_label">
+        <property name="styleSheet">
+         <string notr="true">margin-right: 10px;
+margin-left: 2px;</string>
+        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nombre y apellido&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_7">
+       <widget class="QLabel" name="Correo_label">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>30</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">margin-right: 8px;
+margin-left: 2px;</string>
+        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Correo electrónico&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="Telefono_edit">
+        <property name="maximumSize">
+         <size>
+          <width>220</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::ActionsContextMenu</enum>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhDialableCharactersOnly|Qt::ImhPreferNumbers</set>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Ej.: 2222554499</string>
+        </property>
+        <property name="cursorMoveStyle">
+         <enum>Qt::LogicalMoveStyle</enum>
         </property>
        </widget>
       </item>
@@ -100,15 +220,15 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>40</height>
+        <height>30</height>
        </size>
       </property>
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="dataAbajo_label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los campos señalados con &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt; son obligatorios. El correo electrónico será utilizado como medio de recuperación de la contraseña.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los campos señalados con &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt; son &lt;span style=&quot; font-weight:700;&quot;&gt;obligatorios&lt;/span&gt;. El correo electrónico será utilizado como medio de recuperación de la contraseña.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -120,17 +240,18 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWizardPage" name="wizardPage2">
+  <widget class="QWizardPage" name="Crear_contrasea">
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="label_9">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
+        <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Crear contraseña</string>
+       <string>Crear Contraseña</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -157,6 +278,9 @@
       </property>
       <item row="0" column="0">
        <widget class="QLabel" name="contraseniaLabel">
+        <property name="styleSheet">
+         <string notr="true">margin-left: 2px;</string>
+        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Contraseña&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -164,6 +288,12 @@
       </item>
       <item row="0" column="1">
        <widget class="QLineEdit" name="contraseniaLineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>220</width>
+          <height>22</height>
+         </size>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -174,6 +304,9 @@
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="confirmarContraseniaLabel">
+        <property name="styleSheet">
+         <string notr="true">margin-left: 2px;</string>
+        </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Confirmar contraseña&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -181,6 +314,12 @@
       </item>
       <item row="1" column="1">
        <widget class="QLineEdit" name="confirmarContraseniaLineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>220</width>
+          <height>22</height>
+         </size>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -218,21 +357,6 @@
        </size>
       </property>
      </spacer>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_11">
-      <property name="font">
-       <font>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>En caso de pérdida se utilizará la dirección de correo electrónico del administrador como medio de recuperación.</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>

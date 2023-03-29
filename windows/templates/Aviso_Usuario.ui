@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>Aviso</class>
+ <widget class="QDialog" name="Aviso">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>350</width>
-    <height>104</height>
+    <width>405</width>
+    <height>142</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>405</width>
+    <height>142</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>405</width>
+    <height>142</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>[Alerta] Datos Invalidos</string>
+   <string>[ALERTA]</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -20,8 +32,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>60</y>
+     <x>170</x>
+     <y>90</y>
      <width>221</width>
      <height>41</height>
     </rect>
@@ -30,62 +42,47 @@
     <enum>Qt::Horizontal</enum>
    </property>
    <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel</set>
+    <set>QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLabel" name="img">
+  <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>61</width>
+     <x>110</x>
+     <y>30</y>
+     <width>281</width>
      <height>61</height>
     </rect>
    </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>167777</width>
-     <height>167777</height>
-    </size>
+   <property name="font">
+    <font>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="text">
-    <string/>
+    <string>En caso de pérdida se utilizará la dirección de correo electrónico del administrador como medio de recuperación.</string>
    </property>
-   <property name="textFormat">
-    <enum>Qt::PlainText</enum>
-   </property>
-   <property name="pixmap">
-    <pixmap>../assets/Alert.png</pixmap>
-   </property>
-   <property name="scaledContents">
+   <property name="wordWrap">
     <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>-5</y>
-     <width>261</width>
-     <height>81</height>
+     <x>20</x>
+     <y>20</y>
+     <width>80</width>
+     <height>80</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:transparent;
-color:black;</string>
-   </property>
    <property name="text">
-    <string>Los datos ingresados no son validos o estan fuera de rango.
- Por favor, intente nuevamente.</string>
+    <string/>
    </property>
-   <property name="textFormat">
-    <enum>Qt::AutoText</enum>
+   <property name="pixmap">
+    <pixmap>../assets/Alert-Yellow.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
@@ -94,7 +91,7 @@ color:black;</string>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>Aviso</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -110,7 +107,7 @@ color:black;</string>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>Aviso</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

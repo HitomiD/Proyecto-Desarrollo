@@ -2,22 +2,38 @@
 <ui version="4.0">
  <class>MenuPrincipal</class>
  <widget class="QMainWindow" name="MenuPrincipal">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>829</width>
-    <height>659</height>
+    <width>846</width>
+    <height>663</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>846</width>
+    <height>663</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menu Principal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../assets/Logo_Ventanas.png</normaloff>../assets/Logo_Ventanas.png</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: white;
@@ -33,9 +49,9 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>10</y>
-      <width>810</width>
+      <width>851</width>
       <height>100</height>
      </rect>
     </property>
@@ -45,6 +61,18 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
+    <property name="maximumSize">
+     <size>
+      <width>851</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(84, 84, 84)</string>
     </property>
@@ -53,6 +81,12 @@
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>10</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -81,7 +115,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="Recursos.qrc">:/Logos/Escudo-Club.png</pixmap>
+        <pixmap>:/Logos/Escudo-Club.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -89,7 +123,16 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="tituloTab">
+      <widget class="QLabel" name="LogoInterno">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <bold>false</bold>
@@ -100,7 +143,13 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; color:#ffffff;&quot;&gt;Club Sarmiento&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="pixmap">
+        <pixmap>../assets/Escudo-Interno - copia.png</pixmap>
        </property>
       </widget>
      </item>
@@ -133,7 +182,13 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Iconos/Lupa v2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+       <property name="pixmap">
+        <pixmap>../assets/Lupa-small.png</pixmap>
        </property>
       </widget>
      </item>
@@ -209,7 +264,7 @@
      <rect>
       <x>10</x>
       <y>116</y>
-      <width>811</width>
+      <width>841</width>
       <height>511</height>
      </rect>
     </property>
@@ -217,7 +272,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tabInventario">
      <attribute name="title">
@@ -225,122 +280,761 @@
      </attribute>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QTableWidget" name="tablaInventario">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: white;
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QTableWidget" name="tablaInventario">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>815</width>
+            <height>414</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
 color:black;</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Panel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <property name="lineWidth">
-         <number>1</number>
-        </property>
-        <property name="midLineWidth">
-         <number>0</number>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="autoScroll">
-         <bool>false</bool>
-        </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="alternatingRowColors">
-         <bool>true</bool>
-        </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::SingleSelection</enum>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-        <property name="textElideMode">
-         <enum>Qt::ElideMiddle</enum>
-        </property>
-        <property name="horizontalScrollMode">
-         <enum>QAbstractItemView::ScrollPerItem</enum>
-        </property>
-        <property name="rowCount">
-         <number>0</number>
-        </property>
-        <property name="columnCount">
-         <number>7</number>
-        </property>
-        <attribute name="horizontalHeaderVisible">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="horizontalHeaderCascadingSectionResizes">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="horizontalHeaderMinimumSectionSize">
-         <number>40</number>
-        </attribute>
-        <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>108</number>
-        </attribute>
-        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="horizontalHeaderStretchLastSection">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="verticalHeaderDefaultSectionSize">
-         <number>30</number>
-        </attribute>
-        <attribute name="verticalHeaderHighlightSections">
-         <bool>true</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Nombre</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Stock</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Stock minimo</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Precio unitario</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Proveedor</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Último ingreso</string>
-         </property>
-        </column>
-       </widget>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="textElideMode">
+           <enum>Qt::ElideMiddle</enum>
+          </property>
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerItem</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerItem</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="rowCount">
+           <number>19</number>
+          </property>
+          <property name="columnCount">
+           <number>7</number>
+          </property>
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>40</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>108</number>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderMinimumSectionSize">
+           <number>30</number>
+          </attribute>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>30</number>
+          </attribute>
+          <attribute name="verticalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nombre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Stock</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Stock minimo</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Precio unitario</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Proveedor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Último ingreso</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>008</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>Cebolla</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>15</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>$75</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>Nadur</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="0" column="6">
+           <property name="text">
+            <string>29/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="1" column="0">
+           <property name="text">
+            <string>009</string>
+           </property>
+          </item>
+          <item row="1" column="1">
+           <property name="text">
+            <string>Acelga</string>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>06</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="1" column="4">
+           <property name="text">
+            <string>$120</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="1" column="5">
+           <property name="text">
+            <string>Nadur</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="1" column="6">
+           <property name="text">
+            <string>29/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="2" column="0">
+           <property name="text">
+            <string>034</string>
+           </property>
+          </item>
+          <item row="2" column="1">
+           <property name="text">
+            <string>Papas</string>
+           </property>
+          </item>
+          <item row="2" column="2">
+           <property name="text">
+            <string>150</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="2" column="4">
+           <property name="text">
+            <string>$30,5</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="2" column="5">
+           <property name="text">
+            <string>Nadur</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="2" column="6">
+           <property name="text">
+            <string>10/08/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="3" column="0">
+           <property name="text">
+            <string>035</string>
+           </property>
+          </item>
+          <item row="3" column="1">
+           <property name="text">
+            <string>Tomate</string>
+           </property>
+          </item>
+          <item row="3" column="2">
+           <property name="text">
+            <string>40</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="3" column="4">
+           <property name="text">
+            <string>$80</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="3" column="5">
+           <property name="text">
+            <string>Nadur</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="3" column="6">
+           <property name="text">
+            <string>29/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="4" column="0">
+           <property name="text">
+            <string>048</string>
+           </property>
+          </item>
+          <item row="4" column="1">
+           <property name="text">
+            <string>Queso</string>
+           </property>
+          </item>
+          <item row="4" column="2">
+           <property name="text">
+            <string>10</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="4" column="4">
+           <property name="text">
+            <string>$1000</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="4" column="5">
+           <property name="text">
+            <string>La Elisa S.A.</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="4" column="6">
+           <property name="text">
+            <string>29/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="5" column="0">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </item>
+          <item row="5" column="1">
+           <property name="text">
+            <string>Pan (Común)</string>
+           </property>
+          </item>
+          <item row="5" column="2">
+           <property name="text">
+            <string>03</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="5" column="4">
+           <property name="text">
+            <string>$300</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="5" column="5">
+           <property name="text">
+            <string>Del Pueblo</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="5" column="6">
+           <property name="text">
+            <string>30/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="6" column="0">
+           <property name="text">
+            <string>101</string>
+           </property>
+          </item>
+          <item row="6" column="1">
+           <property name="text">
+            <string>Pan (Hamburguesas)</string>
+           </property>
+          </item>
+          <item row="6" column="2">
+           <property name="text">
+            <string>95</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="6" column="4">
+           <property name="text">
+            <string>$400</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="6" column="5">
+           <property name="text">
+            <string>Del Pueblo</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="6" column="6">
+           <property name="text">
+            <string>30/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="7" column="0">
+           <property name="text">
+            <string>102</string>
+           </property>
+          </item>
+          <item row="7" column="1">
+           <property name="text">
+            <string>Pan (Sandwich)</string>
+           </property>
+          </item>
+          <item row="7" column="2">
+           <property name="text">
+            <string>50</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="7" column="4">
+           <property name="text">
+            <string>$300</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="7" column="5">
+           <property name="text">
+            <string>Del Pueblo</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="7" column="6">
+           <property name="text">
+            <string>30/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="8" column="0">
+           <property name="text">
+            <string>103</string>
+           </property>
+          </item>
+          <item row="8" column="1">
+           <property name="text">
+            <string>Pan (Pebete)</string>
+           </property>
+          </item>
+          <item row="8" column="2">
+           <property name="text">
+            <string>45</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="8" column="4">
+           <property name="text">
+            <string>$330</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="8" column="5">
+           <property name="text">
+            <string>Del Pueblo</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="8" column="6">
+           <property name="text">
+            <string>30/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="9" column="0">
+           <property name="text">
+            <string>158</string>
+           </property>
+          </item>
+          <item row="9" column="1">
+           <property name="text">
+            <string>Hamburguesas</string>
+           </property>
+          </item>
+          <item row="9" column="2">
+           <property name="text">
+            <string>90</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+          </item>
+          <item row="9" column="4">
+           <property name="text">
+            <string>$500</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="9" column="5">
+           <property name="text">
+            <string>San Jorge</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="9" column="6">
+           <property name="text">
+            <string>20/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="10" column="0">
+           <property name="text">
+            <string>256</string>
+           </property>
+          </item>
+          <item row="10" column="1">
+           <property name="text">
+            <string>Harina</string>
+           </property>
+          </item>
+          <item row="10" column="2">
+           <property name="text">
+            <string>10</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="10" column="4">
+           <property name="text">
+            <string>$600</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="10" column="5">
+           <property name="text">
+            <string>San Jorge</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="10" column="6">
+           <property name="text">
+            <string>23/11/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="11" column="0">
+           <property name="text">
+            <string>257</string>
+           </property>
+          </item>
+          <item row="11" column="1">
+           <property name="text">
+            <string>Aceite</string>
+           </property>
+          </item>
+          <item row="11" column="2">
+           <property name="text">
+            <string>10</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+          <item row="11" column="4">
+           <property name="text">
+            <string>$700</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="11" column="5">
+           <property name="text">
+            <string>San Jorge</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignTrailing|AlignVCenter</set>
+           </property>
+          </item>
+          <item row="11" column="6">
+           <property name="text">
+            <string>10/10/2022</string>
+           </property>
+           <property name="textAlignment">
+            <set>AlignCenter</set>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="layoutBtnInventario">
@@ -371,7 +1065,7 @@ color:black;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnNuevoProducto">
+         <widget class="QPushButton" name="btnNuevoProveedor_4">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -386,7 +1080,7 @@ color:black;</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <pointsize>11</pointsize>
             <bold>true</bold>
            </font>
           </property>
@@ -394,13 +1088,25 @@ color:black;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
+           <string notr="true">background-color: #6daa44;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
           </property>
           <property name="text">
-           <string>Nuevo</string>
+           <string>  Nuevo</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../assets/Plus.png</normaloff>../assets/Plus.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -418,7 +1124,7 @@ height:25%;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnModProducto">
+         <widget class="QPushButton" name="btnModProveedor_4">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -427,7 +1133,8 @@ height:25%;</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
             <bold>true</bold>
            </font>
           </property>
@@ -435,13 +1142,25 @@ height:25%;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(0, 0, 0);
+           <string notr="true">background-color: #006dab;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
           </property>
           <property name="text">
-           <string>Modificar</string>
+           <string>  Modificar</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../assets/Pencil.png</normaloff>../assets/Pencil.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -459,7 +1178,7 @@ height:25%;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnElimProducto">
+         <widget class="QPushButton" name="btnElimProveedor_6">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -468,22 +1187,33 @@ height:25%;</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <pointsize>11</pointsize>
             <bold>true</bold>
-            <kerning>false</kerning>
            </font>
           </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(0, 0, 0);
+           <string notr="true">background-color: #c80000;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
           </property>
           <property name="text">
-           <string>Eliminar</string>
+           <string>  Eliminar</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../assets/Trash.png</normaloff>../assets/Trash.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -517,298 +1247,1035 @@ height:25%;</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="tabProveedores">
+    <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>Proveedores</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="whatsThis">
+             <string>Esta es una lista de proveedores</string>
+            </property>
+            <property name="title">
+             <string>Lista de Proveedores</string>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <widget class="QTableWidget" name="tablaProveedores_2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>20</y>
+               <width>809</width>
+               <height>379</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="whatsThis">
+              <string/>
+             </property>
+             <property name="accessibleName">
+              <string>Esta es una lista de </string>
+             </property>
+             <property name="accessibleDescription">
+              <string/>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: white;
+color:black;</string>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>5</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+             <property name="autoScroll">
+              <bool>true</bool>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <attribute name="horizontalHeaderVisible">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>7</number>
+             </attribute>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>131</number>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderCascadingSectionResizes">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>25</number>
+             </attribute>
+             <attribute name="verticalHeaderDefaultSectionSize">
+              <number>30</number>
+             </attribute>
+             <attribute name="verticalHeaderHighlightSections">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>false</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Razón social</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Teléfono</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Correo electrónico</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Dirección</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Nota</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>034</string>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string>Juan Carlos</string>
+              </property>
+             </item>
+             <item row="0" column="2">
+              <property name="text">
+               <string>23423899</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="3">
+              <property name="text">
+               <string>juancarlos@mail.com</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignTrailing|AlignVCenter</set>
+              </property>
+             </item>
+             <item row="0" column="4">
+              <property name="text">
+               <string>Estados Unidos 277</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="5">
+              <property name="text">
+               <string>Bebidas</string>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string>234</string>
+              </property>
+             </item>
+             <item row="1" column="1">
+              <property name="text">
+               <string>El Chancho Peludo</string>
+              </property>
+             </item>
+             <item row="1" column="2">
+              <property name="text">
+               <string>07324938</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="3">
+              <property name="text">
+               <string>elchancho@mail.com.ar</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="4">
+              <property name="text">
+               <string>Alem 343</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="5">
+              <property name="text">
+               <string>Carniceria</string>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string>008</string>
+              </property>
+             </item>
+             <item row="2" column="1">
+              <property name="text">
+               <string>Los Hermanos</string>
+              </property>
+             </item>
+             <item row="2" column="2">
+              <property name="text">
+               <string>20431234</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="3">
+              <property name="text">
+               <string>loshermanos@email.com</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignTrailing|AlignVCenter</set>
+              </property>
+             </item>
+             <item row="2" column="4">
+              <property name="text">
+               <string>Rivadavia 842</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="5">
+              <property name="text">
+               <string>Verduleria</string>
+              </property>
+             </item>
+             <item row="3" column="0">
+              <property name="text">
+               <string>009</string>
+              </property>
+             </item>
+             <item row="3" column="1">
+              <property name="text">
+               <string>Marcelo Rodriguez</string>
+              </property>
+             </item>
+             <item row="3" column="2">
+              <property name="text">
+               <string>38243038</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="3" column="3">
+              <property name="text">
+               <string>mrodriguez@correo.com.ar</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignTrailing|AlignVCenter</set>
+              </property>
+             </item>
+             <item row="3" column="4">
+              <property name="text">
+               <string>Finlandia 893</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="3" column="5">
+              <property name="text">
+               <string>Papelera</string>
+              </property>
+             </item>
+             <item row="4" column="0">
+              <property name="text">
+               <string>158</string>
+              </property>
+             </item>
+             <item row="4" column="1">
+              <property name="text">
+               <string>Matias Perez</string>
+              </property>
+             </item>
+             <item row="4" column="2">
+              <property name="text">
+               <string>23901298</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+              <property name="background">
+               <brush brushstyle="NoBrush">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </property>
+             </item>
+             <item row="4" column="3">
+              <property name="text">
+               <string>matiasperes@mail.com.ar</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignTrailing|AlignVCenter</set>
+              </property>
+             </item>
+             <item row="4" column="4">
+              <property name="text">
+               <string>Alem 284</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="4" column="5">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="5" column="0">
+              <property name="text">
+               <string>341</string>
+              </property>
+             </item>
+             <item row="5" column="1">
+              <property name="text">
+               <string>Mercedes Paredes</string>
+              </property>
+             </item>
+             <item row="5" column="2">
+              <property name="text">
+               <string>23432235</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="5" column="3">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="5" column="4">
+              <property name="text">
+               <string>Finlandia 234</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="5" column="5">
+              <property name="text">
+               <string>Limpieza</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QWidget" name="layoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>410</y>
+               <width>801</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <layout class="QHBoxLayout" name="layoutBtnProveedores_3">
+              <property name="sizeConstraint">
+               <enum>QLayout::SetFixedSize</enum>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <spacer name="horizontalSpacer_19">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_13">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_20">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnNuevoProveedor_7">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #6daa44;
+color: white;
+border-radius:5px;
+height: 40%;
+font-weight: 600;
+</string>
+                </property>
+                <property name="text">
+                 <string>  Nuevo</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../assets/Plus.png</normaloff>../assets/Plus.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>35</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_21">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnModProveedor_7">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>11</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #006dab;
+color: white;
+border-radius:5px;
+height: 40%;
+font-weight: 600;
+</string>
+                </property>
+                <property name="text">
+                 <string>  Modificar</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../assets/Pencil.png</normaloff>../assets/Pencil.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_22">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnElimProveedor_9">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #c80000;
+color: white;
+border-radius:5px;
+height: 40%;
+font-weight: 600;
+</string>
+                </property>
+                <property name="text">
+                 <string>  Eliminar</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../assets/Trash.png</normaloff>../assets/Trash.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>35</width>
+                  <height>35</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_29">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_30">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Ingresos</string>
      </attribute>
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>10</x>
         <y>0</y>
-        <width>811</width>
-        <height>441</height>
+        <width>341</width>
+        <height>421</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QTableWidget" name="tablaProveedores">
-         <property name="enabled">
-          <bool>false</bool>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Ingresos</string>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: white;
-color:black;</string>
-         </property>
-         <property name="autoScroll">
-          <bool>true</bool>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <property name="alternatingRowColors">
-          <bool>true</bool>
-         </property>
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectRows</enum>
-         </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="horizontalHeaderCascadingSectionResizes">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>0</number>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>131</number>
-         </attribute>
-         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderStretchLastSection">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderCascadingSectionResizes">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>25</number>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>30</number>
-         </attribute>
-         <attribute name="verticalHeaderHighlightSections">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderStretchLastSection">
-          <bool>false</bool>
-         </attribute>
-         <column>
-          <property name="text">
-           <string>CUIL/CUIT</string>
+         <widget class="QTableWidget" name="tablaIngresos">
+          <property name="enabled">
+           <bool>true</bool>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Razón social</string>
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>321</width>
+            <height>371</height>
+           </rect>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Teléfono</string>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Correo electrónico</string>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Dirección</string>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Nota</string>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
           </property>
-         </column>
+          <property name="contextMenuPolicy">
+           <enum>Qt::DefaultContextMenu</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color:black;
+gridline-color: black;
+selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));</string>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="autoScrollMargin">
+           <number>10</number>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="tabKeyNavigation">
+           <bool>true</bool>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="showGrid">
+           <bool>true</bool>
+          </property>
+          <property name="gridStyle">
+           <enum>Qt::SolidLine</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="cornerButtonEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="horizontalHeaderVisible">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>20</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>100</number>
+          </attribute>
+          <attribute name="horizontalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Fecha</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Proveedor</string>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>034</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+           <property name="flags">
+            <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>Juan Carlos</string>
+           </property>
+          </item>
+          <item row="1" column="0">
+           <property name="text">
+            <string>234</string>
+           </property>
+          </item>
+          <item row="1" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>El chancho peludo</string>
+           </property>
+          </item>
+          <item row="2" column="0">
+           <property name="text">
+            <string>008</string>
+           </property>
+          </item>
+          <item row="2" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+          </item>
+          <item row="2" column="2">
+           <property name="text">
+            <string>Los hermanos</string>
+           </property>
+          </item>
+          <item row="3" column="0">
+           <property name="text">
+            <string>009</string>
+           </property>
+          </item>
+          <item row="3" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+          </item>
+          <item row="3" column="2">
+           <property name="text">
+            <string>Marcelo Rodriguez</string>
+           </property>
+          </item>
+          <item row="4" column="0">
+           <property name="text">
+            <string>158</string>
+           </property>
+          </item>
+          <item row="4" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+          </item>
+          <item row="4" column="2">
+           <property name="text">
+            <string>Matias perez</string>
+           </property>
+          </item>
+          <item row="5" column="0">
+           <property name="text">
+            <string>341</string>
+           </property>
+          </item>
+          <item row="5" column="1">
+           <property name="text">
+            <string>17/12/22</string>
+           </property>
+          </item>
+          <item row="5" column="2">
+           <property name="text">
+            <string>El chancho peludo</string>
+           </property>
+          </item>
+         </widget>
         </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="layoutBtnProveedores">
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <spacer name="horizontalSpacer_13">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_17">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnNuevoProveedor">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30,30 ,30);
-border-radius:5px;
-height:25%;</string>
-           </property>
-           <property name="text">
-            <string>Nuevo</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_14">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnModProveedor">
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
-border-radius:5px;
-height:25%;</string>
-           </property>
-           <property name="text">
-            <string>Modificar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_15">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnElimProveedor">
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
-border-radius:5px;
-height:25%;</string>
-           </property>
-           <property name="text">
-            <string>Eliminar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_18">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_16">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
        </item>
       </layout>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tabIngresos">
-     <attribute name="title">
-      <string>Ingresos</string>
-     </attribute>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="frame_2">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>30</y>
+        <x>380</x>
+        <y>0</y>
         <width>441</width>
-        <height>391</height>
+        <height>421</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -820,7 +2287,7 @@ height:25%;</string>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
-      <widget class="QGroupBox" name="groupBoxProveedor">
+      <widget class="QGroupBox" name="groupBoxProveedor_6">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -848,23 +2315,23 @@ height:25%;</string>
        <property name="checked">
         <bool>false</bool>
        </property>
-       <layout class="QGridLayout" name="gridLayout">
+       <layout class="QGridLayout" name="gridLayout_7">
         <item row="0" column="0">
-         <widget class="QLabel" name="tagProveedor">
+         <widget class="QLabel" name="tagProveedor_6">
           <property name="text">
            <string>Proveedor</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="telefonoProveedor">
+         <widget class="QLineEdit" name="telefonoProveedor_6">
           <property name="text">
            <string>2456980234</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="cuilProveedor">
+         <widget class="QLineEdit" name="cuilProveedor_6">
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
 </string>
@@ -875,28 +2342,28 @@ height:25%;</string>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="nombreProveedor">
+         <widget class="QLineEdit" name="nombreProveedor_6">
           <property name="text">
            <string>Juan Carlos</string>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QLabel" name="tagCUIL">
+         <widget class="QLabel" name="tagCUIL_6">
           <property name="text">
            <string>CUIL/CUIT </string>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QLabel" name="tagTelefono">
+         <widget class="QLabel" name="tagTelefono_6">
           <property name="text">
            <string>Teléfono</string>
           </property>
          </widget>
         </item>
         <item row="3" column="1">
-         <spacer name="verticalSpacer_2">
+         <spacer name="verticalSpacer_7">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -913,11 +2380,11 @@ height:25%;</string>
         </item>
        </layout>
       </widget>
-      <widget class="QGroupBox" name="groupBox_2">
+      <widget class="QGroupBox" name="groupBox_10">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>160</y>
+         <y>170</y>
          <width>422</width>
          <height>221</height>
         </rect>
@@ -925,7 +2392,7 @@ height:25%;</string>
        <property name="title">
         <string>Detalle de ingreso</string>
        </property>
-       <widget class="QTableWidget" name="tablaIngresosDetalle">
+       <widget class="QTableWidget" name="tablaIngresosDetalle_6">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -973,9 +2440,6 @@ height:25%;</string>
         <property name="alternatingRowColors">
          <bool>true</bool>
         </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
         <property name="wordWrap">
          <bool>false</bool>
         </property>
@@ -985,6 +2449,41 @@ height:25%;</string>
         <attribute name="verticalHeaderVisible">
          <bool>false</bool>
         </attribute>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string/>
+         </property>
+        </row>
         <column>
          <property name="text">
           <string>Producto</string>
@@ -1005,21 +2504,139 @@ height:25%;</string>
           <string>Precio total</string>
          </property>
         </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>Coca coca cero 1L</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>250</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>45</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item row="1" column="0">
+         <property name="text">
+          <string>Esprait 500ml</string>
+         </property>
+        </item>
+        <item row="1" column="1">
+         <property name="text">
+          <string>250</string>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string>23</string>
+         </property>
+        </item>
+        <item row="2" column="0">
+         <property name="text">
+          <string>Fantasiosa 500ml</string>
+         </property>
+        </item>
+        <item row="2" column="1">
+         <property name="text">
+          <string>180</string>
+         </property>
+        </item>
+        <item row="2" column="2">
+         <property name="text">
+          <string>542</string>
+         </property>
+        </item>
+        <item row="3" column="0">
+         <property name="text">
+          <string>Monstruo 380ml</string>
+         </property>
+        </item>
+        <item row="3" column="1">
+         <property name="text">
+          <string>340</string>
+         </property>
+        </item>
+        <item row="3" column="2">
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item row="4" column="0">
+         <property name="text">
+          <string>kilmes 2.5 Ltr.</string>
+         </property>
+        </item>
+        <item row="4" column="1">
+         <property name="text">
+          <string>500</string>
+         </property>
+        </item>
+        <item row="4" column="2">
+         <property name="text">
+          <string>75</string>
+         </property>
+        </item>
+        <item row="5" column="0">
+         <property name="text">
+          <string>Amstel 1 Ltr.</string>
+         </property>
+        </item>
+        <item row="5" column="1">
+         <property name="text">
+          <string>300</string>
+         </property>
+        </item>
+        <item row="5" column="2">
+         <property name="text">
+          <string>50</string>
+         </property>
+        </item>
+        <item row="6" column="0">
+         <property name="text">
+          <string>Jack Daniels 750ml.</string>
+         </property>
+        </item>
+        <item row="6" column="1">
+         <property name="text">
+          <string>1500</string>
+         </property>
+        </item>
+        <item row="6" column="2">
+         <property name="text">
+          <string>5</string>
+         </property>
+        </item>
+        <item row="6" column="3">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="layoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>440</y>
-        <width>790</width>
-        <height>41</height>
+        <x>0</x>
+        <y>430</y>
+        <width>831</width>
+        <height>42</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="layoutBtnProveedores_4">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
        <item>
-        <spacer name="horizontalSpacer_21">
+        <spacer name="horizontalSpacer_31">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -1032,7 +2649,20 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnNuevoIngreso">
+        <spacer name="horizontalSpacer_32">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNuevoProveedor_8">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -1047,6 +2677,7 @@ height:25%;</string>
          </property>
          <property name="font">
           <font>
+           <pointsize>11</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1054,18 +2685,30 @@ height:25%;</string>
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
+          <string notr="true">background-color: #6daa44;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
          </property>
          <property name="text">
-          <string>Nuevo</string>
+          <string>  Nuevo</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../assets/Plus.png</normaloff>../assets/Plus.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
          </property>
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_19">
+        <spacer name="horizontalSpacer_33">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -1078,7 +2721,7 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnModIngreso">
+        <widget class="QPushButton" name="btnModProveedor_8">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -1087,6 +2730,8 @@ height:25%;</string>
          </property>
          <property name="font">
           <font>
+           <family>Segoe UI</family>
+           <pointsize>11</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1094,18 +2739,30 @@ height:25%;</string>
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
+          <string notr="true">background-color: #006dab;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
          </property>
          <property name="text">
-          <string>Modificar</string>
+          <string>  Modificar</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../assets/Pencil.png</normaloff>../assets/Pencil.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
          </property>
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_20">
+        <spacer name="horizontalSpacer_34">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -1118,7 +2775,7 @@ height:25%;</string>
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnElimIngreso">
+        <widget class="QPushButton" name="btnElimProveedor_10">
          <property name="minimumSize">
           <size>
            <width>150</width>
@@ -1127,6 +2784,7 @@ height:25%;</string>
          </property>
          <property name="font">
           <font>
+           <pointsize>11</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -1134,18 +2792,46 @@ height:25%;</string>
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(200, 200, 200);
-color: rgb(30, 30, 30);
+          <string notr="true">background-color: #c80000;
+color: white;
 border-radius:5px;
-height:25%;</string>
+height: 40%;
+font-weight: 600;
+</string>
          </property>
          <property name="text">
-          <string>Eliminar</string>
+          <string>  Eliminar</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../assets/Trash.png</normaloff>../assets/Trash.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>35</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_22">
+        <spacer name="horizontalSpacer_35">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_36">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -1159,174 +2845,6 @@ height:25%;</string>
        </item>
       </layout>
      </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>321</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Ingresos</string>
-      </property>
-      <widget class="QTableWidget" name="tablaIngresos">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>19</y>
-         <width>321</width>
-         <height>392</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="baseSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::DefaultContextMenu</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-color:black;</string>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="sizeAdjustPolicy">
-        <enum>QAbstractScrollArea::AdjustToContents</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="tabKeyNavigation">
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="selectionBehavior">
-        <enum>QAbstractItemView::SelectRows</enum>
-       </property>
-       <property name="showGrid">
-        <bool>true</bool>
-       </property>
-       <property name="gridStyle">
-        <enum>Qt::SolidLine</enum>
-       </property>
-       <property name="sortingEnabled">
-        <bool>false</bool>
-       </property>
-       <property name="cornerButtonEnabled">
-        <bool>true</bool>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="horizontalHeaderCascadingSectionResizes">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>20</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>100</number>
-       </attribute>
-       <attribute name="horizontalHeaderHighlightSections">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderHighlightSections">
-        <bool>true</bool>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Fecha</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Proveedor</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>350</x>
-        <y>12</y>
-        <width>111</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Detalle de ingreso:</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnElimProveedor_2">
-      <property name="geometry">
-       <rect>
-        <x>907</x>
-        <y>440</y>
-        <width>150</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>150</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(232, 0, 0);
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Eliminar</string>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
@@ -1336,8 +2854,8 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>829</width>
-     <height>20</height>
+     <width>846</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -1350,24 +2868,43 @@ color: rgb(255, 255, 255);</string>
     <property name="title">
      <string>Ayuda</string>
     </property>
+    <addaction name="actionManual_del_Usuario"/>
     <addaction name="actionAcerca_de"/>
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuAyuda"/>
   </widget>
   <action name="actionAcerca_de">
+   <property name="icon">
+    <iconset>
+     <normaloff>../assets/Interrogation.png</normaloff>../assets/Interrogation.png</iconset>
+   </property>
    <property name="text">
     <string>Acerca de</string>
    </property>
   </action>
   <action name="actionExportar_como_PDF">
+   <property name="icon">
+    <iconset>
+     <normaloff>../assets/pdf.png</normaloff>../assets/pdf.png</iconset>
+   </property>
    <property name="text">
     <string>Exportar como PDF</string>
    </property>
   </action>
+  <action name="actionManual_del_Usuario">
+   <property name="icon">
+    <iconset>
+     <normaloff>../assets/Info.png</normaloff>../assets/Info.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manual del Usuario</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="Recursos.qrc"/>
+  <include location="../Recursos.qrc"/>
+  <include location="../Recursos.qrc"/>
  </resources>
  <connections/>
 </ui>
