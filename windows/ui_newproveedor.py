@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproveedor.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -114,6 +114,16 @@ class Ui_newProveedor(object):
 
         self.formLayout_3.setWidget(7, QFormLayout.FieldRole, self.lnEditCUIT)
 
+        self.label = QLabel(newProveedor)
+        self.label.setObjectName(u"label")
+
+        self.formLayout_3.setWidget(8, QFormLayout.LabelRole, self.label)
+
+        self.lnEditNota = QLineEdit(newProveedor)
+        self.lnEditNota.setObjectName(u"lnEditNota")
+
+        self.formLayout_3.setWidget(8, QFormLayout.FieldRole, self.lnEditNota)
+
 
         self.verticalLayout_3.addLayout(self.formLayout_3)
 
@@ -137,7 +147,7 @@ class Ui_newProveedor(object):
 
 
         self.retranslateUi(newProveedor)
-        #self.buttonBox.accepted.connect(newProveedor.accept)
+        self.buttonBox.accepted.connect(newProveedor.accept)
         self.buttonBox.rejected.connect(newProveedor.reject)
 
         QMetaObject.connectSlotsByName(newProveedor)
@@ -151,5 +161,6 @@ class Ui_newProveedor(object):
         self.lblTelefono.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblEmail.setText(QCoreApplication.translate("newProveedor", u"E-Mail", None))
         self.labelCUIT.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>CUIL/CUIT<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("newProveedor", u"Nota", None))
     # retranslateUi
 

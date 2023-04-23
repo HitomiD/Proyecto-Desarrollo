@@ -48,7 +48,7 @@ def poblarQTableProveedores(tabla):
     totalRegistros = Proveedores.select().count()
     tabla.setRowCount(totalRegistros)
     listaProveedores = Proveedores.select()
-        
+    
     for index, proveedor in enumerate(listaProveedores):
         
         itemId = QTableWidgetItem()
