@@ -226,20 +226,20 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnInventario.addItem(self.horizontalSpacer_9)
 
-        self.btnNuevoProveedor_4 = QPushButton(self.tabInventario)
-        self.btnNuevoProveedor_4.setObjectName(u"btnNuevoProveedor_4")
+        self.btnNuevoProducto = QPushButton(self.tabInventario)
+        self.btnNuevoProducto.setObjectName(u"btnNuevoProducto")
         sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor_4.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor_4.setSizePolicy(sizePolicy2)
-        self.btnNuevoProveedor_4.setMinimumSize(QSize(150, 0))
+        sizePolicy2.setHeightForWidth(self.btnNuevoProducto.sizePolicy().hasHeightForWidth())
+        self.btnNuevoProducto.setSizePolicy(sizePolicy2)
+        self.btnNuevoProducto.setMinimumSize(QSize(150, 0))
         font3 = QFont()
         font3.setPointSize(11)
         font3.setBold(True)
-        self.btnNuevoProveedor_4.setFont(font3)
-        self.btnNuevoProveedor_4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnNuevoProveedor_4.setStyleSheet(u"background-color: #6daa44;\n"
+        self.btnNuevoProducto.setFont(font3)
+        self.btnNuevoProducto.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnNuevoProducto.setStyleSheet(u"background-color: #6daa44;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
@@ -247,25 +247,25 @@ class Ui_MenuPrincipal(object):
 "")
         icon4 = QIcon()
         icon4.addFile(u"../assets/Plus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btnNuevoProveedor_4.setIcon(icon4)
-        self.btnNuevoProveedor_4.setIconSize(QSize(35, 35))
+        self.btnNuevoProducto.setIcon(icon4)
+        self.btnNuevoProducto.setIconSize(QSize(35, 35))
 
-        self.layoutBtnInventario.addWidget(self.btnNuevoProveedor_4)
+        self.layoutBtnInventario.addWidget(self.btnNuevoProducto)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnInventario.addItem(self.horizontalSpacer_2)
 
-        self.btnModProveedor_4 = QPushButton(self.tabInventario)
-        self.btnModProveedor_4.setObjectName(u"btnModProveedor_4")
-        self.btnModProveedor_4.setMinimumSize(QSize(150, 0))
+        self.btnModProducto = QPushButton(self.tabInventario)
+        self.btnModProducto.setObjectName(u"btnModProducto")
+        self.btnModProducto.setMinimumSize(QSize(150, 0))
         font4 = QFont()
         font4.setFamilies([u"Segoe UI"])
         font4.setPointSize(11)
         font4.setBold(True)
-        self.btnModProveedor_4.setFont(font4)
-        self.btnModProveedor_4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModProveedor_4.setStyleSheet(u"background-color: #006dab;\n"
+        self.btnModProducto.setFont(font4)
+        self.btnModProducto.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnModProducto.setStyleSheet(u"background-color: #006dab;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
@@ -273,21 +273,21 @@ class Ui_MenuPrincipal(object):
 "")
         icon5 = QIcon()
         icon5.addFile(u"../assets/Pencil.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btnModProveedor_4.setIcon(icon5)
-        self.btnModProveedor_4.setIconSize(QSize(30, 30))
+        self.btnModProducto.setIcon(icon5)
+        self.btnModProducto.setIconSize(QSize(30, 30))
 
-        self.layoutBtnInventario.addWidget(self.btnModProveedor_4)
+        self.layoutBtnInventario.addWidget(self.btnModProducto)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnInventario.addItem(self.horizontalSpacer_4)
 
-        self.btnElimProveedor_6 = QPushButton(self.tabInventario)
-        self.btnElimProveedor_6.setObjectName(u"btnElimProveedor_6")
-        self.btnElimProveedor_6.setMinimumSize(QSize(150, 0))
-        self.btnElimProveedor_6.setFont(font3)
-        self.btnElimProveedor_6.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimProveedor_6.setStyleSheet(u"background-color: #c80000;\n"
+        self.btnElimProducto = QPushButton(self.tabInventario)
+        self.btnElimProducto.setObjectName(u"btnElimProducto")
+        self.btnElimProducto.setMinimumSize(QSize(150, 0))
+        self.btnElimProducto.setFont(font3)
+        self.btnElimProducto.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimProducto.setStyleSheet(u"background-color: #c80000;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
@@ -295,10 +295,10 @@ class Ui_MenuPrincipal(object):
 "")
         icon6 = QIcon()
         icon6.addFile(u"../assets/Trash.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btnElimProveedor_6.setIcon(icon6)
-        self.btnElimProveedor_6.setIconSize(QSize(35, 35))
+        self.btnElimProducto.setIcon(icon6)
+        self.btnElimProducto.setIconSize(QSize(35, 35))
 
-        self.layoutBtnInventario.addWidget(self.btnElimProveedor_6)
+        self.layoutBtnInventario.addWidget(self.btnElimProducto)
 
         self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -389,63 +389,63 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_20)
 
-        self.btnNuevoProveedor_7 = QPushButton(self.layoutWidget)
-        self.btnNuevoProveedor_7.setObjectName(u"btnNuevoProveedor_7")
-        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor_7.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor_7.setSizePolicy(sizePolicy2)
-        self.btnNuevoProveedor_7.setMinimumSize(QSize(150, 0))
-        self.btnNuevoProveedor_7.setFont(font3)
-        self.btnNuevoProveedor_7.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnNuevoProveedor_7.setStyleSheet(u"background-color: #6daa44;\n"
+        self.btnNuevoProveedor = QPushButton(self.layoutWidget)
+        self.btnNuevoProveedor.setObjectName(u"btnNuevo")
+        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor.sizePolicy().hasHeightForWidth())
+        self.btnNuevoProveedor.setSizePolicy(sizePolicy2)
+        self.btnNuevoProveedor.setMinimumSize(QSize(150, 0))
+        self.btnNuevoProveedor.setFont(font3)
+        self.btnNuevoProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnNuevoProveedor.setStyleSheet(u"background-color: #6daa44;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnNuevoProveedor_7.setIcon(icon4)
-        self.btnNuevoProveedor_7.setIconSize(QSize(35, 35))
+        self.btnNuevoProveedor.setIcon(icon4)
+        self.btnNuevoProveedor.setIconSize(QSize(35, 35))
 
-        self.layoutBtnProveedores_3.addWidget(self.btnNuevoProveedor_7)
+        self.layoutBtnProveedores_3.addWidget(self.btnNuevoProveedor)
 
         self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_21)
 
-        self.btnModProveedor_7 = QPushButton(self.layoutWidget)
-        self.btnModProveedor_7.setObjectName(u"btnModProveedor_7")
-        self.btnModProveedor_7.setMinimumSize(QSize(150, 0))
-        self.btnModProveedor_7.setFont(font4)
-        self.btnModProveedor_7.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModProveedor_7.setStyleSheet(u"background-color: #006dab;\n"
+        self.btnModProveedor = QPushButton(self.layoutWidget)
+        self.btnModProveedor.setObjectName(u"btnModProveedor")
+        self.btnModProveedor.setMinimumSize(QSize(150, 0))
+        self.btnModProveedor.setFont(font4)
+        self.btnModProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnModProveedor.setStyleSheet(u"background-color: #006dab;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnModProveedor_7.setIcon(icon5)
-        self.btnModProveedor_7.setIconSize(QSize(30, 30))
+        self.btnModProveedor.setIcon(icon5)
+        self.btnModProveedor.setIconSize(QSize(30, 30))
 
-        self.layoutBtnProveedores_3.addWidget(self.btnModProveedor_7)
+        self.layoutBtnProveedores_3.addWidget(self.btnModProveedor)
 
         self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_22)
 
-        self.btnElimProveedor_9 = QPushButton(self.layoutWidget)
-        self.btnElimProveedor_9.setObjectName(u"btnElimProveedor_9")
-        self.btnElimProveedor_9.setMinimumSize(QSize(150, 0))
-        self.btnElimProveedor_9.setFont(font3)
-        self.btnElimProveedor_9.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimProveedor_9.setStyleSheet(u"background-color: #c80000;\n"
+        self.btnElimProveedor = QPushButton(self.layoutWidget)
+        self.btnElimProveedor.setObjectName(u"btnElimProveedor")
+        self.btnElimProveedor.setMinimumSize(QSize(150, 0))
+        self.btnElimProveedor.setFont(font3)
+        self.btnElimProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimProveedor.setStyleSheet(u"background-color: #c80000;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnElimProveedor_9.setIcon(icon6)
-        self.btnElimProveedor_9.setIconSize(QSize(35, 35))
+        self.btnElimProveedor.setIcon(icon6)
+        self.btnElimProveedor.setIconSize(QSize(35, 35))
 
-        self.layoutBtnProveedores_3.addWidget(self.btnElimProveedor_9)
+        self.layoutBtnProveedores_3.addWidget(self.btnElimProveedor)
 
         self.horizontalSpacer_29 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -600,45 +600,45 @@ class Ui_MenuPrincipal(object):
         sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy1)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.groupBoxProveedor_6 = QGroupBox(self.frame_2)
-        self.groupBoxProveedor_6.setObjectName(u"groupBoxProveedor_6")
-        self.groupBoxProveedor_6.setEnabled(False)
-        self.groupBoxProveedor_6.setGeometry(QRect(10, 10, 421, 151))
-        self.groupBoxProveedor_6.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.groupBoxProveedor = QGroupBox(self.frame_2)
+        self.groupBoxProveedor.setObjectName(u"groupBoxProveedor")
+        self.groupBoxProveedor.setEnabled(False)
+        self.groupBoxProveedor.setGeometry(QRect(10, 10, 421, 151))
+        self.groupBoxProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "")
-        self.groupBoxProveedor_6.setFlat(False)
-        self.groupBoxProveedor_6.setCheckable(False)
-        self.groupBoxProveedor_6.setChecked(False)
-        self.gridLayout_7 = QGridLayout(self.groupBoxProveedor_6)
+        self.groupBoxProveedor.setFlat(False)
+        self.groupBoxProveedor.setCheckable(False)
+        self.groupBoxProveedor.setChecked(False)
+        self.gridLayout_7 = QGridLayout(self.groupBoxProveedor)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.tagProveedor_6 = QLabel(self.groupBoxProveedor_6)
-        self.tagProveedor_6.setObjectName(u"tagProveedor_6")
+        self.tagProveedor = QLabel(self.groupBoxProveedor)
+        self.tagProveedor.setObjectName(u"tagProveedor")
 
-        self.gridLayout_7.addWidget(self.tagProveedor_6, 0, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.tagProveedor, 0, 0, 1, 1)
 
-        self.telefonoProveedor_6 = QLineEdit(self.groupBoxProveedor_6)
-        self.telefonoProveedor_6.setObjectName(u"telefonoProveedor_6")
+        self.telefonoProveedor = QLineEdit(self.groupBoxProveedor)
+        self.telefonoProveedor.setObjectName(u"telefonoProveedor")
 
-        self.gridLayout_7.addWidget(self.telefonoProveedor_6, 2, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.telefonoProveedor, 2, 1, 1, 1)
 
-        self.cuilProveedor_6 = QLineEdit(self.groupBoxProveedor_6)
-        self.cuilProveedor_6.setObjectName(u"cuilProveedor_6")
-        self.cuilProveedor_6.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.cuilProveedor = QLineEdit(self.groupBoxProveedor)
+        self.cuilProveedor.setObjectName(u"cuilProveedor")
+        self.cuilProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "")
 
-        self.gridLayout_7.addWidget(self.cuilProveedor_6, 1, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.cuilProveedor, 1, 1, 1, 1)
 
-        self.nombreProveedor_6 = QLineEdit(self.groupBoxProveedor_6)
-        self.nombreProveedor_6.setObjectName(u"nombreProveedor_6")
+        self.nombreProveedor = QLineEdit(self.groupBoxProveedor)
+        self.nombreProveedor.setObjectName(u"nombreProveedor")
 
-        self.gridLayout_7.addWidget(self.nombreProveedor_6, 0, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.nombreProveedor, 0, 1, 1, 1)
 
-        self.tagCUIL_6 = QLabel(self.groupBoxProveedor_6)
+        self.tagCUIL_6 = QLabel(self.groupBoxProveedor)
         self.tagCUIL_6.setObjectName(u"tagCUIL_6")
 
         self.gridLayout_7.addWidget(self.tagCUIL_6, 1, 0, 1, 1)
 
-        self.tagTelefono_6 = QLabel(self.groupBoxProveedor_6)
+        self.tagTelefono_6 = QLabel(self.groupBoxProveedor)
         self.tagTelefono_6.setObjectName(u"tagTelefono_6")
 
         self.gridLayout_7.addWidget(self.tagTelefono_6, 2, 0, 1, 1)
@@ -753,64 +753,64 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_32)
 
-        self.btnNuevoProveedor_8 = QPushButton(self.layoutWidget_2)
-        self.btnNuevoProveedor_8.setObjectName(u"btnNuevoProveedor_8")
-        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor_8.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor_8.setSizePolicy(sizePolicy2)
-        self.btnNuevoProveedor_8.setMinimumSize(QSize(150, 0))
-        self.btnNuevoProveedor_8.setFont(font3)
-        self.btnNuevoProveedor_8.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnNuevoProveedor_8.setStyleSheet(u"background-color: #6daa44;\n"
+        self.btnNuevoIngreso = QPushButton(self.layoutWidget_2)
+        self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
+        sizePolicy2.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
+        self.btnNuevoIngreso.setSizePolicy(sizePolicy2)
+        self.btnNuevoIngreso.setMinimumSize(QSize(150, 0))
+        self.btnNuevoIngreso.setFont(font3)
+        self.btnNuevoIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnNuevoIngreso.setStyleSheet(u"background-color: #6daa44;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnNuevoProveedor_8.setIcon(icon4)
-        self.btnNuevoProveedor_8.setIconSize(QSize(35, 35))
+        self.btnNuevoIngreso.setIcon(icon4)
+        self.btnNuevoIngreso.setIconSize(QSize(35, 35))
 
-        self.layoutBtnProveedores_4.addWidget(self.btnNuevoProveedor_8)
+        self.layoutBtnProveedores_4.addWidget(self.btnNuevoIngreso)
 
         self.horizontalSpacer_33 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_33)
 
-        self.btnModProveedor_8 = QPushButton(self.layoutWidget_2)
-        self.btnModProveedor_8.setObjectName(u"btnModProveedor_8")
-        self.btnModProveedor_8.setMinimumSize(QSize(150, 0))
-        self.btnModProveedor_8.setFont(font4)
-        self.btnModProveedor_8.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModProveedor_8.setStyleSheet(u"background-color: #006dab;\n"
+        self.btnModIngreso = QPushButton(self.layoutWidget_2)
+        self.btnModIngreso.setObjectName(u"btnModIngreso")
+        self.btnModIngreso.setMinimumSize(QSize(150, 0))
+        self.btnModIngreso.setFont(font4)
+        self.btnModIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnModIngreso.setStyleSheet(u"background-color: #006dab;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnModProveedor_8.setIcon(icon5)
-        self.btnModProveedor_8.setIconSize(QSize(30, 30))
+        self.btnModIngreso.setIcon(icon5)
+        self.btnModIngreso.setIconSize(QSize(30, 30))
 
-        self.layoutBtnProveedores_4.addWidget(self.btnModProveedor_8)
+        self.layoutBtnProveedores_4.addWidget(self.btnModIngreso)
 
         self.horizontalSpacer_34 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_34)
 
-        self.btnElimProveedor_10 = QPushButton(self.layoutWidget_2)
-        self.btnElimProveedor_10.setObjectName(u"btnElimProveedor_10")
-        self.btnElimProveedor_10.setMinimumSize(QSize(150, 0))
-        self.btnElimProveedor_10.setFont(font3)
-        self.btnElimProveedor_10.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimProveedor_10.setStyleSheet(u"background-color: #c80000;\n"
+        self.btnElimIngreso = QPushButton(self.layoutWidget_2)
+        self.btnElimIngreso.setObjectName(u"btnElimIngreso")
+        self.btnElimIngreso.setMinimumSize(QSize(150, 0))
+        self.btnElimIngreso.setFont(font3)
+        self.btnElimIngreso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimIngreso.setStyleSheet(u"background-color: #c80000;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnElimProveedor_10.setIcon(icon6)
-        self.btnElimProveedor_10.setIconSize(QSize(35, 35))
-        self.btnElimProveedor_10.setAutoRepeat(False)
+        self.btnElimIngreso.setIcon(icon6)
+        self.btnElimIngreso.setIconSize(QSize(35, 35))
+        self.btnElimIngreso.setAutoRepeat(False)
 
-        self.layoutBtnProveedores_4.addWidget(self.btnElimProveedor_10)
+        self.layoutBtnProveedores_4.addWidget(self.btnElimIngreso)
 
         self.horizontalSpacer_35 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -871,9 +871,9 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
         ___qtablewidgetitem6 = self.tablaInventario.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MenuPrincipal", u"\u00daltimo ingreso", None));
-        self.btnNuevoProveedor_4.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModProveedor_4.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        self.btnNuevoProducto.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
+        self.btnModProducto.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
+        self.btnElimProducto.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInventario), QCoreApplication.translate("MenuPrincipal", u"Inventario", None))
 #if QT_CONFIG(whatsthis)
         self.groupBox_4.setWhatsThis(QCoreApplication.translate("MenuPrincipal", u"Esta es una lista de proveedores", None))
@@ -900,9 +900,9 @@ class Ui_MenuPrincipal(object):
 #if QT_CONFIG(accessibility)
         self.tablaProveedores_2.setAccessibleDescription("")
 #endif // QT_CONFIG(accessibility)
-        self.btnNuevoProveedor_7.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModProveedor_7.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimProveedor_9.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        self.btnNuevoProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
+        self.btnModProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
+        self.btnElimProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MenuPrincipal", u"Proveedores", None))
         self.groupBox_5.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         ___qtablewidgetitem13 = self.tablaIngresos.horizontalHeaderItem(0)
@@ -952,11 +952,11 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem33.setText(QCoreApplication.translate("MenuPrincipal", u"El chancho peludo", None));
         self.tablaIngresos.setSortingEnabled(__sortingEnabled)
 
-        self.groupBoxProveedor_6.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.tagProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.telefonoProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"2456980234", None))
-        self.cuilProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"23423134", None))
-        self.nombreProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"Juan Carlos", None))
+        self.groupBoxProveedor.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.tagProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.telefonoProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"2456980234", None))
+        self.cuilProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"23423134", None))
+        self.nombreProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"Juan Carlos", None))
         self.tagCUIL_6.setText(QCoreApplication.translate("MenuPrincipal", u"CUIL/CUIT ", None))
         self.tagTelefono_6.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None))
         self.groupBox_10.setTitle(QCoreApplication.translate("MenuPrincipal", u"Detalle de ingreso", None))
@@ -1015,9 +1015,9 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem58.setText(QCoreApplication.translate("MenuPrincipal", u"5", None));
         self.tablaIngresosDetalle_6.setSortingEnabled(__sortingEnabled1)
 
-        self.btnNuevoProveedor_8.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModProveedor_8.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimProveedor_10.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
+        self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
+        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MenuPrincipal", u"Archivo", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ayuda", None))
