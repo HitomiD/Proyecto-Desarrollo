@@ -69,11 +69,11 @@ class Ui_newProveedor(object):
 
         self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.lblRazonSocial)
 
-        self.lineEdit_9 = QLineEdit(newProveedor)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
-        self.lineEdit_9.setMaximumSize(QSize(200, 22))
+        self.lnEditRazonSocial = QLineEdit(newProveedor)
+        self.lnEditRazonSocial.setObjectName(u"lnEditRazonSocial")
+        self.lnEditRazonSocial.setMaximumSize(QSize(200, 22))
 
-        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.lineEdit_9)
+        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.lnEditRazonSocial)
 
         self.lblDireccion = QLabel(newProveedor)
         self.lblDireccion.setObjectName(u"lblDireccion")
@@ -82,11 +82,11 @@ class Ui_newProveedor(object):
 
         self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.lblDireccion)
 
-        self.lineEdit_10 = QLineEdit(newProveedor)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-        self.lineEdit_10.setMaximumSize(QSize(200, 22))
+        self.lnEditDireccion = QLineEdit(newProveedor)
+        self.lnEditDireccion.setObjectName(u"lnEditDireccion")
+        self.lnEditDireccion.setMaximumSize(QSize(200, 22))
 
-        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.lineEdit_10)
+        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.lnEditDireccion)
 
         self.lblTelefono = QLabel(newProveedor)
         self.lblTelefono.setObjectName(u"lblTelefono")
@@ -95,17 +95,11 @@ class Ui_newProveedor(object):
 
         self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.lblTelefono)
 
-        self.lineEdit_11 = QLineEdit(newProveedor)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setMaximumSize(QSize(200, 22))
+        self.lnEditTelefono = QLineEdit(newProveedor)
+        self.lnEditTelefono.setObjectName(u"lnEditTelefono")
+        self.lnEditTelefono.setMaximumSize(QSize(200, 22))
 
-        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lineEdit_11)
-
-        self.lineEdit_12 = QLineEdit(newProveedor)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
-        self.lineEdit_12.setMaximumSize(QSize(200, 22))
-
-        self.formLayout_3.setWidget(4, QFormLayout.FieldRole, self.lineEdit_12)
+        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lnEditTelefono)
 
         self.lblEmail = QLabel(newProveedor)
         self.lblEmail.setObjectName(u"lblEmail")
@@ -113,6 +107,32 @@ class Ui_newProveedor(object):
         self.lblEmail.setStyleSheet(u"margin-left:20px;")
 
         self.formLayout_3.setWidget(4, QFormLayout.LabelRole, self.lblEmail)
+
+        self.lnEditEmail = QLineEdit(newProveedor)
+        self.lnEditEmail.setObjectName(u"lnEditEmail")
+        self.lnEditEmail.setMaximumSize(QSize(200, 22))
+
+        self.formLayout_3.setWidget(4, QFormLayout.FieldRole, self.lnEditEmail)
+
+        self.labelCUIT = QLabel(newProveedor)
+        self.labelCUIT.setObjectName(u"labelCUIT")
+
+        self.formLayout_3.setWidget(5, QFormLayout.LabelRole, self.labelCUIT)
+
+        self.lnEditCUIT = QLineEdit(newProveedor)
+        self.lnEditCUIT.setObjectName(u"lnEditCUIT")
+
+        self.formLayout_3.setWidget(5, QFormLayout.FieldRole, self.lnEditCUIT)
+
+        self.label = QLabel(newProveedor)
+        self.label.setObjectName(u"label")
+
+        self.formLayout_3.setWidget(6, QFormLayout.LabelRole, self.label)
+
+        self.lnEditNota = QLineEdit(newProveedor)
+        self.lnEditNota.setObjectName(u"lnEditNota")
+
+        self.formLayout_3.setWidget(6, QFormLayout.FieldRole, self.lnEditNota)
 
 
         self.verticalLayout_3.addLayout(self.formLayout_3)
@@ -171,9 +191,11 @@ class Ui_newProveedor(object):
         newProveedor.setWindowTitle(QCoreApplication.translate("newProveedor", u"Nuevo Proveedor", None))
         self.label_15.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Ingrese los datos solicitados:</p></body></html>", None))
         self.lblRazonSocial.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Raz\u00f3n social<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.lineEdit_9.setText("")
+        self.lnEditRazonSocial.setText("")
         self.lblDireccion.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Direcci\u00f3n<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblTelefono.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Tel\u00e9fono<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.lblEmail.setText(QCoreApplication.translate("newProveedor", u"E-Mail", None))
+        self.lblEmail.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>Email<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.labelCUIT.setText(QCoreApplication.translate("newProveedor", u"<html><head/><body><p>CUIL/CUIT<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("newProveedor", u"Nota", None))
     # retranslateUi
 

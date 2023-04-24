@@ -665,7 +665,7 @@ font-weight: 600;
             <property name="checked">
              <bool>false</bool>
             </property>
-            <widget class="QTableWidget" name="tablaProveedores_2">
+            <widget class="QTableWidget" name="tablaProveedores">
              <property name="enabled">
               <bool>false</bool>
              </property>

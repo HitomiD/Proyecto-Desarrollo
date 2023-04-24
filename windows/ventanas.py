@@ -163,8 +163,11 @@ class VentanaNewProveedor(FormularioProveedor):
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
         super(VentanaPrincipal, self).__init__()
-        self.ui = Ui_MenuPrincipal()    
+        self.ui = Ui_MenuPrincipal()   
         self.ui.setupUi(self)
+        #poblado inicial tablas
+        crud.poblarQTableInventario(self.ui.tablaInventario)
+        crud.poblarQTableProveedores(self.ui.tablaProveedores) 
 
         #Conectar botones
         self.ui.btnNuevoProducto.clicked.connect(self.showNewProd)
