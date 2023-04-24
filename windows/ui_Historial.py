@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Historial.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,10 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QDialog, QFrame,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QSizePolicy, QSpacerItem, QTabWidget, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QDialog,
+    QFrame, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QSizePolicy, QSpacerItem, QTabWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+import Recursos_rc
 import Recursos_rc
 
 class Ui_Dialog(object):
@@ -26,6 +27,10 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(671, 627)
+        Dialog.setMaximumSize(QSize(671, 627))
+        icon = QIcon()
+        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        Dialog.setWindowIcon(icon)
         self.frame = QFrame(Dialog)
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(0, -6, 671, 121))
@@ -42,24 +47,27 @@ class Ui_Dialog(object):
         self.escudoClub = QLabel(self.frame)
         self.escudoClub.setObjectName(u"escudoClub")
         self.escudoClub.setEnabled(True)
-        self.escudoClub.setMaximumSize(QSize(100, 150))
+        self.escudoClub.setMaximumSize(QSize(200, 150))
         self.escudoClub.setSizeIncrement(QSize(0, 0))
         font = QFont()
         font.setPointSize(16)
         self.escudoClub.setFont(font)
         self.escudoClub.setStyleSheet(u"width:25px;\n"
 "height:25px;")
-        self.escudoClub.setPixmap(QPixmap(u":/Logos/Escudo-Club.png"))
-        self.escudoClub.setScaledContents(True)
+        self.escudoClub.setTextFormat(Qt.RichText)
+        self.escudoClub.setPixmap(QPixmap(u"../assets/Escudo-Interno - copia.png"))
+        self.escudoClub.setScaledContents(False)
 
         self.horizontalLayout_2.addWidget(self.escudoClub)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(60, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
         self.label = QLabel(self.frame)
         self.label.setObjectName(u"label")
+        self.label.setTextFormat(Qt.RichText)
+        self.label.setPixmap(QPixmap(u"../assets/Lupa-small.png"))
 
         self.horizontalLayout_2.addWidget(self.label)
 
@@ -437,20 +445,30 @@ class Ui_Dialog(object):
         sizePolicy1.setHeightForWidth(self.tablaInventario.sizePolicy().hasHeightForWidth())
         self.tablaInventario.setSizePolicy(sizePolicy1)
         self.tablaInventario.setMaximumSize(QSize(657, 487))
+        self.tablaInventario.setTabletTracking(False)
         self.tablaInventario.setStyleSheet(u"background-color: white;\n"
 "color:black;")
-        self.tablaInventario.setFrameShape(QFrame.Panel)
+        self.tablaInventario.setFrameShape(QFrame.Box)
         self.tablaInventario.setFrameShadow(QFrame.Plain)
         self.tablaInventario.setLineWidth(1)
         self.tablaInventario.setMidLineWidth(0)
         self.tablaInventario.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tablaInventario.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
         self.tablaInventario.setAutoScroll(True)
         self.tablaInventario.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tablaInventario.setTabKeyNavigation(True)
+        self.tablaInventario.setDragDropMode(QAbstractItemView.NoDragDrop)
         self.tablaInventario.setAlternatingRowColors(True)
         self.tablaInventario.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.tablaInventario.setTextElideMode(Qt.ElideMiddle)
+        self.tablaInventario.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tablaInventario.setTextElideMode(Qt.ElideLeft)
+        self.tablaInventario.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
         self.tablaInventario.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.tablaInventario.setShowGrid(True)
+        self.tablaInventario.setGridStyle(Qt.SolidLine)
+        self.tablaInventario.setSortingEnabled(False)
         self.tablaInventario.setWordWrap(True)
+        self.tablaInventario.setCornerButtonEnabled(True)
         self.tablaInventario.setRowCount(19)
         self.tablaInventario.setColumnCount(6)
         self.tablaInventario.horizontalHeader().setVisible(True)
@@ -461,6 +479,8 @@ class Ui_Dialog(object):
         self.tablaInventario.horizontalHeader().setStretchLastSection(False)
         self.tablaInventario.verticalHeader().setDefaultSectionSize(30)
         self.tablaInventario.verticalHeader().setHighlightSections(True)
+        self.tablaInventario.verticalHeader().setProperty("showSortIndicator", False)
+        self.tablaInventario.verticalHeader().setStretchLastSection(False)
 
         self.verticalLayout_3.addWidget(self.tablaInventario)
 
@@ -476,8 +496,8 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.escudoClub.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p><img src=\":/Logos/Escudo-Club - copia v2.png\"/></p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p><img src=\":/Iconos/Lupa v2.png\"/></p></body></html>", None))
+        self.escudoClub.setText("")
+        self.label.setText("")
         self.barraBusqueda.setPlaceholderText(QCoreApplication.translate("Dialog", u"Buscar por nombre", None))
         ___qtablewidgetitem = self.tablaInventario.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("Dialog", u"Fecha", None));

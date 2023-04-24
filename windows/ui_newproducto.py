@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'newproducto.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QComboBox, QDialog,
-    QDialogButtonBox, QFormLayout, QGridLayout, QLabel,
-    QLineEdit, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
+    QDialogButtonBox, QFormLayout, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
 class Ui_newProducto(object):
     def setupUi(self, newProducto):
@@ -35,33 +35,51 @@ class Ui_newProducto(object):
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(-1, -1, -1, 0)
-        self.verticalLayout_3 = QVBoxLayout()
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(25, 0, 10, 10)
-        self.buttonBox = QDialogButtonBox(newProducto)
-        self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setMaximumSize(QSize(330, 16777215))
-        self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Save)
+        self.gridLayout_2 = QGridLayout()
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(10, 0, -1, 0)
+        self.Cartelito_NewProducto = QLabel(newProducto)
+        self.Cartelito_NewProducto.setObjectName(u"Cartelito_NewProducto")
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Cartelito_NewProducto.sizePolicy().hasHeightForWidth())
+        self.Cartelito_NewProducto.setSizePolicy(sizePolicy)
+        font = QFont()
+        font.setPointSize(9)
+        font.setBold(True)
+        self.Cartelito_NewProducto.setFont(font)
 
-        self.verticalLayout_3.addWidget(self.buttonBox)
+        self.gridLayout_2.addWidget(self.Cartelito_NewProducto, 1, 0, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_2.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer_2, 1, 1, 1, 1)
 
 
-        self.gridLayout.addLayout(self.verticalLayout_3, 4, 0, 1, 1)
+        self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 2, 0, 1, 1)
 
         self.formLayout_2 = QFormLayout()
         self.formLayout_2.setObjectName(u"formLayout_2")
         self.formLayout_2.setContentsMargins(20, -1, 15, -1)
         self.lblNombre = QLabel(newProducto)
         self.lblNombre.setObjectName(u"lblNombre")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lblNombre.sizePolicy().hasHeightForWidth())
-        self.lblNombre.setSizePolicy(sizePolicy)
-        font = QFont()
-        font.setPointSize(9)
-        self.lblNombre.setFont(font)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lblNombre.sizePolicy().hasHeightForWidth())
+        self.lblNombre.setSizePolicy(sizePolicy1)
+        font1 = QFont()
+        font1.setPointSize(9)
+        self.lblNombre.setFont(font1)
 
         self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.lblNombre)
 
@@ -73,7 +91,7 @@ class Ui_newProducto(object):
 
         self.lblPrecio = QLabel(newProducto)
         self.lblPrecio.setObjectName(u"lblPrecio")
-        self.lblPrecio.setFont(font)
+        self.lblPrecio.setFont(font1)
 
         self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.lblPrecio)
 
@@ -96,7 +114,7 @@ class Ui_newProducto(object):
 
         self.lblDistr = QLabel(newProducto)
         self.lblDistr.setObjectName(u"lblDistr")
-        self.lblDistr.setFont(font)
+        self.lblDistr.setFont(font1)
 
         self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.lblDistr)
 
@@ -109,69 +127,48 @@ class Ui_newProducto(object):
 
         self.gridLayout.addLayout(self.formLayout_2, 1, 0, 1, 1)
 
-        self.gridLayout_2 = QGridLayout()
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(10, 0, -1, 0)
-        self.Cartelito_NewProducto = QLabel(newProducto)
-        self.Cartelito_NewProducto.setObjectName(u"Cartelito_NewProducto")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.Cartelito_NewProducto.sizePolicy().hasHeightForWidth())
-        self.Cartelito_NewProducto.setSizePolicy(sizePolicy1)
-        font1 = QFont()
-        font1.setPointSize(9)
-        font1.setBold(True)
-        self.Cartelito_NewProducto.setFont(font1)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(25, 0, 10, 10)
+        self.buttonBox = QDialogButtonBox(newProducto)
+        self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setMaximumSize(QSize(75, 24))
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Help)
 
-        self.gridLayout_2.addWidget(self.Cartelito_NewProducto, 1, 0, 1, 1)
+        self.horizontalLayout.addWidget(self.buttonBox)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_2.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
+        self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 10, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 1, 1, 1, 1)
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.AcceptCancel = QDialogButtonBox(newProducto)
+        self.AcceptCancel.setObjectName(u"AcceptCancel")
+        self.AcceptCancel.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Save)
+
+        self.horizontalLayout.addWidget(self.AcceptCancel)
 
 
-        self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 2, 0, 1, 1)
-
-        self.label_2 = QLabel(newProducto)
-        self.label_2.setObjectName(u"label_2")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(10)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy2)
-        self.label_2.setMaximumSize(QSize(246, 16777215))
-        self.label_2.setStyleSheet(u"margin-left: 1px;")
-        self.label_2.setPixmap(QPixmap(u"../assets/Interrogation - 30x30.png"))
-
-        self.gridLayout.addWidget(self.label_2, 3, 0, 1, 1)
+        self.gridLayout.addLayout(self.horizontalLayout, 3, 0, 1, 1)
 
 
         self.verticalLayout.addLayout(self.gridLayout)
 
 
         self.retranslateUi(newProducto)
-        self.buttonBox.accepted.connect(newProducto.accept)
-        self.buttonBox.rejected.connect(newProducto.reject)
 
         QMetaObject.connectSlotsByName(newProducto)
     # setupUi
 
     def retranslateUi(self, newProducto):
         newProducto.setWindowTitle(QCoreApplication.translate("newProducto", u"Nuevo Producto", None))
+        self.Cartelito_NewProducto.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p><span style=\" font-weight:400;\">Ingrese los datos solicitados:</span></p></body></html>", None))
         self.lblNombre.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Nombre<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblPrecio.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Precio unitario<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Stock minimo<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblDistr.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p>Distribuidor <span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.Cartelito_NewProducto.setText(QCoreApplication.translate("newProducto", u"<html><head/><body><p><span style=\" font-weight:400;\">Ingrese los datos solicitados:</span></p></body></html>", None))
-        self.label_2.setText("")
     # retranslateUi
 

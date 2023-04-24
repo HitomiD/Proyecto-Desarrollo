@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -48,6 +48,22 @@ class Ui_MainWindow(object):
         icon2 = QIcon()
         icon2.addFile(u"../assets/Info.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionCrear_Usuario.setIcon(icon2)
+        self.actionCrear_Usuario_2 = QAction(MainWindow)
+        self.actionCrear_Usuario_2.setObjectName(u"actionCrear_Usuario_2")
+        icon3 = QIcon()
+        icon3.addFile(u"../assets/User.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.actionCrear_Usuario_2.setIcon(icon3)
+        self.actionCrear_Usuario_2.setShortcutContext(Qt.WindowShortcut)
+        self.actionEliminar_Usuario = QAction(MainWindow)
+        self.actionEliminar_Usuario.setObjectName(u"actionEliminar_Usuario")
+        icon4 = QIcon()
+        icon4.addFile(u"../assets/BanUser.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.actionEliminar_Usuario.setIcon(icon4)
+        self.actionModificar_Usuario = QAction(MainWindow)
+        self.actionModificar_Usuario.setObjectName(u"actionModificar_Usuario")
+        icon5 = QIcon()
+        icon5.addFile(u"../assets/ModUser.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.actionModificar_Usuario.setIcon(icon5)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayoutWidget = QWidget(self.centralwidget)
@@ -65,7 +81,8 @@ class Ui_MainWindow(object):
         self.pushButton_3.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_3.setStyleSheet(u"background-color: transparent;\n"
 "color:blue;\n"
-"font-weight: bold;")
+"font-weight: bold;\n"
+"margin-left:30px;")
 
         self.horizontalLayout_3.addWidget(self.pushButton_3)
 
@@ -91,6 +108,7 @@ class Ui_MainWindow(object):
 
         self.label = QLabel(self.gridLayoutWidget)
         self.label.setObjectName(u"label")
+        self.label.setStyleSheet(u"margin-right:30px;")
         self.label.setPixmap(QPixmap(u"../assets/Escudo-black.png"))
 
         self.horizontalLayout_3.addWidget(self.label)
@@ -354,6 +372,7 @@ class Ui_MainWindow(object):
 "font-size: 14px;\n"
 "font-weight: 500;\n"
 "padding: 5px 5px 7px 5px;\n"
+"margin-top:15px;\n"
 "")
 
         self.horizontalLayout_2.addWidget(self.pushButton)
@@ -386,11 +405,17 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 820, 22))
         self.menuAyuda = QMenu(self.menubar)
         self.menuAyuda.setObjectName(u"menuAyuda")
+        self.menuUsuarios = QMenu(self.menubar)
+        self.menuUsuarios.setObjectName(u"menuUsuarios")
         MainWindow.setMenuBar(self.menubar)
 
+        self.menubar.addAction(self.menuUsuarios.menuAction())
         self.menubar.addAction(self.menuAyuda.menuAction())
         self.menuAyuda.addAction(self.actionAcerca_de)
         self.menuAyuda.addAction(self.actionCrear_Usuario)
+        self.menuUsuarios.addAction(self.actionCrear_Usuario_2)
+        self.menuUsuarios.addAction(self.actionModificar_Usuario)
+        self.menuUsuarios.addAction(self.actionEliminar_Usuario)
 
         self.retranslateUi(MainWindow)
 
@@ -399,8 +424,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Club Atletico Sarmiento - Gestion de Inventario", None))
-        self.actionAcerca_de.setText(QCoreApplication.translate("MainWindow", u"Acerca de", None))
-        self.actionCrear_Usuario.setText(QCoreApplication.translate("MainWindow", u"Manual del Usuario", None))
+        self.actionAcerca_de.setText(QCoreApplication.translate("MainWindow", u"Manual del Usuario", None))
+        self.actionCrear_Usuario.setText(QCoreApplication.translate("MainWindow", u"Acerca de...", None))
+        self.actionCrear_Usuario_2.setText(QCoreApplication.translate("MainWindow", u"Crear Usuario", None))
+        self.actionEliminar_Usuario.setText(QCoreApplication.translate("MainWindow", u"Eliminar Usuario", None))
+        self.actionModificar_Usuario.setText(QCoreApplication.translate("MainWindow", u"Modificar Usuario", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u00bfProblemas para\n"
 " iniciar sesi\u00f3n?", None))
         self.label.setText("")
@@ -411,5 +439,6 @@ class Ui_MainWindow(object):
         self.inputPassword.setInputMask("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"INGRESAR", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MainWindow", u"Ayuda", None))
+        self.menuUsuarios.setTitle(QCoreApplication.translate("MainWindow", u"Usuarios", None))
     # retranslateUi
 

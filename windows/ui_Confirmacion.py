@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'Confirmacion.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,73 +16,173 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialog, QDialogButtonBox,
-    QLabel, QLineEdit, QSizePolicy, QWidget)
+    QHBoxLayout, QLabel, QLineEdit, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        if not Dialog.objectName():
-            Dialog.setObjectName(u"Dialog")
-        Dialog.resize(506, 178)
-        self.buttonBox = QDialogButtonBox(Dialog)
-        self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(280, 130, 221, 41))
-        self.buttonBox.setOrientation(Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
-        self.label = QLabel(Dialog)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 10, 501, 41))
-        font = QFont()
-        font.setPointSize(12)
-        self.label.setFont(font)
-        self.label.setLayoutDirection(Qt.LeftToRight)
-        self.inputPassword = QLineEdit(Dialog)
-        self.inputPassword.setObjectName(u"inputPassword")
-        self.inputPassword.setGeometry(QRect(200, 60, 180, 22))
-        self.inputPassword.setMinimumSize(QSize(150, 0))
-        self.inputPassword.setMaximumSize(QSize(300, 16777215))
-        self.inputPassword.setEchoMode(QLineEdit.Password)
-        self.LabelUsuario = QLabel(Dialog)
-        self.LabelUsuario.setObjectName(u"LabelUsuario")
-        self.LabelUsuario.setGeometry(QRect(90, 60, 100, 27))
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+class Ui_Dialogo(object):
+    def setupUi(self, Dialogo):
+        if not Dialogo.objectName():
+            Dialogo.setObjectName(u"Dialogo")
+        Dialogo.resize(352, 212)
+        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.LabelUsuario.sizePolicy().hasHeightForWidth())
-        self.LabelUsuario.setSizePolicy(sizePolicy)
-        self.LabelUsuario.setFont(font)
-        self.LabelUsuario.setAlignment(Qt.AlignCenter)
-        self.CONTRASENA = QLabel(Dialog)
-        self.CONTRASENA.setObjectName(u"CONTRASENA")
-        self.CONTRASENA.setGeometry(QRect(80, 90, 110, 27))
-        sizePolicy.setHeightForWidth(self.CONTRASENA.sizePolicy().hasHeightForWidth())
-        self.CONTRASENA.setSizePolicy(sizePolicy)
-        self.CONTRASENA.setFont(font)
-        self.CONTRASENA.setAlignment(Qt.AlignCenter)
-        self.CasillaUsuario = QLineEdit(Dialog)
-        self.CasillaUsuario.setObjectName(u"CasillaUsuario")
-        self.CasillaUsuario.setEnabled(True)
-        self.CasillaUsuario.setGeometry(QRect(200, 90, 180, 22))
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Maximum)
+        sizePolicy.setHeightForWidth(Dialogo.sizePolicy().hasHeightForWidth())
+        Dialogo.setSizePolicy(sizePolicy)
+        icon = QIcon()
+        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        Dialogo.setWindowIcon(icon)
+        self.verticalLayoutWidget = QWidget(Dialogo)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(0, 10, 351, 196))
+        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_5)
+
+        self.label = QLabel(self.verticalLayoutWidget)
+        self.label.setObjectName(u"label")
+        self.label.setMaximumSize(QSize(308, 22))
+        font = QFont()
+        font.setPointSize(9)
+        self.label.setFont(font)
+        self.label.setLayoutDirection(Qt.LeftToRight)
+
+        self.horizontalLayout_3.addWidget(self.label)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_6)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalSpacer_3 = QSpacerItem(45, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_3)
+
+        self.LabelUsuario = QLabel(self.verticalLayoutWidget)
+        self.LabelUsuario.setObjectName(u"LabelUsuario")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.CasillaUsuario.sizePolicy().hasHeightForWidth())
-        self.CasillaUsuario.setSizePolicy(sizePolicy1)
-        self.CasillaUsuario.setMinimumSize(QSize(180, 0))
-        self.CasillaUsuario.setMaximumSize(QSize(150, 16777215))
-        self.CasillaUsuario.setBaseSize(QSize(0, 0))
+        sizePolicy1.setHeightForWidth(self.LabelUsuario.sizePolicy().hasHeightForWidth())
+        self.LabelUsuario.setSizePolicy(sizePolicy1)
+        self.LabelUsuario.setFont(font)
+        self.LabelUsuario.setStyleSheet(u"margin-right:10px;")
+        self.LabelUsuario.setAlignment(Qt.AlignCenter)
 
-        self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
+        self.horizontalLayout.addWidget(self.LabelUsuario)
 
-        QMetaObject.connectSlotsByName(Dialog)
+        self.inputPassword_2 = QLineEdit(self.verticalLayoutWidget)
+        self.inputPassword_2.setObjectName(u"inputPassword_2")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.inputPassword_2.sizePolicy().hasHeightForWidth())
+        self.inputPassword_2.setSizePolicy(sizePolicy2)
+        self.inputPassword_2.setMinimumSize(QSize(150, 0))
+        self.inputPassword_2.setMaximumSize(QSize(220, 22))
+        self.inputPassword_2.setFrame(True)
+        self.inputPassword_2.setEchoMode(QLineEdit.Normal)
+
+        self.horizontalLayout.addWidget(self.inputPassword_2)
+
+        self.horizontalSpacer_4 = QSpacerItem(60, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.CONTRASENA = QLabel(self.verticalLayoutWidget)
+        self.CONTRASENA.setObjectName(u"CONTRASENA")
+        sizePolicy2.setHeightForWidth(self.CONTRASENA.sizePolicy().hasHeightForWidth())
+        self.CONTRASENA.setSizePolicy(sizePolicy2)
+        self.CONTRASENA.setMaximumSize(QSize(16777215, 16777215))
+        self.CONTRASENA.setFont(font)
+        self.CONTRASENA.setStyleSheet(u"margin-right:10px;")
+        self.CONTRASENA.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_2.addWidget(self.CONTRASENA)
+
+        self.inputPassword = QLineEdit(self.verticalLayoutWidget)
+        self.inputPassword.setObjectName(u"inputPassword")
+        sizePolicy2.setHeightForWidth(self.inputPassword.sizePolicy().hasHeightForWidth())
+        self.inputPassword.setSizePolicy(sizePolicy2)
+        self.inputPassword.setMinimumSize(QSize(150, 0))
+        self.inputPassword.setMaximumSize(QSize(220, 22))
+        self.inputPassword.setEchoMode(QLineEdit.Password)
+
+        self.horizontalLayout_2.addWidget(self.inputPassword)
+
+        self.horizontalSpacer_2 = QSpacerItem(60, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.Ayuda = QDialogButtonBox(self.verticalLayoutWidget)
+        self.Ayuda.setObjectName(u"Ayuda")
+        self.Ayuda.setMaximumSize(QSize(330, 30))
+        self.Ayuda.setLayoutDirection(Qt.LeftToRight)
+        self.Ayuda.setOrientation(Qt.Horizontal)
+        self.Ayuda.setStandardButtons(QDialogButtonBox.Help)
+
+        self.horizontalLayout_4.addWidget(self.Ayuda)
+
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_7)
+
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_8)
+
+        self.buttonBox = QDialogButtonBox(self.verticalLayoutWidget)
+        self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setMaximumSize(QSize(329, 24))
+        self.buttonBox.setOrientation(Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
+
+        self.horizontalLayout_4.addWidget(self.buttonBox)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
+
+        self.retranslateUi(Dialogo)
+        self.buttonBox.accepted.connect(Dialogo.accept)
+        self.buttonBox.rejected.connect(Dialogo.reject)
+
+        QMetaObject.connectSlotsByName(Dialogo)
     # setupUi
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">Para confirmar el cambio, ingrese su <span style=\" font-style:italic; color:#000000;\">usuario</span> y <span style=\" font-style:italic;\">contrase\u00f1a</span></p></body></html>", None))
+    def retranslateUi(self, Dialogo):
+        Dialogo.setWindowTitle(QCoreApplication.translate("Dialogo", u"[ALERTA] Confirmar Cambios", None))
+        self.label.setText(QCoreApplication.translate("Dialogo", u"<html><head/><body><p align=\"center\">Para confirmar el cambio, ingrese su <span style=\" color:#000000;\">usuario</span> y contrase\u00f1a</p></body></html>", None))
+        self.LabelUsuario.setText(QCoreApplication.translate("Dialogo", u"<html><head/><body><p>Usuario: </p></body></html>", None))
+        self.inputPassword_2.setInputMask("")
+        self.inputPassword_2.setText("")
+        self.CONTRASENA.setText(QCoreApplication.translate("Dialogo", u"<html><head/><body><p>Contrase\u00f1a: </p></body></html>", None))
         self.inputPassword.setInputMask("")
-        self.LabelUsuario.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p>Usuario: </p></body></html>", None))
-        self.CONTRASENA.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p>Contrase\u00f1a: </p></body></html>", None))
     # retranslateUi
 
