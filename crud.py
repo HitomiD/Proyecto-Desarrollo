@@ -48,7 +48,7 @@ def poblarQTableProveedores(tabla):
     totalRegistros = Proveedores.select().count()
     tabla.setRowCount(totalRegistros)
     listaProveedores = Proveedores.select()
-        
+    
     for index, proveedor in enumerate(listaProveedores):
         
         itemId = QTableWidgetItem()
@@ -97,4 +97,8 @@ def listaProveedores():
 
 def eliminarProducto(idProducto):
     qry=Productos.delete().where(Productos.id == idProducto)
+    qry.execute()
+    
+def eliminarProveedor(cuilProveedor):
+    qry = Proveedores.delete().where(Proveedores.cuil_cuit == cuilProveedor)
     qry.execute()

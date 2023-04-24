@@ -104,7 +104,7 @@ align-items: center;</string>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_9">
+        <widget class="QLineEdit" name="lnEditRazonSocial">
          <property name="maximumSize">
           <size>
            <width>200</width>
@@ -132,7 +132,7 @@ align-items: center;</string>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_10">
+        <widget class="QLineEdit" name="lnEditDireccion">
          <property name="maximumSize">
           <size>
            <width>200</width>
@@ -157,17 +157,7 @@ align-items: center;</string>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_11">
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>22</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_12">
+        <widget class="QLineEdit" name="lnEditTelefono">
          <property name="maximumSize">
           <size>
            <width>200</width>
@@ -187,9 +177,39 @@ align-items: center;</string>
           <string notr="true">margin-left:20px;</string>
          </property>
          <property name="text">
-          <string>E-Mail</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Email&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lnEditEmail">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="labelCUIT">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CUIL/CUIT&lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;*&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lnEditCUIT"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Nota</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="lnEditNota"/>
        </item>
       </layout>
      </item>

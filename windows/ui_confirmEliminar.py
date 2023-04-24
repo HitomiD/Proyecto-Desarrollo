@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialog, QDialogButtonBox,
     QLabel, QSizePolicy, QWidget)
 
-class Ui_confirmElimProducto(object):
+class Ui_confirmEliminar(object):
     def setupUi(self, confirmElimProducto):
         if not confirmElimProducto.objectName():
             confirmElimProducto.setObjectName(u"confirmElimProducto")
@@ -58,8 +58,8 @@ class Ui_confirmElimProducto(object):
     # setupUi
 
     def retranslateUi(self, confirmElimProducto):
-        confirmElimProducto.setWindowTitle(QCoreApplication.translate("confirmElimProducto", u"[Alerta] Eliminar producto", None))
-        self.label.setText(QCoreApplication.translate("confirmElimProducto", u"<html><head/><body><p align=\"center\">\u00bfEsta seguro de que desea eliminar el producto?</p></body></html>", None))
+        confirmElimProducto.setWindowTitle(QCoreApplication.translate("confirmElim", u"[Alerta] Eliminar item", None))
+        self.label.setText(QCoreApplication.translate("confirmElimProducto", u"<html><head/><body><p align=\"center\">\u00bfEsta seguro de que desea eliminar el item seleccionado?</p></body></html>", None))
         self.img.setText("")
     # retranslateUi
 
