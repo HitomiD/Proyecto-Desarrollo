@@ -4,7 +4,7 @@ from PySide6.QtGui import QDoubleValidator,QIntValidator
 from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
 from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
-from windows.ui_confirmElimProd import Ui_confirmElimProducto
+from windows.ui_confirmEliminar import Ui_confirmEliminar
 from windows.ui_newproveedor import Ui_newProveedor
 
 from dbModel import Productos,Proveedores
@@ -148,6 +148,7 @@ class VentanaNewProveedor(FormularioProveedor):
             #Se extraen los datos de los campos de la ventana
             nuevoProveedor.razonsocial = self.ui.lnEditRazonSocial.text()
             nuevoProveedor.direccion = self.ui.lnEditDireccion.text()
+            nuevoProveedor.email = self.ui.lnEditEmail.text()
             telefono = int(self.ui.lnEditTelefono.text())
             nuevoProveedor.telefono = telefono
             CUIL_CUIT = int(self.ui.lnEditCUIT.text())
@@ -182,6 +183,8 @@ class VentanaPrincipal(QMainWindow):
     def showEliminarProd(self):
         self.popupConfirmacion = popupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProducto)
+        self.popupConfirmacion.ui.label.setText("¿Desea eliminar este producto?")
+        self.popupConfirmacion.setWindowTitle("Eliminar producto")
         self.popupConfirmacion.exec_()
     
     #Elimina el producto si el proceso se confirma
@@ -239,6 +242,8 @@ class VentanaPrincipal(QMainWindow):
     def showEliminarProv(self):
         self.popupConfirmacion = popupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProveedor)
+        self.popupConfirmacion.ui.label.setText("¿Desea eliminar este proveedor?")
+        self.popupConfirmacion.setWindowTitle("Eliminar proveedor")
         self.popupConfirmacion.exec_()
     
     #Elimina el proveedor si el proceso se confirma
@@ -314,5 +319,5 @@ class popupConfirmElim(QDialog) :
         
     def __init__(self):
         super(popupConfirmElim,self).__init__()
-        self.ui = Ui_confirmElimProducto()
+        self.ui = Ui_confirmEliminar()
         self.ui.setupUi(self)
