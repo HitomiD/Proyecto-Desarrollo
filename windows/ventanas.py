@@ -6,6 +6,7 @@ from windows.ui_main import Ui_MenuPrincipal
 from windows.ui_newproducto import Ui_newProducto
 from windows.ui_confirmEliminar import Ui_confirmEliminar
 from windows.ui_newproveedor import Ui_newProveedor
+from windows.error_ui import Ui_ErrorDialog
 
 from dbModel import Productos,Proveedores
 import crud
@@ -184,6 +185,15 @@ class VentanaPrincipal(QMainWindow):
         self.w.show()
     
     def showEliminarProd(self):
+        
+        #comprobar si hay un elemento seleccionado
+        row = self.ui.tablaInventario.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún producto.")
+            popup.exec()
+            return
+        
         self.popupConfirmacion = popupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProducto)
         self.popupConfirmacion.ui.label.setText("¿Desea eliminar este producto?")
@@ -199,10 +209,18 @@ class VentanaPrincipal(QMainWindow):
     
     #Mostrar ventana edicion
     def showEditProd(self):
+        
+        row = self.ui.tablaInventario.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún producto.")
+            popup.exec()
+            return
+        
         self.modProductWindow = VentanaEditProducto()
         self.modProductWindow.setWindowTitle("Editar producto")
         self.modProductWindow.guardado.connect(self.updateTablaInventario)
-        row = self.ui.tablaInventario.currentRow()
+        
         descActual = self.ui.tablaInventario.item(row,1).text()
         #stockNuevo = int(self.ui.tablaInventario.item(row,2).text()) 
         stockMinActual = int(self.ui.tablaInventario.item(row,3).text())
@@ -243,6 +261,15 @@ class VentanaPrincipal(QMainWindow):
         self.newProv.show()
     
     def showEliminarProv(self):
+        
+        #comprobar si hay un elemento seleccionado
+        row = self.ui.tablaProveedores.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún proveedor.")
+            popup.exec()
+            return
+        
         self.popupConfirmacion = popupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProveedor)
         self.popupConfirmacion.ui.label.setText("¿Desea eliminar este proveedor?")
@@ -257,12 +284,18 @@ class VentanaPrincipal(QMainWindow):
         self.updateTablaProveedores()
     
     def showEditProv(self):
-        self.modProvWindow = VentanaEditProveedor()
-        self.modProvWindow.setWindowTitle("Editar proveedor")
-        self.modProvWindow.guardado.connect(self.updateTablaProveedores)
         
         #comprobar si hay un elemento seleccionado
         row = self.ui.tablaProveedores.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún proveedor.")
+            popup.exec()
+            return
+        
+        self.modProvWindow = VentanaEditProveedor()
+        self.modProvWindow.setWindowTitle("Editar proveedor")
+        self.modProvWindow.guardado.connect(self.updateTablaProveedores)
         
         cuilActual = self.ui.tablaProveedores.item(row,0).text()
         razonActual = self.ui.tablaProveedores.item(row,1).text()
@@ -317,6 +350,14 @@ class popupDatosInvalidos(QDialog) :
         self.ui = Ui_popupDatosInvalidos()
         self.ui.setupUi(self)
         
+#Popup error
+class popupError(QDialog) :
+
+    def __init__(self):
+        super(popupError,self).__init__()
+        self.ui = Ui_ErrorDialog()
+        self.ui.setupUi(self)
+
 #Popup confirmacion eliminar producto
 class popupConfirmElim(QDialog) :
         
