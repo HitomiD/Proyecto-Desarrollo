@@ -145,11 +145,11 @@ class Ui_newProducto(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-        self.AcceptCancel = QDialogButtonBox(newProducto)
-        self.AcceptCancel.setObjectName(u"AcceptCancel")
-        self.AcceptCancel.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Save)
+        self.buttonBox = QDialogButtonBox(newProducto)
+        self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Save)
 
-        self.horizontalLayout.addWidget(self.AcceptCancel)
+        self.horizontalLayout.addWidget(self.buttonBox)
 
 
         self.gridLayout.addLayout(self.horizontalLayout, 3, 0, 1, 1)
@@ -159,6 +159,7 @@ class Ui_newProducto(object):
 
 
         self.retranslateUi(newProducto)
+
 
         QMetaObject.connectSlotsByName(newProducto)
     # setupUi
