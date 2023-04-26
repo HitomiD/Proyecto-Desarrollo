@@ -161,6 +161,7 @@ class VentanaNewProveedor(FormularioProveedor):
             self.guardado.emit()
             self.accept()
 
+#Popup inicial de alta de ingreso
 class PopupIngresoNuevo(QDialog):
     
     proveedorGuardado = Signal()
@@ -173,7 +174,6 @@ class PopupIngresoNuevo(QDialog):
         self.ui.buttonBox.accepted.connect(self.showNewIngreso)
 
         self.comboBoxSetup()
-    
     #Aca no se obtiene la fecha, eso esta declarado en AltaIngresoInicio_ui.py
             
     def showNewProvIngreso(self):
@@ -193,6 +193,7 @@ class PopupIngresoNuevo(QDialog):
         #def ComboBoxUpdate(self):
         #    print("actualizar")
     
+    #LLamada a la siguiente ventana
     def showNewIngreso(self):
         self.hide()
         self.ventanaNuevoIngreso = VentanaNuevoIngreso()
@@ -201,6 +202,8 @@ class PopupIngresoNuevo(QDialog):
         self.ventanaNuevoIngreso.ui.lblFechaValor.setText(fecha)
         self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(self.ui.comboxDistr.currentText())
         self.ventanaNuevoIngreso.accepted.connect(self.accept)
+        crud.poblarTablaProductosIngreso(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.ui.lblProveedorValor.text())
+
         self.ventanaNuevoIngreso.show()
         
     
@@ -210,12 +213,13 @@ class PopupIngresoNuevo(QDialog):
         for index,proveedor in enumerate(listaProveedores):
             self.ui.comboxDistr.addItem(proveedor.razonsocial) 
 
+#Ventana de ingreso (seleccion productos)
 class VentanaNuevoIngreso(QDialog):
     def __init__(self):
         super(VentanaNuevoIngreso,self).__init__()
         self.ui = Ui_ventanaNuevoIngreso()
         self.ui.setupUi(self)
-
+        
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
     def __init__(self):

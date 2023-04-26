@@ -49,8 +49,6 @@ class Ui_InicioNuevoIngreso(object):
         self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.lblDistr)
 
         self.comboxDistr = QComboBox(self.layoutWidget_2)
-        self.comboxDistr.addItem("")
-        self.comboxDistr.addItem("")
         self.comboxDistr.setObjectName(u"comboxDistr")
         self.comboxDistr.setMaximumSize(QSize(220, 22))
 
@@ -90,9 +88,6 @@ class Ui_InicioNuevoIngreso(object):
         InicioNuevoIngreso.setWindowTitle(QCoreApplication.translate("InicioNuevoIngreso", u"Nuevo Ingreso", None))
         self.lblIngreso.setText(QCoreApplication.translate("InicioNuevoIngreso", u"<html><head/><body><p>Fecha de ingreso<span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
         self.lblDistr.setText(QCoreApplication.translate("InicioNuevoIngreso", u"<html><head/><body><p>Proveedor <span style=\" font-weight:700; color:#ff0000;\">*</span></p></body></html>", None))
-        self.comboxDistr.setItemText(0, QCoreApplication.translate("InicioNuevoIngreso", u"Juan", None))
-        self.comboxDistr.setItemText(1, QCoreApplication.translate("InicioNuevoIngreso", u"Pedro", None))
-
         self.Cartelito_NewProducto.setText(QCoreApplication.translate("InicioNuevoIngreso", u"<html><head/><body><p><span style=\" font-weight:400;\">Ingrese los datos solicitados:</span></p></body></html>", None))
         self.btnNuevoProveedor.setText(QCoreApplication.translate("InicioNuevoIngreso", u"A\u00f1adir un proveedor", None))
     # retranslateUi

@@ -15,7 +15,6 @@ def poblarQTableInventario(tabla):
                       .join(Proveedores, JOIN.LEFT_OUTER, on=(Productos.cuil_cuit_proveedor == Proveedores.cuil_cuit))
                       .namedtuples()) #namedtuples() es para retornar un diccionario.
 
-
     for index, producto in enumerate(listaProductos):
         itemId = QTableWidgetItem()
         itemId.setData(0,producto.id)
@@ -102,3 +101,50 @@ def eliminarProducto(idProducto):
 def eliminarProveedor(cuilProveedor):
     qry = Proveedores.delete().where(Proveedores.cuil_cuit == cuilProveedor)
     qry.execute()
+
+
+def poblarTablaProductosIngreso(tabla,razonSocial):
+        
+    query = (Proveedores
+                 .select(Proveedores.cuil_cuit)
+                 .where(Proveedores.razonsocial == razonSocial))
+    #Si se le asigna la query en si directamente a cuilCuitProveedor no funciona (¿?).
+    cuilCuitProveedor = query  
+    
+    
+    listaProductos = (Productos
+                      .select(Productos.id,Productos.descripcion,Productos.stock,Productos.stock_minimo)
+                      .where(Productos.cuil_cuit_proveedor == cuilCuitProveedor)
+                      .namedtuples()) #namedtuples() es para retornar un diccionario.
+    
+    
+    #settear cantidad de lineas para la tabla
+    query = (Productos
+             .select(Productos.id,Productos.descripcion,Productos.stock,Productos.stock_minimo,)
+            .where(Productos.cuil_cuit_proveedor == cuilCuitProveedor))
+    
+    totalRegistros = (Productos
+                    .select(Productos.id)
+                    .where(Productos.cuil_cuit_proveedor == cuilCuitProveedor).count())
+    tabla.setRowCount(totalRegistros)
+
+    #id,descripcion,stock,stock minimo
+    for index, producto in enumerate(listaProductos):
+        #id
+        itemId = QTableWidgetItem()
+        itemId.setData(0,producto.id)
+        tabla.setItem(index,0,itemId)
+        
+        #Descripcion
+        #En caso de ser un string se puede omitir la funcion setData de la siguiente forma
+        tabla.setItem(index,1,QTableWidgetItem(producto.descripcion))
+        
+        #Stock
+        itemStock = QTableWidgetItem()
+        itemStock.setData(0,producto.stock)
+        tabla.setItem(index,2,itemStock)
+        
+        #Stock minimo
+        itemStockMin = QTableWidgetItem()
+        itemStockMin.setData(0,producto.stock_minimo)
+        tabla.setItem(index,3,itemStockMin)

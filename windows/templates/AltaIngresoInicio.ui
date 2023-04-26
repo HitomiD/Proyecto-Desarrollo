@@ -72,16 +72,6 @@
         <height>22</height>
        </size>
       </property>
-      <item>
-       <property name="text">
-        <string>Juan</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Pedro</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="0" column="1">
