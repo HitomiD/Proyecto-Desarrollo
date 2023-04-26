@@ -80,7 +80,7 @@ class Ui_InicioNuevoIngreso(object):
         self.btnNuevoProveedor.setGeometry(QRect(70, 140, 171, 23))
 
         self.retranslateUi(InicioNuevoIngreso)
-        self.buttonBox.accepted.connect(InicioNuevoIngreso.accept)
+        #self.buttonBox.accepted.connect(InicioNuevoIngreso.accept)
         self.buttonBox.rejected.connect(InicioNuevoIngreso.reject)
 
         QMetaObject.connectSlotsByName(InicioNuevoIngreso)

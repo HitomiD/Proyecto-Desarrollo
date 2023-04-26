@@ -8,6 +8,7 @@ from windows.ui_confirmEliminar import Ui_confirmEliminar
 from windows.ui_newproveedor import Ui_newProveedor
 from windows.error_ui import Ui_ErrorDialog
 from windows.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
+from windows.AltaIngreso_ui import Ui_ventanaNuevoIngreso
 
 from dbModel import Productos,Proveedores
 import crud
@@ -169,6 +170,8 @@ class PopupIngresoNuevo(QDialog):
         self.ui = Ui_InicioNuevoIngreso()
         self.ui.setupUi(self)
         self.ui.btnNuevoProveedor.clicked.connect(self.showNewProvIngreso)
+        self.ui.buttonBox.accepted.connect(self.showNewIngreso)
+
         self.comboBoxSetup()
     
     #Aca no se obtiene la fecha, eso esta declarado en AltaIngresoInicio_ui.py
@@ -189,6 +192,16 @@ class PopupIngresoNuevo(QDialog):
         
         #def ComboBoxUpdate(self):
         #    print("actualizar")
+    
+    def showNewIngreso(self):
+        self.hide()
+        self.ventanaNuevoIngreso = VentanaNuevoIngreso()
+        self.ventanaNuevoIngreso.rejected.connect(self.show)
+        fecha = self.ui.dateEdit.date().toString("dd/MM/yyyy")
+        self.ventanaNuevoIngreso.ui.lblFechaValor.setText(fecha)
+        self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(self.ui.comboxDistr.currentText())
+        self.ventanaNuevoIngreso.accepted.connect(self.accept)
+        self.ventanaNuevoIngreso.show()
         
     
     #setup combox proveedores
@@ -196,7 +209,13 @@ class PopupIngresoNuevo(QDialog):
         listaProveedores = crud.listaProveedores()
         for index,proveedor in enumerate(listaProveedores):
             self.ui.comboxDistr.addItem(proveedor.razonsocial) 
-        
+
+class VentanaNuevoIngreso(QDialog):
+    def __init__(self):
+        super(VentanaNuevoIngreso,self).__init__()
+        self.ui = Ui_ventanaNuevoIngreso()
+        self.ui.setupUi(self)
+
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
@@ -378,13 +397,9 @@ class VentanaPrincipal(QMainWindow):
         self.newIngresoWindow = PopupIngresoNuevo()
         #Al registrar la señal de guardado se llama a un update de la tabla
         self.newIngresoWindow.proveedorGuardado.connect(self.updateTablaProveedores)
-        self.newIngresoWindow.accepted.connect(self.showNewIngreso)
 
         self.newIngresoWindow.exec()
     
-    def showNewIngreso(self):
-        #aca se declara y muestra la ventana de ingreso
-        print("mostrar ventana ingreso")
     
     
     #Actualiza tabla Inventario en main window
