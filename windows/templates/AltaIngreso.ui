@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ventanaNuevoIngreso</class>
+ <widget class="QWidget" name="ventanaNuevoIngreso">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>637</width>
+    <height>548</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Nuevo Ingreso</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>23</x>
+     <y>500</y>
+     <width>591</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0">
+    <property name="leftMargin">
+     <number>25</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="maximumSize">
+       <size>
+        <width>75</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Help</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QDialogButtonBox" name="AcceptCancel">
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxProductos">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>321</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Productos registrados de &lt;distribuidor&gt;</string>
+   </property>
+   <widget class="QTableWidget" name="tablaProdDisponibles">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>301</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Descripción</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Stock actual</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Stock Minimo</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>Producto 1</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>100</string>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>90</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>Producto 2</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>56</string>
+     </property>
+    </item>
+    <item row="1" column="2">
+     <property name="text">
+      <string>40</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>Producto 3</string>
+     </property>
+    </item>
+    <item row="2" column="1">
+     <property name="text">
+      <string>67</string>
+     </property>
+    </item>
+    <item row="2" column="2">
+     <property name="text">
+      <string>67</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string>Producto 4</string>
+     </property>
+    </item>
+    <item row="3" column="1">
+     <property name="text">
+      <string>48</string>
+     </property>
+    </item>
+    <item row="3" column="2">
+     <property name="text">
+      <string>73</string>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string>Producto 5 </string>
+     </property>
+    </item>
+    <item row="4" column="1">
+     <property name="text">
+      <string>74</string>
+     </property>
+    </item>
+    <item row="4" column="2">
+     <property name="text">
+      <string>14</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="btnRegistrarProd">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>340</y>
+      <width>181</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Registrar un producto nuevo</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxDetalle">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>20</y>
+     <width>241</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Detalle de ingreso</string>
+   </property>
+   <widget class="QTableWidget" name="tablaDetalleIngreso">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>221</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Descripción</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Cantidad</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>Producto 1</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>40</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>Producto 3</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>50</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>producto 4</string>
+     </property>
+    </item>
+    <item row="2" column="1">
+     <property name="text">
+      <string>30</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="btnEliminarProd">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>420</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eliminar del ingreso</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>241</width>
+      <height>53</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_2">
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="rightMargin">
+      <number>15</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblFecha">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fecha&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblDistr">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Distribuidor&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lblFechaValor">
+       <property name="text">
+        <string>&lt;fecha&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="lblProveedorValor">
+       <property name="text">
+        <string>&lt;distribuidor&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
