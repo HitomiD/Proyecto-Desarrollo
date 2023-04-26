@@ -7,6 +7,7 @@ from windows.ui_newproducto import Ui_newProducto
 from windows.ui_confirmEliminar import Ui_confirmEliminar
 from windows.ui_newproveedor import Ui_newProveedor
 from windows.error_ui import Ui_ErrorDialog
+from windows.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
 
 from dbModel import Productos,Proveedores
 import crud
@@ -136,7 +137,6 @@ class VentanaEditProveedor(FormularioProveedor):
             self.guardado.emit()
             self.accept()
 
-
 class VentanaNewProveedor(FormularioProveedor):
     def __init__(self):
         super(VentanaNewProveedor, self).__init__()
@@ -159,6 +159,21 @@ class VentanaNewProveedor(FormularioProveedor):
             
             self.guardado.emit()
             self.accept()
+
+class PopupIngresoNuevo(QDialog):
+    def __init__(self):
+        super(PopupIngresoNuevo,self).__init__()
+        self.ui = Ui_InicioNuevoIngreso()
+        self.ui.setupUi(self)
+        self.comboBoxSetup()
+        
+    #hacer que se tome la fecha actual
+    
+    #setup combox proveedores
+    def comboBoxSetup(self):
+        listaProveedores = crud.listaProveedores()
+        for index,proveedor in enumerate(listaProveedores):
+            self.ui.comboxDistr.addItem(proveedor.razonsocial) 
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
@@ -178,6 +193,8 @@ class VentanaPrincipal(QMainWindow):
         self.ui.btnNuevoProveedor.clicked.connect(self.showNewProv)
         self.ui.btnElimProveedor.clicked.connect(self.showEliminarProv)
         self.ui.btnModProveedor.clicked.connect(self.showEditProv)
+        
+        self.ui.btnNuevoIngreso.clicked.connect(self.showNewIngresoInicio)
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
@@ -334,6 +351,16 @@ class VentanaPrincipal(QMainWindow):
         qry.execute()
         
         self.updateTablaProveedores()
+    
+    def showNewIngresoInicio(self):
+        self.newIngresoWindow = PopupIngresoNuevo()
+        self.newIngresoWindow.accepted.connect(self.showNewIngreso)
+        #Descomentar esta linea cuando la señal se implemente
+        #self.newIngresoWindow.nuevoProveedor.connect(self.showNewProv)
+        self.newIngresoWindow.exec()
+    
+    def showNewIngreso(self):
+        print("mostrar ventana ingreso")
     
     #Actualiza tabla Inventario en main window
     def updateTablaInventario(self):
