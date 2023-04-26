@@ -161,13 +161,35 @@ class VentanaNewProveedor(FormularioProveedor):
             self.accept()
 
 class PopupIngresoNuevo(QDialog):
+    
+    proveedorGuardado = Signal()
+    
     def __init__(self):
         super(PopupIngresoNuevo,self).__init__()
         self.ui = Ui_InicioNuevoIngreso()
         self.ui.setupUi(self)
+        self.ui.btnNuevoProveedor.clicked.connect(self.showNewProvIngreso)
         self.comboBoxSetup()
+    
+    #Aca no se obtiene la fecha, eso esta declarado en AltaIngresoInicio_ui.py
+            
+    def showNewProvIngreso(self):
+        self.newProv = VentanaNewProveedor()
+        #Se vuelve a la ventana si:
+        self.newProv.guardado.connect(self.show) #Se completa el guardado
+        self.newProv.rejected.connect(self.show) #Se cancela el guardado
+        self.newProv.accepted.connect(self.proveedorGuardado.emit)
+        self.proveedorGuardado.connect(self.comboBoxSetup) #Si se completa se actualiza el combobox
+        #self.newProv.guardado.connect(self.proveedorGuardado)
+        self.hide()
+        self.newProv.show()
         
-    #hacer que se tome la fecha actual
+        #Implementar si se puede algo que seleccione automáticamente en
+        # el combobox el proveedor recien registrado
+        
+        #def ComboBoxUpdate(self):
+        #    print("actualizar")
+        
     
     #setup combox proveedores
     def comboBoxSetup(self):
@@ -354,13 +376,16 @@ class VentanaPrincipal(QMainWindow):
     
     def showNewIngresoInicio(self):
         self.newIngresoWindow = PopupIngresoNuevo()
+        #Al registrar la señal de guardado se llama a un update de la tabla
+        self.newIngresoWindow.proveedorGuardado.connect(self.updateTablaProveedores)
         self.newIngresoWindow.accepted.connect(self.showNewIngreso)
-        #Descomentar esta linea cuando la señal se implemente
-        #self.newIngresoWindow.nuevoProveedor.connect(self.showNewProv)
+
         self.newIngresoWindow.exec()
     
     def showNewIngreso(self):
+        #aca se declara y muestra la ventana de ingreso
         print("mostrar ventana ingreso")
+    
     
     #Actualiza tabla Inventario en main window
     def updateTablaInventario(self):

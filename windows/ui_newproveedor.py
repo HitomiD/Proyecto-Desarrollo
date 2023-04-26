@@ -181,7 +181,6 @@ class Ui_newProveedor(object):
 
 
         self.retranslateUi(newProveedor)
-        self.buttonBox.accepted.connect(newProveedor.accept)
         self.buttonBox.rejected.connect(newProveedor.reject)
 
         QMetaObject.connectSlotsByName(newProveedor)
