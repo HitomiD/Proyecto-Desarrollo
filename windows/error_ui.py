@@ -22,7 +22,7 @@ class Ui_ErrorDialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(360, 104)
+        Dialog.resize(380, 104)
         icon = QIcon()
         icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         Dialog.setWindowIcon(icon)
