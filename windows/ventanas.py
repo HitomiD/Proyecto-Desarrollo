@@ -230,7 +230,7 @@ class VentanaNuevoIngreso(QDialog):
     
     productoGuardado = Signal()
     listaProdSeleccionados = [] #Lista de seleccionados
-    listaProductosEliminados = []
+    listaProductosEscondidos = []
     def __init__(self):
         super(VentanaNuevoIngreso,self).__init__()
         self.ui = Ui_ventanaNuevoIngreso()
@@ -239,6 +239,7 @@ class VentanaNuevoIngreso(QDialog):
         #Actualiza la tabla completa desde la base de datos.        
         self.productoGuardado.connect(self.updateTablaProductosIngreso)
         self.ui.btnAgregarSeleccionado.clicked.connect(self.seleccionarProducto)
+        self.ui.btnEliminarProd.clicked.connect(self.quitarProducto)
         
     
     def showNewProdIngreso(self):
@@ -278,7 +279,7 @@ class VentanaNuevoIngreso(QDialog):
             descripcion = str
             cantidad = int
         
-        #Buscar y eliminar producto seleccionado de la lista en memoria
+        #Buscar producto seleccionado de la lista en memoria
         for index,producto in enumerate(self.listaProductos):
             if producto.id == idSeleccionado:
                 productoMover = producto
@@ -287,13 +288,39 @@ class VentanaNuevoIngreso(QDialog):
         productoSelec.descripcion = productoMover.descripcion
         productoSelec.ID = productoMover.id
         productoSelec.cantidad = int(self.ui.spinBox.text())
+        #Se envía el producto seleccionado a otra lista para no perder info de stock
         self.listaProdSeleccionados.append(productoSelec)
-        print(self.listaProdSeleccionados[0].descripcion)
+        #Se envía el producto seleccionado a otra lista para no perder info de stock
+        self.listaProductosEscondidos.append(productoMover)
         self.updateTablaProductosIngreso()
         self.updateTablaProdSeleccionados()
         
+    def quitarProducto(self):
+        row = self.ui.tablaDetalleIngreso.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún producto.")
+            popup.exec()
+            return
         
-
+        idSeleccionado = int(self.ui.tablaDetalleIngreso.item(row,0).text())   
+    
+        #Eliminar el producto seleccionado
+        for index,producto in enumerate(self.listaProdSeleccionados):
+            if producto.ID == idSeleccionado:
+                del self.listaProdSeleccionados[index]
+                break
+        #Se mueve el producto de la lista oculta a la original
+        for ind,prod in enumerate(self.listaProductosEscondidos):
+            if prod.id == idSeleccionado:
+                prodd = prod
+                self.listaProductos.append(prodd)
+                del self.listaProductosEscondidos[ind]
+                break
+            
+        #Actualización de ambas tablas
+        self.updateTablaProductosIngreso()
+        self.updateTablaProdSeleccionados()
         
     def updateTablaProductosIngreso(self):
         crud.poblarTablaProductosIng(self.ui.tablaProdDisponibles,self.listaProductos)
