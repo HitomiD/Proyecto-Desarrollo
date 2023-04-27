@@ -102,7 +102,7 @@ class Ui_MenuPrincipal(object):
         self.LogoInterno.setFont(font1)
         self.LogoInterno.setStyleSheet(u"")
         self.LogoInterno.setTextFormat(Qt.RichText)
-        self.LogoInterno.setPixmap(QPixmap(u"../assets/Escudo-Interno - copia.png"))
+        self.LogoInterno.setPixmap(QPixmap(u"windows/assets/Escudo-Interno - copia.png"))
 
         self.horizontalLayout_2.addWidget(self.LogoInterno)
 
@@ -241,7 +241,7 @@ class Ui_MenuPrincipal(object):
 "font-weight: 600;\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"../assets/Plus.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"windows/assets/Plus.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btnNuevoProducto.setIcon(icon4)
         self.btnNuevoProducto.setIconSize(QSize(35, 35))
 
@@ -267,7 +267,7 @@ class Ui_MenuPrincipal(object):
 "font-weight: 600;\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(u"../assets/Pencil.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"windows/assets/Pencil.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btnModProducto.setIcon(icon5)
         self.btnModProducto.setIconSize(QSize(30, 30))
 
@@ -289,7 +289,7 @@ class Ui_MenuPrincipal(object):
 "font-weight: 600;\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(u"../assets/Trash.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"windows/assets/Trash.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btnElimProducto.setIcon(icon6)
         self.btnElimProducto.setIconSize(QSize(35, 35))
 
