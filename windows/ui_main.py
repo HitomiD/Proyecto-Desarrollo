@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.3.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,13 +16,12 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QFrame,
-    QGridLayout, QGroupBox, QHBoxLayout, QHeaderView,
-    QLabel, QLayout, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QStatusBar, QTabWidget, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
-import crud
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QComboBox,
+    QFrame, QGridLayout, QGroupBox, QHBoxLayout,
+    QHeaderView, QLabel, QLayout, QLineEdit,
+    QMainWindow, QMenu, QMenuBar, QPushButton,
+    QSizePolicy, QSpacerItem, QStatusBar, QTabWidget,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MenuPrincipal(object):
     def setupUi(self, MenuPrincipal):
@@ -152,11 +151,36 @@ class Ui_MenuPrincipal(object):
         self.tabWidget.setCursor(QCursor(Qt.ArrowCursor))
         self.tabInventario = QWidget()
         self.tabInventario.setObjectName(u"tabInventario")
-        self.verticalLayout_3 = QVBoxLayout(self.tabInventario)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.tablaInventario = QTableWidget(self.tabInventario)
+        self.frame_5 = QFrame(self.tabInventario)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setGeometry(QRect(10, 0, 141, 421))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.groupBox = QGroupBox(self.frame_5)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setGeometry(QRect(9, 10, 120, 391))
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy2)
+        self.groupBox.setMinimumSize(QSize(120, 0))
+        self.lblFiltroProv = QLabel(self.groupBox)
+        self.lblFiltroProv.setObjectName(u"lblFiltroProv")
+        self.lblFiltroProv.setGeometry(QRect(7, 150, 61, 20))
+        self.filtroProveedor = QComboBox(self.groupBox)
+        self.filtroProveedor.addItem("")
+        self.filtroProveedor.setObjectName(u"filtroProveedor")
+        self.filtroProveedor.setGeometry(QRect(10, 170, 101, 23))
+        self.frame_6 = QFrame(self.tabInventario)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setGeometry(QRect(180, 0, 641, 421))
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.groupBox_2 = QGroupBox(self.frame_6)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.groupBox_2.setGeometry(QRect(10, 10, 621, 391))
+        self.tablaInventario = QTableWidget(self.groupBox_2)
         if (self.tablaInventario.columnCount() < 7):
             self.tablaInventario.setColumnCount(7)
         __qtablewidgetitem = QTableWidgetItem()
@@ -175,11 +199,12 @@ class Ui_MenuPrincipal(object):
         self.tablaInventario.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.tablaInventario.setObjectName(u"tablaInventario")
         self.tablaInventario.setEnabled(True)
-        sizePolicy.setHeightForWidth(self.tablaInventario.sizePolicy().hasHeightForWidth())
-        self.tablaInventario.setSizePolicy(sizePolicy)
+        self.tablaInventario.setGeometry(QRect(0, 20, 621, 371))
+        sizePolicy2.setHeightForWidth(self.tablaInventario.sizePolicy().hasHeightForWidth())
+        self.tablaInventario.setSizePolicy(sizePolicy2)
         self.tablaInventario.setMaximumSize(QSize(815, 414))
         self.tablaInventario.setStyleSheet(u"background-color: white;\n"
-"color:black;")
+"color: black;")
         self.tablaInventario.setInputMethodHints(Qt.ImhNone)
         self.tablaInventario.setFrameShape(QFrame.Panel)
         self.tablaInventario.setFrameShadow(QFrame.Plain)
@@ -208,15 +233,13 @@ class Ui_MenuPrincipal(object):
         self.tablaInventario.verticalHeader().setDefaultSectionSize(30)
         self.tablaInventario.verticalHeader().setHighlightSections(True)
         self.tablaInventario.verticalHeader().setProperty("showSortIndicator", True)
-        self.tablaInventario.verticalHeader().setStretchLastSection(True)
-
-        self.horizontalLayout_5.addWidget(self.tablaInventario)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_5)
-
-        self.layoutBtnInventario = QHBoxLayout()
+        self.tablaInventario.verticalHeader().setStretchLastSection(False)
+        self.widget = QWidget(self.tabInventario)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(9, 432, 821, 42))
+        self.layoutBtnInventario = QHBoxLayout(self.widget)
         self.layoutBtnInventario.setObjectName(u"layoutBtnInventario")
+        self.layoutBtnInventario.setContentsMargins(0, 0, 0, 0)
         self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.layoutBtnInventario.addItem(self.horizontalSpacer_11)
@@ -227,11 +250,11 @@ class Ui_MenuPrincipal(object):
 
         self.btnNuevoProducto = QPushButton(self.tabInventario)
         self.btnNuevoProducto.setObjectName(u"btnNuevoProducto")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.btnNuevoProducto.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProducto.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.btnNuevoProducto.sizePolicy().hasHeightForWidth())
+        self.btnNuevoProducto.setSizePolicy(sizePolicy3)
         self.btnNuevoProducto.setMinimumSize(QSize(150, 0))
         font3 = QFont()
         font3.setPointSize(11)
@@ -307,227 +330,9 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnInventario.addItem(self.horizontalSpacer_12)
 
-
-        self.verticalLayout_3.addLayout(self.layoutBtnInventario)
-
         self.tabWidget.addTab(self.tabInventario, "")
-        self.tab = QWidget()
-        self.tab.setObjectName(u"tab")
-        self.gridLayout_2 = QGridLayout(self.tab)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_4 = QVBoxLayout()
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.groupBox_4 = QGroupBox(self.tab)
-        self.groupBox_4.setObjectName(u"groupBox_4")
-        self.groupBox_4.setFlat(False)
-        self.groupBox_4.setCheckable(False)
-        self.groupBox_4.setChecked(False)
-        self.tablaProveedores = QTableWidget(self.groupBox_4)
-        if (self.tablaProveedores.columnCount() < 6):
-            self.tablaProveedores.setColumnCount(6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.tablaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem12)
-        self.tablaProveedores.setObjectName(u"tablaProveedores")
-        self.tablaProveedores.setEnabled(True)
-        self.tablaProveedores.setGeometry(QRect(0, 20, 809, 379))
-        sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tablaProveedores.sizePolicy().hasHeightForWidth())
-        self.tablaProveedores.setSizePolicy(sizePolicy3)
-        self.tablaProveedores.setStyleSheet(u"background-color: white;\n"
-"color:black;")
-        self.tablaProveedores.setFrameShadow(QFrame.Plain)
-        self.tablaProveedores.setLineWidth(5)
-        self.tablaProveedores.setMidLineWidth(0)
-        self.tablaProveedores.setAutoScroll(True)
-        self.tablaProveedores.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.tablaProveedores.setAlternatingRowColors(True)
-        self.tablaProveedores.horizontalHeader().setVisible(True)
-        self.tablaProveedores.horizontalHeader().setCascadingSectionResizes(True)
-        self.tablaProveedores.horizontalHeader().setMinimumSectionSize(7)
-        self.tablaProveedores.horizontalHeader().setDefaultSectionSize(131)
-        self.tablaProveedores.horizontalHeader().setHighlightSections(True)
-        self.tablaProveedores.horizontalHeader().setProperty("showSortIndicator", False)
-        self.tablaProveedores.horizontalHeader().setStretchLastSection(False)
-        self.tablaProveedores.verticalHeader().setVisible(False)
-        self.tablaProveedores.verticalHeader().setCascadingSectionResizes(False)
-        self.tablaProveedores.verticalHeader().setMinimumSectionSize(25)
-        self.tablaProveedores.verticalHeader().setDefaultSectionSize(30)
-        self.tablaProveedores.verticalHeader().setHighlightSections(True)
-        self.tablaProveedores.verticalHeader().setProperty("showSortIndicator", False)
-        self.tablaProveedores.verticalHeader().setStretchLastSection(False)
-        self.layoutWidget = QWidget(self.groupBox_4)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 410, 801, 51))
-        self.layoutBtnProveedores_3 = QHBoxLayout(self.layoutWidget)
-        self.layoutBtnProveedores_3.setObjectName(u"layoutBtnProveedores_3")
-        self.layoutBtnProveedores_3.setSizeConstraint(QLayout.SetFixedSize)
-        self.layoutBtnProveedores_3.setContentsMargins(0, 0, 0, 0)
-        self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_19)
-
-        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_13)
-
-        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_20)
-
-        self.btnNuevoProveedor = QPushButton(self.layoutWidget)
-        self.btnNuevoProveedor.setObjectName(u"btnNuevoProveedor")
-        sizePolicy2.setHeightForWidth(self.btnNuevoProveedor.sizePolicy().hasHeightForWidth())
-        self.btnNuevoProveedor.setSizePolicy(sizePolicy2)
-        self.btnNuevoProveedor.setMinimumSize(QSize(150, 0))
-        self.btnNuevoProveedor.setFont(font3)
-        self.btnNuevoProveedor.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnNuevoProveedor.setStyleSheet(u"background-color: #6daa44;\n"
-"color: white;\n"
-"border-radius:5px;\n"
-"height: 40%;\n"
-"font-weight: 600;\n"
-"")
-        self.btnNuevoProveedor.setIcon(icon4)
-        self.btnNuevoProveedor.setIconSize(QSize(35, 35))
-
-        self.layoutBtnProveedores_3.addWidget(self.btnNuevoProveedor)
-
-        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_21)
-
-        self.btnModProveedor = QPushButton(self.layoutWidget)
-        self.btnModProveedor.setObjectName(u"btnModProveedor")
-        self.btnModProveedor.setMinimumSize(QSize(150, 0))
-        self.btnModProveedor.setFont(font4)
-        self.btnModProveedor.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModProveedor.setStyleSheet(u"background-color: #006dab;\n"
-"color: white;\n"
-"border-radius:5px;\n"
-"height: 40%;\n"
-"font-weight: 600;\n"
-"")
-        self.btnModProveedor.setIcon(icon5)
-        self.btnModProveedor.setIconSize(QSize(30, 30))
-
-        self.layoutBtnProveedores_3.addWidget(self.btnModProveedor)
-
-        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_22)
-
-        self.btnElimProveedor = QPushButton(self.layoutWidget)
-        self.btnElimProveedor.setObjectName(u"btnElimProveedor")
-        self.btnElimProveedor.setMinimumSize(QSize(150, 0))
-        self.btnElimProveedor.setFont(font3)
-        self.btnElimProveedor.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimProveedor.setStyleSheet(u"background-color: #c80000;\n"
-"color: white;\n"
-"border-radius:5px;\n"
-"height: 40%;\n"
-"font-weight: 600;\n"
-"")
-        self.btnElimProveedor.setIcon(icon6)
-        self.btnElimProveedor.setIconSize(QSize(35, 35))
-
-        self.layoutBtnProveedores_3.addWidget(self.btnElimProveedor)
-
-        self.horizontalSpacer_29 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_29)
-
-        self.horizontalSpacer_30 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_30)
-
-
-        self.verticalLayout_4.addWidget(self.groupBox_4)
-
-
-        self.verticalLayout_2.addLayout(self.verticalLayout_4)
-
-
-        self.gridLayout_2.addLayout(self.verticalLayout_2, 2, 0, 1, 1)
-
-        self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
-        self.verticalLayoutWidget = QWidget(self.tab_2)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(10, 0, 341, 421))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.groupBox_5 = QGroupBox(self.verticalLayoutWidget)
-        self.groupBox_5.setObjectName(u"groupBox_5")
-        self.tablaIngresos = QTableWidget(self.groupBox_5)
-        if (self.tablaIngresos.columnCount() < 3):
-            self.tablaIngresos.setColumnCount(3)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.tablaIngresos.setHorizontalHeaderItem(0, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.tablaIngresos.setHorizontalHeaderItem(1, __qtablewidgetitem14)
-        brush = QBrush(QColor(0, 0, 0, 255))
-        brush.setStyle(Qt.SolidPattern)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        __qtablewidgetitem15.setForeground(brush);
-        self.tablaIngresos.setHorizontalHeaderItem(2, __qtablewidgetitem15)
-        self.tablaIngresos.setObjectName(u"tablaIngresos")
-        self.tablaIngresos.setEnabled(True)
-        self.tablaIngresos.setGeometry(QRect(10, 20, 321, 371))
-        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.tablaIngresos.sizePolicy().hasHeightForWidth())
-        self.tablaIngresos.setSizePolicy(sizePolicy4)
-        self.tablaIngresos.setMinimumSize(QSize(0, 0))
-        self.tablaIngresos.setMaximumSize(QSize(16777215, 16777215))
-        self.tablaIngresos.setBaseSize(QSize(0, 0))
-        self.tablaIngresos.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.tablaIngresos.setStyleSheet(u"background-color: white;\n"
-"color:black;\n"
-"gridline-color: black;\n"
-"selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));")
-        self.tablaIngresos.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.tablaIngresos.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.tablaIngresos.setAutoScroll(True)
-        self.tablaIngresos.setAutoScrollMargin(10)
-        self.tablaIngresos.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.tablaIngresos.setTabKeyNavigation(True)
-        self.tablaIngresos.setProperty("showDropIndicator", False)
-        self.tablaIngresos.setDragEnabled(False)
-        self.tablaIngresos.setAlternatingRowColors(True)
-        self.tablaIngresos.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.tablaIngresos.setShowGrid(True)
-        self.tablaIngresos.setGridStyle(Qt.SolidLine)
-        self.tablaIngresos.setSortingEnabled(False)
-        self.tablaIngresos.setCornerButtonEnabled(True)
-        self.tablaIngresos.horizontalHeader().setVisible(True)
-        self.tablaIngresos.horizontalHeader().setCascadingSectionResizes(False)
-        self.tablaIngresos.horizontalHeader().setMinimumSectionSize(20)
-        self.tablaIngresos.horizontalHeader().setDefaultSectionSize(100)
-        self.tablaIngresos.horizontalHeader().setHighlightSections(True)
-        self.tablaIngresos.horizontalHeader().setProperty("showSortIndicator", False)
-        self.tablaIngresos.horizontalHeader().setStretchLastSection(False)
-        self.tablaIngresos.verticalHeader().setVisible(False)
-        self.tablaIngresos.verticalHeader().setHighlightSections(True)
-
-        self.verticalLayout.addWidget(self.groupBox_5)
-
         self.frame_2 = QFrame(self.tab_2)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setGeometry(QRect(380, 0, 441, 421))
@@ -535,7 +340,7 @@ class Ui_MenuPrincipal(object):
         self.frame_2.setSizePolicy(sizePolicy1)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.groupBoxProveedor = QGroupBox(self.frame_2)
-        self.groupBoxProveedor.setObjectName(u"groupBoxProveedor")
+        self.groupBoxProveedor.setObjectName(u"groupBoxProveedor_6")
         self.groupBoxProveedor.setEnabled(False)
         self.groupBoxProveedor.setGeometry(QRect(10, 10, 421, 151))
         self.groupBoxProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
@@ -550,22 +355,15 @@ class Ui_MenuPrincipal(object):
 
         self.gridLayout_7.addWidget(self.tagProveedor, 0, 0, 1, 1)
 
-        self.telefonoProveedor = QLineEdit(self.groupBoxProveedor)
-        self.telefonoProveedor.setObjectName(u"telefonoProveedor")
-
-        self.gridLayout_7.addWidget(self.telefonoProveedor, 2, 1, 1, 1)
-
-        self.cuilProveedor = QLineEdit(self.groupBoxProveedor)
-        self.cuilProveedor.setObjectName(u"cuilProveedor")
-        self.cuilProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
-"")
-
-        self.gridLayout_7.addWidget(self.cuilProveedor, 1, 1, 1, 1)
-
         self.nombreProveedor = QLineEdit(self.groupBoxProveedor)
         self.nombreProveedor.setObjectName(u"nombreProveedor")
 
         self.gridLayout_7.addWidget(self.nombreProveedor, 0, 1, 1, 1)
+
+        self.telefonoProveedor = QLineEdit(self.groupBoxProveedor)
+        self.telefonoProveedor.setObjectName(u"telefonoProveedor")
+
+        self.gridLayout_7.addWidget(self.telefonoProveedor, 2, 1, 1, 1)
 
         self.tagCUIL_6 = QLabel(self.groupBoxProveedor)
         self.tagCUIL_6.setObjectName(u"tagCUIL_6")
@@ -577,30 +375,33 @@ class Ui_MenuPrincipal(object):
 
         self.gridLayout_7.addWidget(self.tagTelefono_6, 2, 0, 1, 1)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.cuilProveedor = QLineEdit(self.groupBoxProveedor)
+        self.cuilProveedor.setObjectName(u"cuilProveedor")
+        self.cuilProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+"")
 
-        self.gridLayout_7.addItem(self.verticalSpacer_7, 3, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.cuilProveedor, 1, 1, 1, 1)
 
         self.groupBox_10 = QGroupBox(self.frame_2)
         self.groupBox_10.setObjectName(u"groupBox_10")
-        self.groupBox_10.setGeometry(QRect(10, 170, 422, 221))
+        self.groupBox_10.setGeometry(QRect(10, 170, 422, 231))
+        sizePolicy1.setHeightForWidth(self.groupBox_10.sizePolicy().hasHeightForWidth())
+        self.groupBox_10.setSizePolicy(sizePolicy1)
         self.tablaIngresosDetalle = QTableWidget(self.groupBox_10)
-        if (self.tablaIngresosDetalle.columnCount() < 4):
-            self.tablaIngresosDetalle.setColumnCount(4)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setHorizontalHeaderItem(0, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setHorizontalHeaderItem(1, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setHorizontalHeaderItem(2, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.tablaIngresosDetalle.setHorizontalHeaderItem(3, __qtablewidgetitem19)
+        if (self.tablaIngresosDetalle.columnCount() < 3):
+            self.tablaIngresosDetalle.setColumnCount(3)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.tablaIngresosDetalle.setHorizontalHeaderItem(0, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.tablaIngresosDetalle.setHorizontalHeaderItem(1, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.tablaIngresosDetalle.setHorizontalHeaderItem(2, __qtablewidgetitem9)
         self.tablaIngresosDetalle.setObjectName(u"tablaIngresosDetalle")
         self.tablaIngresosDetalle.setEnabled(True)
-        self.tablaIngresosDetalle.setGeometry(QRect(0, 18, 424, 201))
-        sizePolicy4.setHeightForWidth(self.tablaIngresosDetalle.sizePolicy().hasHeightForWidth())
-        self.tablaIngresosDetalle.setSizePolicy(sizePolicy4)
-        self.tablaIngresosDetalle.setMinimumSize(QSize(424, 0))
+        self.tablaIngresosDetalle.setGeometry(QRect(0, 18, 422, 211))
+        sizePolicy1.setHeightForWidth(self.tablaIngresosDetalle.sizePolicy().hasHeightForWidth())
+        self.tablaIngresosDetalle.setSizePolicy(sizePolicy1)
+        self.tablaIngresosDetalle.setMinimumSize(QSize(422, 0))
         self.tablaIngresosDetalle.setMaximumSize(QSize(424, 16777215))
         self.tablaIngresosDetalle.setMouseTracking(False)
         self.tablaIngresosDetalle.setTabletTracking(False)
@@ -627,8 +428,8 @@ class Ui_MenuPrincipal(object):
 
         self.btnNuevoIngreso = QPushButton(self.layoutWidget_2)
         self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
-        sizePolicy2.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
-        self.btnNuevoIngreso.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
+        self.btnNuevoIngreso.setSizePolicy(sizePolicy3)
         self.btnNuevoIngreso.setMinimumSize(QSize(150, 0))
         self.btnNuevoIngreso.setFont(font3)
         self.btnNuevoIngreso.setCursor(QCursor(Qt.PointingHandCursor))
@@ -692,7 +493,198 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_36)
 
+        self.frame_3 = QFrame(self.tab_2)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setGeometry(QRect(10, 0, 341, 421))
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.groupBox_5 = QGroupBox(self.frame_3)
+        self.groupBox_5.setObjectName(u"groupBox_5")
+        self.groupBox_5.setGeometry(QRect(10, 10, 321, 391))
+        sizePolicy.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
+        self.groupBox_5.setSizePolicy(sizePolicy)
+        self.tablaIngresos = QTableWidget(self.groupBox_5)
+        if (self.tablaIngresos.columnCount() < 3):
+            self.tablaIngresos.setColumnCount(3)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.tablaIngresos.setHorizontalHeaderItem(0, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.tablaIngresos.setHorizontalHeaderItem(1, __qtablewidgetitem11)
+        brush = QBrush(QColor(0, 0, 0, 255))
+        brush.setStyle(Qt.SolidPattern)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        __qtablewidgetitem12.setForeground(brush);
+        self.tablaIngresos.setHorizontalHeaderItem(2, __qtablewidgetitem12)
+        self.tablaIngresos.setObjectName(u"tablaIngresos")
+        self.tablaIngresos.setEnabled(True)
+        self.tablaIngresos.setGeometry(QRect(0, 20, 321, 371))
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.tablaIngresos.sizePolicy().hasHeightForWidth())
+        self.tablaIngresos.setSizePolicy(sizePolicy4)
+        self.tablaIngresos.setMinimumSize(QSize(0, 0))
+        self.tablaIngresos.setMaximumSize(QSize(16777215, 16777215))
+        self.tablaIngresos.setBaseSize(QSize(0, 0))
+        self.tablaIngresos.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.tablaIngresos.setStyleSheet(u"background-color: white;\n"
+"color:black;\n"
+"gridline-color: black;\n"
+"selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));")
+        self.tablaIngresos.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tablaIngresos.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.tablaIngresos.setAutoScroll(True)
+        self.tablaIngresos.setAutoScrollMargin(10)
+        self.tablaIngresos.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tablaIngresos.setTabKeyNavigation(True)
+        self.tablaIngresos.setProperty("showDropIndicator", False)
+        self.tablaIngresos.setDragEnabled(False)
+        self.tablaIngresos.setAlternatingRowColors(True)
+        self.tablaIngresos.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tablaIngresos.setShowGrid(True)
+        self.tablaIngresos.setGridStyle(Qt.SolidLine)
+        self.tablaIngresos.setSortingEnabled(False)
+        self.tablaIngresos.setCornerButtonEnabled(True)
+        self.tablaIngresos.horizontalHeader().setVisible(True)
+        self.tablaIngresos.horizontalHeader().setCascadingSectionResizes(False)
+        self.tablaIngresos.horizontalHeader().setMinimumSectionSize(20)
+        self.tablaIngresos.horizontalHeader().setDefaultSectionSize(100)
+        self.tablaIngresos.horizontalHeader().setHighlightSections(True)
+        self.tablaIngresos.horizontalHeader().setProperty("showSortIndicator", False)
+        self.tablaIngresos.horizontalHeader().setStretchLastSection(False)
+        self.tablaIngresos.verticalHeader().setVisible(False)
+        self.tablaIngresos.verticalHeader().setHighlightSections(True)
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.gridLayout_2 = QGridLayout(self.tab)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.layoutBtnProveedores_3 = QHBoxLayout()
+        self.layoutBtnProveedores_3.setObjectName(u"layoutBtnProveedores_3")
+        self.layoutBtnProveedores_3.setSizeConstraint(QLayout.SetFixedSize)
+        self.layoutBtnProveedores_3.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_13)
+
+        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_20)
+
+        self.btnNuevoProveedor = QPushButton(self.tab)
+        self.btnNuevoProveedor.setObjectName(u"btnNuevoProveedor")
+        sizePolicy3.setHeightForWidth(self.btnNuevoProveedor.sizePolicy().hasHeightForWidth())
+        self.btnNuevoProveedor.setSizePolicy(sizePolicy3)
+        self.btnNuevoProveedor.setMinimumSize(QSize(150, 0))
+        self.btnNuevoProveedor.setFont(font3)
+        self.btnNuevoProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnNuevoProveedor.setStyleSheet(u"background-color: #6daa44;\n"
+"color: white;\n"
+"border-radius:5px;\n"
+"height: 40%;\n"
+"font-weight: 600;\n"
+"")
+        self.btnNuevoProveedor.setIcon(icon4)
+        self.btnNuevoProveedor.setIconSize(QSize(35, 35))
+
+        self.layoutBtnProveedores_3.addWidget(self.btnNuevoProveedor)
+
+        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_21)
+
+        self.btnModProveedor = QPushButton(self.tab)
+        self.btnModProveedor.setObjectName(u"btnModProveedor")
+        self.btnModProveedor.setMinimumSize(QSize(150, 0))
+        self.btnModProveedor.setFont(font4)
+        self.btnModProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnModProveedor.setStyleSheet(u"background-color: #006dab;\n"
+"color: white;\n"
+"border-radius:5px;\n"
+"height: 40%;\n"
+"font-weight: 600;\n"
+"")
+        self.btnModProveedor.setIcon(icon5)
+        self.btnModProveedor.setIconSize(QSize(30, 30))
+
+        self.layoutBtnProveedores_3.addWidget(self.btnModProveedor)
+
+        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_22)
+
+        self.btnElimProveedor = QPushButton(self.tab)
+        self.btnElimProveedor.setObjectName(u"btnElimProveedor")
+        self.btnElimProveedor.setMinimumSize(QSize(150, 0))
+        self.btnElimProveedor.setFont(font3)
+        self.btnElimProveedor.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimProveedor.setStyleSheet(u"background-color: #c80000;\n"
+"color: white;\n"
+"border-radius:5px;\n"
+"height: 40%;\n"
+"font-weight: 600;\n"
+"")
+        self.btnElimProveedor.setIcon(icon6)
+        self.btnElimProveedor.setIconSize(QSize(35, 35))
+
+        self.layoutBtnProveedores_3.addWidget(self.btnElimProveedor)
+
+        self.horizontalSpacer_29 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_29)
+
+        self.horizontalSpacer_30 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.layoutBtnProveedores_3.addItem(self.horizontalSpacer_30)
+
+
+        self.gridLayout_2.addLayout(self.layoutBtnProveedores_3, 2, 0, 1, 1)
+
+        self.tablaProveedores = QTableWidget(self.tab)
+        if (self.tablaProveedores.columnCount() < 6):
+            self.tablaProveedores.setColumnCount(6)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(0, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(1, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(2, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(3, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(4, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tablaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem18)
+        self.tablaProveedores.setObjectName(u"tablaProveedores")
+        self.tablaProveedores.setEnabled(False)
+        sizePolicy.setHeightForWidth(self.tablaProveedores.sizePolicy().hasHeightForWidth())
+        self.tablaProveedores.setSizePolicy(sizePolicy)
+        self.tablaProveedores.setStyleSheet(u"background-color: white;\n"
+"color:black;")
+        self.tablaProveedores.setFrameShadow(QFrame.Plain)
+        self.tablaProveedores.setLineWidth(5)
+        self.tablaProveedores.setMidLineWidth(0)
+        self.tablaProveedores.setAutoScroll(True)
+        self.tablaProveedores.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tablaProveedores.setAlternatingRowColors(True)
+        self.tablaProveedores.horizontalHeader().setVisible(True)
+        self.tablaProveedores.horizontalHeader().setCascadingSectionResizes(True)
+        self.tablaProveedores.horizontalHeader().setMinimumSectionSize(7)
+        self.tablaProveedores.horizontalHeader().setDefaultSectionSize(131)
+        self.tablaProveedores.horizontalHeader().setHighlightSections(True)
+        self.tablaProveedores.horizontalHeader().setProperty("showSortIndicator", False)
+        self.tablaProveedores.horizontalHeader().setStretchLastSection(False)
+        self.tablaProveedores.verticalHeader().setVisible(False)
+        self.tablaProveedores.verticalHeader().setCascadingSectionResizes(False)
+        self.tablaProveedores.verticalHeader().setMinimumSectionSize(25)
+        self.tablaProveedores.verticalHeader().setDefaultSectionSize(30)
+        self.tablaProveedores.verticalHeader().setHighlightSections(True)
+        self.tablaProveedores.verticalHeader().setProperty("showSortIndicator", False)
+        self.tablaProveedores.verticalHeader().setStretchLastSection(False)
+
+        self.gridLayout_2.addWidget(self.tablaProveedores, 1, 0, 1, 1)
+
+        self.tabWidget.addTab(self.tab, "")
         MenuPrincipal.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MenuPrincipal)
         self.statusbar.setObjectName(u"statusbar")
@@ -729,6 +721,11 @@ class Ui_MenuPrincipal(object):
         self.LogoInterno.setText("")
         self.label.setText("")
         self.barraBusqueda.setPlaceholderText(QCoreApplication.translate("MenuPrincipal", u"Buscar por nombre", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MenuPrincipal", u"Filtros", None))
+        self.lblFiltroProv.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.filtroProveedor.setItemText(0, QCoreApplication.translate("MenuPrincipal", u"Todos", None))
+
+        self.groupBox_2.setTitle(QCoreApplication.translate("MenuPrincipal", u"Inventario", None))
         ___qtablewidgetitem = self.tablaInventario.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
         ___qtablewidgetitem1 = self.tablaInventario.horizontalHeaderItem(1)
@@ -736,7 +733,7 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem2 = self.tablaInventario.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MenuPrincipal", u"Stock", None));
         ___qtablewidgetitem3 = self.tablaInventario.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MenuPrincipal", u"Stock minimo", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MenuPrincipal", u"S. minimo", None));
         ___qtablewidgetitem4 = self.tablaInventario.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MenuPrincipal", u"Precio unitario", None));
         ___qtablewidgetitem5 = self.tablaInventario.horizontalHeaderItem(5)
@@ -747,22 +744,46 @@ class Ui_MenuPrincipal(object):
         self.btnModProducto.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
         self.btnElimProducto.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInventario), QCoreApplication.translate("MenuPrincipal", u"Inventario", None))
-#if QT_CONFIG(whatsthis)
-        self.groupBox_4.setWhatsThis(QCoreApplication.translate("MenuPrincipal", u"Esta es una lista de proveedores", None))
-#endif // QT_CONFIG(whatsthis)
-        self.groupBox_4.setTitle(QCoreApplication.translate("MenuPrincipal", u"Lista de Proveedores", None))
-        ___qtablewidgetitem7 = self.tablaProveedores.horizontalHeaderItem(0)
+        self.groupBoxProveedor.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.tagProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.nombreProveedor.setText("")
+        self.telefonoProveedor.setText("")
+        self.tagCUIL_6.setText(QCoreApplication.translate("MenuPrincipal", u"CUIL/CUIT ", None))
+        self.tagTelefono_6.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None))
+        self.cuilProveedor.setText("")
+        self.groupBox_10.setTitle(QCoreApplication.translate("MenuPrincipal", u"Detalle de ingreso", None))
+        ___qtablewidgetitem7 = self.tablaIngresosDetalle.horizontalHeaderItem(0)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
-        ___qtablewidgetitem8 = self.tablaProveedores.horizontalHeaderItem(1)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MenuPrincipal", u"Raz\u00f3n social", None));
-        ___qtablewidgetitem9 = self.tablaProveedores.horizontalHeaderItem(2)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None));
-        ___qtablewidgetitem10 = self.tablaProveedores.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MenuPrincipal", u"Correo electr\u00f3nico", None));
-        ___qtablewidgetitem11 = self.tablaProveedores.horizontalHeaderItem(4)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MenuPrincipal", u"Direcci\u00f3n", None));
-        ___qtablewidgetitem12 = self.tablaProveedores.horizontalHeaderItem(5)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MenuPrincipal", u"Nota", None));
+        ___qtablewidgetitem8 = self.tablaIngresosDetalle.horizontalHeaderItem(1)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MenuPrincipal", u"Descripcion", None));
+        ___qtablewidgetitem9 = self.tablaIngresosDetalle.horizontalHeaderItem(2)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
+        self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
+        self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
+        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        self.groupBox_5.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
+        ___qtablewidgetitem10 = self.tablaIngresos.horizontalHeaderItem(0)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
+        ___qtablewidgetitem11 = self.tablaIngresos.horizontalHeaderItem(1)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MenuPrincipal", u"Fecha", None));
+        ___qtablewidgetitem12 = self.tablaIngresos.horizontalHeaderItem(2)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
+        self.btnNuevoProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
+        self.btnModProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
+        self.btnElimProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        ___qtablewidgetitem13 = self.tablaProveedores.horizontalHeaderItem(0)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
+        ___qtablewidgetitem14 = self.tablaProveedores.horizontalHeaderItem(1)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MenuPrincipal", u"Raz\u00f3n social", None));
+        ___qtablewidgetitem15 = self.tablaProveedores.horizontalHeaderItem(2)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None));
+        ___qtablewidgetitem16 = self.tablaProveedores.horizontalHeaderItem(3)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"Correo electr\u00f3nico", None));
+        ___qtablewidgetitem17 = self.tablaProveedores.horizontalHeaderItem(4)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"Direcci\u00f3n", None));
+        ___qtablewidgetitem18 = self.tablaProveedores.horizontalHeaderItem(5)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MenuPrincipal", u"Nota", None));
 #if QT_CONFIG(whatsthis)
         self.tablaProveedores.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
@@ -772,35 +793,7 @@ class Ui_MenuPrincipal(object):
 #if QT_CONFIG(accessibility)
         self.tablaProveedores.setAccessibleDescription("")
 #endif // QT_CONFIG(accessibility)
-        self.btnNuevoProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MenuPrincipal", u"Proveedores", None))
-        self.groupBox_5.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
-        ___qtablewidgetitem13 = self.tablaIngresos.horizontalHeaderItem(0)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
-        ___qtablewidgetitem14 = self.tablaIngresos.horizontalHeaderItem(1)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MenuPrincipal", u"Fecha", None));
-        ___qtablewidgetitem15 = self.tablaIngresos.horizontalHeaderItem(2)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
-        self.groupBoxProveedor.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.tagProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.telefonoProveedor.setText("")
-        self.cuilProveedor.setText("")
-        self.nombreProveedor.setText("")
-        self.tagCUIL_6.setText(QCoreApplication.translate("MenuPrincipal", u"CUIL/CUIT ", None))
-        self.tagTelefono_6.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None))
-        self.groupBox_10.setTitle(QCoreApplication.translate("MenuPrincipal", u"Detalle de ingreso", None))
-        ___qtablewidgetitem16 = self.tablaIngresosDetalle.horizontalHeaderItem(0)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
-        ___qtablewidgetitem17 = self.tablaIngresosDetalle.horizontalHeaderItem(1)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"Descripcion", None));
-        ___qtablewidgetitem18 = self.tablaIngresosDetalle.horizontalHeaderItem(2)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
-        self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MenuPrincipal", u"Archivo", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ayuda", None))
     # retranslateUi
