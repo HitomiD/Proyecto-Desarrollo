@@ -28,7 +28,7 @@ class Ui_newProducto(object):
         newProducto.setMaximumSize(QSize(389, 231))
         newProducto.setFocusPolicy(Qt.StrongFocus)
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         newProducto.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(newProducto)
         self.verticalLayout.setObjectName(u"verticalLayout")
