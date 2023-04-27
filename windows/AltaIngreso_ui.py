@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialog, QDialogButtonBox,
     QFormLayout, QFrame, QGroupBox, QHeaderView,
-    QLabel, QPushButton, QSizePolicy, QTableWidget,
-    QTableWidgetItem, QWidget)
+    QLabel, QPushButton, QSizePolicy, QSpinBox,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_ventanaNuevoIngreso(object):
     def setupUi(self, Dialog):
@@ -32,7 +32,7 @@ class Ui_ventanaNuevoIngreso(object):
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Help|QDialogButtonBox.Ok)
         self.groupBoxDetalle = QGroupBox(Dialog)
         self.groupBoxDetalle.setObjectName(u"groupBoxDetalle")
-        self.groupBoxDetalle.setGeometry(QRect(410, 20, 261, 451))
+        self.groupBoxDetalle.setGeometry(QRect(410, 20, 261, 471))
         self.tablaDetalleIngreso = QTableWidget(self.groupBoxDetalle)
         if (self.tablaDetalleIngreso.columnCount() < 3):
             self.tablaDetalleIngreso.setColumnCount(3)
@@ -46,10 +46,10 @@ class Ui_ventanaNuevoIngreso(object):
         self.tablaDetalleIngreso.setGeometry(QRect(10, 30, 241, 381))
         self.btnEliminarProd = QPushButton(self.groupBoxDetalle)
         self.btnEliminarProd.setObjectName(u"btnEliminarProd")
-        self.btnEliminarProd.setGeometry(QRect(50, 420, 151, 23))
+        self.btnEliminarProd.setGeometry(QRect(60, 422, 151, 41))
         self.groupBoxProductos = QGroupBox(Dialog)
         self.groupBoxProductos.setObjectName(u"groupBoxProductos")
-        self.groupBoxProductos.setGeometry(QRect(20, 100, 361, 371))
+        self.groupBoxProductos.setGeometry(QRect(20, 100, 371, 391))
         self.tablaProdDisponibles = QTableWidget(self.groupBoxProductos)
         if (self.tablaProdDisponibles.columnCount() < 4):
             self.tablaProdDisponibles.setColumnCount(4)
@@ -62,13 +62,21 @@ class Ui_ventanaNuevoIngreso(object):
         __qtablewidgetitem6 = QTableWidgetItem()
         self.tablaProdDisponibles.setHorizontalHeaderItem(3, __qtablewidgetitem6)
         self.tablaProdDisponibles.setObjectName(u"tablaProdDisponibles")
-        self.tablaProdDisponibles.setGeometry(QRect(10, 30, 341, 301))
+        self.tablaProdDisponibles.setGeometry(QRect(10, 30, 351, 301))
         self.btnRegistrarProd = QPushButton(self.groupBoxProductos)
         self.btnRegistrarProd.setObjectName(u"btnRegistrarProd")
-        self.btnRegistrarProd.setGeometry(QRect(10, 340, 181, 23))
-        self.btnRegistrarProd_2 = QPushButton(self.groupBoxProductos)
-        self.btnRegistrarProd_2.setObjectName(u"btnRegistrarProd_2")
-        self.btnRegistrarProd_2.setGeometry(QRect(200, 340, 111, 23))
+        self.btnRegistrarProd.setGeometry(QRect(10, 340, 161, 41))
+        self.frame_2 = QFrame(self.groupBoxProductos)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(190, 340, 171, 41))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.btnAgregarSeleccionado = QPushButton(self.frame_2)
+        self.btnAgregarSeleccionado.setObjectName(u"btnAgregarSeleccionado")
+        self.btnAgregarSeleccionado.setGeometry(QRect(0, 0, 111, 41))
+        self.spinBox = QSpinBox(self.frame_2)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setGeometry(QRect(120, 10, 42, 23))
         self.frame = QFrame(Dialog)
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(20, 20, 241, 61))
@@ -121,7 +129,7 @@ class Ui_ventanaNuevoIngreso(object):
         ___qtablewidgetitem2 = self.tablaDetalleIngreso.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("Dialog", u"Cantidad", None));
         self.btnEliminarProd.setText(QCoreApplication.translate("Dialog", u"Eliminar del ingreso", None))
-        self.groupBoxProductos.setTitle(QCoreApplication.translate("Dialog", u"Productos registrados de <distribuidor>", None))
+        self.groupBoxProductos.setTitle(QCoreApplication.translate("Dialog", u"Productos registrados del proveedor:", None))
         ___qtablewidgetitem3 = self.tablaProdDisponibles.horizontalHeaderItem(0)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("Dialog", u"ID", None));
         ___qtablewidgetitem4 = self.tablaProdDisponibles.horizontalHeaderItem(1)
@@ -130,8 +138,8 @@ class Ui_ventanaNuevoIngreso(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("Dialog", u"Stock actual", None));
         ___qtablewidgetitem6 = self.tablaProdDisponibles.horizontalHeaderItem(3)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("Dialog", u"Stock Minimo", None));
-        self.btnRegistrarProd.setText(QCoreApplication.translate("Dialog", u"Registrar un producto nuevo", None))
-        self.btnRegistrarProd_2.setText(QCoreApplication.translate("Dialog", u"A\u00f1adir", None))
+        self.btnRegistrarProd.setText(QCoreApplication.translate("Dialog", u"Producto nuevo", None))
+        self.btnAgregarSeleccionado.setText(QCoreApplication.translate("Dialog", u"A\u00f1adir", None))
         self.lblFecha.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p>Fecha</p></body></html>", None))
         self.lblDistr.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p>Distribuidor</p></body></html>", None))
         self.lblFechaValor.setText(QCoreApplication.translate("Dialog", u"<fecha>", None))
