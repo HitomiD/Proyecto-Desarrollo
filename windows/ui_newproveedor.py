@@ -27,7 +27,7 @@ class Ui_newProveedor(object):
         newProveedor.resize(382, 212)
         newProveedor.setMaximumSize(QSize(409, 212))
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         newProveedor.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(newProveedor)
         self.verticalLayout.setObjectName(u"verticalLayout")
