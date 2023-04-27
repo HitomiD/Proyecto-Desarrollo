@@ -26,7 +26,7 @@ class Ui_confirmEliminar(object):
         confirmElimProducto.setMinimumSize(QSize(341, 118))
         confirmElimProducto.setMaximumSize(QSize(341, 118))
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         confirmElimProducto.setWindowIcon(icon)
         self.buttonBox = QDialogButtonBox(confirmElimProducto)
         self.buttonBox.setObjectName(u"buttonBox")
@@ -47,7 +47,7 @@ class Ui_confirmEliminar(object):
         self.img.setSizePolicy(sizePolicy)
         self.img.setMaximumSize(QSize(167777, 167777))
         self.img.setTextFormat(Qt.PlainText)
-        self.img.setPixmap(QPixmap(u"../assets/Alert.png"))
+        self.img.setPixmap(QPixmap(u"windows/assets/Alert.png"))
         self.img.setScaledContents(True)
 
         self.retranslateUi(confirmElimProducto)
