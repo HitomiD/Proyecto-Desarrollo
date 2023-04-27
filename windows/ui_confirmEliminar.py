@@ -36,7 +36,7 @@ class Ui_confirmEliminar(object):
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
         self.label = QLabel(confirmElimProducto)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(50, 30, 301, 16))
+        self.label.setGeometry(QRect(90, 30, 301, 16))
         self.img = QLabel(confirmElimProducto)
         self.img.setObjectName(u"img")
         self.img.setGeometry(QRect(10, 10, 61, 61))
@@ -59,7 +59,7 @@ class Ui_confirmEliminar(object):
 
     def retranslateUi(self, confirmElimProducto):
         confirmElimProducto.setWindowTitle(QCoreApplication.translate("confirmElim", u"[Alerta] Eliminar item", None))
-        self.label.setText(QCoreApplication.translate("confirmElimProducto", u"<html><head/><body><p align=\"center\">\u00bfEsta seguro de que desea eliminar el item seleccionado?</p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("confirmElimProducto", u"<html><head/><body><p align=\"center\">\u00bf¿Esta seguro de que desea eliminar el item seleccionado?</p></body></html>", None))
         self.img.setText("")
     # retranslateUi
 
