@@ -10,7 +10,8 @@ from windows.error_ui import Ui_ErrorDialog
 from windows.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
 from windows.AltaIngreso_ui import Ui_ventanaNuevoIngreso
 
-from dbModel import Productos,Proveedores
+import datetime
+from dbModel import Productos,Proveedores,Ingresos, ProductosPorIngreso
 import crud
 
 #Este archivo contiene las definiciones de todas las ventanas (y sus funciones) del sistema
@@ -240,6 +241,7 @@ class VentanaNuevoIngreso(QDialog):
         self.productoGuardado.connect(self.updateTablaProductosIngreso)
         self.ui.btnAgregarSeleccionado.clicked.connect(self.seleccionarProducto)
         self.ui.btnEliminarProd.clicked.connect(self.quitarProducto)
+        self.ui.buttonBox.accepted.connect(self.guardarIngreso)
         
     
     def showNewProdIngreso(self):
@@ -327,6 +329,37 @@ class VentanaNuevoIngreso(QDialog):
     
     def updateTablaProdSeleccionados(self):
         crud.poblarTablaProdSeleccionados(self.ui.tablaDetalleIngreso,self.listaProdSeleccionados)
+
+    def guardarIngreso(self):
+        if not self.listaProdSeleccionados:
+            popup = popupError()
+            popup.ui.label.setText("No se ha añadido ningún producto.")
+            popup.exec()
+            return
+        else:
+            ingreso = Ingresos()
+            query = (Proveedores
+                    .select(Proveedores.cuil_cuit)
+                    .where(Proveedores.razonsocial == self.ui.lblProveedorValor.text()))
+                    #Si se le asigna la query en si directamente a cuilCuitProveedor no funciona (¿?).
+            cuilCuitProveedor = query 
+            ingreso.cuil_cuit_proveedor = cuilCuitProveedor
+            fechaIngreso = datetime.datetime.strptime(self.ui.lblFechaValor.text(), "%d/%m/%Y")
+            ingreso.fecha = fechaIngreso
+            
+            #guardar ingreso
+            ingreso.save()
+                                    
+            #Insertar productos en productos por ingreso
+            prod = ProductosPorIngreso()
+            prod.num_ingreso = ingreso.get_id()
+
+            for index, producto in enumerate(self.listaProdSeleccionados):
+                prod.id_producto = producto.ID
+                prod.cantidad = producto.cantidad
+                prod.save()
+            
+            self.accept()
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow):

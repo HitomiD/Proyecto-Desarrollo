@@ -212,4 +212,4 @@ def poblarTablaProdSeleccionados(tabla,listaProductos):
         #Stock
         itemCantidad = QTableWidgetItem()
         itemCantidad.setData(0,producto.cantidad)
-        tabla.setItem(index,2,itemCantidad)
+        tabla.setItem(index,2,itemCantidad)    
