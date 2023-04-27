@@ -379,12 +379,46 @@ class VentanaPrincipal(QMainWindow):
         self.ui.btnElimProducto.clicked.connect(self.showEliminarProd)
         self.ui.btnModProducto.clicked.connect(self.showEditProd)
         
+        self.ui.filtroProveedor.currentTextChanged.connect(self.filtrarProdProveedores)
+        self.poblarComboxFiltroProveedores()
+        
         self.ui.btnNuevoProveedor.clicked.connect(self.showNewProv)
         self.ui.btnElimProveedor.clicked.connect(self.showEliminarProv)
         self.ui.btnModProveedor.clicked.connect(self.showEditProv)
         
         self.ui.btnNuevoIngreso.clicked.connect(self.showNewIngresoInicio)
         self.ui.tablaIngresos.clicked.connect(self.mostrarDetallesIngreso)
+        
+    def poblarComboxFiltroProveedores(self):
+        listaProveedores = crud.listaProveedores()
+        
+        for index, proveedor in enumerate(listaProveedores):
+            self.ui.filtroProveedor.addItem(proveedor.razonsocial)
+        
+    
+    def filtrarProdProveedores(self):
+        razonSocial = self.ui.filtroProveedor.currentText()
+        if razonSocial == "Todos":
+            crud.poblarQTableInventario(self.ui.tablaInventario)
+        else:
+            prov = (Proveedores
+                    .select()
+                    .where(Proveedores.razonsocial == razonSocial))
+            for index,proveedor in enumerate(prov):
+                cuil = proveedor.cuil_cuit
+            
+            listaFiltrada = (Productos
+                             .select()
+                             .where(Productos.cuil_cuit_proveedor == cuil))
+
+            prov = (Proveedores
+                    .select()
+                    .where(Proveedores.razonsocial == razonSocial))
+            for index,proveedor in enumerate(prov):
+                cuil = proveedor.cuil_cuit
+
+            crud.poblarTablaInventarioLista(self.ui.tablaInventario, prov)
+        
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
@@ -465,6 +499,7 @@ class VentanaPrincipal(QMainWindow):
     def showNewProv(self):
         self.newProv = VentanaNewProveedor()
         self.newProv.guardado.connect(self.updateTablaProveedores)
+        self.newProv.guardado.connect(self.poblarComboxFiltroProveedores)
         self.newProv.show()
     
     def showEliminarProv(self):

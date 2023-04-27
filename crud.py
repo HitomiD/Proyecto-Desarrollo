@@ -41,6 +41,48 @@ def poblarQTableInventario(tabla):
     
         #Completar mas adelante con la fecha del último ingreso 
         
+def poblarTablaInventarioLista(tabla,listaProv):
+    
+    for ind, prov in enumerate(listaProv):
+        cuil = prov.cuil_cuit
+    
+    listaProductos = (Productos
+                      .select(Productos.id,Productos.descripcion,Productos.stock,Productos.stock_minimo,Productos.precio_venta, Proveedores.razonsocial)
+                      .join(Proveedores, JOIN.LEFT_OUTER, on=(Productos.cuil_cuit_proveedor == Proveedores.cuil_cuit))
+                      .where(Proveedores.cuil_cuit == cuil)
+                      .namedtuples())
+    
+    if not listaProductos:
+        tabla.setRowCount(0)
+    
+    #settear cantidad de lineas para la tabla
+    totalRegistros = listaProductos.count()
+    tabla.setRowCount(totalRegistros)
+    
+    for index, producto in enumerate(listaProductos):
+        itemId = QTableWidgetItem()
+        itemId.setData(0,producto.id)
+        tabla.setItem(index,0,itemId)
+        
+        #En caso de ser un string se puede omitir la funcion setData de la siguiente forma
+        tabla.setItem(index,1,QTableWidgetItem(producto.descripcion))
+        
+        itemStock = QTableWidgetItem()
+        itemStock.setData(0,producto.stock)
+        tabla.setItem(index,2,itemStock)
+        
+        itemStockMin = QTableWidgetItem()
+        itemStockMin.setData(0,producto.stock_minimo)
+        tabla.setItem(index,3,itemStockMin)
+        
+        itemPrecio = QTableWidgetItem()
+        itemPrecio.setData(0,producto.precio_venta)
+        tabla.setItem(index,4,itemPrecio)
+        
+        itemProveedor = QTableWidgetItem()
+        itemProveedor.setData(0,producto.razonsocial)
+        tabla.setItem(index,5,itemProveedor)
+        
 def poblarQTableProveedores(tabla):
     
     #settear cantidad lineas
