@@ -165,6 +165,7 @@ class VentanaNewProveedor(FormularioProveedor):
 class PopupIngresoNuevo(QDialog):
     
     proveedorGuardado = Signal()
+    productoGuardado = Signal()
     
     def __init__(self):
         super(PopupIngresoNuevo,self).__init__()
@@ -190,20 +191,21 @@ class PopupIngresoNuevo(QDialog):
         #Implementar si se puede algo que seleccione automáticamente en
         # el combobox el proveedor recien registrado
         
-        #def ComboBoxUpdate(self):
-        #    print("actualizar")
     
     #LLamada a la siguiente ventana
     def showNewIngreso(self):
         self.hide()
         self.ventanaNuevoIngreso = VentanaNuevoIngreso()
+        #Se pasa la señal de nuevo Ingreso a nuevo Ingreso popup para registrarla en ventanaPrincipal
+        #y actualizar la tabla de proveedores
+        self.ventanaNuevoIngreso.productoGuardado.connect(self.productoGuardado.emit)
         self.ventanaNuevoIngreso.rejected.connect(self.show)
         fecha = self.ui.dateEdit.date().toString("dd/MM/yyyy")
         self.ventanaNuevoIngreso.ui.lblFechaValor.setText(fecha)
         self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(self.ui.comboxDistr.currentText())
         self.ventanaNuevoIngreso.accepted.connect(self.accept)
         crud.poblarTablaProductosIngreso(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.ui.lblProveedorValor.text())
-
+        
         self.ventanaNuevoIngreso.show()
         
     
@@ -211,14 +213,41 @@ class PopupIngresoNuevo(QDialog):
     def comboBoxSetup(self):
         listaProveedores = crud.listaProveedores()
         for index,proveedor in enumerate(listaProveedores):
-            self.ui.comboxDistr.addItem(proveedor.razonsocial) 
+            self.ui.comboxDistr.addItem(proveedor.razonsocial)
+    
+    
 
 #Ventana de ingreso (seleccion productos)
 class VentanaNuevoIngreso(QDialog):
+    
+    productoGuardado = Signal()
+    
     def __init__(self):
         super(VentanaNuevoIngreso,self).__init__()
         self.ui = Ui_ventanaNuevoIngreso()
         self.ui.setupUi(self)
+        self.ui.btnRegistrarProd.clicked.connect(self.showNewProdIngreso)
+        self.productoGuardado.connect(self.updateTablaProveedoresIngreso)
+    
+    def showNewProdIngreso(self):
+        
+        razonSocial = self.ui.lblProveedorValor.text()
+        
+        self.newProd = VentanaNewProducto()
+        self.newProd.ui.comboxDistr.setCurrentText(razonSocial)
+        self.newProd.ui.comboxDistr.setDisabled(True)
+        #Se vuelve a la ventana si:
+        self.newProd.guardado.connect(self.show) #Se completa el guardado
+        self.newProd.rejected.connect(self.show) #Se cancela el guardado
+        #Se pasa la señal de guardado de la ventana de proveedor a la ventana anterior (IngresoInicio)
+        self.newProd.accepted.connect(self.productoGuardado.emit)
+        
+        self.hide()
+        self.newProd.show()
+        
+    def updateTablaProveedoresIngreso(self):
+            crud.poblarTablaProductosIngreso(self.ui.tablaProdDisponibles,self.ui.lblProveedorValor.text())
+            
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
@@ -401,6 +430,7 @@ class VentanaPrincipal(QMainWindow):
         self.newIngresoWindow = PopupIngresoNuevo()
         #Al registrar la señal de guardado se llama a un update de la tabla
         self.newIngresoWindow.proveedorGuardado.connect(self.updateTablaProveedores)
+        self.newIngresoWindow.productoGuardado.connect(self.updateTablaInventario)
 
         self.newIngresoWindow.exec()
     

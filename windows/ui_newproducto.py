@@ -160,7 +160,7 @@ class Ui_newProducto(object):
 
         self.retranslateUi(newProducto)
 
-        self.buttonBox.accepted.connect(newProducto.accept)
+        #self.buttonBox.accepted.connect(newProducto.accept)
         self.buttonBox.rejected.connect(newProducto.reject)
         
         QMetaObject.connectSlotsByName(newProducto)
