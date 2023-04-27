@@ -22,7 +22,7 @@ class Ui_popupDatosInvalidos(object):
     def setupUi(self, popupDatosInvalidos):
         if not popupDatosInvalidos.objectName():
             popupDatosInvalidos.setObjectName(u"popupDatosInvalidos")
-        popupDatosInvalidos.resize(350, 104)
+        popupDatosInvalidos.resize(500, 104)
         icon = QIcon()
         icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         popupDatosInvalidos.setWindowIcon(icon)
@@ -45,7 +45,7 @@ class Ui_popupDatosInvalidos(object):
         self.img.setScaledContents(True)
         self.label = QLabel(popupDatosInvalidos)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, -5, 261, 81))
+        self.label.setGeometry(QRect(80, -5, 450, 81))
         self.label.setStyleSheet(u"background-color:transparent;\n"
 "color:black;")
         self.label.setTextFormat(Qt.AutoText)
