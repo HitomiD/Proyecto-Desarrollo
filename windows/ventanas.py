@@ -198,13 +198,21 @@ class PopupIngresoNuevo(QDialog):
         self.ventanaNuevoIngreso = VentanaNuevoIngreso()
         #Se pasa la señal de nuevo Ingreso a nuevo Ingreso popup para registrarla en ventanaPrincipal
         #y actualizar la tabla de proveedores
+        razonSocial = self.ui.comboxDistr.currentText()
         self.ventanaNuevoIngreso.productoGuardado.connect(self.productoGuardado.emit)
         self.ventanaNuevoIngreso.rejected.connect(self.show)
         fecha = self.ui.dateEdit.date().toString("dd/MM/yyyy")
         self.ventanaNuevoIngreso.ui.lblFechaValor.setText(fecha)
-        self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(self.ui.comboxDistr.currentText())
+        self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(razonSocial)
         self.ventanaNuevoIngreso.accepted.connect(self.accept)
-        crud.poblarTablaProductosIngreso(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.ui.lblProveedorValor.text())
+        #Guardar el ingreso
+        #self.ventanaNuevoIngreso.accepted.connect(self.guardarIngreso)
+        #Poblar tabla desde la base de datos
+        #crud.poblarTablaProductosIngreso(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.ui.lblProveedorValor.text())
+        
+        #Poblar tabla usando una lista de productos de la propia clase
+        self.ventanaNuevoIngreso.listaProductos = crud.listaProductosDeProveedor(razonSocial)
+        crud.poblarTablaProductosIng(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.listaProductos)
         
         self.ventanaNuevoIngreso.show()
         
@@ -221,13 +229,17 @@ class PopupIngresoNuevo(QDialog):
 class VentanaNuevoIngreso(QDialog):
     
     productoGuardado = Signal()
-    
+    listaProdSeleccionados = [] #Lista de seleccionados
+    listaProductosEliminados = []
     def __init__(self):
         super(VentanaNuevoIngreso,self).__init__()
         self.ui = Ui_ventanaNuevoIngreso()
         self.ui.setupUi(self)
         self.ui.btnRegistrarProd.clicked.connect(self.showNewProdIngreso)
-        self.productoGuardado.connect(self.updateTablaProveedoresIngreso)
+        #Actualiza la tabla completa desde la base de datos.        
+        self.productoGuardado.connect(self.updateTablaProductosIngreso)
+        self.ui.btnAgregarSeleccionado.clicked.connect(self.seleccionarProducto)
+        
     
     def showNewProdIngreso(self):
         
@@ -245,9 +257,49 @@ class VentanaNuevoIngreso(QDialog):
         self.hide()
         self.newProd.show()
         
-    def updateTablaProveedoresIngreso(self):
-            crud.poblarTablaProductosIngreso(self.ui.tablaProdDisponibles,self.ui.lblProveedorValor.text())
-            
+    def seleccionarProducto(self):
+        
+        row = self.ui.tablaProdDisponibles.currentRow()
+        if row == -1:
+            popup = popupError()
+            popup.ui.label.setText("No se ha seleccionado ningún producto.")
+            popup.exec()
+            return
+        if int(self.ui.spinBox.text()) == 0:
+            popup = popupError()
+            popup.ui.label.setText("No se ha indicado la cantidad.")
+            popup.exec()
+            return
+        
+        idSeleccionado = int(self.ui.tablaProdDisponibles.item(row,0).text())
+        
+        class productoSeleccionado():
+            ID = int
+            descripcion = str
+            cantidad = int
+        
+        #Buscar y eliminar producto seleccionado de la lista en memoria
+        for index,producto in enumerate(self.listaProductos):
+            if producto.id == idSeleccionado:
+                productoMover = producto
+                del self.listaProductos[index]
+        productoSelec = productoSeleccionado()
+        productoSelec.descripcion = productoMover.descripcion
+        productoSelec.ID = productoMover.id
+        productoSelec.cantidad = int(self.ui.spinBox.text())
+        self.listaProdSeleccionados.append(productoSelec)
+        print(self.listaProdSeleccionados[0].descripcion)
+        self.updateTablaProductosIngreso()
+        self.updateTablaProdSeleccionados()
+        
+        
+
+        
+    def updateTablaProductosIngreso(self):
+        crud.poblarTablaProductosIng(self.ui.tablaProdDisponibles,self.listaProductos)
+    
+    def updateTablaProdSeleccionados(self):
+        crud.poblarTablaProdSeleccionados(self.ui.tablaDetalleIngreso,self.listaProdSeleccionados)
         
 #Ventana principal
 class VentanaPrincipal(QMainWindow):
