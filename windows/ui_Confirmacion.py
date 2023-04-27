@@ -30,7 +30,7 @@ class Ui_Dialogo(object):
         sizePolicy.setHeightForWidth(Dialogo.sizePolicy().hasHeightForWidth())
         Dialogo.setSizePolicy(sizePolicy)
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         Dialogo.setWindowIcon(icon)
         self.verticalLayoutWidget = QWidget(Dialogo)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
