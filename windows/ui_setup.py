@@ -28,7 +28,7 @@ class Ui_Crear_usuario(object):
         Crear_usuario.setMinimumSize(QSize(373, 259))
         Crear_usuario.setMaximumSize(QSize(373, 259))
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         Crear_usuario.setWindowIcon(icon)
         Crear_usuario.setStyleSheet(u"")
         Crear_usuario.setInputMethodHints(Qt.ImhNone)
