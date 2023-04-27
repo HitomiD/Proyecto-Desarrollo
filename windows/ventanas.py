@@ -339,24 +339,26 @@ class VentanaNuevoIngreso(QDialog):
         else:
             ingreso = Ingresos()
             query = (Proveedores
-                    .select(Proveedores.cuil_cuit)
+                    .select(Proveedores.cuil_cuit,Proveedores.telefono)
                     .where(Proveedores.razonsocial == self.ui.lblProveedorValor.text()))
                     #Si se le asigna la query en si directamente a cuilCuitProveedor no funciona (¿?).
-            cuilCuitProveedor = query 
-            ingreso.cuil_cuit_proveedor = cuilCuitProveedor
+            for indice, proveedor in enumerate(query): 
+                ingreso.cuil_cuit_proveedor = proveedor.cuil_cuit
+                ingreso.telefono_proveedor = proveedor.telefono
             fechaIngreso = datetime.datetime.strptime(self.ui.lblFechaValor.text(), "%d/%m/%Y")
             ingreso.fecha = fechaIngreso
-            
+            ingreso.razonsocial_proveedor = self.ui.lblProveedorValor.text()
             #guardar ingreso
             ingreso.save()
                                     
+            
             #Insertar productos en productos por ingreso
-            prod = ProductosPorIngreso()
-            prod.num_ingreso = ingreso.get_id()
-
             for index, producto in enumerate(self.listaProdSeleccionados):
+                prod = ProductosPorIngreso()
+                prod.num_ingreso = ingreso.get_id()
                 prod.id_producto = producto.ID
                 prod.cantidad = producto.cantidad
+                prod.descripcion = producto.descripcion
                 prod.save()
             
             self.accept()
@@ -370,6 +372,7 @@ class VentanaPrincipal(QMainWindow):
         #poblado inicial tablas
         crud.poblarQTableInventario(self.ui.tablaInventario)
         crud.poblarQTableProveedores(self.ui.tablaProveedores) 
+        crud.poblarQTableIngresos(self.ui.tablaIngresos)
 
         #Conectar botones
         self.ui.btnNuevoProducto.clicked.connect(self.showNewProd)
@@ -381,6 +384,7 @@ class VentanaPrincipal(QMainWindow):
         self.ui.btnModProveedor.clicked.connect(self.showEditProv)
         
         self.ui.btnNuevoIngreso.clicked.connect(self.showNewIngresoInicio)
+        self.ui.tablaIngresos.clicked.connect(self.mostrarDetallesIngreso)
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
@@ -543,10 +547,24 @@ class VentanaPrincipal(QMainWindow):
         #Al registrar la señal de guardado se llama a un update de la tabla
         self.newIngresoWindow.proveedorGuardado.connect(self.updateTablaProveedores)
         self.newIngresoWindow.productoGuardado.connect(self.updateTablaInventario)
-
+        self.newIngresoWindow.accepted.connect(self.updateTablaIngresos)
         self.newIngresoWindow.exec()
     
-    
+    def mostrarDetallesIngreso(self):
+        row = self.ui.tablaIngresos.currentRow()
+        if row == None:
+            return
+        numIngreso = int(self.ui.tablaIngresos.item(row,0).text())
+
+        crud.poblarTablaDetalle(self.ui.tablaIngresosDetalle, numIngreso)
+        tupla = (Ingresos
+                 .select()
+                 .where(Ingresos.num_ingreso == numIngreso)
+                 .namedtuples())
+        for index, ingreso in enumerate(tupla):
+            self.ui.nombreProveedor.setText(ingreso.razonsocial_proveedor)
+            self.ui.cuilProveedor.setText(str(ingreso.cuil_cuit_proveedor))
+            self.ui.telefonoProveedor.setText(str(ingreso.telefono_proveedor))
     
     #Actualiza tabla Inventario en main window
     def updateTablaInventario(self):
@@ -554,6 +572,9 @@ class VentanaPrincipal(QMainWindow):
     
     def updateTablaProveedores(self):
         crud.poblarQTableProveedores(self.ui.tablaProveedores)
+    
+    def updateTablaIngresos(self):
+        crud.poblarQTableIngresos(self.ui.tablaIngresos)
   
 #Popup datos ingresados inválidos
 class popupDatosInvalidos(QDialog) :

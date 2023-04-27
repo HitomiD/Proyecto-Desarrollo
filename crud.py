@@ -79,13 +79,13 @@ def poblarQTableIngresos(tabla):
         itemId.setData(0,ingreso.num_ingreso)
         tabla.setItem(index,0,itemId)
         
-        itemId = QTableWidgetItem()
-        itemId.setData(0,ingreso.fecha)
-        tabla.setItem(index,1,itemId)
+        itemFecha = QTableWidgetItem()
+        itemFecha.setData(0,str(ingreso.fecha))
+        tabla.setItem(index,1,itemFecha)
         
-        itemStock = QTableWidgetItem()
-        itemStock.setData(0,"nombre proveedor") #placeholder
-        tabla.setItem(index,2,itemStock)
+        itemProveedor = QTableWidgetItem()
+        itemProveedor.setData(0,"placeholder") 
+        tabla.setItem(index,2,itemProveedor)
 
 #Retorna una lista de proveedores para la comboBox de la ventana para añadir un producto.
 def listaProveedores():
@@ -212,4 +212,31 @@ def poblarTablaProdSeleccionados(tabla,listaProductos):
         #Stock
         itemCantidad = QTableWidgetItem()
         itemCantidad.setData(0,producto.cantidad)
+        tabla.setItem(index,2,itemCantidad)    
+
+def poblarTablaDetalle(tabla,numIngreso):
+    
+    listaProdDetalle = (ProductosPorIngreso
+                      .select(ProductosPorIngreso.id_producto,ProductosPorIngreso.descripcion,ProductosPorIngreso.cantidad)
+                      .where(ProductosPorIngreso.num_ingreso == numIngreso)
+                      .namedtuples()) #namedtuples() es para retornar un diccionario.    
+    
+    totalRegistros = len(listaProdDetalle)
+    tabla.setRowCount(totalRegistros)
+
+    #id,descripcion,stock,stock minimo
+    for index, ppd in enumerate(listaProdDetalle):
+
+        #id
+        itemId = QTableWidgetItem()
+        itemId.setData(0,ppd.id_producto)
+        tabla.setItem(index,0,itemId)
+        
+        #Descripcion
+        #En caso de ser un string se puede omitir la funcion setData de la siguiente forma
+        tabla.setItem(index,1,QTableWidgetItem(str(ppd.descripcion)))
+        
+        #Stock
+        itemCantidad = QTableWidgetItem()
+        itemCantidad.setData(0,ppd.cantidad)
         tabla.setItem(index,2,itemCantidad)    

@@ -19,7 +19,9 @@ class BaseModel(Model):
 class Ingresos(BaseModel):
     cuil_cuit_proveedor = BareField(column_name='CUIL_CUIT_proveedor')
     fecha = DateField()
+    razonsocial_proveedor = TextField()
     num_ingreso = AutoField(null=True)
+    telefono_proveedor = IntegerField(null=True)
 
     class Meta:
         table_name = 'Ingresos'
@@ -53,8 +55,7 @@ class ProductosPorIngreso(BaseModel):
     id_producto = ForeignKeyField(column_name='ID_producto', field='id', model=Productos)
     cantidad = IntegerField()
     num_ingreso = ForeignKeyField(column_name='num_ingreso', field='num_ingreso', model=Ingresos)
-    precio_unitario_compra = FloatField()
-
+    descripcion = TextField()
     class Meta:
         table_name = 'Productos_por_Ingreso'
 

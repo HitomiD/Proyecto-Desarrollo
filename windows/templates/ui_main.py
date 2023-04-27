@@ -22,7 +22,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QMenu, QMenuBar, QPushButton, QSizePolicy,
     QSpacerItem, QStatusBar, QTabWidget, QTableWidget,
     QTableWidgetItem, QVBoxLayout, QWidget)
-import crud
+import Recursos_rc
+import Recursos_rc
 
 class Ui_MenuPrincipal(object):
     def setupUi(self, MenuPrincipal):
@@ -37,7 +38,7 @@ class Ui_MenuPrincipal(object):
         MenuPrincipal.setSizePolicy(sizePolicy)
         MenuPrincipal.setMaximumSize(QSize(846, 663))
         icon = QIcon()
-        icon.addFile(u"./assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         MenuPrincipal.setWindowIcon(icon)
         MenuPrincipal.setWindowOpacity(1.000000000000000)
         MenuPrincipal.setStyleSheet(u"background-color: white;\n"
@@ -45,17 +46,17 @@ class Ui_MenuPrincipal(object):
         self.actionAcerca_de = QAction(MenuPrincipal)
         self.actionAcerca_de.setObjectName(u"actionAcerca_de")
         icon1 = QIcon()
-        icon1.addFile(u"./assets/Interrogation.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"../assets/Interrogation.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionAcerca_de.setIcon(icon1)
         self.actionExportar_como_PDF = QAction(MenuPrincipal)
         self.actionExportar_como_PDF.setObjectName(u"actionExportar_como_PDF")
         icon2 = QIcon()
-        icon2.addFile(u"./assets/pdf.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"../assets/pdf.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionExportar_como_PDF.setIcon(icon2)
         self.actionManual_del_Usuario = QAction(MenuPrincipal)
         self.actionManual_del_Usuario.setObjectName(u"actionManual_del_Usuario")
         icon3 = QIcon()
-        icon3.addFile(u"./assets/Info.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"../assets/Info.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionManual_del_Usuario.setIcon(icon3)
         self.centralwidget = QWidget(MenuPrincipal)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -104,7 +105,7 @@ class Ui_MenuPrincipal(object):
         self.LogoInterno.setFont(font2)
         self.LogoInterno.setStyleSheet(u"")
         self.LogoInterno.setTextFormat(Qt.RichText)
-        self.LogoInterno.setPixmap(QPixmap(u"./assets/Escudo-Interno - copia.png"))
+        self.LogoInterno.setPixmap(QPixmap(u"../assets/Escudo-Interno - copia.png"))
 
         self.horizontalLayout_2.addWidget(self.LogoInterno)
 
@@ -340,7 +341,7 @@ class Ui_MenuPrincipal(object):
         __qtablewidgetitem12 = QTableWidgetItem()
         self.tablaProveedores.setHorizontalHeaderItem(5, __qtablewidgetitem12)
         self.tablaProveedores.setObjectName(u"tablaProveedores")
-        self.tablaProveedores.setEnabled(True)
+        self.tablaProveedores.setEnabled(False)
         self.tablaProveedores.setGeometry(QRect(0, 20, 809, 379))
         sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy3.setHorizontalStretch(0)
@@ -534,45 +535,45 @@ class Ui_MenuPrincipal(object):
         sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy1)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.groupBoxProveedor = QGroupBox(self.frame_2)
-        self.groupBoxProveedor.setObjectName(u"groupBoxProveedor")
-        self.groupBoxProveedor.setEnabled(False)
-        self.groupBoxProveedor.setGeometry(QRect(10, 10, 421, 151))
-        self.groupBoxProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.groupBoxProveedor_6 = QGroupBox(self.frame_2)
+        self.groupBoxProveedor_6.setObjectName(u"groupBoxProveedor_6")
+        self.groupBoxProveedor_6.setEnabled(False)
+        self.groupBoxProveedor_6.setGeometry(QRect(10, 10, 421, 151))
+        self.groupBoxProveedor_6.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "")
-        self.groupBoxProveedor.setFlat(False)
-        self.groupBoxProveedor.setCheckable(False)
-        self.groupBoxProveedor.setChecked(False)
-        self.gridLayout_7 = QGridLayout(self.groupBoxProveedor)
+        self.groupBoxProveedor_6.setFlat(False)
+        self.groupBoxProveedor_6.setCheckable(False)
+        self.groupBoxProveedor_6.setChecked(False)
+        self.gridLayout_7 = QGridLayout(self.groupBoxProveedor_6)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.tagProveedor = QLabel(self.groupBoxProveedor)
-        self.tagProveedor.setObjectName(u"tagProveedor")
+        self.tagProveedor_6 = QLabel(self.groupBoxProveedor_6)
+        self.tagProveedor_6.setObjectName(u"tagProveedor_6")
 
-        self.gridLayout_7.addWidget(self.tagProveedor, 0, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.tagProveedor_6, 0, 0, 1, 1)
 
-        self.telefonoProveedor = QLineEdit(self.groupBoxProveedor)
-        self.telefonoProveedor.setObjectName(u"telefonoProveedor")
+        self.telefonoProveedorIng = QLineEdit(self.groupBoxProveedor_6)
+        self.telefonoProveedorIng.setObjectName(u"telefonoProveedorIng")
 
-        self.gridLayout_7.addWidget(self.telefonoProveedor, 2, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.telefonoProveedorIng, 2, 1, 1, 1)
 
-        self.cuilProveedor = QLineEdit(self.groupBoxProveedor)
-        self.cuilProveedor.setObjectName(u"cuilProveedor")
-        self.cuilProveedor.setStyleSheet(u"color: rgb(0, 0, 0);\n"
+        self.cuilProveedorIng = QLineEdit(self.groupBoxProveedor_6)
+        self.cuilProveedorIng.setObjectName(u"cuilProveedorIng")
+        self.cuilProveedorIng.setStyleSheet(u"color: rgb(0, 0, 0);\n"
 "")
 
-        self.gridLayout_7.addWidget(self.cuilProveedor, 1, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.cuilProveedorIng, 1, 1, 1, 1)
 
-        self.nombreProveedor = QLineEdit(self.groupBoxProveedor)
-        self.nombreProveedor.setObjectName(u"nombreProveedor")
+        self.nombreProveedorIng = QLineEdit(self.groupBoxProveedor_6)
+        self.nombreProveedorIng.setObjectName(u"nombreProveedorIng")
 
-        self.gridLayout_7.addWidget(self.nombreProveedor, 0, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.nombreProveedorIng, 0, 1, 1, 1)
 
-        self.tagCUIL_6 = QLabel(self.groupBoxProveedor)
+        self.tagCUIL_6 = QLabel(self.groupBoxProveedor_6)
         self.tagCUIL_6.setObjectName(u"tagCUIL_6")
 
         self.gridLayout_7.addWidget(self.tagCUIL_6, 1, 0, 1, 1)
 
-        self.tagTelefono_6 = QLabel(self.groupBoxProveedor)
+        self.tagTelefono_6 = QLabel(self.groupBoxProveedor_6)
         self.tagTelefono_6.setObjectName(u"tagTelefono_6")
 
         self.gridLayout_7.addWidget(self.tagTelefono_6, 2, 0, 1, 1)
@@ -667,22 +668,22 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_34)
 
-        self.btnElimIngreso = QPushButton(self.layoutWidget_2)
-        self.btnElimIngreso.setObjectName(u"btnElimIngreso")
-        self.btnElimIngreso.setMinimumSize(QSize(150, 0))
-        self.btnElimIngreso.setFont(font3)
-        self.btnElimIngreso.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimIngreso.setStyleSheet(u"background-color: #c80000;\n"
+        self.btnElimProveedor_10 = QPushButton(self.layoutWidget_2)
+        self.btnElimProveedor_10.setObjectName(u"btnElimProveedor_10")
+        self.btnElimProveedor_10.setMinimumSize(QSize(150, 0))
+        self.btnElimProveedor_10.setFont(font3)
+        self.btnElimProveedor_10.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnElimProveedor_10.setStyleSheet(u"background-color: #c80000;\n"
 "color: white;\n"
 "border-radius:5px;\n"
 "height: 40%;\n"
 "font-weight: 600;\n"
 "")
-        self.btnElimIngreso.setIcon(icon6)
-        self.btnElimIngreso.setIconSize(QSize(35, 35))
-        self.btnElimIngreso.setAutoRepeat(False)
+        self.btnElimProveedor_10.setIcon(icon6)
+        self.btnElimProveedor_10.setIconSize(QSize(35, 35))
+        self.btnElimProveedor_10.setAutoRepeat(False)
 
-        self.layoutBtnProveedores_4.addWidget(self.btnElimIngreso)
+        self.layoutBtnProveedores_4.addWidget(self.btnElimProveedor_10)
 
         self.horizontalSpacer_35 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -783,23 +784,25 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MenuPrincipal", u"Fecha", None));
         ___qtablewidgetitem15 = self.tablaIngresos.horizontalHeaderItem(2)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None));
-        self.groupBoxProveedor.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.tagProveedor.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
-        self.telefonoProveedor.setText("")
-        self.cuilProveedor.setText("")
-        self.nombreProveedor.setText("")
+        self.groupBoxProveedor_6.setTitle(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.tagProveedor_6.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
+        self.telefonoProveedorIng.setText("")
+        self.cuilProveedorIng.setText("")
+        self.nombreProveedorIng.setText("")
         self.tagCUIL_6.setText(QCoreApplication.translate("MenuPrincipal", u"CUIL/CUIT ", None))
         self.tagTelefono_6.setText(QCoreApplication.translate("MenuPrincipal", u"Tel\u00e9fono", None))
         self.groupBox_10.setTitle(QCoreApplication.translate("MenuPrincipal", u"Detalle de ingreso", None))
         ___qtablewidgetitem16 = self.tablaIngresosDetalle.horizontalHeaderItem(0)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MenuPrincipal", u"Producto", None));
         ___qtablewidgetitem17 = self.tablaIngresosDetalle.horizontalHeaderItem(1)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"Descripcion", None));
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MenuPrincipal", u"Precio de compra", None));
         ___qtablewidgetitem18 = self.tablaIngresosDetalle.horizontalHeaderItem(2)
         ___qtablewidgetitem18.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
+        ___qtablewidgetitem19 = self.tablaIngresosDetalle.horizontalHeaderItem(3)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MenuPrincipal", u"Precio total", None));
         self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
         self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
+        self.btnElimProveedor_10.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MenuPrincipal", u"Archivo", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ayuda", None))

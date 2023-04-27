@@ -457,7 +457,7 @@ color:black;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnNuevoProveedor_4">
+         <widget class="QPushButton" name="btnNuevoProducto">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -516,7 +516,7 @@ font-weight: 600;
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnModProveedor_4">
+         <widget class="QPushButton" name="btnModProducto">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -570,7 +570,7 @@ font-weight: 600;
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="btnElimProveedor_6">
+         <widget class="QPushButton" name="btnElimProducto">
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -843,7 +843,7 @@ color:black;</string>
                </spacer>
               </item>
               <item>
-               <widget class="QPushButton" name="btnNuevoProveedor_7">
+               <widget class="QPushButton" name="btnNuevoProveedor">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -902,7 +902,7 @@ font-weight: 600;
                </spacer>
               </item>
               <item>
-               <widget class="QPushButton" name="btnModProveedor_7">
+               <widget class="QPushButton" name="btnModProveedor">
                 <property name="minimumSize">
                  <size>
                   <width>150</width>
@@ -956,7 +956,7 @@ font-weight: 600;
                </spacer>
               </item>
               <item>
-               <widget class="QPushButton" name="btnElimProveedor_9">
+               <widget class="QPushButton" name="btnElimProveedor">
                 <property name="minimumSize">
                  <size>
                   <width>150</width>
@@ -1164,71 +1164,6 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
           <attribute name="verticalHeaderHighlightSections">
            <bool>true</bool>
           </attribute>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string/>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>ID</string>
@@ -1253,99 +1188,6 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
             </brush>
            </property>
           </column>
-          <item row="0" column="0">
-           <property name="text">
-            <string>034</string>
-           </property>
-          </item>
-          <item row="0" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-           <property name="flags">
-            <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-           </property>
-          </item>
-          <item row="0" column="2">
-           <property name="text">
-            <string>Juan Carlos</string>
-           </property>
-          </item>
-          <item row="1" column="0">
-           <property name="text">
-            <string>234</string>
-           </property>
-          </item>
-          <item row="1" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-          </item>
-          <item row="1" column="2">
-           <property name="text">
-            <string>El chancho peludo</string>
-           </property>
-          </item>
-          <item row="2" column="0">
-           <property name="text">
-            <string>008</string>
-           </property>
-          </item>
-          <item row="2" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-          </item>
-          <item row="2" column="2">
-           <property name="text">
-            <string>Los hermanos</string>
-           </property>
-          </item>
-          <item row="3" column="0">
-           <property name="text">
-            <string>009</string>
-           </property>
-          </item>
-          <item row="3" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-          </item>
-          <item row="3" column="2">
-           <property name="text">
-            <string>Marcelo Rodriguez</string>
-           </property>
-          </item>
-          <item row="4" column="0">
-           <property name="text">
-            <string>158</string>
-           </property>
-          </item>
-          <item row="4" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-          </item>
-          <item row="4" column="2">
-           <property name="text">
-            <string>Matias perez</string>
-           </property>
-          </item>
-          <item row="5" column="0">
-           <property name="text">
-            <string>341</string>
-           </property>
-          </item>
-          <item row="5" column="1">
-           <property name="text">
-            <string>17/12/22</string>
-           </property>
-          </item>
-          <item row="5" column="2">
-           <property name="text">
-            <string>El chancho peludo</string>
-           </property>
-          </item>
          </widget>
         </widget>
        </item>
@@ -1406,27 +1248,27 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="telefonoProveedor_6">
+         <widget class="QLineEdit" name="telefonoProveedorIng">
           <property name="text">
-           <string>2456980234</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="cuilProveedor_6">
+         <widget class="QLineEdit" name="cuilProveedorIng">
           <property name="styleSheet">
            <string notr="true">color: rgb(0, 0, 0);
 </string>
           </property>
           <property name="text">
-           <string>23423134</string>
+           <string/>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="nombreProveedor_6">
+         <widget class="QLineEdit" name="nombreProveedorIng">
           <property name="text">
-           <string>Juan Carlos</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -1474,7 +1316,7 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
        <property name="title">
         <string>Detalle de ingreso</string>
        </property>
-       <widget class="QTableWidget" name="tablaIngresosDetalle_6">
+       <widget class="QTableWidget" name="tablaIngresosDetalle">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -1531,41 +1373,6 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
         <attribute name="verticalHeaderVisible">
          <bool>false</bool>
         </attribute>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
-        <row>
-         <property name="text">
-          <string/>
-         </property>
-        </row>
         <column>
          <property name="text">
           <string>Producto</string>
@@ -1586,121 +1393,6 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
           <string>Precio total</string>
          </property>
         </column>
-        <item row="0" column="0">
-         <property name="text">
-          <string>Coca coca cero 1L</string>
-         </property>
-        </item>
-        <item row="0" column="1">
-         <property name="text">
-          <string>250</string>
-         </property>
-        </item>
-        <item row="0" column="2">
-         <property name="text">
-          <string>45</string>
-         </property>
-        </item>
-        <item row="0" column="3">
-         <property name="text">
-          <string/>
-         </property>
-        </item>
-        <item row="1" column="0">
-         <property name="text">
-          <string>Esprait 500ml</string>
-         </property>
-        </item>
-        <item row="1" column="1">
-         <property name="text">
-          <string>250</string>
-         </property>
-        </item>
-        <item row="1" column="2">
-         <property name="text">
-          <string>23</string>
-         </property>
-        </item>
-        <item row="2" column="0">
-         <property name="text">
-          <string>Fantasiosa 500ml</string>
-         </property>
-        </item>
-        <item row="2" column="1">
-         <property name="text">
-          <string>180</string>
-         </property>
-        </item>
-        <item row="2" column="2">
-         <property name="text">
-          <string>542</string>
-         </property>
-        </item>
-        <item row="3" column="0">
-         <property name="text">
-          <string>Monstruo 380ml</string>
-         </property>
-        </item>
-        <item row="3" column="1">
-         <property name="text">
-          <string>340</string>
-         </property>
-        </item>
-        <item row="3" column="2">
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
-        <item row="4" column="0">
-         <property name="text">
-          <string>kilmes 2.5 Ltr.</string>
-         </property>
-        </item>
-        <item row="4" column="1">
-         <property name="text">
-          <string>500</string>
-         </property>
-        </item>
-        <item row="4" column="2">
-         <property name="text">
-          <string>75</string>
-         </property>
-        </item>
-        <item row="5" column="0">
-         <property name="text">
-          <string>Amstel 1 Ltr.</string>
-         </property>
-        </item>
-        <item row="5" column="1">
-         <property name="text">
-          <string>300</string>
-         </property>
-        </item>
-        <item row="5" column="2">
-         <property name="text">
-          <string>50</string>
-         </property>
-        </item>
-        <item row="6" column="0">
-         <property name="text">
-          <string>Jack Daniels 750ml.</string>
-         </property>
-        </item>
-        <item row="6" column="1">
-         <property name="text">
-          <string>1500</string>
-         </property>
-        </item>
-        <item row="6" column="2">
-         <property name="text">
-          <string>5</string>
-         </property>
-        </item>
-        <item row="6" column="3">
-         <property name="text">
-          <string/>
-         </property>
-        </item>
        </widget>
       </widget>
      </widget>
@@ -1744,7 +1436,7 @@ selection-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255,
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnNuevoProveedor_8">
+        <widget class="QPushButton" name="btnNuevoIngreso">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -1803,7 +1495,7 @@ font-weight: 600;
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btnModProveedor_8">
+        <widget class="QPushButton" name="btnModIngreso">
          <property name="minimumSize">
           <size>
            <width>150</width>

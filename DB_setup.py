@@ -34,6 +34,8 @@ def setup():
                             CREATE TABLE Ingresos (
                                 num_ingreso INTEGER PRIMARY KEY AUTOINCREMENT,
                                 CUIL_CUIT_proveedor NOT NULL,
+                                razonsocial_proveedor NOT NULL,
+                                telefono_proveedor INTEGER,
                                 fecha DATE NOT NULL
                             );
                             """)
@@ -41,8 +43,8 @@ def setup():
                             CREATE TABLE Productos_por_Ingreso(
                                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
                                 ID_producto INTEGER NOT NULL,
+                                descripcion NOT NULL,
                                 num_ingreso INTEGER NOT NULL,
-                                precio_unitario_compra FLOAT NOT NULL,
                                 cantidad INTEGER NOT NULL,
                                 FOREIGN KEY(ID_producto) REFERENCES Productos(ID),
                                 FOREIGN KEY(num_ingreso) REFERENCES Ingresos(num_ingreso) 
