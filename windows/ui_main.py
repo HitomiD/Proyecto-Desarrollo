@@ -65,10 +65,10 @@ class Ui_MenuPrincipal(object):
         self.centralwidget.setSizePolicy(sizePolicy1)
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 10, 851, 100))
+        self.frame.setGeometry(QRect(-10, 10, 857, 100))
         sizePolicy1.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy1)
-        self.frame.setMaximumSize(QSize(851, 100))
+        self.frame.setMaximumSize(QSize(857, 100))
         font = QFont()
         font.setBold(False)
         font.setItalic(False)
@@ -80,33 +80,6 @@ class Ui_MenuPrincipal(object):
         self.frame.setMidLineWidth(0)
         self.horizontalLayout_2 = QHBoxLayout(self.frame)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.escudoClub = QLabel(self.frame)
-        self.escudoClub.setObjectName(u"escudoClub")
-        self.escudoClub.setMaximumSize(QSize(70, 80))
-        self.escudoClub.setSizeIncrement(QSize(0, 0))
-        font1 = QFont()
-        font1.setPointSize(16)
-        self.escudoClub.setFont(font1)
-        self.escudoClub.setStyleSheet(u"")
-        self.escudoClub.setPixmap(QPixmap(u":/Logos/Escudo-Club.png"))
-        self.escudoClub.setScaledContents(True)
-
-        self.horizontalLayout_2.addWidget(self.escudoClub)
-
-        self.LogoInterno = QLabel(self.frame)
-        self.LogoInterno.setObjectName(u"LogoInterno")
-        self.LogoInterno.setEnabled(True)
-        self.LogoInterno.setMaximumSize(QSize(16777215, 16777215))
-        font2 = QFont()
-        font2.setBold(False)
-        font2.setKerning(False)
-        self.LogoInterno.setFont(font2)
-        self.LogoInterno.setStyleSheet(u"")
-        self.LogoInterno.setTextFormat(Qt.RichText)
-        self.LogoInterno.setPixmap(QPixmap(u"./assets/Escudo-Interno - copia.png"))
-
-        self.horizontalLayout_2.addWidget(self.LogoInterno)
-
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
@@ -115,23 +88,23 @@ class Ui_MenuPrincipal(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_8)
 
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-        self.label.setTextFormat(Qt.PlainText)
-        self.label.setPixmap(QPixmap(u"../assets/Lupa-small.png"))
-
-        self.horizontalLayout_2.addWidget(self.label)
-
-        self.barraBusqueda = QLineEdit(self.frame)
-        self.barraBusqueda.setObjectName(u"barraBusqueda")
-        self.barraBusqueda.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-        self.barraBusqueda.setReadOnly(False)
-
-        self.horizontalLayout_2.addWidget(self.barraBusqueda)
-
         self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_7)
+
+        self.LogoInterno = QLabel(self.frame)
+        self.LogoInterno.setObjectName(u"LogoInterno")
+        self.LogoInterno.setEnabled(True)
+        self.LogoInterno.setMaximumSize(QSize(16777215, 16777215))
+        font1 = QFont()
+        font1.setBold(False)
+        font1.setKerning(False)
+        self.LogoInterno.setFont(font1)
+        self.LogoInterno.setStyleSheet(u"")
+        self.LogoInterno.setTextFormat(Qt.RichText)
+        self.LogoInterno.setPixmap(QPixmap(u"../assets/Escudo-Interno - copia.png"))
+
+        self.horizontalLayout_2.addWidget(self.LogoInterno)
 
         self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -281,11 +254,11 @@ class Ui_MenuPrincipal(object):
         self.btnModProducto = QPushButton(self.tabInventario)
         self.btnModProducto.setObjectName(u"btnModProducto")
         self.btnModProducto.setMinimumSize(QSize(150, 0))
-        font4 = QFont()
-        font4.setFamilies([u"Segoe UI"])
-        font4.setPointSize(11)
-        font4.setBold(True)
-        self.btnModProducto.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"Segoe UI"])
+        font3.setPointSize(11)
+        font3.setBold(True)
+        self.btnModProducto.setFont(font3)
         self.btnModProducto.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnModProducto.setStyleSheet(u"background-color: #006dab;\n"
 "color: white;\n"
@@ -422,10 +395,6 @@ class Ui_MenuPrincipal(object):
 
         self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_31)
 
-        self.horizontalSpacer_32 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_32)
-
         self.btnNuevoIngreso = QPushButton(self.layoutWidget_2)
         self.btnNuevoIngreso.setObjectName(u"btnNuevoIngreso")
         sizePolicy3.setHeightForWidth(self.btnNuevoIngreso.sizePolicy().hasHeightForWidth())
@@ -443,51 +412,6 @@ class Ui_MenuPrincipal(object):
         self.btnNuevoIngreso.setIconSize(QSize(35, 35))
 
         self.layoutBtnProveedores_4.addWidget(self.btnNuevoIngreso)
-
-        self.horizontalSpacer_33 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_33)
-
-        self.btnModIngreso = QPushButton(self.layoutWidget_2)
-        self.btnModIngreso.setObjectName(u"btnModIngreso")
-        self.btnModIngreso.setMinimumSize(QSize(150, 0))
-        self.btnModIngreso.setFont(font4)
-        self.btnModIngreso.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnModIngreso.setStyleSheet(u"background-color: #006dab;\n"
-"color: white;\n"
-"border-radius:5px;\n"
-"height: 40%;\n"
-"font-weight: 600;\n"
-"")
-        self.btnModIngreso.setIcon(icon5)
-        self.btnModIngreso.setIconSize(QSize(30, 30))
-
-        self.layoutBtnProveedores_4.addWidget(self.btnModIngreso)
-
-        self.horizontalSpacer_34 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_34)
-
-        self.btnElimIngreso = QPushButton(self.layoutWidget_2)
-        self.btnElimIngreso.setObjectName(u"btnElimIngreso")
-        self.btnElimIngreso.setMinimumSize(QSize(150, 0))
-        self.btnElimIngreso.setFont(font3)
-        self.btnElimIngreso.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btnElimIngreso.setStyleSheet(u"background-color: #c80000;\n"
-"color: white;\n"
-"border-radius:5px;\n"
-"height: 40%;\n"
-"font-weight: 600;\n"
-"")
-        self.btnElimIngreso.setIcon(icon6)
-        self.btnElimIngreso.setIconSize(QSize(35, 35))
-        self.btnElimIngreso.setAutoRepeat(False)
-
-        self.layoutBtnProveedores_4.addWidget(self.btnElimIngreso)
-
-        self.horizontalSpacer_35 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.layoutBtnProveedores_4.addItem(self.horizontalSpacer_35)
 
         self.horizontalSpacer_36 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -596,7 +520,7 @@ class Ui_MenuPrincipal(object):
         self.btnModProveedor = QPushButton(self.tab)
         self.btnModProveedor.setObjectName(u"btnModProveedor")
         self.btnModProveedor.setMinimumSize(QSize(150, 0))
-        self.btnModProveedor.setFont(font4)
+        self.btnModProveedor.setFont(font3)
         self.btnModProveedor.setCursor(QCursor(Qt.PointingHandCursor))
         self.btnModProveedor.setStyleSheet(u"background-color: #006dab;\n"
 "color: white;\n"
@@ -717,10 +641,7 @@ class Ui_MenuPrincipal(object):
         self.actionAcerca_de.setText(QCoreApplication.translate("MenuPrincipal", u"Acerca de", None))
         self.actionExportar_como_PDF.setText(QCoreApplication.translate("MenuPrincipal", u"Exportar como PDF", None))
         self.actionManual_del_Usuario.setText(QCoreApplication.translate("MenuPrincipal", u"Manual del Usuario", None))
-        self.escudoClub.setText("")
         self.LogoInterno.setText("")
-        self.label.setText("")
-        self.barraBusqueda.setPlaceholderText(QCoreApplication.translate("MenuPrincipal", u"Buscar por nombre", None))
         self.groupBox.setTitle(QCoreApplication.translate("MenuPrincipal", u"Filtros", None))
         self.lblFiltroProv.setText(QCoreApplication.translate("MenuPrincipal", u"Proveedor", None))
         self.filtroProveedor.setItemText(0, QCoreApplication.translate("MenuPrincipal", u"Todos", None))
@@ -759,8 +680,6 @@ class Ui_MenuPrincipal(object):
         ___qtablewidgetitem9 = self.tablaIngresosDetalle.horizontalHeaderItem(2)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MenuPrincipal", u"Cantidad", None));
         self.btnNuevoIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Nuevo", None))
-        self.btnModIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Modificar", None))
-        self.btnElimIngreso.setText(QCoreApplication.translate("MenuPrincipal", u"  Eliminar", None))
         self.groupBox_5.setTitle(QCoreApplication.translate("MenuPrincipal", u"Ingresos", None))
         ___qtablewidgetitem10 = self.tablaIngresos.horizontalHeaderItem(0)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MenuPrincipal", u"ID", None));
