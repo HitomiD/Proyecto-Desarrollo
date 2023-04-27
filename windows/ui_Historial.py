@@ -29,7 +29,7 @@ class Ui_Dialog(object):
         Dialog.resize(671, 627)
         Dialog.setMaximumSize(QSize(671, 627))
         icon = QIcon()
-        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         Dialog.setWindowIcon(icon)
         self.frame = QFrame(Dialog)
         self.frame.setObjectName(u"frame")
