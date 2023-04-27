@@ -22,7 +22,7 @@ class Ui_ErrorDialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(350, 104)
+        Dialog.resize(360, 104)
         icon = QIcon()
         icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         Dialog.setWindowIcon(icon)
@@ -45,7 +45,7 @@ class Ui_ErrorDialog(object):
         self.img.setScaledContents(True)
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(80, -5, 261, 81))
+        self.label.setGeometry(QRect(80, -5, 300, 81))
         self.label.setStyleSheet(u"background-color:transparent;\n"
 "color:black;")
         self.label.setTextFormat(Qt.AutoText)
