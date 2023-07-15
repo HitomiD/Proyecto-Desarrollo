@@ -11,6 +11,7 @@ from windows.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
 from windows.AltaIngreso_ui import Ui_ventanaNuevoIngreso
 
 import datetime
+import dbModel
 from dbModel import Productos,Proveedores,Ingresos, ProductosPorIngreso
 import crud
 
@@ -20,12 +21,12 @@ import crud
 
 
 #Ventana formulario para modificar/añadir producto
-class formularioProducto(QDialog) :
+class FormularioProducto(QDialog) :
     #La señal de guardado se emite en un guardado exitoso para disparar la actualizacion de la tabla.
-    guardado = Signal()
+    saved_signal = Signal()
     
     def __init__(self):
-        super(formularioProducto,self).__init__()
+        super(FormularioProducto,self).__init__()
         self.ui = Ui_newProducto()
         self.ui.setupUi(self)
         #Validadores para campos:
@@ -43,58 +44,57 @@ class formularioProducto(QDialog) :
         self.comboBoxSetup()
 
     def comboBoxSetup(self):
-        listaProveedores = crud.listaProveedores()
-        for index,proveedor in enumerate(listaProveedores):
+        lista_proveedores = crud.listaProveedores()
+        for index,proveedor in enumerate(lista_proveedores):
             self.ui.comboxDistr.addItem(proveedor.razonsocial) 
     
     #Validacion de datos en los campos
     def fieldCheckProducto(self):
         if self.ui.lnEditPrecio.hasAcceptableInput():
-            print ("el precio es valido")
+            print ("el precio es valido")   #Mensajes para depuración via consola
             if self.ui.lnEditNombre.text() != "":
                 print ("la descripción es válida")
                 if self.ui.lnEditStockMinimo.text() != "":
                     print("El stock mínimo es válido")
                     if self.ui.comboxDistr.currentText() != "":
                         print("El distribuidor es válido. Todos los datos son válidos.")
-                        return "ok"
-        #Si alguno de los datos es incorrecto se falla el check
-        self.popupDatosInv = popupDatosInvalidos()
-        self.popupDatosInv.exec_()
+                        return "ok" #Esto es una crotada.
+        #Si el check falla:
+        self.popup_datos_invalidos = PopupDatosInvalidos()
+        self.popup_datos_invalidos.exec_()
 
 #Popup nuevo producto
-class VentanaNewProducto(formularioProducto):
+class VentanaNewProducto(FormularioProducto):
     def __init__(self):
         super(VentanaNewProducto,self).__init__()
         self.ui.buttonBox.accepted.connect(self.guardarProducto)
     
     #Guardar producto
     def guardarProducto(self):
-        if self.fieldCheckProducto() == "ok":
-            nuevoProducto = Productos() #"Productos" es el nombre del modelo de la tabla
+        if self.fieldCheckProducto() == "ok": #Reitero, crotada.
+            producto_nuevo = dbModel.Productos() #Model de tabla
             
             #Se extraen los datos de los campos de la ventana
-            nuevoProducto.descripcion = self.ui.lnEditNombre.text()
+            producto_nuevo.descripcion = self.ui.lnEditNombre.text()
             precio = self.ui.lnEditPrecio.text().replace(",",".") #se reemplaza la coma por el punto para que el interprete lo reconozca como float
-            nuevoProducto.precio_venta = precio
-            nuevoProducto.stock_minimo = int(self.ui.lnEditStockMinimo.text())
+            producto_nuevo.precio_venta = precio
+            producto_nuevo.stock_minimo = int(self.ui.lnEditStockMinimo.text())
             cuil_cuit_proveedor = Proveedores.select(Proveedores.cuil_cuit).where(self.ui.comboxDistr.currentText() == Proveedores.razonsocial).get()
-            nuevoProducto.cuil_cuit_proveedor = cuil_cuit_proveedor
+            producto_nuevo.cuil_cuit_proveedor = cuil_cuit_proveedor
             
-            nuevoProducto.save()
+            producto_nuevo.save()
             
-            self.guardado.emit()
+            self.saved_signal.emit()
             self.accept()
         
-class VentanaEditProducto(formularioProducto):
+class VentanaEditProducto(FormularioProducto):
     def __init__(self):
         super(VentanaEditProducto,self).__init__()
         self.ui.buttonBox.accepted.connect(self.comprobarCampos)
 
-    def comprobarCampos(self):
-        if self.fieldCheckProducto() == "ok":
-            #print (self.fieldCheckProducto())
-            self.guardado.emit()
+    def comprobarCampos(self): #Totalmente redundante existiendo fieldCheckProducto(), revisar.
+        if self.fieldCheckProducto() == "ok": #REITERO NUEVAMENTE, CROTADA.
+            self.saved_signal.emit()
             self.accept()
 
 class FormularioProveedor(QDialog):
@@ -119,14 +119,14 @@ class FormularioProveedor(QDialog):
     def fieldCheckProveedor(self):
         if self.ui.lblRazonSocial.text() != "":
             if self.ui.lnEditDireccion.text() != "":
-                print("direccion valida")
+                print("direccion valida") #Mensajes para depurar via consola.
                 if self.ui.lnEditTelefono.hasAcceptableInput():
                     print("telefono valido")
                     if self.ui.lnEditCUIT.hasAcceptableInput():
                         print("El CUIT/CUIL es válido. Todos los datos son válidos")
                     return "ok"
-        #Si alguno de los datos es incorrecto se falla el check
-        self.popupDatosInv = popupDatosInvalidos()
+        #Si falla el check:
+        self.popupDatosInv = PopupDatosInvalidos()
         self.popupDatosInv.exec_()
 
 class VentanaEditProveedor(FormularioProveedor):
@@ -147,26 +147,26 @@ class VentanaNewProveedor(FormularioProveedor):
     #Guardar producto
     def guardarProveedor(self):
         if self.fieldCheckProveedor() == "ok":
-            nuevoProveedor = Proveedores() #"Proveedores" es el nombre del modelo de la tabla
+            proveedor_nuevo = dbModel.Proveedores()
             #Se extraen los datos de los campos de la ventana
-            nuevoProveedor.razonsocial = self.ui.lnEditRazonSocial.text()
-            nuevoProveedor.direccion = self.ui.lnEditDireccion.text()
-            nuevoProveedor.email = self.ui.lnEditEmail.text()
+            proveedor_nuevo.razonsocial = self.ui.lnEditRazonSocial.text()
+            proveedor_nuevo.direccion = self.ui.lnEditDireccion.text()
+            proveedor_nuevo.email = self.ui.lnEditEmail.text()
             telefono = int(self.ui.lnEditTelefono.text())
-            nuevoProveedor.telefono = telefono
+            proveedor_nuevo.telefono = telefono
             CUIL_CUIT = int(self.ui.lnEditCUIT.text())
-            nuevoProveedor.cuil_cuit = CUIL_CUIT
-            nuevoProveedor.nota = self.ui.lnEditNota.text()
-            nuevoProveedor.save(force_insert=True)
+            proveedor_nuevo.cuil_cuit = CUIL_CUIT
+            proveedor_nuevo.nota = self.ui.lnEditNota.text()
+            proveedor_nuevo.save(force_insert=True)
             
             self.guardado.emit()
             self.accept()
 
-#Popup inicial de alta de ingreso
+#Popup inicial (fecha y proveedor) de alta de ingreso
 class PopupIngresoNuevo(QDialog):
     
-    proveedorGuardado = Signal()
-    productoGuardado = Signal()
+    signal_prov_guardado = Signal()
+    signal_prod_guardado = Signal()
     
     def __init__(self):
         super(PopupIngresoNuevo,self).__init__()
@@ -176,52 +176,52 @@ class PopupIngresoNuevo(QDialog):
         self.ui.buttonBox.accepted.connect(self.showNewIngreso)
 
         self.comboBoxSetup()
-    #Aca no se obtiene la fecha, eso esta declarado en AltaIngresoInicio_ui.py
+        #La fecha actual se obtiene en AltaIngresoInicio_ui.py
             
+    #Anyadir un proveedor desde la ventana de ingresos:
     def showNewProvIngreso(self):
-        self.newProv = VentanaNewProveedor()
-        #Se vuelve a la ventana si:
-        self.newProv.guardado.connect(self.show) #Se completa el guardado
-        self.newProv.rejected.connect(self.show) #Se cancela el guardado
-        self.newProv.accepted.connect(self.proveedorGuardado.emit)
-        self.proveedorGuardado.connect(self.comboBoxSetup) #Si se completa se actualiza el combobox
-        #self.newProv.guardado.connect(self.proveedorGuardado)
+        self.ventana_nuevo_proveedor = VentanaNewProveedor()
+        #Conexiones a señales
+        self.ventana_nuevo_proveedor.guardado.connect(self.show)
+        self.ventana_nuevo_proveedor.rejected.connect(self.show)
+        self.ventana_nuevo_proveedor.accepted.connect(self.signal_prov_guardado.emit)
+        self.signal_prov_guardado.connect(self.comboBoxSetup)
+        
+        #Ocultar ingresos y mostrar ventana proveedor
         self.hide()
-        self.newProv.show()
+        self.ventana_nuevo_proveedor.show()
         
         #Implementar si se puede algo que seleccione automáticamente en
         # el combobox el proveedor recien registrado
-        
     
-    #LLamada a la siguiente ventana
+    #Crear y mostrar VentanaNuevoIngreso
     def showNewIngreso(self):
         self.hide()
-        self.ventanaNuevoIngreso = VentanaNuevoIngreso()
+        self.ventana_nuevo_ingreso = VentanaNuevoIngreso()
         #Se pasa la señal de nuevo Ingreso a nuevo Ingreso popup para registrarla en ventanaPrincipal
         #y actualizar la tabla de proveedores
         razonSocial = self.ui.comboxDistr.currentText()
-        self.ventanaNuevoIngreso.productoGuardado.connect(self.productoGuardado.emit)
-        self.ventanaNuevoIngreso.rejected.connect(self.show)
+        self.ventana_nuevo_ingreso.productoGuardado.connect(self.signal_prod_guardado.emit)
+        self.ventana_nuevo_ingreso.rejected.connect(self.show)
         fecha = self.ui.dateEdit.date().toString("dd/MM/yyyy")
-        self.ventanaNuevoIngreso.ui.lblFechaValor.setText(fecha)
-        self.ventanaNuevoIngreso.ui.lblProveedorValor.setText(razonSocial)
-        self.ventanaNuevoIngreso.accepted.connect(self.accept)
+        self.ventana_nuevo_ingreso.ui.lblFechaValor.setText(fecha)
+        self.ventana_nuevo_ingreso.ui.lblProveedorValor.setText(razonSocial)
+        self.ventana_nuevo_ingreso.accepted.connect(self.accept)
         #Guardar el ingreso
         #self.ventanaNuevoIngreso.accepted.connect(self.guardarIngreso)
         #Poblar tabla desde la base de datos
         #crud.poblarTablaProductosIngreso(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.ui.lblProveedorValor.text())
         
         #Poblar tabla usando una lista de productos de la propia clase
-        self.ventanaNuevoIngreso.listaProductos = crud.listaProductosDeProveedor(razonSocial)
-        crud.poblarTablaProductosIng(self.ventanaNuevoIngreso.ui.tablaProdDisponibles,self.ventanaNuevoIngreso.listaProductos)
+        self.ventana_nuevo_ingreso.listaProductos = crud.listaProductosDeProveedor(razonSocial)
+        crud.poblarTablaProductosIng(self.ventana_nuevo_ingreso.ui.tablaProdDisponibles,self.ventana_nuevo_ingreso.listaProductos)
         
-        self.ventanaNuevoIngreso.show()
+        self.ventana_nuevo_ingreso.show()
         
-    
     #setup combox proveedores
     def comboBoxSetup(self):
-        listaProveedores = crud.listaProveedores()
-        for index,proveedor in enumerate(listaProveedores):
+        lista_proveedores = crud.listaProveedores()
+        for index,proveedor in enumerate(lista_proveedores):
             self.ui.comboxDistr.addItem(proveedor.razonsocial)
     
     
@@ -252,7 +252,7 @@ class VentanaNuevoIngreso(QDialog):
         self.newProd.ui.comboxDistr.setCurrentText(razonSocial)
         self.newProd.ui.comboxDistr.setDisabled(True)
         #Se vuelve a la ventana si:
-        self.newProd.guardado.connect(self.show) #Se completa el guardado
+        self.newProd.saved_signal.connect(self.show) #Se completa el guardado
         self.newProd.rejected.connect(self.show) #Se cancela el guardado
         #Se pasa la señal de guardado de la ventana de proveedor a la ventana anterior (IngresoInicio)
         self.newProd.accepted.connect(self.productoGuardado.emit)
@@ -264,12 +264,12 @@ class VentanaNuevoIngreso(QDialog):
         
         row = self.ui.tablaProdDisponibles.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún producto.")
             popup.exec()
             return
         if int(self.ui.spinBox.text()) == 0:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha indicado la cantidad.")
             popup.exec()
             return
@@ -300,7 +300,7 @@ class VentanaNuevoIngreso(QDialog):
     def quitarProducto(self):
         row = self.ui.tablaDetalleIngreso.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún producto.")
             popup.exec()
             return
@@ -332,7 +332,7 @@ class VentanaNuevoIngreso(QDialog):
 
     def guardarIngreso(self):
         if not self.listaProdSeleccionados:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha añadido ningún producto.")
             popup.exec()
             return
@@ -422,7 +422,7 @@ class VentanaPrincipal(QMainWindow):
         
     def showNewProd(self):
         self.w = VentanaNewProducto()
-        self.w.guardado.connect(self.updateTablaInventario)
+        self.w.saved_signal.connect(self.updateTablaInventario)
         self.w.show()
     
     def showEliminarProd(self):
@@ -430,12 +430,12 @@ class VentanaPrincipal(QMainWindow):
         #comprobar si hay un elemento seleccionado
         row = self.ui.tablaInventario.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún producto.")
             popup.exec()
             return
         
-        self.popupConfirmacion = popupConfirmElim()
+        self.popupConfirmacion = PopupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProducto)
         self.popupConfirmacion.ui.label.setText("¿Desea eliminar este producto?")
         self.popupConfirmacion.setWindowTitle("Eliminar producto")
@@ -453,14 +453,14 @@ class VentanaPrincipal(QMainWindow):
         
         row = self.ui.tablaInventario.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún producto.")
             popup.exec()
             return
         
         self.modProductWindow = VentanaEditProducto()
         self.modProductWindow.setWindowTitle("Editar producto")
-        self.modProductWindow.guardado.connect(self.updateTablaInventario)
+        self.modProductWindow.saved_signal.connect(self.updateTablaInventario)
         
         descActual = self.ui.tablaInventario.item(row,1).text()
         #stockNuevo = int(self.ui.tablaInventario.item(row,2).text()) 
@@ -507,12 +507,12 @@ class VentanaPrincipal(QMainWindow):
         #comprobar si hay un elemento seleccionado
         row = self.ui.tablaProveedores.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún proveedor.")
             popup.exec()
             return
         
-        self.popupConfirmacion = popupConfirmElim()
+        self.popupConfirmacion = PopupConfirmElim()
         self.popupConfirmacion.accepted.connect(self.eliminarProveedor)
         self.popupConfirmacion.ui.label.setText("¿Desea eliminar este proveedor?")
         self.popupConfirmacion.setWindowTitle("Eliminar proveedor")
@@ -530,7 +530,7 @@ class VentanaPrincipal(QMainWindow):
         #comprobar si hay un elemento seleccionado
         row = self.ui.tablaProveedores.currentRow()
         if row == -1:
-            popup = popupError()
+            popup = PopupError()
             popup.ui.label.setText("No se ha seleccionado ningún proveedor.")
             popup.exec()
             return
@@ -580,8 +580,8 @@ class VentanaPrincipal(QMainWindow):
     def showNewIngresoInicio(self):
         self.newIngresoWindow = PopupIngresoNuevo()
         #Al registrar la señal de guardado se llama a un update de la tabla
-        self.newIngresoWindow.proveedorGuardado.connect(self.updateTablaProveedores)
-        self.newIngresoWindow.productoGuardado.connect(self.updateTablaInventario)
+        self.newIngresoWindow.signal_prov_guardado.connect(self.updateTablaProveedores)
+        self.newIngresoWindow.signal_prod_guardado.connect(self.updateTablaInventario)
         self.newIngresoWindow.accepted.connect(self.updateTablaIngresos)
         self.newIngresoWindow.exec()
     
@@ -612,25 +612,25 @@ class VentanaPrincipal(QMainWindow):
         crud.poblarQTableIngresos(self.ui.tablaIngresos)
   
 #Popup datos ingresados inválidos
-class popupDatosInvalidos(QDialog) :
+class PopupDatosInvalidos(QDialog) :
         
     def __init__(self):
-        super(popupDatosInvalidos,self).__init__()
+        super(PopupDatosInvalidos,self).__init__()
         self.ui = Ui_popupDatosInvalidos()
         self.ui.setupUi(self)
         
-#Popup error
-class popupError(QDialog) :
+#Plantilla popup de error
+class PopupError(QDialog) :
 
     def __init__(self):
-        super(popupError,self).__init__()
+        super(PopupError,self).__init__()
         self.ui = Ui_ErrorDialog()
         self.ui.setupUi(self)
 
 #Popup confirmacion eliminar producto
-class popupConfirmElim(QDialog) :
+class PopupConfirmElim(QDialog) :
         
     def __init__(self):
-        super(popupConfirmElim,self).__init__()
+        super(PopupConfirmElim,self).__init__()
         self.ui = Ui_confirmEliminar()
         self.ui.setupUi(self)
