@@ -59,6 +59,15 @@ class ProductosPorIngreso(BaseModel):
     class Meta:
         table_name = 'Productos_por_Ingreso'
 
+class Usuarios(BaseModel):
+    id = AutoField(column_name='ID', null=True)
+    usuario = TextField(unique=True)
+    nombre = IntegerField()
+    apellido = TextField()
+    password = TextField()
+    class Meta:
+        table_name = 'Usuarios'
+
 class SqliteSequence(BaseModel):
     name = BareField(null=True)
     seq = BareField(null=True)

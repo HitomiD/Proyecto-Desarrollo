@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'login.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -21,7 +21,6 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
     QMenuBar, QPushButton, QSizePolicy, QSpacerItem,
     QVBoxLayout, QWidget)
 import Recursos_rc
-import Recursos_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -36,33 +35,33 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(820, 520))
         MainWindow.setMaximumSize(QSize(820, 520))
         icon = QIcon()
-        icon.addFile(u"windows/assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../assets/Logo_Ventanas.png", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.actionAcerca_de = QAction(MainWindow)
         self.actionAcerca_de.setObjectName(u"actionAcerca_de")
         icon1 = QIcon()
-        icon1.addFile(u"windows/assets/Interrogation - 60x60.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"../assets/Interrogation - 60x60.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionAcerca_de.setIcon(icon1)
         self.actionCrear_Usuario = QAction(MainWindow)
         self.actionCrear_Usuario.setObjectName(u"actionCrear_Usuario")
         icon2 = QIcon()
-        icon2.addFile(u"windows/assets/Info.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"../assets/Info.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionCrear_Usuario.setIcon(icon2)
         self.actionCrear_Usuario_2 = QAction(MainWindow)
         self.actionCrear_Usuario_2.setObjectName(u"actionCrear_Usuario_2")
         icon3 = QIcon()
-        icon3.addFile(u"windows/assets/User.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"../assets/User.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionCrear_Usuario_2.setIcon(icon3)
         self.actionCrear_Usuario_2.setShortcutContext(Qt.WindowShortcut)
         self.actionEliminar_Usuario = QAction(MainWindow)
         self.actionEliminar_Usuario.setObjectName(u"actionEliminar_Usuario")
         icon4 = QIcon()
-        icon4.addFile(u"windows/assets/BanUser.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"../assets/BanUser.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionEliminar_Usuario.setIcon(icon4)
         self.actionModificar_Usuario = QAction(MainWindow)
         self.actionModificar_Usuario.setObjectName(u"actionModificar_Usuario")
         icon5 = QIcon()
-        icon5.addFile(u"windows/assets/ModUser.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"../assets/ModUser.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionModificar_Usuario.setIcon(icon5)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -109,7 +108,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.gridLayoutWidget)
         self.label.setObjectName(u"label")
         self.label.setStyleSheet(u"margin-right:30px;")
-        self.label.setPixmap(QPixmap(u"windows/assets/Escudo-black.png"))
+        self.label.setPixmap(QPixmap(u"../assets/Escudo-black.png"))
 
         self.horizontalLayout_3.addWidget(self.label)
 
@@ -137,7 +136,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.gridLayoutWidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(200, 200))
-        self.label_2.setPixmap(QPixmap(u"windows/assets/Logo_Ventanas.png"))
+        self.label_2.setPixmap(QPixmap(u"../assets/Logo_Ventanas.png"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label_2)
@@ -229,20 +228,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_31)
 
-        self.CasillaUsuario = QLineEdit(self.gridLayoutWidget)
-        self.CasillaUsuario.setObjectName(u"CasillaUsuario")
-        self.CasillaUsuario.setEnabled(True)
+        self.inputUsuario = QLineEdit(self.gridLayoutWidget)
+        self.inputUsuario.setObjectName(u"inputUsuario")
+        self.inputUsuario.setEnabled(True)
         sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Maximum)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.CasillaUsuario.sizePolicy().hasHeightForWidth())
-        self.CasillaUsuario.setSizePolicy(sizePolicy2)
-        self.CasillaUsuario.setMinimumSize(QSize(180, 0))
-        self.CasillaUsuario.setMaximumSize(QSize(180, 22))
-        self.CasillaUsuario.setBaseSize(QSize(0, 0))
-        self.CasillaUsuario.setStyleSheet(u"")
+        sizePolicy2.setHeightForWidth(self.inputUsuario.sizePolicy().hasHeightForWidth())
+        self.inputUsuario.setSizePolicy(sizePolicy2)
+        self.inputUsuario.setMinimumSize(QSize(180, 0))
+        self.inputUsuario.setMaximumSize(QSize(180, 22))
+        self.inputUsuario.setBaseSize(QSize(0, 0))
+        self.inputUsuario.setStyleSheet(u"")
 
-        self.horizontalLayout_7.addWidget(self.CasillaUsuario)
+        self.horizontalLayout_7.addWidget(self.inputUsuario)
 
         self.horizontalSpacer_33 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -361,11 +360,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_20)
 
-        self.pushButton = QPushButton(self.gridLayoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMaximumSize(QSize(200, 16777215))
-        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet(u"background-color: rgb(0, 193, 13);\n"
+        self.btnIngresar = QPushButton(self.gridLayoutWidget)
+        self.btnIngresar.setObjectName(u"btnIngresar")
+        self.btnIngresar.setMaximumSize(QSize(200, 16777215))
+        self.btnIngresar.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btnIngresar.setStyleSheet(u"background-color: rgb(0, 193, 13);\n"
 "color:white;\n"
 "border:none;\n"
 "border-radius:3px;\n"
@@ -375,7 +374,7 @@ class Ui_MainWindow(object):
 "margin-top:15px;\n"
 "")
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.horizontalLayout_2.addWidget(self.btnIngresar)
 
         self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -402,7 +401,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 820, 22))
+        self.menubar.setGeometry(QRect(0, 0, 820, 20))
         self.menuAyuda = QMenu(self.menubar)
         self.menuAyuda.setObjectName(u"menuAyuda")
         self.menuUsuarios = QMenu(self.menubar)
@@ -437,7 +436,7 @@ class Ui_MainWindow(object):
         self.LabelUsuario.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Usuario</span></p></body></html>", None))
         self.CONTRASENA.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">Contrase\u00f1a</span></p></body></html>", None))
         self.inputPassword.setInputMask("")
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"INGRESAR", None))
+        self.btnIngresar.setText(QCoreApplication.translate("MainWindow", u"INGRESAR", None))
         self.menuAyuda.setTitle(QCoreApplication.translate("MainWindow", u"Ayuda", None))
         self.menuUsuarios.setTitle(QCoreApplication.translate("MainWindow", u"Usuarios", None))
     # retranslateUi

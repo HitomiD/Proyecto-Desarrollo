@@ -55,7 +55,7 @@
      <item row="1" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="btnAdmin">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
@@ -66,8 +66,8 @@ font-weight: bold;
 margin-left:30px;</string>
          </property>
          <property name="text">
-          <string>¿Problemas para
- iniciar sesión?</string>
+          <string>Administrar 
+usuarios</string>
          </property>
         </widget>
        </item>
@@ -430,7 +430,7 @@ margin-left:30px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="CasillaUsuario">
+            <widget class="QLineEdit" name="inputUsuario">
              <property name="enabled">
               <bool>true</bool>
              </property>
@@ -775,7 +775,7 @@ margin-left:30px;</string>
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="btnIngresar">
            <property name="maximumSize">
             <size>
              <width>200</width>
@@ -866,7 +866,7 @@ margin-top:15px;
      <x>0</x>
      <y>0</y>
      <width>820</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAyuda">
@@ -938,7 +938,6 @@ margin-top:15px;
  </widget>
  <resources>
   <include location="../Recursos.qrc"/>
-  <include location="Recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

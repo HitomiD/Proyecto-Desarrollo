@@ -50,6 +50,15 @@ def setup():
                                 FOREIGN KEY(num_ingreso) REFERENCES Ingresos(num_ingreso) 
                             );
                             """)
+        dbconnection.execute("""
+                            CREATE TABLE Usuarios(
+                                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                usuario NOT NULL UNIQUE,
+                                nombre NOT NULL,
+                                apellido NOT NULL,
+                                password NOT NULL
+                            );
+                            """)
         #Fin crear tablas
         
         #Triggers de actualización ante nuevo ingreso
