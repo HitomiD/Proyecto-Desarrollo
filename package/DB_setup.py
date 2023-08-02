@@ -3,7 +3,7 @@ import sqlite3
 
 #setup
 def setup():
-    dbconnection = sqlite3.connect("database.db")
+    dbconnection = sqlite3.connect("./db/database.db")
     try:
         #Crear tablas
         dbconnection.execute("""

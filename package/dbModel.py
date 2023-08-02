@@ -3,7 +3,7 @@ from peewee import *
 #Este archivo contiene el modelo de DB de peewee
 
 ## Modelos generados automáticamente por pwiz ##
-database = SqliteDatabase('database.db')
+database = SqliteDatabase('./db/database.db')
 
 class UnknownField(object):
     def __init__(self, *_, **__): pass

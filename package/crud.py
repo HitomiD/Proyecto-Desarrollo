@@ -1,4 +1,4 @@
-from dbModel import *
+from .dbModel import *
 from PySide6.QtWidgets import QTableWidget, QTableWidgetItem
 
 #Este modulo contiene todas las interacciones directas con la base de datos.

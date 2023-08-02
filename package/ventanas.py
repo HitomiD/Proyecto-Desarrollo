@@ -1,19 +1,22 @@
 from PySide6.QtWidgets import QMainWindow, QDialog, QPushButton,QMessageBox
 from PySide6.QtCore import Signal, QLocale
 from PySide6.QtGui import QDoubleValidator,QIntValidator
-from windows.ui_datosInvalidos import Ui_popupDatosInvalidos
-from windows.ui_main import Ui_MenuPrincipal
-from windows.ui_newproducto import Ui_newProducto
-from windows.ui_confirmEliminar import Ui_confirmEliminar
-from windows.ui_newproveedor import Ui_newProveedor
-from windows.error_ui import Ui_ErrorDialog
-from windows.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
-from windows.AltaIngreso_ui import Ui_ventanaNuevoIngreso
+from .ui.ui_datosInvalidos import Ui_popupDatosInvalidos
+from .ui.ui_main import Ui_MenuPrincipal
+from .ui.ui_newproducto import Ui_newProducto
+from .ui.ui_confirmEliminar import Ui_confirmEliminar
+from .ui.ui_newproveedor import Ui_newProveedor
+from .ui.error_ui import Ui_ErrorDialog
+from .ui.AltaIngresoInicio_ui import Ui_InicioNuevoIngreso
+from .ui.AltaIngreso_ui import Ui_ventanaNuevoIngreso
 
 import datetime
-import dbModel
-from dbModel import Productos,Proveedores,Ingresos, ProductosPorIngreso
-import crud
+
+#hay que resolver estos dos con un solo import
+from . import dbModel
+from .dbModel import Productos,Proveedores,Ingresos, ProductosPorIngreso
+
+from . import crud
 
 #Este archivo contiene las definiciones de todas las ventanas (y sus funciones) del sistema
 
