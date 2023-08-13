@@ -2,6 +2,9 @@
 *.db
 *.pyc
 
+#vscode workspace configuration
+./vscode
+
 #Resource logo file
 rc_Logo-Chiquito.py
 
